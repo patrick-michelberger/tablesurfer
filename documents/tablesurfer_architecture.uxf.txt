@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>63</x>
+      <y>273</y>
+      <w>42</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>742</x>
+      <y>147</y>
+      <w>91</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Whatsapp
+valign=center
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>742</x>
+      <y>189</y>
+      <w>91</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Yowsup
+valign=center
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>483</x>
+      <y>119</y>
+      <w>238</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Message Broker
+valign=center
+--
+sendMessage(phoneNumber, text)
+createGroup(groupName)
+addUserToGroup(groupId, phoneNumber)
+removeUserFromGroup(groupId, phoneNumber)
+sendMessageToGroup(groupId, text)
+readMessagesFromGroup(groupId)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>476</x>
+      <y>287</y>
+      <w>105</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Server
+valign=center
+--
+API mirrors Client
+API mirrors Message Broker
+--
+createTables(dateId)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>777</x>
+      <y>168</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>196</y>
+      <w>42</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>154</x>
+      <y>287</y>
+      <w>266</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>Client (App / Website)
+valign=center
+--
+createAccount(email, password, firstName, lastName)
+deleteAccount(password)
+--
+login(email, password)
+logout()
+--
+addPhone(phoneNumber)
+verifyPhone(verifyCode)
+verifyEmail(verifyCode)
+addCampusMail(campusMail)
+verifyCampusMail(verifyCode)
+--
+changeEmail(newEmail)
+changePassword(oldPassword, newPassword)
+changeCity(newCity)
+changePhone(newPhoneNumber)
+--
+getDates(city)
+getTables()
+attendDate(dateId)
+unattendDate(dateId)
+leaveTable(tableId)
+inviteFriend(dateId, user)
+acceptInvite(dateId)
+declineInvite(dateId)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>210</y>
+      <w>42</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=-
+REST</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Database</type>
+    <coordinates>
+      <x>490</x>
+      <y>392</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Database</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>98</x>
+      <y>287</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>287</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-
+REST</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>518</x>
+      <y>343</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+</diagram>
