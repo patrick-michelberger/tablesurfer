@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ssh -i "tablesurfer.pem" ubuntu@ec2-52-29-134-35.eu-central-1.compute.amazonaws.com
+

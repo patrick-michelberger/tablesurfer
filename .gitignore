@@ -8,4 +8,4 @@ dist
 /server/config/local.env.js
 npm-debug.log
 coverage
-/credentials
+/bin/tablesurfer.pem
