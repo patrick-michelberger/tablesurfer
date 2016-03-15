@@ -1,5 +1,6 @@
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
+@import './_variables.scss';
 
 /**
  * App-wide Styles
@@ -18,6 +19,27 @@ body {
 
 .app {
     background-color: #fff;
+}
+
+.has-navbar-bottom .app-body {
+    padding-bottom: 0px;
+}
+
+@media (max-width: $screen-xs) {
+    .has-navbar-bottom .app-body {
+        padding-bottom: 51px;
+    }
+}
+
+.navbar-app .btn-navbar, .navbar-app .btn {
+    background: #007aff;
+    border: none;
+    line-height: 50px;
+    padding-top: 0; 
+    padding-bottom: 0;
+    color: #fff;
+    text-transform: lowercase;
+    height: 51px;
 }
 
 a {
@@ -50,7 +72,8 @@ button,
     height: 45px;
 }
 
-input, .form-control {
+input,
+.form-control {
     height: 45px;
     border-radius: 0;
 }
@@ -63,6 +86,7 @@ $brand-warning: orange;
 $brand-danger: red;
 // Component styles are injected through grunt
 // injector
+@import '_variables.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
 @import '../components/footer/footer.scss';

@@ -21,6 +21,7 @@
     font-size: 2.0em;
 }
 
+
 /**
  * Jumbotron
  */
@@ -30,25 +31,50 @@
     background-size: cover;
     height: calc(100vh - 50px);
     position: relative;
-    opacity: 0.90;
+    opacity: 0.85;
 }
 
 #ts-main .ts-jumbotron-container h1 {
     position: absolute;
     bottom: 0;
-    left: 20px;
     font-size: 4.0em;
     color: #fff;
     text-align: center;
     width: 100%;
-    top: 45%;
+    top: 50%;
+    margin-top: -100px;
 }
 
 #ts-main .ts-jumbotron-container .btn-register {
-    top: 60%;
+    top: 50%;
     position: absolute;
     left: 50%;
-    margin-left: -45px;
+    margin-left: -75px;
+}
+
+@media (min-width: $screen-sm) {
+    #ts-main .ts-jumbotron-container h1 {
+        font-size: 5.0em;
+        margin-top: -80px;
+    }
+}
+
+@media (min-width: $screen-sm) {
+    #ts-main .ts-jumbotron-container h1 {
+        top: 55%;
+    }
+    #ts-main .ts-jumbotron-container .btn-register {
+        top: 60%;
+    }
+}
+
+@media (min-width: $screen-lg) {
+    #ts-main .ts-jumbotron-container h1 {
+        top: 65%;
+    }
+    #ts-main .ts-jumbotron-container .btn-register {
+        top: 70%;
+    }
 }
 
 
@@ -57,24 +83,43 @@
  */
 
 #ts-main .ts-photo-gallery-container {
-    height: 1000px;
-}
-
-#ts-main .ts-photo-gallery-container {
     padding-top: 100px;
     padding-bottom: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 #ts-main .ts-photo-gallery-container section {
     margin-top: 100px;
 }
 
-@media (min-width: 768px) {}
+#ts-main .ts-photo-gallery-container .ts-image-container {
+    padding: 10px 10px 5px 5px;
+}
+
+@media (max-width: $screen-md) {
+    #ts-main .ts-photo-gallery-container .img-responsive {
+        width: 100%;
+    }
+}
 
 
 /**
  * How To
  */
+
+#ts-main .ts-how-to-container {
+    height: 630px;
+}
+
+#ts-main .ts-how-to-container .img-circle {
+    padding: 30px;
+}
+
+#ts-main .ts-how-to-container .row {
+    padding-top: 60px;
+}
+
 
 #ts-main .ts-how-to-container p {
     text-align: center;
