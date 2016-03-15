@@ -1,4 +1,52 @@
-.navbar-default {
-	background-color: #fff;
-    border-color: #fff; 
+.navbar-absolute-top {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.navbar-app .btn-navbar:hover,
+.navbar-app .btn:hover {
+    color: #000;
+}
+
+body > div.app > navbar > div > div > button > i {
+    font-size: 2.4em;
+    color: #000;
+    margin-right: 5px;
+}
+
+.navbar-toggle {
+    margin: 0;
+}
+
+.navbar-right {
+    float: right!important;
+    margin-right: 15px;
+    list-style: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+
+.navbar-brand {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5em;
+    padding-top: 15px;
+}
+
+.navbar-right>li {
+    float: left;
+}
+
+.navbar-right>li>a {
+    line-height: 20px;
+    position: relative;
+    display: block;
+    padding-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.navbar-right>li>a.active {
+    border-bottom: 4px solid #000;
 }

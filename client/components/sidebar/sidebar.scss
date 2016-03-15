@@ -1,0 +1,22 @@
+.sidebar-right {
+    background-color: #fff;
+}
+
+.sidebar-right .list-group {
+    margin: 20px 5px 20px 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.sidebar-right .fa-chevron-right {
+    font-size: 1.4em;
+}
+
+
+.sidebar-right .list-group {
+    font-size: 1.2em;
+}
+
+.sidebar-right .active > a {
+    border-bottom: 4px solid #000;
+}
