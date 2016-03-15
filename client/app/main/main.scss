@@ -1,27 +1,95 @@
-.thing-form {
-  margin: 20px 0;
+/**
+ * General 
+ */
+
+#ts-main h1,
+#ts-main h2,
+#ts-main h3 {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
 }
 
-#banner {
-  border-bottom: none;
-  margin-top: -20px;
+#ts-main h1 {
+    font-size: 4.0em;
 }
 
-#banner h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+#ts-main h2 {
+    font-size: 3.0em;
 }
 
-.hero-unit {
-  position: relative;
-  padding: 30px 15px;
-  color: #F5F5F5;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+#ts-main h3 {
+    font-size: 2.0em;
 }
 
-.navbar-text {
-  margin-left: 15px;
+/**
+ * Jumbotron
+ */
+
+#ts-main .ts-jumbotron-container {
+    background: url(/assets/images/ts-home-background.jpg) no-repeat top center fixed;
+    background-size: cover;
+    height: calc(100vh - 50px);
+    position: relative;
+    opacity: 0.90;
 }
+
+#ts-main .ts-jumbotron-container h1 {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    font-size: 4.0em;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    top: 45%;
+}
+
+#ts-main .ts-jumbotron-container .btn-register {
+    top: 60%;
+    position: absolute;
+    left: 50%;
+    margin-left: -45px;
+}
+
+
+/**
+ * Photo Gallery 
+ */
+
+#ts-main .ts-photo-gallery-container {
+    height: 1000px;
+}
+
+#ts-main .ts-photo-gallery-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#ts-main .ts-photo-gallery-container section {
+    margin-top: 100px;
+}
+
+@media (min-width: 768px) {}
+
+
+/**
+ * How To
+ */
+
+#ts-main .ts-how-to-container p {
+    text-align: center;
+}
+
+
+/**
+ * Features 
+ */
+
+#ts-main .ts-features-container section {
+    height: 630px;
+}
+
+
+/**
+ * Jumbotron Styles 
+ */
