@@ -4,6 +4,194 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: client/components/footer/footer.html:54
+msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
+msgstr ""
+
+#: client/app/account/signup/signup.html:9
+msgid "A name is required"
+msgstr ""
+
+#: client/components/navbar/navbar.html:37
+msgid "Admin"
+msgstr ""
+
+#: client/components/footer/footer.html:10
+msgid "AGB"
+msgstr ""
+
+#: client/app/main/main.html:60
+msgid "Anmeldung mit Deiner Campus-Email"
+msgstr ""
+
+#: client/components/footer/footer.html:23
+msgid "Ausgewählte Universitäten"
+msgstr ""
+
+#: client/app/main/main.html:87
+msgid "Bekannt aus"
+msgstr ""
+
+#: client/components/footer/footer.html:18
+msgid "Berlin"
+msgstr ""
+
+#: client/app/account/signup/signup.html:40
+msgid "Confirm Password"
+msgstr ""
+
+#: client/components/footer/footer.html:9
+msgid "Datenschutz"
+msgstr ""
+
+#: client/app/main/main.html:65
+msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
+msgstr ""
+
+#: client/app/account/signup/signup.html:17
+msgid "Doesn't look like a valid email."
+msgstr ""
+
+#: client/app/main/main.html:77
+msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
+msgstr ""
+
+#: client/app/account/login/login.html:6
+#: client/app/account/signup/signup.html:15
+msgid "Email"
+msgstr ""
+
+#: client/components/footer/footer.html:7
+msgid "FAQ"
+msgstr ""
+
+#: client/app/main/main.html:36
+msgid "Freundschaften knüpfen zwischen Herd und Spülbecken!"
+msgstr ""
+
+#: client/components/footer/footer.html:19
+msgid "Hamburg"
+msgstr ""
+
+#: client/components/navbar/navbar.html:16
+msgid "Hello"
+msgstr ""
+
+#: client/components/footer/footer.html:27
+msgid "Hochschule für angewandte Wissenschaften München"
+msgstr ""
+
+#: client/components/navbar/navbar.html:12
+msgid "Home"
+msgstr ""
+
+#: client/components/footer/footer.html:11
+msgid "Impressum"
+msgstr ""
+
+#: client/app/main/main.html:76
+msgid "Kocht zusammen und knüpft neue Freundschaften!"
+msgstr ""
+
+#: client/app/account/signup/signup.html:50
+#: client/components/navbar/navbar.html:14
+msgid "Login"
+msgstr ""
+
+#: client/components/navbar/navbar.html:19
+msgid "Logout"
+msgstr ""
+
+#: client/components/footer/footer.html:26
+msgid "Ludwig-Maximilians-Universität München"
+msgstr ""
+
+#: client/app/main/main.html:61
+msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
+msgstr ""
+
+#: client/components/footer/footer.html:17
+msgid "München"
+msgstr ""
+
+#: client/app/account/signup/signup.html:7
+msgid "Name"
+msgstr ""
+
+#: client/app/main/main.html:71
+msgid "Organisiert euren Kochabend im Chat!"
+msgstr ""
+
+#: client/app/main/main.html:16
+msgid "Partner & Unterstützer"
+msgstr ""
+
+#: client/app/account/login/login.html:10
+#: client/app/account/signup/signup.html:29
+msgid "Password"
+msgstr ""
+
+#: client/app/account/signup/signup.html:31
+msgid "Password must be at least 3 characters."
+msgstr ""
+
+#: client/app/account/signup/signup.html:42
+msgid "Passwords must match."
+msgstr ""
+
+#: client/app/account/login/login.html:17
+msgid "Please enter a valid email."
+msgstr ""
+
+#: client/app/account/login/login.html:14
+msgid "Please enter your email and password."
+msgstr ""
+
+#: client/components/footer/footer.html:8
+msgid "Presse"
+msgstr ""
+
+#: client/app/account/login/login.html:26
+msgid "Register"
+msgstr ""
+
+#: client/app/account/signup/signup.html:47
+#: client/components/navbar/navbar.html:13
+msgid "Sign up"
+msgstr ""
+
+#: client/app/main/main.html:66
+msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
+msgstr ""
+
+#: client/components/footer/footer.html:33
+msgid "Sprich mit uns"
+msgstr ""
+
+#: client/components/footer/footer.html:15
+msgid "Städte"
+msgstr ""
+
+#: client/components/footer/footer.html:25
+msgid "Technische Universität München"
+msgstr ""
+
 #: client/app/main/main.html:4
-msgid "Die Koch-Community <b>für Studenten!</b>"
+msgid "The Cooking-Community <b>for Students!</b>"
+msgstr ""
+
+#: client/components/footer/footer.html:6
+msgid "Über uns"
+msgstr ""
+
+#: client/components/footer/footer.html:4
+msgid "Von Studenten für Studenten"
+msgstr ""
+
+#: client/app/main/main.html:72
+msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
+msgstr ""
+
+#: client/app/account/signup/signup.html:20
+msgid "What's your email address?"
 msgstr ""

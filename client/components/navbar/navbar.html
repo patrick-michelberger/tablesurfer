@@ -9,31 +9,31 @@
         </button>
     </div>
     <ul class="navbar-right hidden-xs pull-right">
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="main">Home</a></li>
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
-        <li ng-click="nav.changeLanguage('de')">
-            <img class="ts-btn-language" src="assets/images/flags/de.png" />
-        </li>
-        <li ng-click="nav.changeLanguage('gb')">
-            <img class="ts-btn-language" src="assets/images/flags/gb.png" />
-        </li>
-        <li ng-click="nav.changeLanguage('se')">
-            <img class="ts-btn-language" src="assets/images/flags/se.png" />
-        </li>
-        <li ng-click="nav.changeLanguage('cn')">
-            <img class="ts-btn-language" src="assets/images/flags/cn.png" />
-        </li>
+        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="main" translate>Home</a></li>
+        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup" translate>Sign up</a></li>
+        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login" translate>Login</a></li>
         <li ng-show="nav.isLoggedIn()">
-            <p class="navbar-text">Hello <b>{{ nav.getCurrentUser().name }}</b></p>
+            <p class="navbar-text"><span translate>Hello</span> <b>{{ nav.getCurrentUser().name }}</b></p>
         </li>
         <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
+        <li ng-show="nav.isLoggedIn()"><a ui-sref="logout" translate>Logout</a></li>
+        <li ng-hide="nav.currentLanguage=='de'" ng-click="nav.changeLanguage('de')">
+            <img class="ts-btn-language" src="assets/images/flags/de.png" />
+        </li>
+        <li ng-hide="nav.currentLanguage=='en'" ng-click="nav.changeLanguage('en')">
+            <img class="ts-btn-language" src="assets/images/flags/gb.png" />
+        </li>
+        <li ng-hide="nav.currentLanguage=='se'" ng-click="nav.changeLanguage('se')">
+            <img class="ts-btn-language" src="assets/images/flags/se.png" />
+        </li>
+        <li ng-hide="nav.currentLanguage=='cn'" ng-click="nav.changeLanguage('cn')">
+            <img class="ts-btn-language" src="assets/images/flags/cn.png" />
+        </li>
     </ul>
     <ul class="navbar-right pull-right">
         <li ng-repeat="item in nav.menu" ui-sref-active="active">
             <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
-        <li ng-show="nav.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
+        <li ng-show="nav.isAdmin()" ui-sref-active="active"><a ui-sref="admin" translate>Admin</a></li>
     </ul>
 </div>
