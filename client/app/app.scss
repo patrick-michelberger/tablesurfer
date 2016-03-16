@@ -25,8 +25,10 @@ em {
     background-color: #fff;
 }
 
-.has-navbar-bottom .app-body {
-    padding-bottom: 0px;
+@media (min-width: $screen-sm) {
+    .has-navbar-bottom .app-body {
+        padding-bottom: 0px;
+    }
 }
 
 @media (max-width: $screen-xs) {
@@ -35,11 +37,12 @@ em {
     }
 }
 
-.navbar-app .btn-navbar, .navbar-app .btn {
+.navbar-app .btn-navbar,
+.navbar-app .btn {
     background: #007aff;
     border: none;
     line-height: 50px;
-    padding-top: 0; 
+    padding-top: 0;
     padding-bottom: 0;
     color: #fff;
     text-transform: lowercase;

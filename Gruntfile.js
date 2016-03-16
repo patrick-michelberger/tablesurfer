@@ -24,6 +24,8 @@ module.exports = function(grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    grunt.loadNpmTasks('grunt-angular-gettext');
+
     // Define the configuration for all the tasks
     grunt.initConfig({
 
@@ -57,6 +59,14 @@ module.exports = function(grunt) {
             }
         },
         watch: {
+            "po-changed": {
+                files: ["i18n/*.po"],
+                tasks: ["nggettext_compile"]
+            },
+            "update-pot": {
+                files: ['<%= yeoman.client %>/{app,components}/**/*.html'],
+                tasks: ["nggettext_extract"]
+            },
             babel: {
                 files: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js'],
                 tasks: ['newer:babel:client']
@@ -366,6 +376,21 @@ module.exports = function(grunt) {
             dist: {
                 html: ['<%= yeoman.dist %>/<%= yeoman.client %>/*.html']
             }
+        },
+
+        nggettext_extract: {
+            pot: {
+                files: {
+                    'i18n/template.pot': ['<%= yeoman.client %>/{app,components}/**/*.html']
+                }
+            }
+        },
+        nggettext_compile: {
+            all: {
+                files: {
+                    'client/app/translations.js': ['i18n/*.po']
+                }
+            },
         },
 
         // Copies remaining files to places other tasks can use
@@ -804,7 +829,9 @@ module.exports = function(grunt) {
         'cssmin',
         'uglify',
         'filerev',
-        'usemin'
+        'usemin',
+        'nggettext_extract',
+        'nggettext_compile'
     ]);
 
     grunt.registerTask('default', [

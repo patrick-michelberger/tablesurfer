@@ -1,4 +1,4 @@
-<div class="navbar navbar-app navbar-absolute-top" ng-controller="NavbarController">
+<div class="navbar navbar-app navbar-absolute-top">
     <a href="/" class="navbar-brand">
         tablesurfer
     </a>
@@ -12,6 +12,18 @@
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="main">Home</a></li>
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
+        <li ng-click="nav.changeLanguage('de')">
+            <img class="ts-btn-language" src="assets/images/flags/de.png" />
+        </li>
+        <li ng-click="nav.changeLanguage('gb')">
+            <img class="ts-btn-language" src="assets/images/flags/gb.png" />
+        </li>
+        <li ng-click="nav.changeLanguage('se')">
+            <img class="ts-btn-language" src="assets/images/flags/se.png" />
+        </li>
+        <li ng-click="nav.changeLanguage('cn')">
+            <img class="ts-btn-language" src="assets/images/flags/cn.png" />
+        </li>
         <li ng-show="nav.isLoggedIn()">
             <p class="navbar-text">Hello <b>{{ nav.getCurrentUser().name }}</b></p>
         </li>

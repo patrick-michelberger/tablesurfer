@@ -1,18 +1,14 @@
 footer.footer {
-    background-color: #f5f5f5;
-}
-
-footer.footer {
-    padding-top: 40px;
-    margin-top: 40px;
+    padding-top: 35px;
     font-size: 16px;
     line-height: 1.5em;
+    background-color: $ts-light-grey;
 }
 
 footer.footer .row {
-    padding-bottom: 42px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 footer.footer h4 {
@@ -29,7 +25,7 @@ footer.footer ul {
 }
 
 footer.footer ul li {
-    color: #000;
+    color: $ts-black;
 }
 
 footer.footer .list-inline {
@@ -38,11 +34,10 @@ footer.footer .list-inline {
     margin-left: -5px;
 }
 
-
 footer.footer .ts-social-container .fa {
-	font-size: 2.5em;
+    font-size: 2.5em;
 }
 
 footer.footer .ts-legal-hint-container {
-	text-align: center;
+    text-align: center;
 }

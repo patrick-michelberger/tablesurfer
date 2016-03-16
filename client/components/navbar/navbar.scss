@@ -20,7 +20,7 @@ body > div.app > navbar > div > div > button > i {
 
 .navbar-right {
     float: right!important;
-    margin-right: 0px;
+    margin-right: 10px;
     list-style: none;
     font-weight: 100;
     text-transform: lowercase;
@@ -30,7 +30,7 @@ body > div.app > navbar > div > div > button > i {
 .navbar-brand {
     font-style: normal;
     font-weight: 600;
-    font-size: 2.0em;
+    font-size: 1.7em;
     padding-top: 15px;
 }
 
@@ -60,4 +60,11 @@ body > div.app > navbar > div > div > button > i {
 
 .navbar-right>li>a.active {
     border-bottom: 2px solid #000;
+}
+
+.navbar-right .ts-btn-language {
+    height: 20px;
+    margin-top: 16px;
+    margin-right: 5px;
+    cursor: pointer;
 }

@@ -10,11 +10,16 @@ angular.module('tablesurferApp', [
         'btford.socket-io',
         'ui.router',
         'validation.match',
-        'mobile-angular-ui'
+        'mobile-angular-ui',
+        'gettext'
     ])
     .config(function($urlRouterProvider, $locationProvider) {
         $urlRouterProvider
             .otherwise('/');
 
         $locationProvider.html5Mode(true);
-    });
+    })
+    .run(function(gettextCatalog) {
+        gettextCatalog.setCurrentLanguage('de');
+        gettextCatalog.debug = true;
+    })
