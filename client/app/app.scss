@@ -91,11 +91,17 @@ $brand-danger: red;
 // Component styles are injected through grunt
 // injector
 @import '_variables.scss';
+@import 'about/about.scss';
 @import 'account/login/login.scss';
 @import 'account/settings/settings.scss';
 @import 'account/signup/signup.scss';
 @import 'admin/admin.scss';
+@import 'agb/agb.scss';
+@import 'faq/faq.scss';
+@import 'imprint/imprint.scss';
 @import 'main/main.scss';
+@import 'presse/presse.scss';
+@import 'privacy/privacy.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 @import '../components/navbar/navbar.scss';
