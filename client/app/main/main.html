@@ -1,65 +1,105 @@
-<div id="ts-main" class="scrollable">
-    <div class="scrollable-content">
-        <!-- Jumbotron Container START -->
-        <div class="ts-jumbotron-container">
-            <h1>Die Koch-Community <b>für Studenten!</b></h1>
-            <a href="/signup" class="hidden-xs">
+<div id="ts-main">
+    <!-- Jumbotron Container START -->
+    <div class="ts-jumbotron-container">
+        <h1>Die Koch-Community <b>für Studenten!</b></h1>
+        <!--<a href="/signup" class="hidden-xs">
                 <button class="btn btn-lg btn-primary btn-register">jetzt anmelden</button>
-            </a>
-        </div>
-        <!-- Jumbotron Container END -->
-        <!-- Photo Gallery Container START -->
-        <article class="ts-photo-gallery-container container">
-            <header class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <h1>Freundschaften knüpfen zwischen Herd und Spülbecken!</h1>
+            </a>-->
+        <ts-signup class="col-sm-6 col-sm-offset-3 hidden-xs"></ts-signup>
+    </div>
+    <!-- Jumbotron Container END -->
+    <!-- Photo Gallery Container START -->
+    <article class="ts-photo-gallery-container container">
+        <header class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1>Freundschaften knüpfen zwischen Herd und Spülbecken!</h1>
+            </div>
+        </header>
+        <section class="row">
+            <div class="ts-image-container col-sm-6 col-md-3">
+                <img class="img-responsive" src="/assets/images/insta-1.jpg" />
+            </div>
+            <div class="ts-image-container col-sm-6 col-md-3">
+                <img class="img-responsive" src="/assets/images/insta-2.jpg" />
+            </div>
+            <div class="ts-image-container col-sm-6 col-md-3">
+                <img class="img-responsive" src="/assets/images/insta-3.jpg" />
+            </div>
+            <div class="ts-image-container col-sm-6 col-md-3">
+                <img class="img-responsive" src="/assets/images/insta-4.jpg" />
+            </div>
+        </section>
+    </article>
+    <!-- Photo Gallery Container END -->
+    <!-- How To Container START -->
+    <article class="ts-how-to-container container">
+        <section class="row">
+            <div class="col-sm-6 col-md-3">
+                <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                <h3>Anmeldung mit Deiner Campus-Email</h3>
+                <p>Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an.</p>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                <h3>Deine Koch-Gruppe als WhatsApp Gruppe</h3>
+                <p>Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste.
+                </p>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                <h3>Organisiert euren Kochabend im Chat!</h3>
+                <p>Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?</p>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                <h3>Kocht zusammen und knüpft neue Freundschaften!</h3>
+                <p>Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst.</p>
+            </div>
+        </section>
+    </article>
+    <!-- How To Container END -->
+    <!-- Supporters Container START -->
+    <article class="ts-supporters-container container">
+        <section class="row">
+            <div class="col-xs-12">
+                <h3>Partner & Unterstützer</h3>
+                <div class="ts-logos-container">
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" style="margin-top:20px;">
+                        <img class="img-responsive" src="/assets/images/tum.png" />
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <img class="img-responsive" src="/assets/images/lmu.png" />
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <img class="img-responsive" src="/assets/images/fhmuc.png" />
+                    </div>
                 </div>
-            </header>
-            <section class="row">
-                <div class="ts-image-container col-sm-6 col-md-3">
-                    <img class="img-responsive" src="/assets/images/insta-1.jpg" />
+            </div>
+        </section>
+    </article>
+    <!-- Supporters Container END -->
+    <!-- Press Container START -->
+    <article class="ts-press-container container">
+        <section class="row">
+            <div class="col-xs-12">
+                <h3>Bekannt aus</h3>
+                <div class="ts-logos-container">
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <img class="img-responsive ts-logo-sz" src="/assets/images/sz.png" />
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <img class="img-responsive ts-logo-m945" src="/assets/images/m945.png" />
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                        <img class="img-responsive ts-logo-goethe" src="/assets/images/goethe.png" />
+                    </div>
                 </div>
-                <div class="ts-image-container col-sm-6 col-md-3">
-                    <img class="img-responsive" src="/assets/images/insta-2.jpg" />
-                </div>
-                <div class="ts-image-container col-sm-6 col-md-3">
-                    <img class="img-responsive" src="/assets/images/insta-3.jpg" />
-                </div>
-                <div class="ts-image-container col-sm-6 col-md-3">
-                    <img class="img-responsive" src="/assets/images/insta-4.jpg" />
-                </div>
-            </section>
-        </article>
-        <!-- Photo Gallery Container END -->
-        <!-- How To Container START -->
-        <article class="ts-how-to-container container">
-            <section class="row">
-                <div class="col-sm-6 col-md-3">
-                    <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
-                    <h3>Anmeldung mit Deiner Campus-Email</h3>
-                    <p>Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an.</p>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
-                    <h3>Deine Koch-Gruppe als WhatsApp Gruppe</h3>
-                    <p>Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste.
-                    </p>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
-                    <h3>Organisiert euren Kochabend im Chat!</h3>
-                    <p>Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?</p>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
-                    <h3>Kocht zusammen und knüpft neue Freundschaften!</h3>
-                    <p>Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst.</p>
-                </div>
-            </section>
-        </article>
-        <!-- How To Container END -->
-        <!-- Features Container START -->
-        <!--
+            </div>
+        </section>
+    </article>
+    <!-- Press Container END -->
+    <!-- Features Container START -->
+    <!--
         <article class="ts-features-container container">
             <section class="row">
                 <div class="col-md-7">
@@ -79,6 +119,5 @@
             </section>
         </article>
         -->
-        <!-- Features Container END -->
-    </div>
+    <!-- Features Container END -->
 </div>

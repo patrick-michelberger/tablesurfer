@@ -1,0 +1,12 @@
+@media (min-width: $screen-sm) {
+    #ts-login {
+        height: 100vh;
+        min-height: 500px;
+        position: relative;
+    }
+    #ts-login .ts-login-form-container {
+        position: absolute;
+        top: 50%;
+        margin-top: -153px;
+    }
+}

@@ -1,0 +1,11 @@
+@media (min-width: $screen-sm) {
+    #ts-signup {
+        min-height: 100vh;
+        position: relative;
+    }
+    #ts-signup .ts-signup-form-container {
+        position: absolute;
+        top: 50%;
+        margin-top: -228px;
+    }
+}

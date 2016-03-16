@@ -10,6 +10,10 @@ body {
     font-family: 'canada-type-gibson', 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
 
+em {
+    font-family: 'Amatic SC', cursive;
+}
+
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
@@ -87,6 +91,9 @@ $brand-danger: red;
 // Component styles are injected through grunt
 // injector
 @import '_variables.scss';
+@import 'account/login/login.scss';
+@import 'account/settings/settings.scss';
+@import 'account/signup/signup.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
 @import '../components/footer/footer.scss';
@@ -94,4 +101,5 @@ $brand-danger: red;
 @import '../components/navbar/navbar.scss';
 @import '../components/oauth-buttons/oauth-buttons.scss';
 @import '../components/sidebar/sidebar.scss';
+@import '../components/tsSignup/tsSignup.scss';
 // endinjector

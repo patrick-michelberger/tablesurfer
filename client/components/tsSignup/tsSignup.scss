@@ -1,0 +1,24 @@
+ts-signup .input-group {
+    width: 100%;
+    max-width: 768px;
+    position: relative;
+}
+
+ts-signup input[type=email] {
+    font-size: 21px;
+    padding: 0 16px;
+    width: 65%;
+    font-weight: 400;
+    height: 60px;
+}
+
+ts-signup .input-group-btn {
+    width: 35%;
+}
+
+ts-signup .input-group-btn button {
+    height: 60px;
+    width: 100%;
+    font-size: 21px;
+}
+
