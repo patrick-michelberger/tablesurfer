@@ -6,6 +6,7 @@
     margin: 20px 5px 20px 10px;
     font-weight: 400;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .sidebar-right .fa-chevron-right {
@@ -20,3 +21,4 @@
 .sidebar-right .active > a {
     border-bottom: 4px solid #000;
 }
+

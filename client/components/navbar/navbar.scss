@@ -59,12 +59,13 @@ body > div.app > navbar > div > div > button > i {
     margin-right: 15px;
 }
 
-.navbar-right>li>a.active {
+.navbar-right>li.active>a {
     border-bottom: 2px solid #000;
 }
 
 .navbar-right .ts-btn-language {
     height: 20px;
+    width: 30px;
     margin-top: 16px;
     margin-right: 5px;
     cursor: pointer;
