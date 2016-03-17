@@ -1,123 +1,147 @@
 'use strict';
 
-import User from './user.model';
-import passport from 'passport';
-import config from '../../config/environment';
-import jwt from 'jsonwebtoken';
+var User = require('./user.model');
+var passport = require('passport');
+var config = require('../../config/environment');
+var jwt = require('jsonwebtoken');
 
-function validationError(res, statusCode) {
-  statusCode = statusCode || 422;
-  return function(err) {
-    res.status(statusCode).json(err);
-  }
-}
+var validationError = function(res, err) {
+    return res.status(422).json(err);
+};
 
-function handleError(res, statusCode) {
-  statusCode = statusCode || 500;
-  return function(err) {
-    res.status(statusCode).send(err);
-  };
-}
+var populateFields = "currentCity";
 
 /**
  * Get list of users
  * restriction: 'admin'
  */
-export function index(req, res) {
-  return User.find({}, '-salt -password').exec()
-    .then(users => {
-      res.status(200).json(users);
-    })
-    .catch(handleError(res));
-}
+exports.index = function(req, res) {
+    User.find({}, '-salt -hashedPassword -phonecode').populate(populateFields).exec(function(err, users) {
+        if (err) return res.status(500).send(err);
+        res.status(200).json(users);
+    });
+};
 
 /**
  * Creates a new user
  */
-export function create(req, res, next) {
-  var newUser = new User(req.body);
-  newUser.provider = 'local';
-  newUser.role = 'user';
-  newUser.save()
-    .then(function(user) {
-      var token = jwt.sign({ _id: user._id }, config.secrets.session, {
-        expiresIn: 60 * 60 * 5
-      });
-      res.json({ token });
-    })
-    .catch(validationError(res));
-}
+exports.create = function(req, res, next) {
+    var newUser = new User(req.body);
+    newUser.provider = 'local';
+    newUser.role = 'user';
+    newUser.save(function(err, user) {
+        if (err) return validationError(res, err);
+        var token = jwt.sign({
+            _id: user._id
+        }, config.secrets.session, {
+            expiresInMinutes: 60 * 5
+        });
+        res.json({
+            token: token
+        });
+    });
+};
 
 /**
  * Get a single user
  */
-export function show(req, res, next) {
-  var userId = req.params.id;
+exports.show = function(req, res, next) {
+    var userId = req.params.id;
 
-  return User.findById(userId).exec()
-    .then(user => {
-      if (!user) {
-        return res.status(404).end();
-      }
-      res.json(user.profile);
-    })
-    .catch(err => next(err));
-}
+    User.findById(userId).populate(populateFields).exec(function(err, user) {
+        if (err) return next(err);
+        if (!user) return res.status(401).send('Unauthorized');
+        res.json(user.profile);
+    });
+};
 
 /**
  * Deletes a user
  * restriction: 'admin'
  */
-export function destroy(req, res) {
-  return User.findByIdAndRemove(req.params.id).exec()
-    .then(function() {
-      res.status(204).end();
-    })
-    .catch(handleError(res));
-}
+exports.destroy = function(req, res) {
+    User.findByIdAndRemove(req.params.id, function(err, user) {
+        if (err) return res.status(500).send(err);
+        return res.status(204).send('No Content');
+    });
+};
 
 /**
  * Change a users password
  */
-export function changePassword(req, res, next) {
-  var userId = req.user._id;
-  var oldPass = String(req.body.oldPassword);
-  var newPass = String(req.body.newPassword);
+exports.changePassword = function(req, res, next) {
+    var userId = req.user._id;
+    var oldPass = String(req.body.oldPassword);
+    var newPass = String(req.body.newPassword);
 
-  return User.findById(userId).exec()
-    .then(user => {
-      if (user.authenticate(oldPass)) {
-        user.password = newPass;
-        return user.save()
-          .then(() => {
-            res.status(204).end();
-          })
-          .catch(validationError(res));
-      } else {
-        return res.status(403).end();
-      }
+    User.findById(userId, function(err, user) {
+        if (user.authenticate(oldPass)) {
+            user.password = newPass;
+            user.save(function(err) {
+                if (err) return validationError(res, err);
+                res.status(200).send('OK');
+            });
+        } else {
+            res.status(403).send('Forbidden');
+        }
     });
-}
+};
+
+/**
+ * Change a users current city
+ */
+exports.changeCity = function(req, res, next) {
+    var userId = req.user._id;
+    var city = req.body.city;
+    User.findById(userId, function(err, user) {
+        user.currentCity = city._id;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
+
+/**
+ * Change a users phone number
+ */
+exports.changePhone = function(req, res, next) {
+    var userId = req.user._id;
+
+    User.findById(userId, function(err, user) {
+        if (err || !req.body.phone) {
+            return next(err);
+        }
+        user.phone = req.body.phone;
+
+        user.createPhonecode(function(err) {
+            if (err) {
+                return next(err);
+            }
+            res.send(200);
+        });
+
+    });
+
+};
 
 /**
  * Get my info
  */
-export function me(req, res, next) {
-  var userId = req.user._id;
-
-  return User.findOne({ _id: userId }, '-salt -password').exec()
-    .then(user => { // don't ever give out the password or salt
-      if (!user) {
-        return res.status(401).end();
-      }
-      res.json(user);
-    })
-    .catch(err => next(err));
-}
+exports.me = function(req, res, next) {
+    var userId = req.user._id;
+    User.findOne({
+        _id: userId
+    }, '-salt -hashedPassword -phonecode').populate(populateFields).exec(function(err, user) { // don't ever give out the password or salt
+        if (err) return next(err);
+        if (!user) return res.status(401).send('Unauthorized');
+        res.json(user);
+    });
+};
 
 /**
  * Authentication callback
  */
-export function authCallback(req, res, next) {
-  res.redirect('/');
-}
+exports.authCallback = function(req, res, next) {
+    res.redirect('/');
+};

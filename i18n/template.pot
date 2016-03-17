@@ -8,8 +8,12 @@ msgstr ""
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
-#: client/app/account/signup/signup.html:19
-msgid "A name is required"
+#: client/app/main/main.html:135
+msgid "A first name is required"
+msgstr ""
+
+#: client/app/main/main.html:143
+msgid "A last name is required"
 msgstr ""
 
 #: client/components/navbar/navbar.html:37
@@ -36,15 +40,19 @@ msgstr ""
 msgid "Berlin"
 msgstr ""
 
-#: client/components/oauth-buttons/oauth-buttons.html:3
-msgid "Connect with Facebook"
+#: client/app/main/main.html:166
+msgid "Complete Registration"
+msgstr ""
+
+#: client/app/main/main.html:129
+msgid "Complete Your Profile"
 msgstr ""
 
 #: client/components/footer/footer.html:9
 msgid "Datenschutz"
 msgstr ""
 
-#: client/app/account/signup/signup.html:57
+#: client/app/account/signup/signup.html:60
 msgid "Datenschutzerklärung"
 msgstr ""
 
@@ -52,7 +60,7 @@ msgstr ""
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
-#: client/app/account/signup/signup.html:27
+#: client/app/account/signup/signup.html:30
 msgid "Doesn't look like a valid email."
 msgstr ""
 
@@ -60,13 +68,17 @@ msgstr ""
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
 msgstr ""
 
-#: client/app/account/login/login.html:15
-#: client/app/account/signup/signup.html:25
+#: client/app/account/login/login.html:16
+#: client/app/account/signup/signup.html:28
 msgid "Email"
 msgstr ""
 
 #: client/components/footer/footer.html:7
 msgid "FAQ"
+msgstr ""
+
+#: client/app/main/main.html:133
+msgid "first name"
 msgstr ""
 
 #: client/app/main/main.html:33
@@ -75,6 +87,10 @@ msgstr ""
 
 #: client/components/footer/footer.html:19
 msgid "Hamburg"
+msgstr ""
+
+#: client/app/account/signup/signup.html:5
+msgid "Heim und Herd: Wir sind eine Koch-Community für Studierende von Studierenden. Knüpfe neue Freundschaften - abseits der Uni."
 msgstr ""
 
 #: client/components/footer/footer.html:27
@@ -89,7 +105,7 @@ msgstr ""
 msgid "Impressum"
 msgstr ""
 
-#: client/app/account/signup/signup.html:57
+#: client/app/account/signup/signup.html:60
 msgid "Indem du dich bei tablesurfer registrierst, erklärst du dich mit den"
 msgstr ""
 
@@ -101,7 +117,16 @@ msgstr ""
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
-#: client/app/account/signup/signup.html:63
+#: client/app/main/main.html:141
+msgid "last name"
+msgstr ""
+
+#: client/app/account/login/login.html:45
+msgid "login"
+msgstr ""
+
+#: client/app/account/login/login.html:4
+#: client/app/account/signup/signup.html:66
 #: client/components/navbar/navbar.html:14
 msgid "Login"
 msgstr ""
@@ -122,16 +147,12 @@ msgstr ""
 msgid "München"
 msgstr ""
 
-#: client/app/account/signup/signup.html:17
-msgid "Name"
-msgstr ""
-
-#: client/app/account/signup/signup.html:57
+#: client/app/account/signup/signup.html:60
 msgid "Nutzungsbedingungen"
 msgstr ""
 
-#: client/app/account/login/login.html:11
-#: client/app/account/signup/signup.html:11
+#: client/app/account/login/login.html:12
+#: client/app/account/signup/signup.html:15
 msgid "oder"
 msgstr ""
 
@@ -143,12 +164,12 @@ msgstr ""
 msgid "Partner & Unterstützer"
 msgstr ""
 
-#: client/app/account/login/login.html:19
-#: client/app/account/signup/signup.html:39
+#: client/app/account/login/login.html:20
+#: client/app/account/signup/signup.html:42
 msgid "Password"
 msgstr ""
 
-#: client/app/account/signup/signup.html:41
+#: client/app/account/signup/signup.html:44
 msgid "Password must be at least 3 characters."
 msgstr ""
 
@@ -156,11 +177,11 @@ msgstr ""
 msgid "Phone number successfully changed."
 msgstr ""
 
-#: client/app/account/login/login.html:26
+#: client/app/account/login/login.html:27
 msgid "Please enter a valid email."
 msgstr ""
 
-#: client/app/account/login/login.html:23
+#: client/app/account/login/login.html:24
 msgid "Please enter your email and password."
 msgstr ""
 
@@ -168,21 +189,33 @@ msgstr ""
 msgid "Presse"
 msgstr ""
 
-#: client/app/account/login/login.html:35
+#: client/app/account/signup/signup.html:71
+msgid "register"
+msgstr ""
+
+#: client/app/account/login/login.html:36
 msgid "Register"
 msgstr ""
 
-#: client/app/account/signup/signup.html:13
-msgid "Registriere dich exklusiv mit deiner"
+#: client/app/account/signup/signup.html:4
+msgid "Register as a Tablesurfer"
+msgstr ""
+
+#: client/components/oauth-buttons/oauth-buttons.html:3
+msgid "Register with Facebook"
 msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:8
 msgid "Send verification code to my phone"
 msgstr ""
 
-#: client/app/account/signup/signup.html:60
+#: client/app/account/signup/signup.html:63
 #: client/components/navbar/navbar.html:13
 msgid "Sign up"
+msgstr ""
+
+#: client/app/main/main.html:189
+msgid "signup now"
 msgstr ""
 
 #: client/app/main/main.html:63
@@ -201,10 +234,6 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: client/components/oauth-buttons/oauth-buttons.html:5
-msgid "tablesurfer postet nicht ohne Deine Erlaubnis an Deinen FB Account."
-msgstr ""
-
 #: client/components/footer/footer.html:25
 msgid "Technische Universität München"
 msgstr ""
@@ -221,7 +250,7 @@ msgstr ""
 msgid "Über uns"
 msgstr ""
 
-#: client/app/account/signup/signup.html:57
+#: client/app/account/signup/signup.html:60
 msgid "und der"
 msgstr ""
 
@@ -241,12 +270,8 @@ msgstr ""
 msgid "We've sent you a verification code to <b>+{{currentUser.phone}}</b>"
 msgstr ""
 
-#: client/app/account/signup/signup.html:30
+#: client/app/account/signup/signup.html:33
 msgid "What's your email address?"
-msgstr ""
-
-#: client/app/main/main.html:129
-msgid "Willkommen bei tablesurfer!"
 msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:2

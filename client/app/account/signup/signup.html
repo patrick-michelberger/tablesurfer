@@ -1,6 +1,10 @@
 <div id="ts-signup" class="container">
     <div class="row">
         <div class="ts-signup-form-container col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+            <h1 translate>Register as a Tablesurfer</h1>
+            <p class="hidden-xs" translate>
+                Heim und Herd: Wir sind eine Koch-Community für Studierende von Studierenden. Knüpfe neue Freundschaften - abseits der Uni.
+            </p>
             <div class="row">
                 <div class="col-xs-12">
                     <oauth-buttons classes="btn-block"></oauth-buttons>
@@ -10,16 +14,15 @@
                 <hr/>
                 <span translate>oder</span>
             </div>
-            <p><span translate>Registriere dich exklusiv mit deiner</span> <a>Campus-Email&#42;</a></p>
             <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
-                <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
+                <!--<div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
                     <label translate>Name</label>
                     <input type="text" name="name" class="form-control" ng-model="vm.user.name" required/>
                     <p class="help-block" ng-show="form.name.$error.required && vm.submitted" translate>
                         A name is required
                     </p>
-                </div>
+                </div>-->
                 <div class="form-group" ng-class="{ 'has-success': form.email.$valid && vm.submitted,
                                             'has-error': form.email.$invalid && vm.submitted }">
                     <label translate>Email</label>
@@ -63,6 +66,9 @@
                     <a class="btn btn-default btn-lg btn-login btn-block ts-btn-login" ui-sref="login" translate>
                         Login
                       </a>
+                </div>
+                <div ui-content-for="footer">
+                    <button ng-click="vm.register(form)" class="btn btn-lg btn-primary btn-register btn-block" translate>register</button>
                 </div>
             </form>
         </div>

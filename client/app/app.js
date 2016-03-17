@@ -22,5 +22,5 @@ angular.module('tablesurferApp', [
     })
     .run(function(gettextCatalog) {
         gettextCatalog.setCurrentLanguage('de');
-        gettextCatalog.debug = true;
+        /*gettextCatalog.debug = true;*/
     })

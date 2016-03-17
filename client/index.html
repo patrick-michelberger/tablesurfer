@@ -61,7 +61,7 @@
     </div>
     <div class="app ">
         <navbar></navbar>
-        <div class="navbar navbar-app navbar-absolute-bottom visible-xs ">
+        <div class="navbar navbar-app navbar-absolute-bottom visible-xs" ui-yield-to="footer">
             <a href="/signup ">
                 <button class="btn btn-lg btn-primary btn-register btn-block ">jetzt anmelden</button>
             </a>
@@ -158,6 +158,7 @@
     <script src="components/oauth-buttons/oauth-buttons.controller.js"></script>
     <script src="components/oauth-buttons/oauth-buttons.directive.js"></script>
     <script src="components/socket/socket.service.js"></script>
+    <script src="components/tsEmail/tsEmail.directive.js"></script>
     <script src="components/tsPhone/tsPhone.directive.js"></script>
     <script src="components/tsSignup/tsSignup.directive.js"></script>
     <script src="app/account/login/login.controller.js"></script>
