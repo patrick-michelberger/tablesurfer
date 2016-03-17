@@ -15,7 +15,8 @@
     "angular-validation-match": "~1.5.2",
     "mobile-angular-ui": "^1.2.1",
     "angular-gettext": "^2.2.1",
-    "jquery": "^2.2.1"
+    "jquery": "^2.2.1",
+    "international-phone-number": "^0.0.16"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.0"

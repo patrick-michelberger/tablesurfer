@@ -11,7 +11,8 @@ angular.module('tablesurferApp', [
         'ui.router',
         'validation.match',
         'mobile-angular-ui',
-        'gettext'
+        'gettext',
+        'internationalPhoneNumber'
     ])
     .config(function($urlRouterProvider, $locationProvider) {
         $urlRouterProvider
