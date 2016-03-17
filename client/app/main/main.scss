@@ -199,5 +199,13 @@
 
 
 /**
- * Jumbotron Styles 
+ * Welcome
  */
+
+@media (min-width: $screen-sm) {
+    .ts-welcome-container .ts-profile-picture {
+        position: relative;
+        left: 50%;
+        margin-left: -160px;
+    }
+}

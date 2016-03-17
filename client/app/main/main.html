@@ -123,8 +123,19 @@
 </div>
 <div id="ts-main" ng-show="isLoggedIn()">
     <!-- Welcome Container START -->
-    <div class="ts-welcome-container">
-        <h1 translate>Willkommen bei tablesurfer!</h1>
+    <div class="ts-welcome-container container">
+        <div class="row">
+            <div class="ts-login-form-container col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+                <h2 translate>Willkommen bei tablesurfer!</h2>
+                <img src="https://graph.facebook.com/10152868215243752/picture?height=250&width=250" class="ts-profile-picture img-circle img-responsive" />
+                <div class="form-group">
+                    <label>Aktiv. Du bist auf der Warteliste.</label>
+                    <ui-switch ng-model="rememberMe" class="ng-pristine ng-untouched ng-valid ng-isolate-scope switch switch-transition-enabled active">
+                        <div class="switch-handle"></div>
+                    </ui-switch>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Welcome Container END -->
 </div>

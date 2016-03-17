@@ -14,7 +14,6 @@ class NavbarController {
 
     changeLanguage(code) {
         this.gettextCatalog.setCurrentLanguage(code);
-        console.log("currentLanguage: ", this.gettextCatalog.getCurrentLanguage());
         this.currentLanguage = this.gettextCatalog.getCurrentLanguage();
     }
 

@@ -77,10 +77,6 @@ msgstr ""
 msgid "Hamburg"
 msgstr ""
 
-#: client/components/navbar/navbar.html:16
-msgid "Hello"
-msgstr ""
-
 #: client/components/footer/footer.html:27
 msgid "Hochschule für angewandte Wissenschaften München"
 msgstr ""
@@ -221,6 +217,6 @@ msgstr ""
 msgid "What's your email address?"
 msgstr ""
 
-#: client/app/main/main.html:127
+#: client/app/main/main.html:129
 msgid "Willkommen bei tablesurfer!"
 msgstr ""
