@@ -93,6 +93,10 @@ msgstr ""
 msgid "Indem du dich bei tablesurfer registrierst, erklärst du dich mit den"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:24
+msgid "Invalid code"
+msgstr ""
+
 #: client/app/main/main.html:73
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
@@ -148,6 +152,10 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:9
+msgid "Phone number successfully changed."
+msgstr ""
+
 #: client/app/account/login/login.html:26
 msgid "Please enter a valid email."
 msgstr ""
@@ -168,6 +176,10 @@ msgstr ""
 msgid "Registriere dich exklusiv mit deiner"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:8
+msgid "Send verification code to my phone"
+msgstr ""
+
 #: client/app/account/signup/signup.html:60
 #: client/components/navbar/navbar.html:13
 msgid "Sign up"
@@ -185,6 +197,10 @@ msgstr ""
 msgid "Städte"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:25
+msgid "Submit"
+msgstr ""
+
 #: client/components/oauth-buttons/oauth-buttons.html:5
 msgid "tablesurfer postet nicht ohne Deine Erlaubnis an Deinen FB Account."
 msgstr ""
@@ -197,12 +213,20 @@ msgstr ""
 msgid "The Cooking-Community <b>for Students!</b>"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:23
+msgid "Type in the received code e.g. 123456"
+msgstr ""
+
 #: client/components/footer/footer.html:6
 msgid "Über uns"
 msgstr ""
 
 #: client/app/account/signup/signup.html:57
 msgid "und der"
+msgstr ""
+
+#: client/components/tsPhone/tsPhone.html:13
+msgid "Verified phone number"
 msgstr ""
 
 #: client/components/footer/footer.html:4
@@ -213,10 +237,18 @@ msgstr ""
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:18
+msgid "We've sent you a verification code to <b>+{{currentUser.phone}}</b>"
+msgstr ""
+
 #: client/app/account/signup/signup.html:30
 msgid "What's your email address?"
 msgstr ""
 
 #: client/app/main/main.html:129
 msgid "Willkommen bei tablesurfer!"
+msgstr ""
+
+#: client/components/tsPhone/tsPhone.html:2
+msgid "Your Whatsapp <i class=\"fa fa-whatsapp\"></i> number:"
 msgstr ""

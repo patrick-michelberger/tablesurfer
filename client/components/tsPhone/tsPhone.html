@@ -1,1 +1,30 @@
-<div>this is the tsPhone directive</div>
+<form ng-hide="hasPhonecode()" name="phone" ng-submit="saveNumber()">
+	<span translate>Your Whatsapp <i class="fa fa-whatsapp"></i> number: </span>
+	<a ng-click="changeNumber()"><i class="fa fa-pencil-square-o" ng-show="currentUser.verifiedPhone"></i></a>
+	<br/>
+
+	<div ng-hide="isLoading">
+		<input ng-disabled="currentUser.verifiedPhone" name<="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone" type="text" international-phone-number class="col-xs-12" ng-model="currentUser.phone" required>
+		<button ng-show="phone.$valid&&!currentUser.verifiedPhone" ng-disabled="phone.$invalid&&currentUser.verifiedPhone" class="ts-btn-save btn btn-default" type="submit" translate>Send verification code to my phone</button>
+		<p ng-show="phoneChanged" class="alert alert-success" translate>Phone number successfully changed.</p>
+	</div>
+
+	<ts-loading ng-show="isLoading"></ts-loading>
+	<ts-success ng-show="currentUser.verifiedPhone" translate>Verified phone number</ts-success>
+
+</form>	
+
+<form ng-show="hasPhonecode(currentUser)" name="phonecode" class="ts-phonecode" ng-submit="submit()">
+	<span translate>We've sent you a verification code to <b>+{{currentUser.phone}}</b></span>
+	<a ng-click="changeNumber()"><i class="fa fa-pencil-square-o"></i></a>
+	<br/>
+
+	<div ng-hide="isLoading">
+		<input type="text" name="code" ng-minlength="6" ng-maxlength="6"  ng-model="currentUser.phonecode" placeholder="{{'Type in the received code e.g. 123456'|translate}}" required/>
+		<div class="alert alert-danger" ng-show="hasError" translate>Invalid code</div>
+		<button ng-show="phonecode.$valid" ng-disabled="phonecode.$invalid" class="ts-btn-save btn btn-default" type="submit" translate>Submit</button>
+	</div>
+
+	<ts-loading ng-show="isLoading"></ts-loading>
+
+</form>
