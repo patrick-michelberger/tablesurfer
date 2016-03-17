@@ -17,6 +17,9 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/university/university.socket').register(socket);
+  require('../api/city/city.socket').register(socket);
+  require('../api/phonecode/phonecode.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 
 }
