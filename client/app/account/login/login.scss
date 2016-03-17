@@ -7,6 +7,12 @@
     #ts-login .ts-login-form-container {
         position: absolute;
         top: 50%;
-        margin-top: -153px;
+        margin-top: -255px;
+    }
+}
+
+@media (max-width: $screen-xs) {
+    #ts-login {
+        margin-top: 15px;
     }
 }

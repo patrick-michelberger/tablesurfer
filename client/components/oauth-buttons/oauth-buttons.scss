@@ -1,1 +1,37 @@
+oauth-buttons .btn-facebook {
+    border-color: #4568b2;
+    border-bottom-color: #2d4575;
+    background-color: #4568b2;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 50px;
+}
+
+oauth-buttons .btn-facebook span {
+    top: -8px;
+    position: relative;
+    font-size: 1.1em;
+}
+
+oauth-buttons .btn-facebook .fa {
+    top: -10px;
+    position: relative;
+    font-size: 2.2em;
+}
+
+.ts-signup-or-separator {
+    position: relative;
+}
+
+.ts-signup-or-separator span {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -25px;
+    font-size: 1.1em;
+    font-weight: 400;
+    background: #fff;
+    padding: 0 15px;
+}
 

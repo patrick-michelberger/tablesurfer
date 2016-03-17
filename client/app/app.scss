@@ -25,9 +25,16 @@ em {
     background-color: #fff;
 }
 
+.btn:hover {
+    color: #fff;
+}
+
 @media (min-width: $screen-sm) {
     .has-navbar-bottom .app-body {
         padding-bottom: 0px;
+    }
+    .ts-ui-view {
+        min-height: 100vh;
     }
 }
 
@@ -81,8 +88,13 @@ button,
 
 input,
 .form-control {
-    height: 45px;
+    height: 50px;
+    font-size: 1.2em;
     border-radius: 0;
+}
+
+.form-group {
+    padding: 5px 0;
 }
 
 // Variables

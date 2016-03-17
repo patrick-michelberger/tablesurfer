@@ -8,7 +8,7 @@ msgstr ""
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
-#: client/app/account/signup/signup.html:9
+#: client/app/account/signup/signup.html:19
 msgid "A name is required"
 msgstr ""
 
@@ -20,7 +20,7 @@ msgstr ""
 msgid "AGB"
 msgstr ""
 
-#: client/app/main/main.html:60
+#: client/app/main/main.html:57
 msgid "Anmeldung mit Deiner Campus-Email"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Ausgewählte Universitäten"
 msgstr ""
 
-#: client/app/main/main.html:87
+#: client/app/main/main.html:84
 msgid "Bekannt aus"
 msgstr ""
 
@@ -36,28 +36,32 @@ msgstr ""
 msgid "Berlin"
 msgstr ""
 
-#: client/app/account/signup/signup.html:40
-msgid "Confirm Password"
+#: client/components/oauth-buttons/oauth-buttons.html:3
+msgid "Connect with Facebook"
 msgstr ""
 
 #: client/components/footer/footer.html:9
 msgid "Datenschutz"
 msgstr ""
 
-#: client/app/main/main.html:65
+#: client/app/account/signup/signup.html:57
+msgid "Datenschutzerklärung"
+msgstr ""
+
+#: client/app/main/main.html:62
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
-#: client/app/account/signup/signup.html:17
+#: client/app/account/signup/signup.html:27
 msgid "Doesn't look like a valid email."
 msgstr ""
 
-#: client/app/main/main.html:77
+#: client/app/main/main.html:74
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
 msgstr ""
 
-#: client/app/account/login/login.html:6
-#: client/app/account/signup/signup.html:15
+#: client/app/account/login/login.html:15
+#: client/app/account/signup/signup.html:25
 msgid "Email"
 msgstr ""
 
@@ -65,7 +69,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: client/app/main/main.html:36
+#: client/app/main/main.html:33
 msgid "Freundschaften knüpfen zwischen Herd und Spülbecken!"
 msgstr ""
 
@@ -89,11 +93,15 @@ msgstr ""
 msgid "Impressum"
 msgstr ""
 
-#: client/app/main/main.html:76
+#: client/app/account/signup/signup.html:57
+msgid "Indem du dich bei tablesurfer registrierst, erklärst du dich mit den"
+msgstr ""
+
+#: client/app/main/main.html:73
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
-#: client/app/account/signup/signup.html:50
+#: client/app/account/signup/signup.html:63
 #: client/components/navbar/navbar.html:14
 msgid "Login"
 msgstr ""
@@ -106,7 +114,7 @@ msgstr ""
 msgid "Ludwig-Maximilians-Universität München"
 msgstr ""
 
-#: client/app/main/main.html:61
+#: client/app/main/main.html:58
 msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
 msgstr ""
 
@@ -114,36 +122,41 @@ msgstr ""
 msgid "München"
 msgstr ""
 
-#: client/app/account/signup/signup.html:7
+#: client/app/account/signup/signup.html:17
 msgid "Name"
 msgstr ""
 
-#: client/app/main/main.html:71
+#: client/app/account/signup/signup.html:57
+msgid "Nutzungsbedingungen"
+msgstr ""
+
+#: client/app/account/login/login.html:11
+#: client/app/account/signup/signup.html:11
+msgid "oder"
+msgstr ""
+
+#: client/app/main/main.html:68
 msgid "Organisiert euren Kochabend im Chat!"
 msgstr ""
 
-#: client/app/main/main.html:16
+#: client/app/main/main.html:13
 msgid "Partner & Unterstützer"
 msgstr ""
 
-#: client/app/account/login/login.html:10
-#: client/app/account/signup/signup.html:29
+#: client/app/account/login/login.html:19
+#: client/app/account/signup/signup.html:39
 msgid "Password"
 msgstr ""
 
-#: client/app/account/signup/signup.html:31
+#: client/app/account/signup/signup.html:41
 msgid "Password must be at least 3 characters."
 msgstr ""
 
-#: client/app/account/signup/signup.html:42
-msgid "Passwords must match."
-msgstr ""
-
-#: client/app/account/login/login.html:17
+#: client/app/account/login/login.html:26
 msgid "Please enter a valid email."
 msgstr ""
 
-#: client/app/account/login/login.html:14
+#: client/app/account/login/login.html:23
 msgid "Please enter your email and password."
 msgstr ""
 
@@ -151,16 +164,20 @@ msgstr ""
 msgid "Presse"
 msgstr ""
 
-#: client/app/account/login/login.html:26
+#: client/app/account/login/login.html:35
 msgid "Register"
 msgstr ""
 
-#: client/app/account/signup/signup.html:47
+#: client/app/account/signup/signup.html:13
+msgid "Registriere dich exklusiv mit deiner"
+msgstr ""
+
+#: client/app/account/signup/signup.html:60
 #: client/components/navbar/navbar.html:13
 msgid "Sign up"
 msgstr ""
 
-#: client/app/main/main.html:66
+#: client/app/main/main.html:63
 msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
 msgstr ""
 
@@ -170,6 +187,10 @@ msgstr ""
 
 #: client/components/footer/footer.html:15
 msgid "Städte"
+msgstr ""
+
+#: client/components/oauth-buttons/oauth-buttons.html:5
+msgid "tablesurfer postet nicht ohne Deine Erlaubnis an Deinen FB Account."
 msgstr ""
 
 #: client/components/footer/footer.html:25
@@ -184,14 +205,22 @@ msgstr ""
 msgid "Über uns"
 msgstr ""
 
+#: client/app/account/signup/signup.html:57
+msgid "und der"
+msgstr ""
+
 #: client/components/footer/footer.html:4
 msgid "Von Studenten für Studenten"
 msgstr ""
 
-#: client/app/main/main.html:72
+#: client/app/main/main.html:69
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 
-#: client/app/account/signup/signup.html:20
+#: client/app/account/signup/signup.html:30
 msgid "What's your email address?"
+msgstr ""
+
+#: client/app/main/main.html:127
+msgid "Willkommen bei tablesurfer!"
 msgstr ""

@@ -4,8 +4,33 @@
         position: relative;
     }
     #ts-signup .ts-signup-form-container {
-        position: absolute;
-        top: 50%;
-        margin-top: -228px;
+        margin-top: 15px;
     }
+    #ts-signup .form-group {
+        padding: 0;
+    }
+}
+
+@media (max-width: $screen-xs) {
+    #ts-signup {
+        margin-top: 15px;
+    }
+}
+
+#ts-signup .ts-terms-of-use {
+	margin-top: 5px;
+	margin-bottom: 5px;
+} 
+
+#ts-signup a {
+	font-weight: 400;
+}
+
+#ts-signup .ts-btn-signup {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#ts-signup {
+	margin-bottom: 35px;
 }

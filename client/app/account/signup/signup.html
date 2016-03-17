@@ -1,6 +1,16 @@
 <div id="ts-signup" class="container">
     <div class="row">
-        <div class="ts-signup-form-container col-sm-4 col-sm-offset-4">
+        <div class="ts-signup-form-container col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+            <div class="row">
+                <div class="col-xs-12">
+                    <oauth-buttons classes="btn-block"></oauth-buttons>
+                </div>
+            </div>
+            <div class="ts-signup-or-separator">
+                <hr/>
+                <span translate>oder</span>
+            </div>
+            <p><span translate>Registriere dich exklusiv mit deiner</span> <a>Campus-Email&#42;</a></p>
             <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
                 <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
@@ -35,30 +45,25 @@
                         {{ vm.errors.password }}
                     </p>
                 </div>
-                <div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted,
+                <!--<div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted,
                                             'has-error': form.confirmPassword.$invalid && vm.submitted }">
                     <label translate>Confirm Password</label>
                     <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword" match="vm.user.password" ng-minlength="3" required/>
                     <p class="help-block" ng-show="form.confirmPassword.$error.match && vm.submitted" translate>
                         Passwords must match.
                     </p>
-                </div>
-                <div>
-                    <button class="btn btn-inverse btn-lg btn-register btn-block" type="submit" translate>
+                </div>-->
+                <p class="ts-terms-of-use">
+                    <span translate>Indem du dich bei tablesurfer registrierst, erklärst du dich mit den</span> <a ui-sref="agb" target="_blank" translate>Nutzungsbedingungen</a> <span translate>und der</span> <a ui-sref="privacy" target="_blank" translate>Datenschutzerklärung</a> <span>einverstanden</span>.
+                </p>
+                <div class="hidden-xs">
+                    <button class="btn btn-inverse btn-lg btn-register btn-block ts-btn-signup" type="submit" translate>
                         Sign up
                     </button>
-                      <a class="btn btn-default btn-lg btn-login btn-block" ui-sref="login" translate>
-            Login
-          </a>
+                    <a class="btn btn-default btn-lg btn-login btn-block ts-btn-login" ui-sref="login" translate>
+                        Login
+                      </a>
                 </div>
-                <!--
-        <hr/>
-        <div class="row">
-          <div class="col-sm-4 col-md-3">
-            <oauth-buttons classes="btn-block"></oauth-buttons>
-          </div>
-        </div>
-  -->
             </form>
         </div>
     </div>

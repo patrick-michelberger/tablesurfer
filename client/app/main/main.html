@@ -1,10 +1,7 @@
-<div id="ts-main">
+<div id="ts-main" ng-hide="isLoggedIn()">
     <!-- Jumbotron Container START -->
     <div class="ts-jumbotron-container">
         <h1 translate>The Cooking-Community <b>for Students!</b></h1>
-        <!--<a href="/signup" class="hidden-xs">
-                <button class="btn btn-lg btn-primary btn-register" translate>jetzt anmelden</button>
-            </a>-->
         <ts-signup class="col-sm-6 col-sm-offset-3 hidden-xs"></ts-signup>
     </div>
     <!-- Jumbotron Container END -->
@@ -123,4 +120,11 @@
         </article>
         -->
     <!-- Features Container END -->
+</div>
+<div id="ts-main" ng-show="isLoggedIn()">
+    <!-- Welcome Container START -->
+    <div class="ts-welcome-container">
+        <h1 translate>Willkommen bei tablesurfer!</h1>
+    </div>
+    <!-- Welcome Container END -->
 </div>

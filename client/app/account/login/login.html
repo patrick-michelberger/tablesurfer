@@ -1,6 +1,15 @@
 <div id="ts-login" class="container">
     <div class="row">
-        <div class="ts-login-form-container col-sm-4 col-sm-offset-4">
+        <div class="ts-login-form-container col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+            <div class="row">
+                <div class="col-xs-12">
+                    <oauth-buttons classes="btn-block"></oauth-buttons>
+                </div>
+            </div>
+            <div class="ts-signup-or-separator">
+                <hr/>
+                <span translate>oder</span>
+            </div>
             <form class="form" name="form" ng-submit="vm.login(form)" novalidate>
                 <div class="form-group">
                     <label translate>Email</label>
@@ -19,24 +28,14 @@
                     </p>
                     <p class="help-block">{{ vm.errors.other }}</p>
                 </div>
-                <div>
+                <div class="hidden-xs">
                     <button class="btn btn-inverse btn-lg btn-login btn-block" type="submit">
                         Login
                     </button>
                     <a class="btn btn-default btn-lg btn-register btn-block" ui-sref="signup" translate>
-            Register
-          </a>
+                        Register
+                      </a>
                 </div>
-                <!--
-                <hr/>
-                <div class="row">
-                    <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@example.com</code> / <code>test</code></p>
-                    <p>Admin account is <code>admin@example.com</code> / <code>admin</code></p>
-                    <div class="col-sm-4 col-md-3">
-                        <oauth-buttons classes="btn-block"></oauth-buttons>
-                    </div>
-                </div>
-                -->
             </form>
         </div>
     </div>
