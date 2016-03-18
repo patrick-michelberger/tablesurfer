@@ -25,10 +25,6 @@ em {
     background-color: #fff;
 }
 
-.btn:hover {
-    color: #fff;
-}
-
 @media (min-width: $screen-sm) {
     .has-navbar-bottom .app-body {
         padding-bottom: 0px;
@@ -123,6 +119,8 @@ $brand-danger: red;
 @import '../components/navbar/navbar.scss';
 @import '../components/oauth-buttons/oauth-buttons.scss';
 @import '../components/sidebar/sidebar.scss';
+@import '../components/tsLoading/tsLoading.scss';
 @import '../components/tsPhone/tsPhone.scss';
 @import '../components/tsSignup/tsSignup.scss';
+@import '../components/tsSuccess/tsSuccess.scss';
 // endinjector

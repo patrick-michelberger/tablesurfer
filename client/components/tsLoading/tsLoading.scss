@@ -1,0 +1,12 @@
+ts-loading {
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 15px;
+}
+
+ts-loading svg {
+    position: relative;
+    left: 50%;
+    margin-left: -35px;
+}

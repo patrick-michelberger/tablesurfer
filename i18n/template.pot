@@ -40,7 +40,7 @@ msgstr ""
 msgid "Berlin"
 msgstr ""
 
-#: client/app/main/main.html:166
+#: client/app/main/main.html:164
 msgid "Complete Registration"
 msgstr ""
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Datenschutz"
 msgstr ""
 
-#: client/app/account/signup/signup.html:60
+#: client/app/account/signup/signup.html:44
 msgid "Datenschutzerklärung"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr ""
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
-#: client/app/account/signup/signup.html:30
+#: client/app/account/signup/signup.html:22
 msgid "Doesn't look like a valid email."
 msgstr ""
 
@@ -69,7 +69,7 @@ msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst,
 msgstr ""
 
 #: client/app/account/login/login.html:16
-#: client/app/account/signup/signup.html:28
+#: client/app/account/signup/signup.html:20
 msgid "Email"
 msgstr ""
 
@@ -105,11 +105,11 @@ msgstr ""
 msgid "Impressum"
 msgstr ""
 
-#: client/app/account/signup/signup.html:60
+#: client/app/account/signup/signup.html:44
 msgid "Indem du dich bei tablesurfer registrierst, erklärst du dich mit den"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:24
+#: client/components/tsPhone/tsPhone.html:20
 msgid "Invalid code"
 msgstr ""
 
@@ -126,7 +126,7 @@ msgid "login"
 msgstr ""
 
 #: client/app/account/login/login.html:4
-#: client/app/account/signup/signup.html:66
+#: client/app/account/signup/signup.html:50
 #: client/components/navbar/navbar.html:14
 msgid "Login"
 msgstr ""
@@ -147,7 +147,7 @@ msgstr ""
 msgid "München"
 msgstr ""
 
-#: client/app/account/signup/signup.html:60
+#: client/app/account/signup/signup.html:44
 msgid "Nutzungsbedingungen"
 msgstr ""
 
@@ -165,15 +165,15 @@ msgid "Partner & Unterstützer"
 msgstr ""
 
 #: client/app/account/login/login.html:20
-#: client/app/account/signup/signup.html:42
+#: client/app/account/signup/signup.html:34
 msgid "Password"
 msgstr ""
 
-#: client/app/account/signup/signup.html:44
+#: client/app/account/signup/signup.html:36
 msgid "Password must be at least 3 characters."
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:9
+#: client/components/tsPhone/tsPhone.html:8
 msgid "Phone number successfully changed."
 msgstr ""
 
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Presse"
 msgstr ""
 
-#: client/app/account/signup/signup.html:71
+#: client/app/account/signup/signup.html:59
 msgid "register"
 msgstr ""
 
@@ -205,16 +205,16 @@ msgstr ""
 msgid "Register with Facebook"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:8
+#: client/components/tsPhone/tsPhone.html:7
 msgid "Send verification code to my phone"
 msgstr ""
 
-#: client/app/account/signup/signup.html:63
+#: client/app/account/signup/signup.html:47
 #: client/components/navbar/navbar.html:13
 msgid "Sign up"
 msgstr ""
 
-#: client/app/main/main.html:189
+#: client/app/main/main.html:184
 msgid "signup now"
 msgstr ""
 
@@ -230,7 +230,7 @@ msgstr ""
 msgid "Städte"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:25
+#: client/components/tsPhone/tsPhone.html:21
 msgid "Submit"
 msgstr ""
 
@@ -242,7 +242,7 @@ msgstr ""
 msgid "The Cooking-Community <b>for Students!</b>"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:23
+#: client/components/tsPhone/tsPhone.html:19
 msgid "Type in the received code e.g. 123456"
 msgstr ""
 
@@ -250,11 +250,11 @@ msgstr ""
 msgid "Über uns"
 msgstr ""
 
-#: client/app/account/signup/signup.html:60
+#: client/app/account/signup/signup.html:44
 msgid "und der"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:13
+#: client/components/tsPhone/tsPhone.html:11
 msgid "Verified phone number"
 msgstr ""
 
@@ -266,11 +266,11 @@ msgstr ""
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:18
+#: client/components/tsPhone/tsPhone.html:15
 msgid "We've sent you a verification code to <b>+{{currentUser.phone}}</b>"
 msgstr ""
 
-#: client/app/account/signup/signup.html:33
+#: client/app/account/signup/signup.html:25
 msgid "What's your email address?"
 msgstr ""
 

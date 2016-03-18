@@ -70,3 +70,7 @@ body > div.app > navbar > div > div > button > i {
     margin-right: 5px;
     cursor: pointer;
 }
+
+.navbar-app .btn-navbar:hover, .navbar-app .btn:hover {
+    color: #fff;
+}

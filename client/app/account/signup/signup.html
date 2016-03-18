@@ -15,14 +15,6 @@
                 <span translate>oder</span>
             </div>
             <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
-                <!--<div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
-                                            'has-error': form.name.$invalid && vm.submitted }">
-                    <label translate>Name</label>
-                    <input type="text" name="name" class="form-control" ng-model="vm.user.name" required/>
-                    <p class="help-block" ng-show="form.name.$error.required && vm.submitted" translate>
-                        A name is required
-                    </p>
-                </div>-->
                 <div class="form-group" ng-class="{ 'has-success': form.email.$valid && vm.submitted,
                                             'has-error': form.email.$invalid && vm.submitted }">
                     <label translate>Email</label>
@@ -48,29 +40,21 @@
                         {{ vm.errors.password }}
                     </p>
                 </div>
-                <!--<div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted,
-                                            'has-error': form.confirmPassword.$invalid && vm.submitted }">
-                    <label translate>Confirm Password</label>
-                    <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword" match="vm.user.password" ng-minlength="3" required/>
-                    <p class="help-block" ng-show="form.confirmPassword.$error.match && vm.submitted" translate>
-                        Passwords must match.
-                    </p>
-                </div>-->
                 <p class="ts-terms-of-use">
                     <span translate>Indem du dich bei tablesurfer registrierst, erklärst du dich mit den</span> <a ui-sref="agb" target="_blank" translate>Nutzungsbedingungen</a> <span translate>und der</span> <a ui-sref="privacy" target="_blank" translate>Datenschutzerklärung</a> <span>einverstanden</span>.
                 </p>
                 <div class="hidden-xs">
-                    <button class="btn btn-inverse btn-lg btn-register btn-block ts-btn-signup" type="submit" translate>
+                    <button class="btn btn-inverse btn-lg btn-register btn-block ts-btn-signup btn-primary" type="submit" translate>
                         Sign up
                     </button>
                     <a class="btn btn-default btn-lg btn-login btn-block ts-btn-login" ui-sref="login" translate>
                         Login
                       </a>
                 </div>
-                <div ui-content-for="footer">
-                    <button ng-click="vm.register(form)" class="btn btn-lg btn-primary btn-register btn-block" translate>register</button>
-                </div>
             </form>
         </div>
     </div>
+</div>
+<div ui-content-for="footer">
+    <button ng-click="vm.register()" class="btn btn-lg btn-primary btn-register btn-block" translate>register</button>
 </div>

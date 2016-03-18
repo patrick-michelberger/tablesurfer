@@ -20,6 +20,10 @@ oauth-buttons .btn-facebook .fa {
     font-size: 2.2em;
 }
 
+oauth-buttons .btn:hover {
+    color: #fff;
+}
+
 .ts-signup-or-separator {
     position: relative;
     top: 5px;
@@ -35,4 +39,3 @@ oauth-buttons .btn-facebook .fa {
     background: #fff;
     padding: 0 15px;
 }
-
