@@ -5,7 +5,11 @@ angular.module('tablesurferApp')
         $stateProvider
             .state('main', {
                 url: '/',
-                templateUrl: 'app/main/main.html',
-                controller: 'MainCtrl'
+                views: {
+                    "": {
+                        templateUrl: 'app/main/main.html',
+                        controller: 'MainCtrl'
+                    }
+                }
             });
     });

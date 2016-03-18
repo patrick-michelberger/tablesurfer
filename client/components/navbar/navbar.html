@@ -16,6 +16,7 @@
             <p class="navbar-text">{{ nav.getCurrentUser().name }}</p>
         </li>
         <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="nav.isLoggedIn()" class="ts-user-name"><a ui-sref="dashboard">{{nav.getCurrentUser().email}}</a></li>
         <li ng-show="nav.isLoggedIn()"><a ui-sref="logout" translate>Logout</a></li>
         <li ng-hide="nav.currentLanguage=='de'" ng-click="nav.changeLanguage('de')">
             <img class="ts-btn-language" src="assets/images/flags/de.png" />

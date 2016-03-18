@@ -3,6 +3,10 @@
     border-color: #fff;
 }
 
+.navbar-absolute-top .ts-user-name a {
+    margin-right: 0px;
+}
+
 .navbar-absolute-top .btn-navbar:hover,
 .navbar-absolute-top .btn:hover {
     color: #000;
@@ -71,6 +75,7 @@ body > div.app > navbar > div > div > button > i {
     cursor: pointer;
 }
 
-.navbar-app .btn-navbar:hover, .navbar-app .btn:hover {
+.navbar-app .btn-navbar:hover,
+.navbar-app .btn:hover {
     color: #fff;
 }

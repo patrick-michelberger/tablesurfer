@@ -8,15 +8,15 @@ msgstr ""
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
-#: client/app/main/main.html:135
+#: client/app/dashboard/dashboard.html:12
 msgid "A first name is required"
 msgstr ""
 
-#: client/app/main/main.html:143
+#: client/app/dashboard/dashboard.html:20
 msgid "A last name is required"
 msgstr ""
 
-#: client/components/navbar/navbar.html:37
+#: client/components/navbar/navbar.html:38
 msgid "Admin"
 msgstr ""
 
@@ -40,11 +40,11 @@ msgstr ""
 msgid "Berlin"
 msgstr ""
 
-#: client/app/main/main.html:164
+#: client/app/dashboard/dashboard.html:41
 msgid "Complete Registration"
 msgstr ""
 
-#: client/app/main/main.html:129
+#: client/app/dashboard/dashboard.html:6
 msgid "Complete Your Profile"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: client/app/main/main.html:133
+#: client/app/dashboard/dashboard.html:10
 msgid "first name"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
-#: client/app/main/main.html:141
+#: client/app/dashboard/dashboard.html:18
 msgid "last name"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: client/components/navbar/navbar.html:19
+#: client/components/navbar/navbar.html:20
 msgid "Logout"
 msgstr ""
 
@@ -214,7 +214,7 @@ msgstr ""
 msgid "Sign up"
 msgstr ""
 
-#: client/app/main/main.html:184
+#: client/app/dashboard/dashboard.html:61
 msgid "signup now"
 msgstr ""
 

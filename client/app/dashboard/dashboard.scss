@@ -1,0 +1,30 @@
+/**
+ * General
+ */
+
+#ts-dashboard h1,
+#ts-dashboard h2,
+#ts-dashboard h3 {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+}
+
+#ts-dashboard h1 {
+    font-size: 4.0em;
+}
+
+#ts-dashboard h2 {
+    font-size: 3.0em;
+}
+
+#ts-dashboard h3 {
+    font-size: 2.0em;
+}
+
+@media (min-width: $screen-sm) {
+    .ts-welcome-container .ts-profile-picture {
+        position: relative;
+        left: 50%;
+        margin-left: -160px;
+    }
+}

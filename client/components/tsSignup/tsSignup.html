@@ -1,4 +1,4 @@
-<form lass="form" name="form" ng-submit="register(form)" novalidate>
+<form lass="form" name="form" ng-submit="register(form)" novalidate ng-hide="isLoggedIn()">
     <div class="form-group">
         <div class="input-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                                 'has-error': form.email.$invalid && submitted }">
@@ -9,3 +9,6 @@
         </div>
     </div>
 </form>
+<div class="input-group-btn">
+    <button class="btn btn-primary" ui-sref="dashboard" ng-show="isLoggedIn()">Melde dich an</button>
+</div>
