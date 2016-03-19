@@ -12,6 +12,7 @@ router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/:id/city', auth.isAuthenticated(), controller.changeCity);
 router.put('/:id/phone', auth.isAuthenticated(), controller.changePhone);
+router.put('/:id/name', auth.isAuthenticated(), controller.changeName);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 

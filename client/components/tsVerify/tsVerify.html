@@ -1,0 +1,8 @@
+<div class="alert alert-warning ts-not-verified" role="alert" ng-show="getStatus() == 'unverified'" translate>Your email is not verified. Check your email for a verification email or <a href="" ng-click="sendVerificationEmail(getCurrentUser().email)">send a new one</a>. {{ status.sent }}</div>
+<div class="alert alert-warning" role="alert" ng-show="getStatus() == 'sending'">
+    <ts-loading></ts-loading>
+</div>
+<div class="alert alert-warning" role="alert" ng-show="getStatus() == 'error'" translate>Could not send verification email. Try again later.</div>
+<div class="alert alert-success" role="alert" ng-show="getStatus() == 'sent'">
+    <ts-success translate>Verification email sent</ts-success>
+</div>

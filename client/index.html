@@ -62,9 +62,6 @@
     <div class="app ">
         <navbar></navbar>
         <div class="navbar navbar-app navbar-absolute-bottom visible-xs" ui-yield-to="footer">
-            <a href="/signup ">
-                <button class="btn btn-lg btn-primary btn-register btn-block ">jetzt anmelden</button>
-            </a>
         </div>
         <div class='app-body'>
             <div class='app-content'>
@@ -116,6 +113,7 @@
     <script src="bower_components/intl-tel-input/build/js/intlTelInput.min.js"></script>
     <script src="bower_components/intl-tel-input/lib/libphonenumber/build/utils.js"></script>
     <script src="bower_components/international-phone-number/releases/international-phone-number.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <script src="socket.io-client/socket.io.js "></script>
     <!-- endbuild -->
@@ -125,7 +123,7 @@
     <script src="app/admin/admin.module.js"></script>
     <script src="components/auth/auth.module.js"></script>
     <script src="components/util/util.module.js"></script>
-    <script src="app/privacy/privacy.controller.js"></script>
+    <script src="app/translations.js"></script>
     <script src="app/account/settings/settings.controller.js"></script>
     <script src="app/account/signup/signup.controller.js"></script>
     <script src="app/admin/admin.controller.js"></script>
@@ -144,9 +142,11 @@
     <script src="app/main/main.js"></script>
     <script src="app/presse/presse.controller.js"></script>
     <script src="app/presse/presse.js"></script>
-    <script src="app/about/about.js"></script>
+    <script src="app/privacy/privacy.controller.js"></script>
     <script src="app/privacy/privacy.js"></script>
-    <script src="app/translations.js"></script>
+    <script src="app/about/about.js"></script>
+    <script src="app/verify/verify.controller.js"></script>
+    <script src="app/verify/verify.js"></script>
     <script src="app/account/account.js"></script>
     <script src="components/auth/auth.service.js"></script>
     <script src="components/auth/interceptor.service.js"></script>
@@ -165,6 +165,7 @@
     <script src="components/tsPhone/tsPhone.directive.js"></script>
     <script src="components/tsSignup/tsSignup.directive.js"></script>
     <script src="components/tsSuccess/tsSuccess.directive.js"></script>
+    <script src="components/tsVerify/tsVerify.directive.js"></script>
     <script src="app/account/login/login.controller.js"></script>
     <script src="components/util/util.service.js"></script>
     <!-- endinjector -->

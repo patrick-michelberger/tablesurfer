@@ -1,0 +1,31 @@
+msgid ""
+msgstr "Content-Type: text/plain;\n"
+
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\forgotpassword.hbs:9
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\verify.hbs:9
+msgid "Hello"
+msgstr ""
+
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\forgotpassword.hbs:10
+msgid "We have sent you this email because you forgot your password."
+msgstr ""
+
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\forgotpassword.hbs:11
+msgid "You can reset your password "
+msgstr ""
+
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\forgotpassword.hbs:11
+msgid "here"
+msgstr ""
+
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\verify.hbs:10
+msgid "We have sent you this email because you registered to tablesurfer."
+msgstr ""
+
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\verify.hbs:11
+msgid "You can verify your email address by clicking this "
+msgstr ""
+
+#: C:/Users\Janosch\Documents\GitHub\tablesurfer-2.0\server\views\verify.hbs:11
+msgid "link"
+msgstr ""

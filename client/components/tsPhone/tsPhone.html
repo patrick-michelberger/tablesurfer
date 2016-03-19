@@ -1,18 +1,16 @@
 <form ng-hide="hasPhonecode()" name="phone" ng-submit="saveNumber()">
-    <span translate>Your Whatsapp <i class="fa fa-whatsapp"></i> number: </span>
-    <a ng-click="changeNumber()"><i class="fa fa-pencil-square-o" ng-show="currentUser.verifiedPhone"></i></a>
-    <br/>
     <div ng-hide="isLoading">
-        <input ng-disabled="currentUser.verifiedPhone" name="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone" type="text" international-phone-number class="col-xs-12" ng-model="currentUser.phone" required>
+        <label for="phone" translate>Your Whatsapp <i class="fa fa-whatsapp"></i> number: </label>
+        <a ng-click="changeNumber()"><i class="fa fa-pencil-square-o" ng-show="currentUser.verifiedPhone"></i></a>
+        <input id="phone" ng-disabled="currentUser.verifiedPhone" name="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone col-xs-12" type="text" international-phone-number ng-model="currentUser.phone" required>
         <button ng-show="phone.$valid&&!currentUser.verifiedPhone" ng-disabled="phone.$invalid&&currentUser.verifiedPhone" class="ts-btn-save btn btn-default" type="submit" translate>Send verification code to my phone</button>
         <p ng-show="phoneChanged" class="alert alert-success" translate>Phone number successfully changed.</p>
     </div>
-    <ts-loading ng-show="isLoading"></ts-loading>
-    <ts-success ng-show="currentUser.verifiedPhone" translate>Verified phone number</ts-success>
+    <ts-loading ng-show="isLoading" style="margin-top:15px;"></ts-loading>
+    <alert class="alert alert-success" ng-show="currentUser.verifiedPhone" translate>Verified phone number</alert>
 </form>
-
 <form ng-show="hasPhonecode(currentUser)" name="phonecode" class="ts-phonecode" ng-submit="submit()">
-    <span translate>We've sent you a verification code to <b>+{{currentUser.phone}}</b></span>
+    <span class="ts-verification-code-sent" translate>We've sent you a verification code to <b>+{{currentUser.phone}}</b></span>
     <a ng-click="changeNumber()"><i class="fa fa-pencil-square-o"></i></a>
     <br/>
     <div ng-hide="isLoading">

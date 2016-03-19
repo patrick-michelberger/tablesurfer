@@ -1,0 +1,41 @@
+<div class="ts-complete-profile-form-container container">
+    <h2 translate>Complete Your Profile</h2>
+    <!-- Complete Form Container START -->
+    <div class="col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+        <uib-progressbar animate="true" value="currentProgress" type="success" class="progress-striped active"></uib-progressbar>
+        <!-- Change Name Form START -->
+        <form ng-if="!getCurrentUser().name" class="form" name="form" ng-submit="changeName(form)" novalidate>
+            <div class="form-group" ng-class="{ 'has-success': form.fname.$valid && submitted,
+                                            'has-error': form.fname.$invalid && submitted }">
+                <label for="fname" translate>first name</label>
+                <input type="text" name="fname" class="form-control" ng-model="user.first_name" id="fname" autocomplete="given-name" required/>
+                <p class="help-block" ng-show="form.fname.$error.required && submitted" translate>
+                    A first name is required
+                </p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-success': form.lname.$valid && submitted,
+                                            'has-error': form.lname.$invalid && submitted }">
+                <label for="lname" translate>last name</label>
+                <input type="text" name="ln-ame" class="form-control" ng-model="user.last_name" id="lname" autocomplete="family-name" required/>
+                <p class="help-block" ng-show="form.lname.$error.required && submitted" translate>
+                    A last name is required
+                </p>
+            </div>
+            <div class="hidden-xs">
+                <button class="btn btn-inverse btn-lg btn-complete-registration btn-block ts-btn-complete-registration btn-primary" type="submit" ng-disabled="form.$invalid" translate>
+                    Complete Registration
+                </button>
+            </div>
+        </form>
+        <!-- Change Name Form END -->
+        <ts-phone ng-if="getCurrentUser().name"></ts-phone>
+
+
+    </div>
+    <!-- Complete Form Container END -->
+</div>
+<div ui-content-for="footer">
+    <a href="/signup">
+        <button class="btn btn-lg btn-primary btn-register btn-block" translate>save</button>
+    </a>
+</div>

@@ -15,7 +15,6 @@ angular.module('tablesurferApp.auth')
           if (has) {
             return;
           }
-
           event.preventDefault();
           return Auth.isLoggedIn(_.noop).then(is => {
             $state.go(is ? 'main' : 'login');

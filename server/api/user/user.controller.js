@@ -102,6 +102,26 @@ exports.changeCity = function(req, res, next) {
     });
 };
 
+
+/**
+ * Change a users's name
+ */
+exports.changeName = function(req, res, next) {
+    var userId = req.user._id;
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    User.findById(userId, function(err, user) {
+        user.first_name = firstName;
+        user.last_name = lastName;
+        user.name = firstName + " " + lastName;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
+
+
 /**
  * Change a users phone number
  */
@@ -132,7 +152,7 @@ exports.me = function(req, res, next) {
     var userId = req.user._id;
     User.findOne({
         _id: userId
-    }, '-salt -hashedPassword -phonecode').populate(populateFields).exec(function(err, user) { // don't ever give out the password or salt
+    }, '-salt -password -phonecode -verifycode').populate(populateFields).exec(function(err, user) { // don't ever give out the password or salt
         if (err) return next(err);
         if (!user) return res.status(401).send('Unauthorized');
         res.json(user);

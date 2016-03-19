@@ -44,7 +44,7 @@
                     <span translate>Indem du dich bei tablesurfer registrierst, erklärst du dich mit den</span> <a ui-sref="agb" target="_blank" translate>Nutzungsbedingungen</a> <span translate>und der</span> <a ui-sref="privacy" target="_blank" translate>Datenschutzerklärung</a> <span>einverstanden</span>.
                 </p>
                 <div class="hidden-xs">
-                    <button class="btn btn-inverse btn-lg btn-register btn-block ts-btn-signup btn-primary" type="submit" translate>
+                    <button class="btn btn-inverse btn-lg btn-register btn-block ts-btn-signup btn-primary" type="submit" ng-disabled="form.$invalid" translate>
                         Sign up
                     </button>
                     <a class="btn btn-default btn-lg btn-login btn-block ts-btn-login" ui-sref="login" translate>

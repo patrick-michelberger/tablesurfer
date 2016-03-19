@@ -24,6 +24,10 @@ module.exports = function(config) {
       'client/bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js',
       'client/bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.js',
       'client/bower_components/angular-gettext/dist/angular-gettext.js',
+      'client/bower_components/intl-tel-input/build/js/intlTelInput.min.js',
+      'client/bower_components/intl-tel-input/lib/libphonenumber/build/utils.js',
+      'client/bower_components/international-phone-number/releases/international-phone-number.js',
+      'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

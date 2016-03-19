@@ -70,6 +70,31 @@
             },
 
             /**
+             * Change name
+             *
+             * @param  {String}   firstName     - user's first name,
+             * @param  {String}   lastName      - user's last name
+             * @param  {Function} callback - optional, function(error, user)
+             * @return {Promise}
+             */
+            changeName(firstName, lastName, callback) {
+                return User.changeName({ id: currentUser._id }, {
+                        firstName: firstName,
+                        lastName: lastName
+                    }, function(data) {
+                        //$cookies.put('token', data.token);
+                        currentUser.first_name = firstName;
+                        currentUser.last_name = lastName;
+                        currentUser.name = firstName + " " + lastName;
+                        return safeCb(callback)(null);
+                    },
+                    function(err) {
+                        Auth.logout();
+                        return safeCb(callback)(err);
+                    }).$promise;
+            },
+
+            /**
              * Change password
              *
              * @param  {String}   oldPassword
@@ -171,6 +196,44 @@
             },
 
             /**
+             * Check if a user's email is verified
+             *   (synchronous|asynchronous)
+             *
+             * @param  {Function|*} callback - optional, function(is)
+             * @return {Bool|Promise}
+             */
+            isVerified(callback) {
+                if (arguments.length === 0) {
+                    return currentUser.verified;
+                }
+                return Auth.getCurrentUser(null)
+                    .then(user => {
+                        var verified = user.verified;
+                        safeCb(callback)(verified);
+                        return verified;
+                    });
+            },
+
+            /**
+             * Check if a user's email is a campus mail
+             *   (synchronous|asynchronous)
+             *
+             * @param  {Function|*} callback - optional, function(is)
+             * @return {Bool|Promise}
+             */
+            isCampusMail(callback) {
+                if (arguments.length === 0) {
+                    return currentUser.isCampusMail;
+                }
+                return Auth.getCurrentUser(null)
+                    .then(user => {
+                        var verified = user.verifiedEmail;
+                        safeCb(callback)(verified);
+                        return verified;
+                    });
+            },
+
+            /**
              * Get auth token
              *
              * @return {String} - a token string used for authenticating
@@ -240,6 +303,17 @@
                     return response;
                 });
             },
+
+            /**
+             * Authenticate user with token and save it
+             *
+             * @param  {String}   token
+             */
+            loginWithToken(token, callback) {
+                $cookies.put('token', token);
+                currentUser = User.get();
+            },
+
 
 
         };

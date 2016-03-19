@@ -25,6 +25,15 @@ em {
     background-color: #fff;
 }
 
+label {
+    width: 100%;
+}
+
+.progress {
+    height: 35px;
+    border-radius: 0;
+}
+
 @media (min-width: $screen-sm) {
     .has-navbar-bottom .app-body {
         padding-bottom: 0px;
@@ -115,6 +124,7 @@ $brand-danger: red;
 @import 'main/main.scss';
 @import 'presse/presse.scss';
 @import 'privacy/privacy.scss';
+@import 'verify/verify.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 @import '../components/navbar/navbar.scss';
@@ -124,4 +134,5 @@ $brand-danger: red;
 @import '../components/tsPhone/tsPhone.scss';
 @import '../components/tsSignup/tsSignup.scss';
 @import '../components/tsSuccess/tsSuccess.scss';
+@import '../components/tsVerify/tsVerify.scss';
 // endinjector

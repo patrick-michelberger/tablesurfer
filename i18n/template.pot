@@ -8,20 +8,24 @@ msgstr ""
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:12
+#: client/app/dashboard/partials/completeProfile.html:12
 msgid "A first name is required"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:20
+#: client/app/dashboard/partials/completeProfile.html:20
 msgid "A last name is required"
 msgstr ""
 
-#: client/components/navbar/navbar.html:38
+#: client/components/navbar/navbar.html:39
 msgid "Admin"
 msgstr ""
 
 #: client/components/footer/footer.html:10
 msgid "AGB"
+msgstr ""
+
+#: client/app/main/main.html:126
+msgid "anmelden"
 msgstr ""
 
 #: client/app/main/main.html:57
@@ -40,12 +44,16 @@ msgstr ""
 msgid "Berlin"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:41
+#: client/app/dashboard/partials/completeProfile.html:25
 msgid "Complete Registration"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:6
+#: client/app/dashboard/partials/completeProfile.html:2
 msgid "Complete Your Profile"
+msgstr ""
+
+#: client/components/tsVerify/tsVerify.html:5
+msgid "Could not send verification email. Try again later."
 msgstr ""
 
 #: client/components/footer/footer.html:9
@@ -73,11 +81,15 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+#: client/app/verify/verify.html:17
+msgid "Error verifying user."
+msgstr ""
+
 #: client/components/footer/footer.html:7
 msgid "FAQ"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:10
+#: client/app/dashboard/partials/completeProfile.html:10
 msgid "first name"
 msgstr ""
 
@@ -109,15 +121,19 @@ msgstr ""
 msgid "Indem du dich bei tablesurfer registrierst, erklärst du dich mit den"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:20
+#: client/components/tsPhone/tsPhone.html:18
 msgid "Invalid code"
+msgstr ""
+
+#: client/app/main/main.html:125
+msgid "jetzt mitmachen"
 msgstr ""
 
 #: client/app/main/main.html:73
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:18
+#: client/app/dashboard/partials/completeProfile.html:18
 msgid "last name"
 msgstr ""
 
@@ -131,7 +147,7 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: client/components/navbar/navbar.html:20
+#: client/components/navbar/navbar.html:21
 msgid "Logout"
 msgstr ""
 
@@ -173,7 +189,7 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:8
+#: client/components/tsPhone/tsPhone.html:7
 msgid "Phone number successfully changed."
 msgstr ""
 
@@ -205,17 +221,17 @@ msgstr ""
 msgid "Register with Facebook"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:7
+#: client/app/dashboard/partials/completeProfile.html:39
+msgid "save"
+msgstr ""
+
+#: client/components/tsPhone/tsPhone.html:6
 msgid "Send verification code to my phone"
 msgstr ""
 
 #: client/app/account/signup/signup.html:47
 #: client/components/navbar/navbar.html:13
 msgid "Sign up"
-msgstr ""
-
-#: client/app/dashboard/dashboard.html:61
-msgid "signup now"
 msgstr ""
 
 #: client/app/main/main.html:63
@@ -230,7 +246,8 @@ msgstr ""
 msgid "Städte"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:21
+#: client/app/verify/verify.html:10
+#: client/components/tsPhone/tsPhone.html:19
 msgid "Submit"
 msgstr ""
 
@@ -242,7 +259,7 @@ msgstr ""
 msgid "The Cooking-Community <b>for Students!</b>"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:19
+#: client/components/tsPhone/tsPhone.html:17
 msgid "Type in the received code e.g. 123456"
 msgstr ""
 
@@ -254,7 +271,15 @@ msgstr ""
 msgid "und der"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:11
+#: client/app/verify/verify.html:19
+msgid "User succesfully verified. You will be redirected shortly."
+msgstr ""
+
+#: client/components/tsVerify/tsVerify.html:7
+msgid "Verification email sent"
+msgstr ""
+
+#: client/components/tsPhone/tsPhone.html:10
 msgid "Verified phone number"
 msgstr ""
 
@@ -266,7 +291,7 @@ msgstr ""
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:15
+#: client/components/tsPhone/tsPhone.html:13
 msgid "We've sent you a verification code to <b>+{{currentUser.phone}}</b>"
 msgstr ""
 
@@ -274,6 +299,10 @@ msgstr ""
 msgid "What's your email address?"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:2
+#: client/components/tsVerify/tsVerify.html:1
+msgid "Your email is not verified. Check your email for a verification email or <a href=\"\" ng-click=\"sendVerificationEmail(getCurrentUser().email)\">send a new one</a>. {{ status.sent }}"
+msgstr ""
+
+#: client/components/tsPhone/tsPhone.html:3
 msgid "Your Whatsapp <i class=\"fa fa-whatsapp\"></i> number:"
 msgstr ""

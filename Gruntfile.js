@@ -721,7 +721,7 @@ module.exports = function(grunt) {
             'env:all',
             'concurrent:pre',
             'concurrent:server',
-            'injector',
+            'injector', 
             'wiredep:client',
             'postcss',
             'express:dev',

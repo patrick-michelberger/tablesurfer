@@ -5,8 +5,12 @@ import mongoose from 'mongoose';
 mongoose.Promise = require('bluebird');
 import { Schema } from 'mongoose';
 import Phonecode from '../phonecode/phonecode.model';
+import Verify from '../verifycode/verifycode.model';
 import University from '../university/university.model';
 import City from '../city/city.model';
+import mail from '../../components/mail';
+import config from '../../config/environment';
+import Whatsapp from '../../components/whatsapp';
 
 const authTypes = ['facebook'];
 
@@ -30,12 +34,19 @@ var UserSchema = new Schema({
     picture: String,
     phone: String,
     verifiedPhone: {
-        type: Boolean,
-        default: false
+        type: Boolean
     },
     verified: {
         type: Boolean,
         default: false
+    },
+    verifycode: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Verifycode"
+    },
+    forgotpasswordcode: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Forgotpassword"
     },
     phonecode: {
         type: mongoose.Schema.Types.ObjectId,
@@ -283,6 +294,39 @@ UserSchema.methods = {
             });
         });
 
+    },
+
+    /**
+     * Create verifycode and saves user
+     *
+     * @param {Function} callback
+     * @api public
+     */
+    createVerifycode: function(callback) {
+        var user = this;
+
+        Verify.create({ email: user.email, user: user._id }, function(err, verifycode) {
+            if (err) {
+                console.log(err);
+                return callback(err);
+            }
+            user.verifycode = verifycode._id;
+            user.verified = false;
+            user.save(function(err) {
+                if (err) {
+                    return callback(err);
+                }
+
+                var data = {
+                    to: user.email,
+                    url: config.domain + '/verify/' + user.verifycode,
+                    template: 'verify.hbs',
+                    subject: 'tablesurfer.org - erify'
+                };
+
+                mail.send(data, callback);
+            });
+        });
     },
 };
 

@@ -16,7 +16,8 @@
     "mobile-angular-ui": "^1.2.1",
     "angular-gettext": "^2.2.1",
     "jquery": "^2.2.1",
-    "international-phone-number": "^0.0.16"
+    "international-phone-number": "^0.0.16",
+    "angular-bootstrap": "^1.2.4"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.0"

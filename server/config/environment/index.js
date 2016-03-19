@@ -4,65 +4,73 @@ var path = require('path');
 var _ = require('lodash');
 
 function requiredProcessEnv(name) {
-  if (!process.env[name]) {
-    throw new Error('You must set the ' + name + ' environment variable');
-  }
-  return process.env[name];
+    if (!process.env[name]) {
+        throw new Error('You must set the ' + name + ' environment variable');
+    }
+    return process.env[name];
 }
 
 // All configurations will extend these options
 // ============================================
 var all = {
-  env: process.env.NODE_ENV,
+    env: process.env.NODE_ENV,
 
-  // Root path of server
-  root: path.normalize(__dirname + '/../../..'),
+    domain: process.env.DOMAIN,
 
-  // Server port
-  port: process.env.PORT || 9000,
+    // Root path of server
+    root: path.normalize(__dirname + '/../../..'),
 
-  // Server IP
-  ip: process.env.IP || '0.0.0.0',
+    // Server port
+    port: process.env.PORT || 9000,
 
-  // Should we populate the DB with sample data?
-  seedDB: false,
+    // Server IP
+    ip: process.env.IP || '0.0.0.0',
 
-  // Secret for session, you will want to change this and make it an environment variable
-  secrets: {
-    session: 'tablesurfer-secret'
-  },
+    // Should we populate the DB with sample data?
+    seedDB: false,
 
-  // MongoDB connection options
-  mongo: {
-    options: {
-      db: {
-        safe: true
-      }
-    }
-  },
+    // Secret for session, you will want to change this and make it an environment variable
+    secrets: {
+        session: 'tablesurfer-secret'
+    },
 
-  facebook: {
-    clientID:     process.env.FACEBOOK_ID || 'id',
-    clientSecret: process.env.FACEBOOK_SECRET || 'secret',
-    callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
-  },
+    // MongoDB connection options
+    mongo: {
+        options: {
+            db: {
+                safe: true
+            }
+        }
+    },
 
-  twitter: {
-    clientID:     process.env.TWITTER_ID || 'id',
-    clientSecret: process.env.TWITTER_SECRET || 'secret',
-    callbackURL:  (process.env.DOMAIN || '') + '/auth/twitter/callback'
-  },
+    facebook: {
+        clientID: process.env.FACEBOOK_ID || 'id',
+        clientSecret: process.env.FACEBOOK_SECRET || 'secret',
+        callbackURL: (process.env.DOMAIN || '') + '/auth/facebook/callback'
+    },
 
-  google: {
-    clientID:     process.env.GOOGLE_ID || 'id',
-    clientSecret: process.env.GOOGLE_SECRET || 'secret',
-    callbackURL:  (process.env.DOMAIN || '') + '/auth/google/callback'
-  }
+    twitter: {
+        clientID: process.env.TWITTER_ID || 'id',
+        clientSecret: process.env.TWITTER_SECRET || 'secret',
+        callbackURL: (process.env.DOMAIN || '') + '/auth/twitter/callback'
+    },
+
+    google: {
+        clientID: process.env.GOOGLE_ID || 'id',
+        clientSecret: process.env.GOOGLE_SECRET || 'secret',
+        callbackURL: (process.env.DOMAIN || '') + '/auth/google/callback'
+    },
+
+    mail: {
+        username: process.env.GMAIL_USERNAME || 'username',
+        password: process.env.GMAIL_PASSWORD || 'password',
+        service: 'gmail'
+    },
 };
 
 // Export the config object based on the NODE_ENV
 // ==============================================
 module.exports = _.merge(
-  all,
-  require('./shared'),
-  require('./' + process.env.NODE_ENV + '.js') || {});
+    all,
+    require('./shared'),
+    require('./' + process.env.NODE_ENV + '.js') || {});
