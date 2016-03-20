@@ -287,6 +287,29 @@
             },
 
             /**
+             * Delete phone number
+             *
+             * @param  {String}   phone number
+             * @param  {Function} callback - optional
+             * @return {Promise}
+             */
+            deletePhone(phone, callback) {
+                var cb = callback || angular.noop;
+
+                return User.changePhone({
+                    id: currentUser._id
+                }, {
+                    phone: phone
+                }, function(user) {
+                    delete currentUser.phone;
+                    delete currentUser.verifiedPhone;
+                    return cb(user);
+                }, function(err) {
+                    return cb(err);
+                }).$promise;
+            },
+
+            /**
              *  Verify user's phone number
              *
              * @param {String} phonecode

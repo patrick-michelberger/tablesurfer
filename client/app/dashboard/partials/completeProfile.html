@@ -21,16 +21,22 @@
                     A last name is required
                 </p>
             </div>
+            <!-- Email Verification START -->
+            <ts-verify></ts-verify>
+            <!-- Email Verification END -->
             <div class="hidden-xs">
-                <button class="btn btn-inverse btn-lg btn-complete-registration btn-block ts-btn-complete-registration btn-primary" type="submit" ng-disabled="form.$invalid" translate>
+                <button class="btn btn-inverse btn-lg btn-complete-registration btn-block ts-btn-complete-registration btn-primary" type="submit" ng-disabled="form.$invalid&&!getCurrentUser().verified" translate>
                     Complete Registration
                 </button>
             </div>
         </form>
         <!-- Change Name Form END -->
-        <ts-phone ng-if="getCurrentUser().name"></ts-phone>
-
-
+        <!-- Phone Verification START -->
+        <ts-phone ng-if="getCurrentUser().name&&!getCurrentUser().verifiedPhone"></ts-phone>
+        <!-- Phone Verification END -->
+        <!-- Preferred Weekdays START -->
+        <ts-weekdays ng-if="getCurrentUser().name&&getCurrentUser().verifiedPhone"></ts-weekdays>
+        <!-- Preferred Weekdays END -->
     </div>
     <!-- Complete Form Container END -->
 </div>

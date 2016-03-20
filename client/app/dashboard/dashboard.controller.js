@@ -17,7 +17,6 @@ angular.module('tablesurferApp')
                 Auth.changeName($scope.user.first_name, $scope.user.last_name)
                     .then(() => {
                         $scope.currentProgress = updateProgressBar();
-                        console.log("$scope.currentProgress: ", $scope.currentProgress);
                     })
                     .catch(err => {
                         err = err.data;
@@ -30,15 +29,24 @@ angular.module('tablesurferApp')
                         });
                     });
             }
-        }
+        };
+
+        $scope.$on('user:changed', function()  {
+            $scope.currentProgress = updateProgressBar();
+        });
+
 
         function updateProgressBar() {
-            console.log("updateProgressBar()...");
             var progress = 25;
             var currentUser = Auth.getCurrentUser();
-            console.log("currentUser: ", currentUser.name);
             if (currentUser.name) {
                 progress = 50;
+            }
+            if (currentUser.verifiedPhone == false) {
+                progress = 75;
+            }
+            if (currentUser.verifiedPhone == true) {
+                progress = 90;
             }
             return progress;
         };

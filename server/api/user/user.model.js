@@ -285,12 +285,8 @@ UserSchema.methods = {
                     console.log(err);
                     return callback(err);
                 }
-                Whatsapp.sendMessage(user.phone, "Dein Bestätigunscode: " + phonecode.code, true, function(err) {
-                    if (err) {
-                        console.log('Error: ', err);
-                    }
-                    callback();
-                });
+                Whatsapp.sendMessage(user.phone, "Dein Verifizierungscode lautet: " + phonecode.code, true);
+                callback();
             });
         });
 

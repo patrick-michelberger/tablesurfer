@@ -1,7 +1,7 @@
 <form ng-hide="hasPhonecode()" name="phone" ng-submit="saveNumber()">
     <div ng-hide="isLoading">
         <label for="phone" translate>Your Whatsapp <i class="fa fa-whatsapp"></i> number: </label>
-        <a ng-click="changeNumber()"><i class="fa fa-pencil-square-o" ng-show="currentUser.verifiedPhone"></i></a>
+        <a ng-click="changeNumber()"><i class="fa fa-pencil-square-o ts-change-number" ng-show="currentUser.verifiedPhone"></i></a>
         <input id="phone" ng-disabled="currentUser.verifiedPhone" name="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone col-xs-12" type="text" international-phone-number ng-model="currentUser.phone" required>
         <button ng-show="phone.$valid&&!currentUser.verifiedPhone" ng-disabled="phone.$invalid&&currentUser.verifiedPhone" class="ts-btn-save btn btn-default" type="submit" translate>Send verification code to my phone</button>
         <p ng-show="phoneChanged" class="alert alert-success" translate>Phone number successfully changed.</p>

@@ -44,7 +44,7 @@ msgstr ""
 msgid "Berlin"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile.html:25
+#: client/app/dashboard/partials/completeProfile.html:28
 msgid "Complete Registration"
 msgstr ""
 
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Register with Facebook"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile.html:39
+#: client/app/dashboard/partials/completeProfile.html:45
 msgid "save"
 msgstr ""
 

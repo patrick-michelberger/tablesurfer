@@ -14,10 +14,17 @@ ts-phone .ts-phonecode input {
     padding: 10px;
 }
 
-
-
 ts-phone a {
     cursor: pointer;
+}
+
+ts-phone .ts-change-number {
+    cursor: pointer;
+    position: absolute;
+    z-index: 200;
+    font-size: 2.5em;
+    right: 10px;
+    top: 33px;
 }
 
 ts-phone .intl-tel-input,
