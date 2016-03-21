@@ -10,7 +10,7 @@
     </div>
     <ul class="navbar-right hidden-xs pull-right">
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="main" translate>Home</a></li>
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a href="/universities" translate>Universities</a></li>
+        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="universities" translate>Universities</a></li>
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup" translate>Sign up</a></li>
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login" translate>Login</a></li>
         <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>

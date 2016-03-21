@@ -3,7 +3,10 @@
 angular.module('tablesurferApp')
     .config(function($stateProvider) {
         $stateProvider
-            .state('universityList', {
+            .state('universities', {
+                data: {
+                    hideFooter: true
+                },
                 url: '/universities',
                 views: {
                     "": {

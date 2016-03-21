@@ -2,7 +2,6 @@
 
 angular.module('tablesurferApp')
     .controller('UniversityListCtrl', function($scope, $http) {
-
         $http.get('/api/countries').then(function(response) {
             $scope.countries = response.data;
             console.log("countries received");
