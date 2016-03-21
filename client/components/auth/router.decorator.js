@@ -6,9 +6,20 @@ angular.module('tablesurferApp.auth')
   .run(function($rootScope, $state, Auth) {
     // Redirect to login if route requires auth and the user is not logged in, or doesn't have required role
     $rootScope.$on('$stateChangeStart', function(event, next) {
+
+      // hide static footer for mobile
+      if (next.data && next.data.hideFooter) {
+        $rootScope.hideFooter = true;
+      } else {
+        $rootScope.hideFooter = false;
+      }
+      console.log("next.data.hideFooter: ", $rootScope.hideFooter);
+
+
       if (!next.authenticate) {
         return;
       }
+
 
       if (typeof next.authenticate === 'string') {
         Auth.hasRole(next.authenticate, _.noop).then(has => {
