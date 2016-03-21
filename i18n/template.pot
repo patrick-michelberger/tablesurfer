@@ -238,7 +238,7 @@ msgstr ""
 msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
 msgstr ""
 
-#: client/components/tsSignup/tsSignup.html:20
+#: client/components/tsSignup/tsSignup.html:10
 msgid "Sorry, no valid university email."
 msgstr ""
 

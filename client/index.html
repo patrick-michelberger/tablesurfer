@@ -59,9 +59,9 @@
             </div>
         </div>
     </div>
-    <div class="app" ng-class="{hideFooter:'hide-footer'}">
+    <div class="app" ng-class="{hideFooter:footer.hide}">
         <navbar></navbar>
-        <div ng-hide="hideFooter" class="navbar navbar-app navbar-absolute-bottom visible-xs" ui-yield-to="footer">
+        <div ng-hide="footer.hide" class="navbar navbar-app navbar-absolute-bottom visible-xs" ui-yield-to="footer">
         </div>
         <div class='app-body'>
             <div class='app-content'>

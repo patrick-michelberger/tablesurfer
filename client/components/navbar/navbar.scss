@@ -42,6 +42,11 @@ body > div.app > navbar > div > div > button > i {
     float: left;
 }
 
+
+.navbar-absolute-bottom .btn {
+    margin-top: 0;
+}
+
 .navbar-right .navbar-text {
     line-height: 20px;
     position: relative;
