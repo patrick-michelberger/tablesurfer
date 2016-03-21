@@ -1,0 +1,19 @@
+<div id="ts-university-list" class="container">
+    <div class="row">
+        <h1 class="col-xs-12 col-sm-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">Universities</h1>
+    </div>
+    <div class="row">
+        <uib-accordion close-others="oneAtATime" class="col-xs-12 col-sm-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <uib-accordion-group heading="{{country.name}} ({{country.universities.length}})" is-open="false" ng-repeat="country in countries">
+                <div class="media" ng-repeat="university in country.universities">
+                    <div class="media-body">
+                        <h4 class="media-heading"> <a href="{{university.web_page}}" target="_blank">{{university.name}}</a></h4>
+                        <div class="ts-domain">
+                            *.{{university.domain}}
+                        </div>
+                        <hr/>
+                    </div>
+            </uib-accordion-group>
+        </uib-accordion>
+        </div>
+    </div>

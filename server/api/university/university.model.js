@@ -5,7 +5,9 @@ var mongoose = require('mongoose'),
 
 var UniversitySchema = new Schema({
     "name": String,
-    "campusMails": [String]
+    "web_page": String,
+    "country": String,
+    "domain": String
 }, {
     collection: 'universities'
 });

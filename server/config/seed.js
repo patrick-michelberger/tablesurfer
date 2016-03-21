@@ -12,19 +12,34 @@
 
 var University = require('../api/university/university.model');
 var City = require('../api/city/city.model');
+var Country = require('../api/country/country.model');
 var User = require('../api/user/user.model');
 
+var universities = require('../../university-domains-list/world_universities_and_domains.json');
+var countries = [{
+    name: "Germany"
+}, {
+    name: "USA",
+}, {
+    name: "France"
+},   {
+    name: "Sweden"
+}, {
+    name: "China"
+}, {
+    name: "United Kingdom"
+}, {
+    name: "Italy"
+}];
+
 University.find({}).remove(function() {
-    University.create({
-        "name": "LMU München",
-        "campusMails": ["lmu.de"]
-    }, {
-        "name": "TU München",
-        "campusMails": ["tum.de"]
-    }, {
-        "name": "Universität Hamburg",
-        "campusMails": ["uh.edu"]
-    }, function(err, LMU, TUM, UH) {
+    University.create(universities, function(err) {
+        Country.find({}).remove(function() {
+            Country.create(countries,
+                function(err) {});
+        });
+
+        /*
         City.find({}).remove(function() {
             City.create({
                     "name": "Munich",
@@ -41,6 +56,7 @@ University.find({}).remove(function() {
 
                 });
         });
+        */
     });
 });
 

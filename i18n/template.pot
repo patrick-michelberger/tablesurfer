@@ -143,7 +143,7 @@ msgstr ""
 
 #: client/app/account/login/login.html:4
 #: client/app/account/signup/signup.html:50
-#: client/components/navbar/navbar.html:14
+#: client/components/navbar/navbar.html:15
 msgid "Login"
 msgstr ""
 
@@ -230,7 +230,7 @@ msgid "Send verification code to my phone"
 msgstr ""
 
 #: client/app/account/signup/signup.html:47
-#: client/components/navbar/navbar.html:13
+#: client/components/navbar/navbar.html:14
 msgid "Sign up"
 msgstr ""
 
@@ -269,6 +269,10 @@ msgstr ""
 
 #: client/app/account/signup/signup.html:44
 msgid "und der"
+msgstr ""
+
+#: client/components/navbar/navbar.html:13
+msgid "Universities"
 msgstr ""
 
 #: client/app/verify/verify.html:19
