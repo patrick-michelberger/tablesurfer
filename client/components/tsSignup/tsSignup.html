@@ -5,8 +5,27 @@
             <input ng-disabled="isChecking" type="email" name="email" class="form-control" ng-model="user.email" placeholder="E-Mail" required="" />
             <div class="input-group-btn">
                 <button type="submit" ng-hide="isChecking" class="btn btn-primary" ng-disabled="form.email.$invalid">los geht's</button>
-                <button type="button" ng-show="isChecking" class="btn btn-default" ng-disabled="true"><i class="fa fa-circle-o-notch fa-spin"></i>
- checking</button>
+                <button type="button" ng-show="isChecking" class="btn btn-default" ng-disabled="true"><i class="fa fa-circle-o-notch fa-spin"></i> checking
+                </button>
+            </div>
+        </div>
+    </div>
+    <div ui-content-for="modals">
+        <div class="modal" ui-if="noCampusMailHint" ui-state='noCampusMailHint'>
+            <div class="modal-backdrop in"></div>
+            <div class="modal-dialog">
+                <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                    <div class="modal-header">
+                        <button class="close" ui-turn-off="noCampusMailHint">&times;</button>
+                        <h4 class="modal-title" translate>Sorry, no valid university email.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>tablesurfer is currently only for students. A list of participating universities can be found here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button ui-turn-off="noCampusMailHint" class="btn btn-default">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
