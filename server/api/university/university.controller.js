@@ -20,6 +20,10 @@ exports.index = function(req, res) {
         query.country = req.query.country;
     }
 
+    if (req.query.domain) {
+        query.domain = req.query.domain;
+    }
+
     University.find(query, function(err, universitys) {
         if (err) {
             return handleError(res, err); }
