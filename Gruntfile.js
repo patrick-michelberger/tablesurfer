@@ -419,6 +419,7 @@ module.exports = function(grunt) {
                     dest: '<%= yeoman.dist %>',
                     src: [
                         'package.json',
+                        'university-domains-list/**/*',
                         '<%= yeoman.server %>/**/*',
                         '!<%= yeoman.server %>/config/local.env.sample.js'
                     ]
@@ -721,7 +722,7 @@ module.exports = function(grunt) {
             'env:all',
             'concurrent:pre',
             'concurrent:server',
-            'injector', 
+            'injector',
             'wiredep:client',
             'postcss',
             'express:dev',
