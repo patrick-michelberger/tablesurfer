@@ -27,11 +27,22 @@
  */
 
 #ts-main .ts-jumbotron-container {
-    background: url(/assets/images/ts-home-background.jpg) no-repeat top center fixed;
-    background-size: cover;
     height: calc(100vh - 50px);
     position: relative;
     opacity: 0.85;
+    background-size: cover;
+}
+
+@media (min-width: $screen-xs) {
+    #ts-main .ts-jumbotron-container {
+        background: url(/assets/images/ts-home-background.jpg) no-repeat top center fixed;
+    }
+}
+
+@media (max-width: $screen-xs) {
+    #ts-main .ts-jumbotron-container {
+        background: url(/assets/images/ts-home-background.jpg) no-repeat top center fixed;
+    }
 }
 
 #ts-main .ts-jumbotron-container h1 {

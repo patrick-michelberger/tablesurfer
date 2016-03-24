@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tablesurferApp')
-    .controller('DashboardCtrl', function($scope, $state, $timeout, Auth) {
+    .controller('DashboardCtrl', function($rootScope, $scope, $state, $timeout, Auth) {
         $scope.isLoggedIn = Auth.isLoggedIn;
         $scope.getCurrentUser = Auth.getCurrentUser;
         $scope.isEmailVerified = Auth.isEmailVerified;
@@ -9,6 +9,12 @@ angular.module('tablesurferApp')
         $scope.user = Auth.getCurrentUser() || {};
         $scope.currentProgress = updateProgressBar();
 
+
+        $timeout(function() {
+            if (Auth.getCurrentUser().verified && !Auth.getCurrentUser().verifiedPhone) {
+                $rootScope.Ui.turnOn('phoneModal');
+            }
+        }, 0);
 
         $scope.$watch('user', function() {
             $scope.currentProgress = updateProgressBar();
@@ -93,6 +99,4 @@ angular.module('tablesurferApp')
             }
             return progress;
         };
-
-
     });

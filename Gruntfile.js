@@ -25,10 +25,18 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     grunt.loadNpmTasks('grunt-angular-gettext');
+    grunt.loadNpmTasks('grunt-responsive-images');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
-
+        responsive_images: {
+            dev: {
+                files: [{
+                    expand: true,
+                    src: '<%= yeoman.client %>/assets/images/**.{jpg,gif,png}'
+                }]
+            }
+        },
         // Project settings
         pkg: grunt.file.readJSON('package.json'),
         yeoman: {
@@ -126,7 +134,7 @@ module.exports = function(grunt) {
             bower: {
                 files: ['bower.json'],
                 tasks: ['wiredep']
-            },
+            }
         },
 
         // Make sure code styles are up to par and there are no obvious mistakes

@@ -23,6 +23,9 @@
             <!-- Email Verification START -->
             <ts-verify></ts-verify>
             <!-- Email Verification END -->
+            <!-- Phone Verification START -->
+            <ts-phone ng-if="getCurrentUser().verified&&!getCurrentUser().verifiedPhone"></ts-phone>
+            <!-- Phone Verification END -->
             <div class="hidden-xs">
                 <button class="btn btn-inverse btn-lg btn-complete-registration btn-block ts-btn-complete-registration btn-primary" type="submit" ng-disabled="form.$invalid||!getCurrentUser().verified" translate>
                     next
@@ -33,23 +36,38 @@
             </div>
         </form>
         <!-- Change Name Form END -->
-        <!-- Phone Verification START -->
-        <ts-phone ng-if="getCurrentUser().verified&&!getCurrentUser().verifiedPhone"></ts-phone>
-        <!-- Phone Verification END -->
         <!-- Preferred Weekdays START -->
         <ts-weekdays ng-if="getCurrentUser().verifiedPhone"></ts-weekdays>
         <!-- Preferred Weekdays END -->
     </div>
     <!-- Complete Form Container END -->
 </div>
-<!--<div ui-content-for="footer">
-    <a href="/signup">
-        <button class="btn btn-lg btn-primary btn-register btn-block" translate>save</button>
-    </a>
-</div>-->
+<!-- Modal START -->
+<div ui-content-for="modals">
+    <div class="modal" ui-if="phoneModal" ui-state='phoneModal'>
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog">
+            <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <div class="modal-header">
+                    <button class="close" ui-turn-off="phoneModal">&times;</button>
+                    <h4 class="modal-title" translate>tablesurfer <i class="fa fa-heart-o"></i> whatsapp</h4>
+                </div>
+                <div class="modal-body col-sm-10 col-sm-offset-1">
+                    <!-- Phone Verification START -->
+                    <ts-phone></ts-phone>
+                    <!-- Phone Verification END -->
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal END -->
+<!-- Title START -->
 <div ui-content-for="title" translate>
     <span ng-show="false" class="visible-xs">profile</span>
     <span ng-hide="getCurrentUser().first_name&&getCurrentUser().last_name&&getCurrentUser().verified">complete your profile</span>
-    <span ng-show="getCurrentUser().first_name && getCurrentUser().last_name && getCurrentUser().verified && !(getCurrentUser().verifiedPhone == false)">your whatsapp number</span>
+    <span ng-show="getCurrentUser().first_name && getCurrentUser().last_name && getCurrentUser().verified && !(getCurrentUser().verifiedPhone == false)"></span>
     <span ng-show="getCurrentUser().verifiedPhone == false">Type in received code</span>
 </div>
+<!-- Title END -->

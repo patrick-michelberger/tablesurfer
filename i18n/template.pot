@@ -20,11 +20,11 @@ msgstr ""
 msgid "<span class=\"visible-xs\">universities</span>"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:50
+#: client/app/dashboard/partials/completeProfile/completeProfile.html:67
 msgid ""
 "<span ng-show=\"false\" class=\"visible-xs\">profile</span>\n"
 "    <span ng-hide=\"getCurrentUser().first_name&&getCurrentUser().last_name&&getCurrentUser().verified\">complete your profile</span>\n"
-"    <span ng-show=\"getCurrentUser().first_name && getCurrentUser().last_name && getCurrentUser().verified && !(getCurrentUser().verifiedPhone == false)\">your whatsapp number</span>\n"
+"    <span ng-show=\"getCurrentUser().first_name && getCurrentUser().last_name && getCurrentUser().verified && !(getCurrentUser().verifiedPhone == false)\"></span>\n"
 "    <span ng-show=\"getCurrentUser().verifiedPhone == false\">Type in received code</span>"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Impressum"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:5
+#: client/components/tsPhone/tsPhone.html:20
 msgid "Invalid code"
 msgstr ""
 
@@ -169,8 +169,8 @@ msgstr ""
 msgid "München"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:27
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:32
+#: client/app/dashboard/partials/completeProfile/completeProfile.html:30
+#: client/app/dashboard/partials/completeProfile/completeProfile.html:35
 msgid "next"
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:30
+#: client/components/tsPhone/tsPhone.html:9
 msgid "Phone number successfully changed."
 msgstr ""
 
@@ -216,20 +216,11 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:4
-msgid "Received code e.g. 123456"
-msgstr ""
-
 #: client/app/account/signup/signup.html:63
 msgid "register"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:28
-msgid "Request Verification Code"
-msgstr ""
-
-#: client/components/tsPhone/tsPhone.html:26
-#: client/components/tsPhone/tsPhone.html:37
+#: client/components/tsPhone/tsPhone.html:7
 msgid "Send verification code to my phone"
 msgstr ""
 
@@ -260,7 +251,7 @@ msgid "Städte"
 msgstr ""
 
 #: client/app/verify/verify.html:10
-#: client/components/tsPhone/tsPhone.html:6
+#: client/components/tsPhone/tsPhone.html:21
 msgid "Submit"
 msgstr ""
 
@@ -268,10 +259,8 @@ msgstr ""
 msgid "tablesurfer"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:18
-msgid ""
-"tablesurfer <3 whatsapp<=\"\" h4=\"\">\r\n"
-"                </3>"
+#: client/app/dashboard/partials/completeProfile/completeProfile.html:53
+msgid "tablesurfer <i class=\"fa fa-heart-o\"></i> whatsapp"
 msgstr ""
 
 #: client/app/account/signup/signup.html:22
@@ -290,6 +279,10 @@ msgstr ""
 msgid "The Cooking-Community <b>for Students!</b>"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:19
+msgid "Type in the received code e.g. 123456"
+msgstr ""
+
 #: client/components/footer/footer.html:6
 msgid "Über uns"
 msgstr ""
@@ -306,7 +299,7 @@ msgstr ""
 msgid "Verification email sent <i class=\"fa fa-check-circle-o\"></i>"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:33
+#: client/components/tsPhone/tsPhone.html:12
 msgid "Verified phone number"
 msgstr ""
 
@@ -316,6 +309,10 @@ msgstr ""
 
 #: client/app/main/main.html:69
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
+msgstr ""
+
+#: client/components/tsPhone/tsPhone.html:15
+msgid "We've sent you a verification code to <b>+{{currentUser.phone}}</b>"
 msgstr ""
 
 #: client/app/dashboard/partials/welcome/welcome.html:7
