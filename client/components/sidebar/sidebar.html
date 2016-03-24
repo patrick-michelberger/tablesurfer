@@ -1,0 +1,21 @@
+<div class="sidebar sidebar-left">
+    <div class=" scrollable">
+        <div class="scrollable-content">
+            <div class="list-group" ui-turn-off="uiSidebarLeft" ui-outer-click="Ui.turnOff('uiSidebarLeft')" ui-outer-click-if="Ui.active('uiSidebarLeft')">
+                <!-- Logged Out START -->
+                <div class="list-group row" ng-hide="nav.isLoggedIn() " ui-sref-active="active" ui-sref="main"><a href="#">Home <i class="fa fa-chevron-right pull-right "></i></a></div>
+                <div class="list-group row" ng-hide="nav.isLoggedIn() " ui-sref-active="active" ui-sref="universities"><a href="#">Universities <i class="fa fa-chevron-right pull-right "></i></a></div>
+                <div class="list-group row" ng-hide="nav.isLoggedIn() " ui-sref-active="active" ui-sref="signup"><a href="#">Sign up <i class="fa fa-chevron-right pull-right "></i></a></div>
+                <div class="list-group row" ng-hide="nav.isLoggedIn() " ui-sref-active="active" ui-sref="login"><a href="#">Login <i class="fa fa-chevron-right pull-right "></i></a></div>
+                <!-- Logged Out END -->
+                <!-- Logged In START -->
+                <div class="list-group " ng-show="nav.isLoggedIn() " ui-sref-active="active" ui-sref="settings"><a href="#">Settings <i class="fa fa-chevron-right pull-right "></i></a></div>
+                <div class="list-group " ng-show="nav.isLoggedIn() "><a ui-sref="logout ">Logout</a></div>
+                <!-- Logged In END -->
+                <!-- Admin START -->
+                <div class="list-group row" ng-show="nav.isAdmin() " ui-sref-active="active " ui-sref="admin"><a href="#">Admin <i class="fa fa-chevron-right pull-right "></i></a></div>
+                <!-- Admin END -->
+            </div>
+        </div>
+    </div>
+</div>

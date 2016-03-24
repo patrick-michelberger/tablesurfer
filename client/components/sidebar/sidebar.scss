@@ -1,24 +1,24 @@
-.sidebar-right {
+.sidebar-left {
     background-color: #fff;
 }
 
-.sidebar-right .list-group {
+.sidebar-left .list-group {
     margin: 20px 5px 20px 10px;
     font-weight: 400;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-.sidebar-right .fa-chevron-right {
+.sidebar-left .fa-chevron-right {
     font-size: 1.4em;
 }
 
 
-.sidebar-right .list-group {
+.sidebar-left .list-group {
     font-size: 1.2em;
 }
 
-.sidebar-right .active > a {
+.sidebar-left .active > a {
     border-bottom: 4px solid #000;
 }
 
