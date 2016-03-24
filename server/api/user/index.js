@@ -1,6 +1,6 @@
 'use strict';
 
-import {Router} from 'express';
+import { Router } from 'express';
 import * as controller from './user.controller';
 import * as auth from '../../auth/auth.service';
 
@@ -12,7 +12,10 @@ router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/:id/city', auth.isAuthenticated(), controller.changeCity);
 router.put('/:id/phone', auth.isAuthenticated(), controller.changePhone);
-router.put('/:id/name', auth.isAuthenticated(), controller.changeName);
+router.put('/:id/weekdays', auth.isAuthenticated(), controller.changeWeekdays);
+router.put('/:id/registration', auth.isAuthenticated(), controller.setRegistrationCompleted);
+router.put('/:id/firstname', auth.isAuthenticated(), controller.changeFirstName);
+router.put('/:id/lastname', auth.isAuthenticated(), controller.changeLastName);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 
