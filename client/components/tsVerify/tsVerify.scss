@@ -2,3 +2,47 @@ ts-verify .alert {
     border-radius: 0;
     margin-bottom: 15px;
 }
+
+ts-verify .alert-warning a {
+    font-weight: 400;
+}
+
+ts-verify .alert {
+    min-height: 75px;
+}
+
+ts-verify .alert-warning {
+    text-align: left;
+    position: relative;
+    padding-right: 75px;
+}
+
+ts-verify .alert-warning i {
+    position: absolute;
+    font-size: 2.0em;
+    right: 15px;
+    top: 20px;
+    color: black;
+}
+
+ts-verify .alert-success {
+    text-align: left;
+}
+
+ts-verify .alert-warning {
+    cursor: pointer;
+}
+
+ts-verify .alert-success i {
+    position: absolute;
+    font-size: 3.0em;
+    top: 0px;
+    right: 0;
+}
+
+ts-verify .alert-success span {
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    top: 12px;
+}

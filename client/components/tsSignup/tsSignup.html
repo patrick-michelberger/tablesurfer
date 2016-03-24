@@ -1,24 +1,5 @@
+<!-- Logged Out START -->
 <form class="form" name="form" ng-submit="register(form)" novalidate ng-hide="isLoggedIn()">
-<!-- MODAL -->
-    <div ui-content-for="modals">
-        <div class="modal" ui-if="noCampusMailHint" ui-state='noCampusMailHint'>
-            <div class="modal-backdrop in"></div>
-            <div class="modal-dialog">
-                <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                    <div class="modal-header">
-                        <button class="close" ui-turn-off="noCampusMailHint">&times;</button>
-                        <h4 class="modal-title" translate>Sorry, no valid university email.</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>tablesurfer is currently only for students. A list of participating universities can be found here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button ui-turn-off="noCampusMailHint" class="btn btn-default">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="form-group">
         <div class="input-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                                 'has-error': form.email.$invalid && submitted }">
@@ -31,8 +12,32 @@
         </div>
     </div>
 </form>
+<!-- Logged Out END -->
+<!-- Logged In START -->
 <div class="input-group">
     <div class="input-group-btn">
         <button class="btn btn-primary" ui-sref="dashboard" ng-show="isLoggedIn()">Melde dich an</button>
     </div>
 </div>
+<!-- Logged In END -->
+<!-- Modal START -->
+<div ui-content-for="modals">
+    <div class="modal" ui-if="noCampusMailHint" ui-state='noCampusMailHint'>
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog">
+            <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <div class="modal-header">
+                    <button class="close" ui-turn-off="noCampusMailHint">&times;</button>
+                    <h4 class="modal-title" translate>Sorry, no valid university email.</h4>
+                </div>
+                <div class="modal-body">
+                    <p>tablesurfer is currently only for students. A list of participating universities can be found <a ui-sref="universities" ui-turn-off="noCampusMailHint"><b>here.</b></a></p>
+                </div>
+                <div class="modal-footer">
+                    <button ui-turn-off="noCampusMailHint" class="btn btn-default">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal END -->

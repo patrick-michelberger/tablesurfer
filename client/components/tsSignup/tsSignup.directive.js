@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tablesurferApp')
-    .directive('tsSignup', function($location, $state, $rootScope, $stateParams, $http, $timeout, Auth) {
+    .directive('tsSignup', function($location, $state, $rootScope, $stateParams, $http, $timeout, Auth, Helpers) {
         return {
             templateUrl: 'components/tsSignup/tsSignup.html',
             restrict: 'EA',
@@ -15,7 +15,7 @@ angular.module('tablesurferApp')
                     scope.submitted = true;
                     scope.isChecking = true;
                     $timeout(function() {
-                        checkCampusMail(email, function(isCampusMail) {
+                        Helpers.checkCampusMail(email, function(isCampusMail) {
                             if (isCampusMail) {
                                 $state.go('signup', {
                                     email: email
@@ -27,27 +27,6 @@ angular.module('tablesurferApp')
                             scope.isChecking = false;
                         });
                     }, 500);
-                };
-
-                var checkCampusMail = function(email, callback) {
-                    var regex = /@(.*)/;
-                    var match = regex.exec(email);
-                    if (match && match[1]) {
-                        var domain = match[1];
-                        $http.get('/api/universities?domain=' + domain).then(function(response) {
-                            if (response && response.data && response.data.length > 0) {
-                                $state.go('signup', {
-                                    email: email
-                                });
-                                callback(true);
-
-                            } else {
-                                callback(false);
-                            }
-                        });
-                    } else {
-                        callback(false);
-                    }
                 };
             }
         };
