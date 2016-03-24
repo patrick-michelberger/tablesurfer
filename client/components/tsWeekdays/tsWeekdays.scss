@@ -1,0 +1,46 @@
+ts-weekdays .btn-default {
+    text-transform: initial;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+ts-weekdays .fa-check-circle-o {
+    position: absolute;
+    right: 10px;
+    font-size: 2.0em;
+    top: 5px;
+    color: green;
+    display: none;
+}
+
+ts-weekdays h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ts-weekdays .ts-weekday-name {
+    font-size: 1.5em;
+    position: absolute;
+    top: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    left: 15px;
+}
+
+ts-weekdays .btn-default.active .fa-check-circle-o {
+    display: block;
+}
+
+ts-weekdays .btn:focus,
+ts-weekdays .btn:active:focus,
+ts-weekdays .btn.active:focus,
+ts-weekdays .btn.focus,
+ts-weekdays .btn:active.focus,
+ts-weekdays .btn.active.focus {
+    outline: none;
+    outline-offset: 0;
+    color: #333333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+}
