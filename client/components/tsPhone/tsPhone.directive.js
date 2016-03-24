@@ -24,8 +24,18 @@ angular.module('tablesurferApp')
 
                 // ACTIONS
                 scope.saveNumber = function() {
+                    console.log("save number...");
                     scope.isLoading = true;
-                    Auth.changePhone(scope.currentUser.phone)
+                    var phone = scope.currentUser.phone;
+
+                    // Check for German phone number
+                    var regex = /49([0-9])[0-9]*/;
+                    var matches = phone.match(regex);
+                    if (matches && matches[1] && matches[1] === "0") {
+                        scope.currentUser.phone = phone.replace('0', '');
+                    }
+
+                    Auth.changePhone(phone)
                         .then(function(user) {
                             scope.$emit('user:changed');
                             scope.isLoading = false;
@@ -34,6 +44,7 @@ angular.module('tablesurferApp')
                                 scope.phoneChanged = false;
                             }, 1500);
                         });
+                    
                 };
 
                 scope.submit = function() {
