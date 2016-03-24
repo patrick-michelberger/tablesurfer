@@ -7,14 +7,24 @@ class SignupController {
     submitted = false;
     //end-non-standard
 
-    constructor(Auth, $state, $stateParams, $scope) {
+    constructor(Auth, $state, $stateParams, $scope, Helpers) {
         this.$scope = $scope;
         this.Auth = Auth;
+        this.Helpers = Helpers;
         this.$state = $state;
+        this.$scope.isCampusMail = true;
         this.$stateParams = $stateParams;
         if ($stateParams.email) {
             this.user.email = $stateParams.email;
         }
+    }
+
+    checkEmail() {
+        var self = this;
+        var email = this.user.email;
+        this.Helpers.checkCampusMail(email, function(isCampusMail) {
+            self.$scope.isCampusMail = isCampusMail;
+        });
     }
 
     register() {

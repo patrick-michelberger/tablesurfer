@@ -1,10 +1,10 @@
 <div id="ts-signup" class="container">
     <div class="row">
         <div class="ts-signup-form-container col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
-            <h1 translate>Register as a Tablesurfer</h1>
+            <!--<h1 translate>Register as a Tablesurfer</h1>
             <p class="hidden-xs" translate>
                 Heim und Herd: Wir sind eine Koch-Community für Studierende von Studierenden. Knüpfe neue Freundschaften - abseits der Uni.
-            </p>
+            </p>-->
             <div class="row">
                 <div class="col-xs-12">
                     <oauth-buttons classes="btn-block"></oauth-buttons>
@@ -18,10 +18,10 @@
                 <div class="form-group" ng-class="{ 'has-success': form.email.$valid && vm.submitted,
                                             'has-error': form.email.$invalid && vm.submitted }">
                     <label translate>Email</label>
-                    <input type="email" name="email" class="form-control" ng-model="vm.user.email" required mongoose-error/>
-                    <p class="help-block" ng-show="form.email.$error.email && vm.submitted" translate>
-                        Doesn't look like a valid email.
-                    </p>
+                    <input type="email" name="email" ng-blur="vm.checkEmail()" class="form-control" ng-model="vm.user.email" required mongoose-error/>
+                    <div class="alert alert-danger help-block" ng-show="form.email.$error.email && vm.submitted || !isCampusMail" translate>
+                        tablesurfer is only for students. Please check the allowed university email addresses <a ui-sref="universities">here</a>.
+                    </div>
                     <p class="help-block" ng-show="form.email.$error.required && vm.submitted" translate>
                         What's your email address?
                     </p>
@@ -41,14 +41,18 @@
                     </p>
                 </div>
                 <p class="ts-terms-of-use">
-                    <span translate>Indem du dich bei tablesurfer registrierst, erklärst du dich mit den</span> <a ui-sref="agb" target="_blank" translate>Nutzungsbedingungen</a> <span translate>und der</span> <a ui-sref="privacy" target="_blank" translate>Datenschutzerklärung</a> <span>einverstanden</span>.
+                    <span translate>By signing up, I agree to the </span> <a ui-sref="agb" target="_blank" translate>Terms of Services</a> <span translate>and </span> <a ui-sref="privacy" target="_blank" translate>Privacy Policy</a> <span></span>.
                 </p>
                 <div class="hidden-xs">
                     <button class="btn btn-inverse btn-lg btn-register btn-block ts-btn-signup btn-primary" type="submit" ng-disabled="form.$invalid" translate>
                         Sign up
                     </button>
+                </div>
+                <div class="hidden-xs">
+                    <hr/>
+                    <p>Already a Tablesurfer?</p>
                     <a class="btn btn-default btn-lg btn-login btn-block ts-btn-login" ui-sref="login" translate>
-                        Login
+                        Log in
                       </a>
                 </div>
             </form>
@@ -57,4 +61,7 @@
 </div>
 <div ui-content-for="footer">
     <button ng-click="vm.register()" class="btn btn-lg btn-primary btn-register btn-block" translate>register</button>
+</div>
+<div ui-content-for="title" translate>
+    <span class="visible-xs">signup</span>
 </div>

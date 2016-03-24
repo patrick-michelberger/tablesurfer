@@ -1,7 +1,7 @@
 <div id="ts-login" class="container">
     <div class="row">
         <div class="ts-login-form-container col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
-            <h1 translate>Login</h1>
+            <!--<h1 translate>Login</h1>-->
             <div class="row">
                 <div class="col-xs-12">
                     <oauth-buttons classes="btn-block"></oauth-buttons>
@@ -18,23 +18,27 @@
                 </div>
                 <div class="form-group">
                     <label translate>Password</label>
-                    <input type="password" name="password" class="form-control" ng-model="vm.user.password" required>
+                    <input type="password" name="password" class="form-control" style="margin-bottom:0;" ng-model="vm.user.password" required>
                 </div>
-                <div class="form-group has-error">
-                    <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && vm.submitted" translate>
+                <div class="form-group has-error" ng-show="(form.email.$error.required && form.password.$error.required && vm.submitted)||(form.email.$error.email && vm.submitted)||vm.errors.other">
+                    <div class="alert alert-danger help-block" ng-show="form.email.$error.required && form.password.$error.required && vm.submitted" translate>
                         Please enter your email and password.
-                    </p>
-                    <p class="help-block" ng-show="form.email.$error.email && vm.submitted" translate>
+                    </div>
+                    <div class="alert alert-danger help-block" ng-show="form.email.$error.email && vm.submitted" translate>
                         Please enter a valid email.
-                    </p>
-                    <p class="help-block">{{ vm.errors.other }}</p>
+                    </div>
+                    <div ng-show="vm.errors.other" class="alert alert-danger help-block">{{ vm.errors.other }}</div>
                 </div>
                 <div class="hidden-xs">
                     <button class="btn btn-inverse btn-lg btn-login btn-block btn-primary" type="submit" ng-disabled="form.$invalid">
                         Login
                     </button>
+                </div>
+                <div class="hidden-xs">
+                    <hr/>
+                    <p>Don’t have an account?</p>
                     <a class="btn btn-default btn-lg btn-register btn-block" ui-sref="signup" translate>
-                        Register
+                        Sign up
                       </a>
                 </div>
             </form>
@@ -42,5 +46,8 @@
     </div>
 </div>
 <div ui-content-for="footer">
-    <button class="btn btn-lg btn-primary btn-register btn-block " translate>login</button>
+    <button ng-click="vm.login()" class="btn btn-lg btn-primary btn-register btn-block " translate>login</button>
+</div>
+<div ui-content-for="title" translate>
+    <span class="visible-xs">login</span>
 </div>

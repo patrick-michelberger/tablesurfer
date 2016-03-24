@@ -1,29 +1,19 @@
 @media (min-width: $screen-sm) {
     #ts-signup {
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 500px;
         position: relative;
     }
     #ts-signup .ts-signup-form-container {
-        margin-top: 15px;
-    }
-    #ts-signup .form-group {
-        padding: 0;
-    }
-}
-
-@media (max-width: $screen-xs) {
-    #ts-signup {
-        margin-top: 15px;
+        position: absolute;
+        top: 50%;
+        margin-top: -260px;
     }
 }
 
-#ts-signup .ts-terms-of-use {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#ts-signup a {
-    font-weight: 400;
+#ts-signup {
+    margin-top: 15px;
+    margin-bottom: 35px;
 }
 
 #ts-signup .ts-btn-signup {
@@ -31,13 +21,18 @@
     margin-bottom: 10px
 }
 
-#ts-signup {
-    margin-bottom: 35px;
-}
-
 #ts-signup h1 {
     font-family: 'Amatic SC', cursive;
     text-align: center;
     font-size: 3.0em;
     margin-bottom: 15px;
+}
+
+#ts-signup a {
+    font-weight: 400;
+}
+
+#ts-signup .ts-terms-of-use {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
