@@ -70,22 +70,37 @@
             },
 
             /**
-             * Change name
+             * Change first name
              *
              * @param  {String}   firstName     - user's first name,
+             * @param  {Function} callback - optional, function(error, user)
+             * @return {Promise}
+             */
+            changeFirstName(firstName, callback) {
+                return User.changeFirstName({ id: currentUser._id }, {
+                        firstName: firstName
+                    }, function(data) {
+                        currentUser.first_name = firstName;
+                        return safeCb(callback)(null);
+                    },
+                    function(err) {
+                        Auth.logout();
+                        return safeCb(callback)(err);
+                    }).$promise;
+            },
+
+            /**
+             * Change last name
+             *
              * @param  {String}   lastName      - user's last name
              * @param  {Function} callback - optional, function(error, user)
              * @return {Promise}
              */
-            changeName(firstName, lastName, callback) {
-                return User.changeName({ id: currentUser._id }, {
-                        firstName: firstName,
+            changeLastName(lastName, callback) {
+                return User.changeLastName({ id: currentUser._id }, {
                         lastName: lastName
                     }, function(data) {
-                        //$cookies.put('token', data.token);
-                        currentUser.first_name = firstName;
                         currentUser.last_name = lastName;
-                        currentUser.name = firstName + " " + lastName;
                         return safeCb(callback)(null);
                     },
                     function(err) {
@@ -287,6 +302,28 @@
             },
 
             /**
+             * Change user's preferred weekdays
+             *
+             * @param  {Array}   weekdays
+             * @param  {Function} callback - optional
+             * @return {Promise}
+             */
+            changeWeekdays(weekdays, callback) {
+                var cb = callback || angular.noop;
+
+                return User.changeWeekdays({
+                    id: currentUser._id
+                }, {
+                    weekdays: weekdays
+                }, function(user) {
+                    currentUser.weekdays = weekdays;
+                    return cb(user);
+                }, function(err) {
+                    return cb(err);
+                }).$promise;
+            },
+
+            /**
              * Delete phone number
              *
              * @param  {String}   phone number
@@ -338,6 +375,24 @@
             },
 
 
+            /**
+             * Mark user as completely registered 
+             *
+             * @param  {Boolean}  registrationCompleted
+             * @param  {Function} callback - optional, function(error, user)
+             * @return {Promise}
+             */
+            setRegistrationCompleted(registrationCompleted, callback) {
+                return User.setRegistrationCompleted({ id: currentUser._id }, {
+                        registrationCompleted: registrationCompleted
+                    }, function(data) {
+                        currentUser.registrationCompleted = registrationCompleted
+                        return safeCb(callback)(null);
+                    },
+                    function(err) {
+                        return safeCb(callback)(err);
+                    }).$promise;
+            },
 
         };
 

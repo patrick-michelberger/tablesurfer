@@ -1,14 +1,13 @@
 <div class="ts-complete-profile-form-container container">
-    <h2 translate>Complete Your Profile</h2>
     <!-- Complete Form Container START -->
     <div class="col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
         <uib-progressbar animate="true" value="currentProgress" type="success" class="progress-striped active"></uib-progressbar>
         <!-- Change Name Form START -->
-        <form ng-if="!getCurrentUser().name" class="form" name="form" ng-submit="changeName(form)" novalidate>
+        <form ng-if="!getCurrentUser().verified" class="form" name="form" novalidate>
             <div class="form-group" ng-class="{ 'has-success': form.fname.$valid && submitted,
                                             'has-error': form.fname.$invalid && submitted }">
                 <label for="fname" translate>first name</label>
-                <input type="text" name="fname" class="form-control" ng-model="user.first_name" id="fname" autocomplete="given-name" required/>
+                <input type="text" name="fname" class="form-control" ng-blur="changeFirstName(form)" ng-model="user.first_name" id="fname" autocomplete="given-name" required/>
                 <p class="help-block" ng-show="form.fname.$error.required && submitted" translate>
                     A first name is required
                 </p>
@@ -16,7 +15,7 @@
             <div class="form-group" ng-class="{ 'has-success': form.lname.$valid && submitted,
                                             'has-error': form.lname.$invalid && submitted }">
                 <label for="lname" translate>last name</label>
-                <input type="text" name="ln-ame" class="form-control" ng-model="user.last_name" id="lname" autocomplete="family-name" required/>
+                <input type="text" name="lname" class="form-control" ng-blur="changeLastName(form)" ng-model="user.last_name" id="lname" autocomplete="family-name" required/>
                 <p class="help-block" ng-show="form.lname.$error.required && submitted" translate>
                     A last name is required
                 </p>
@@ -25,23 +24,32 @@
             <ts-verify></ts-verify>
             <!-- Email Verification END -->
             <div class="hidden-xs">
-                <button class="btn btn-inverse btn-lg btn-complete-registration btn-block ts-btn-complete-registration btn-primary" type="submit" ng-disabled="form.$invalid&&!getCurrentUser().verified" translate>
-                    Complete Registration
+                <button class="btn btn-inverse btn-lg btn-complete-registration btn-block ts-btn-complete-registration btn-primary" type="submit" ng-disabled="form.$invalid||!getCurrentUser().verified" translate>
+                    next
                 </button>
+            </div>
+            <div ui-content-for="footer">
+                <button class="btn btn-lg btn-primary btn-register btn-block" type="submit" ng-disabled="form.$invalid||!getCurrentUser().verified" translate>next</button>
             </div>
         </form>
         <!-- Change Name Form END -->
         <!-- Phone Verification START -->
-        <ts-phone ng-if="getCurrentUser().name&&!getCurrentUser().verifiedPhone"></ts-phone>
+        <ts-phone ng-if="getCurrentUser().verified&&!getCurrentUser().verifiedPhone"></ts-phone>
         <!-- Phone Verification END -->
         <!-- Preferred Weekdays START -->
-        <ts-weekdays ng-if="getCurrentUser().name&&getCurrentUser().verifiedPhone"></ts-weekdays>
+        <ts-weekdays ng-if="getCurrentUser().verifiedPhone"></ts-weekdays>
         <!-- Preferred Weekdays END -->
     </div>
     <!-- Complete Form Container END -->
 </div>
-<div ui-content-for="footer">
+<!--<div ui-content-for="footer">
     <a href="/signup">
         <button class="btn btn-lg btn-primary btn-register btn-block" translate>save</button>
     </a>
+</div>-->
+<div ui-content-for="title" translate>
+    <span ng-show="false" class="visible-xs">profile</span>
+    <span ng-hide="getCurrentUser().first_name&&getCurrentUser().last_name&&getCurrentUser().verified">complete your profile</span>
+    <span ng-show="getCurrentUser().first_name && getCurrentUser().last_name && getCurrentUser().verified && !(getCurrentUser().verifiedPhone == false)">your whatsapp number</span>
+    <span ng-show="getCurrentUser().verifiedPhone == false">Type in received code</span>
 </div>

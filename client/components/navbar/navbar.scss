@@ -5,6 +5,7 @@
 
 .navbar-absolute-top .ts-user-name a {
     margin-right: 0px;
+    font-weight: 200;
 }
 
 .navbar-absolute-top .btn-navbar:hover,
@@ -12,17 +13,28 @@
     color: #000;
 }
 
+.navbar-brand-center {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-absolute-top > li {
+    font-weight: 600;
+}
+
 body > div.app > navbar > div > div > button > i {
-    font-size: 2.4em;
+    font-size: 2.0em;
     color: #000;
-    margin-right: 5px;
+    margin-left: 0px;
+    margin-top: 2px;
 }
 
 .navbar-toggle {
     margin: 0;
 }
 
-.navbar-right {
+.navbar-left {
     float: right!important;
     margin-right: 10px;
     list-style: none;
@@ -31,23 +43,30 @@ body > div.app > navbar > div > div > button > i {
     font-size: 1.4em;
 }
 
+.navbar-absolute-top .btn-group {
+    z-index: 200;
+}
+
+.navbar-brand-center {
+    z-index: 1;
+}
+
 .navbar-brand {
     font-style: normal;
     font-weight: 600;
-    font-size: 1.7em;
+    font-size: 1.6em;
     padding-top: 15px;
 }
 
-.navbar-right>li {
+.navbar-left>li {
     float: left;
 }
-
 
 .navbar-absolute-bottom .btn {
     margin-top: 0;
 }
 
-.navbar-right .navbar-text {
+.navbar-left .navbar-text {
     line-height: 20px;
     position: relative;
     display: block;
@@ -59,20 +78,21 @@ body > div.app > navbar > div > div > button > i {
     margin-bottom: 0;
 }
 
-.navbar-right>li>a {
+.navbar-left>li>a {
     line-height: 20px;
     position: relative;
     display: block;
     padding-top: 15px;
     margin-left: 15px;
     margin-right: 15px;
+    font-weight: 600;
 }
 
-.navbar-right>li.active>a {
+.navbar-left>li.active>a {
     border-bottom: 2px solid #000;
 }
 
-.navbar-right .ts-btn-language {
+.navbar-left .ts-btn-language {
     height: 20px;
     width: 30px;
     margin-top: 16px;

@@ -5,6 +5,9 @@ angular.module('tablesurferApp')
         $stateProvider
             .state('main', {
                 url: '/',
+                data: {
+                    hideTitle: true
+                },
                 views: {
                     "": {
                         templateUrl: 'app/main/main.html',

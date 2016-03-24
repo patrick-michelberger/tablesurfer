@@ -1,4 +1,4 @@
-<div class="container">
+<div id="ts-verify-container" class="container">
     <!-- Only show this when code was not given with route -->
     <div class="row" ng-show="status == 'enterVerifycode'">
         <form class="form" name="form" ng-submit="verify(form)" novalidate>
@@ -14,8 +14,12 @@
         </form>
     </div>
     <div class="col-sm-12">
-        <p class="help-block" ng-show="status == 'error'" translate>Error verifying user.</p>
+        <div class="alert alert-danger" ng-show="status == 'error'" translate>Error verifying user.</div>
         <ts-loading ng-show="status == 'sending'"></ts-loading>
-        <ts-success ng-show="status == 'success'" translate>User succesfully verified. You will be redirected shortly.</ts-success>
+        <div class="alert alert-success" ng-show="status == 'success'" translate>User succesfully verified. You will be redirected shortly. <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
     </div>
+</div>
+<div ui-content-for="title" translate>
+    tablesurfer
 </div>

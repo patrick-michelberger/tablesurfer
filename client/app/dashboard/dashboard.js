@@ -12,7 +12,10 @@ angular.module('tablesurferApp')
                         controller: 'DashboardCtrl'
                     },
                     'completeProfile@dashboard': {
-                        templateUrl: 'app/dashboard/partials/completeProfile.html'
+                        templateUrl: 'app/dashboard/partials/completeProfile/completeProfile.html'
+                    },
+                    'welcome@dashboard': {
+                        templateUrl: 'app/dashboard/partials/welcome/welcome.html'
                     }
                 }
             });

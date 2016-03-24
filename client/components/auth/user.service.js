@@ -24,10 +24,28 @@
                     controller: 'phone'
                 }
             },
-            changeName: {
+            changeWeekdays: {
                 method: 'PUT',
                 params: {
-                    controller: 'name'
+                    controller: 'weekdays'
+                }
+            },
+            changeFirstName: {
+                method: 'PUT',
+                params: {
+                    controller: 'firstname'
+                }
+            },
+            changeLastName: {
+                method: 'PUT',
+                params: {
+                    controller: 'lastname'
+                }
+            },
+            setRegistrationCompleted: {
+                method: 'PUT',
+                params: {
+                    controller: 'registration'
                 }
             },
             get: {

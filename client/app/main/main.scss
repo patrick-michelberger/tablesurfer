@@ -36,18 +36,27 @@
 
 #ts-main .ts-jumbotron-container h1 {
     position: absolute;
-    bottom: 0;
+    bottom: 65px;
     font-size: 4.0em;
     color: #fff;
     text-align: center;
     width: 100%;
-    top: 50%;
-    margin-top: -100px;
 }
 
 #ts-main .ts-jumbotron-container ts-signup {
     bottom: 20px;
     position: absolute;
+}
+
+@media (max-width: $screen-xs) {
+    #ts-main .ts-jumbotron-container {
+        opacity: 0.75;
+    }
+    #ts-main .ts-jumbotron-container h1 {
+        font-size: 3.0em;
+        bottom: 65px;
+        margin: 0;
+    }
 }
 
 @media (min-width: $screen-sm) {
