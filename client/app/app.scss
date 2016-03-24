@@ -34,6 +34,17 @@ label {
     border-radius: 0;
 }
 
+/* ALERTS */
+
+.alert {
+    border-radius: 0;
+    margin-bottom: 0px;
+}
+
+.alert-danger {
+    
+}
+
 @media (min-width: $screen-sm) {
     .has-navbar-bottom .app-body {
         padding-bottom: 0px;
@@ -92,7 +103,8 @@ button,
 .btn {
     text-transform: lowercase;
     border-radius: 0;
-    height: 45px;
+    height: 50px;
+    line-height: 1.7em;
 }
 
 input,
@@ -105,6 +117,11 @@ input,
 
 .form-group {
     padding: 5px 0;
+}
+
+.has-sidebar-left .app,
+.sidebar-left-in .app {
+    margin-left: 0;
 }
 
 // Variables
@@ -123,6 +140,8 @@ $brand-danger: red;
 @import 'admin/admin.scss';
 @import 'agb/agb.scss';
 @import 'dashboard/dashboard.scss';
+@import 'dashboard/partials/completeProfile/completeProfile.scss';
+@import 'dashboard/partials/welcome/welcome.scss';
 @import 'faq/faq.scss';
 @import 'imprint/imprint.scss';
 @import 'main/main.scss';
