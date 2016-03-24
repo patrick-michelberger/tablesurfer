@@ -15,7 +15,6 @@ import Whatsapp from '../../components/whatsapp';
 const authTypes = ['facebook'];
 
 var UserSchema = new Schema({
-    name: String,
     first_name: String,
     last_name: String,
     gender: String,
@@ -40,6 +39,10 @@ var UserSchema = new Schema({
         type: Boolean,
         default: false
     },
+    registrationCompleted: {
+        type: Boolean,
+        default: false
+    },
     verifycode: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Verifycode"
@@ -60,6 +63,7 @@ var UserSchema = new Schema({
         "type": mongoose.Schema.ObjectId,
         "ref": "University"
     },
+    weekdays: []
 });
 
 /**
@@ -317,7 +321,7 @@ UserSchema.methods = {
                     to: user.email,
                     url: config.domain + '/verify/' + user.verifycode,
                     template: 'verify.hbs',
-                    subject: 'tablesurfer.org - erify'
+                    subject: 'tablesurfer.org - verify your email'
                 };
 
                 mail.send(data, callback);

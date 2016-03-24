@@ -102,18 +102,14 @@ exports.changeCity = function(req, res, next) {
     });
 };
 
-
 /**
- * Change a users's name
+ * Change a users's first name
  */
-exports.changeName = function(req, res, next) {
+exports.changeFirstName = function(req, res, next) {
     var userId = req.user._id;
     var firstName = req.body.firstName;
-    var lastName = req.body.lastName;
     User.findById(userId, function(err, user) {
         user.first_name = firstName;
-        user.last_name = lastName;
-        user.name = firstName + " " + lastName;
         user.save(function(err) {
             if (err) return validationError(res, err);
             res.status(200).send('OK');
@@ -121,6 +117,35 @@ exports.changeName = function(req, res, next) {
     });
 };
 
+/**
+ * Change a users's last name
+ */
+exports.changeLastName = function(req, res, next) {
+    var userId = req.user._id;
+    var lastName = req.body.lastName;
+    User.findById(userId, function(err, user) {
+        user.last_name = lastName;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
+
+/**
+ * Change registration status
+ */
+exports.setRegistrationCompleted = function(req, res, next) {
+    var userId = req.user._id;
+    var registrationCompleted = req.body.registrationCompleted;
+    User.findById(userId, function(err, user) {
+        user.registrationCompleted = registrationCompleted;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
 
 /**
  * Change a users phone number
@@ -144,6 +169,24 @@ exports.changePhone = function(req, res, next) {
     });
 
 };
+
+/**
+ * Change a users preferred weekdays
+ */
+exports.changeWeekdays = function(req, res, next) {
+    var userId = req.user._id;
+    User.findById(userId, function(err, user) {
+        if (err || !req.body.weekdays) {
+            return next(err);
+        }
+        user.weekdays = req.body.weekdays;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
+
 
 /**
  * Get my info
