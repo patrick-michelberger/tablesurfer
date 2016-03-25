@@ -27,7 +27,6 @@
  */
 
 #ts-main .ts-jumbotron-container {
-    height: calc(100vh - 50px);
     position: relative;
     opacity: 0.85;
     background-size: cover;
@@ -36,12 +35,14 @@
 @media (min-width: $screen-xs) {
     #ts-main .ts-jumbotron-container {
         background: url(/assets/images/ts-home-background.jpg) no-repeat top center fixed;
+        height: calc(100vh - 50px);
     }
 }
 
 @media (max-width: $screen-xs) {
     #ts-main .ts-jumbotron-container {
-        background: url(/assets/images/ts-home-background.jpg) no-repeat top center fixed;
+        background: url(/assets/images/ts-home-background-small.jpg) no-repeat top center fixed;
+        height: calc(100vh - 100px);
     }
 }
 

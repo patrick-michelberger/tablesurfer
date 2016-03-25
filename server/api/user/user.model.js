@@ -29,6 +29,7 @@ var UserSchema = new Schema({
     password: String,
     provider: String,
     salt: String,
+    locale: String,
     facebook: {},
     picture: String,
     phone: String,
@@ -75,7 +76,8 @@ UserSchema
     .virtual('profile')
     .get(function() {
         return {
-            'name': this.name,
+            'first_name': this.first_name,
+            'last_name': this.last_name,
             'role': this.role
         };
     });

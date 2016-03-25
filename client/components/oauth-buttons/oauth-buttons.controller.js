@@ -5,7 +5,5 @@ angular.module('tablesurferApp')
     this.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;
     };
-    console.log("$state: ", $state.includes('login'));
-
     this.$state = $state;
   });

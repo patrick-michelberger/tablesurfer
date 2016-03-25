@@ -31,9 +31,6 @@
                     next
                 </button>
             </div>
-            <div ui-content-for="footer">
-                <button class="btn btn-lg btn-primary btn-register btn-block" type="submit" ng-disabled="form.$invalid||!getCurrentUser().verified" translate>next</button>
-            </div>
         </form>
         <!-- Change Name Form END -->
         <!-- Preferred Weekdays START -->
@@ -71,3 +68,6 @@
     <span ng-show="getCurrentUser().verifiedPhone == false">Type in received code</span>
 </div>
 <!-- Title END -->
+<div ui-content-for="footer">
+    <button class="btn btn-lg btn-primary btn-register btn-block" type="submit" ng-disabled="form.$invalid||!getCurrentUser().verified" translate>next</button>
+</div>
