@@ -77,7 +77,7 @@ export function setTokenCookie(req, res) {
   }
   var token = signToken(req.user._id, req.user.role);
   res.cookie('token', token);
-  res.redirect('/');
+  res.redirect('/dashboard');
 }
 
 /**

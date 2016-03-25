@@ -6,7 +6,7 @@ export function setup(User, config) {
     clientID: config.facebook.clientID,
     clientSecret: config.facebook.clientSecret,
     callbackURL: config.facebook.callbackURL,
-    profileFields: []
+    profileFields: ["id", "birthday", "email", "first_name", "gender", "last_name"]
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOne({'facebook.id': profile.id}).exec()
@@ -14,14 +14,12 @@ export function setup(User, config) {
         if (user) {
           return done(null, user);
         }
-        console.log("profile: ", profile);
         user = new User({
-          first_name: profile.first_name,
-          last_name: profile.last_name,
+          first_name: profile.name.givenName,
+          last_name: profile.name.familyName,
           role: 'user',
           provider: 'facebook',
-          locale: profile.locale,
-          picture: profile.picture,
+          picture: 'https://graph.facebook.com/' + profile.id + '/picture',
           facebook: profile._json
         });
         user.save()
