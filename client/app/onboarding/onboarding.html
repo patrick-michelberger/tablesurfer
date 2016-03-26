@@ -1,0 +1,35 @@
+<div class="ts-complete-profile-form-container container">
+    <div class="col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+        <uib-progressbar animate="true" value="currentProgress" type="success" class="progress-striped active"></uib-progressbar>
+        <div ui-view></div>
+        <!--
+        <div ng-if="getCurrentUser().provider=='facebook'">
+            <p>facebook login</p>
+        </div>
+        <div ng-if="getCurrentUser().provider=='local'">
+            <div ng-show="status=='EMAIL'">
+                <ts-campus-mail></ts-campus-mail>
+                <button ng-disabled="!getCurrentUser().verified" class="btn btn-primary btn-block" ng-click="next()" translate>Next</button>
+            </div>
+            <div ng-show="status=='PERSONAL_INFO'" class="row">
+                <ts-name></ts-name>
+                <button ng-disabled="!(getCurrentUser().first_name&&getCurrentUser().last_name)" class="btn btn-primary btn-block" ng-click="next()" translate>Next</button>
+            </div>
+            <div ng-show="status=='PHONE'" class="row" style="min-height:140px;">
+                <ts-phone></ts-phone>
+                <button ng-disabled="!getCurrentUser().verifiedPhone" class="btn btn-primary btn-block" ng-click="next()" translate>Next</button>
+            </div>
+            <div ng-show="status=='DATES'">
+                <ts-weekdays></ts-weekdays>
+                <button ng-disabled="getCurrentUser().weekdays.length<1" class="btn btn-primary btn-block" ng-click="next()" translate>Next</button>
+            </div>
+            <div ng-show="status=='COMPLETED'">
+                <h1>COMPLETED</h1>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-default btn-block" ng-click="back()" ng-hide="status == 'EMAIL'" translate>Back</button>
+        </div>
+        -->
+    </div>
+</div>
