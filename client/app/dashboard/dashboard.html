@@ -1,7 +1,6 @@
 <div id="ts-dashboard">
     <div class="ts-dashboard-container container">
         <div class="row">
-            <div ui-view="completeProfile" ng-if="!getCurrentUser().registrationCompleted"></div>
             <div ui-view="welcome" ng-if="getCurrentUser().registrationCompleted"></div>
         </div>
     </div>
