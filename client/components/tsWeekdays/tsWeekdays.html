@@ -7,6 +7,3 @@
     <button class="btn btn-default col-xs-12" ng-model="weekdays.saturday" uib-btn-checkbox><span class="ts-weekday-name">Saturday</span> <i class="fa fa-check-circle-o"></i></button>
     <button class="btn btn-default col-xs-12" ng-model="weekdays.sunday" uib-btn-checkbox><span class="ts-weekday-name">Sunday</span> <i class="fa fa-check-circle-o"></i></button>
 </div>
-<div class="row">
-<button ng-if="!getCurrentUser().registrationCompleted" class="btn btn-primary btn-block" ng-click="savePreferences()"ng-disabled="preferences.length<1">Weiter</button>
-</div>

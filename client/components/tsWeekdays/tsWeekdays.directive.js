@@ -22,8 +22,8 @@ angular.module('tablesurferApp')
                     angular.forEach(scope.weekdays, function(value, key) {
                         if (value) {
                             scope.preferences.push(key);
-                            Auth.changeWeekdays(scope.preferences);
                         }
+                        Auth.changeWeekdays(scope.preferences);
                     });
                 });
 
