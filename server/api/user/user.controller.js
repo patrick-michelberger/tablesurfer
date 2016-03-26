@@ -105,6 +105,21 @@ exports.changeCity = function(req, res, next) {
 /**
  * Change a users's first name
  */
+exports.changeEmail = function(req, res, next) {
+    var userId = req.user._id;
+    var email = req.body.email;
+    User.findById(userId, function(err, user) {
+        user.email = email;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
+
+/**
+ * Change a users's first name
+ */
 exports.changeFirstName = function(req, res, next) {
     var userId = req.user._id;
     var firstName = req.body.firstName;

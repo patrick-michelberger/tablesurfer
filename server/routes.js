@@ -14,7 +14,6 @@ export default function(app) {
   app.use('/api/universities', require('./api/university'));
   app.use('/api/cities', require('./api/city'));
   app.use('/api/phonecodes', require('./api/phonecode'));
-  app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));

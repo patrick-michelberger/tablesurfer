@@ -12,6 +12,7 @@ router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/:id/city', auth.isAuthenticated(), controller.changeCity);
 router.put('/:id/phone', auth.isAuthenticated(), controller.changePhone);
+router.put('/:id/email', auth.isAuthenticated(), controller.changeEmail);
 router.put('/:id/weekdays', auth.isAuthenticated(), controller.changeWeekdays);
 router.put('/:id/registration', auth.isAuthenticated(), controller.setRegistrationCompleted);
 router.put('/:id/firstname', auth.isAuthenticated(), controller.changeFirstName);
