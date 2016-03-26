@@ -26,6 +26,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-angular-gettext');
     grunt.loadNpmTasks('grunt-responsive-images');
+    grunt.loadNpmTasks('grunt-critical');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -35,6 +36,22 @@ module.exports = function(grunt) {
                     expand: true,
                     src: '<%= yeoman.client %>/assets/images/**.{jpg,gif,png}'
                 }]
+            }
+        },
+
+        critical: {
+            test: {
+                options: {
+                    base: './',
+                    css: [
+                        '<%= yeoman.dist %>/client/app/app.*.css',
+                        '<%= yeoman.dist %>/client/app/vendor.*.css'
+                    ],
+                    width: 1254,
+                    height: 705
+                },
+                src: '<%= yeoman.dist  %>/client/index.html',
+                dest: '<%= yeoman.client %>/critical.html'
             }
         },
 
