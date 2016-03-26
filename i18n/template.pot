@@ -20,7 +20,7 @@ msgstr ""
 msgid "<span class=\"visible-xs\">universities</span>"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:64
+#: client/app/dashboard/partials/completeProfile/completeProfileOLD.html:45
 msgid ""
 "<span ng-show=\"false\" class=\"visible-xs\">profile</span>\n"
 "    <span ng-hide=\"getCurrentUser().first_name&&getCurrentUser().last_name&&getCurrentUser().verified\">complete your profile</span>\n"
@@ -28,11 +28,11 @@ msgid ""
 "    <span ng-show=\"getCurrentUser().verifiedPhone == false\">Type in received code</span>"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:11
+#: client/components/tsName/tsName.html:6
 msgid "A first name is required"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:19
+#: client/components/tsName/tsName.html:14
 msgid "A last name is required"
 msgstr ""
 
@@ -86,6 +86,7 @@ msgstr ""
 
 #: client/app/account/login/login.html:16
 #: client/app/account/signup/signup.html:20
+#: client/components/tsCampusMail/tsCampusMail.html:4
 msgid "Email"
 msgstr ""
 
@@ -97,7 +98,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:9
+#: client/components/tsName/tsName.html:4
 msgid "first name"
 msgstr ""
 
@@ -121,7 +122,7 @@ msgstr ""
 msgid "Impressum"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:19
+#: client/components/tsPhone/tsPhone.html:17
 msgid "Invalid code"
 msgstr ""
 
@@ -133,7 +134,7 @@ msgstr ""
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:17
+#: client/components/tsName/tsName.html:12
 msgid "last name"
 msgstr ""
 
@@ -169,9 +170,15 @@ msgstr ""
 msgid "München"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:30
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:72
+#: client/app/dashboard/partials/completeProfile/completeProfileOLD.html:53
 msgid "next"
+msgstr ""
+
+#: client/app/onboarding/onboarding.email.html:2
+#: client/app/onboarding/onboarding.info.html:2
+#: client/app/onboarding/onboarding.phone.html:2
+#: client/app/onboarding/onboarding.weekdays.html:2
+msgid "Next"
 msgstr ""
 
 #: client/app/account/login/login.html:12
@@ -216,6 +223,10 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:16
+msgid "Received code e.g. 123456"
+msgstr ""
+
 #: client/app/account/signup/signup.html:63
 msgid "register"
 msgstr ""
@@ -251,7 +262,7 @@ msgid "Städte"
 msgstr ""
 
 #: client/app/verify/verify.html:10
-#: client/components/tsPhone/tsPhone.html:20
+#: client/components/tsPhone/tsPhone.html:18
 msgid "Submit"
 msgstr ""
 
@@ -259,12 +270,16 @@ msgstr ""
 msgid "tablesurfer"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfile.html:50
+#: client/app/dashboard/partials/completeProfile/completeProfileOLD.html:31
 msgid "tablesurfer <i class=\"fa fa-heart-o\"></i> whatsapp"
 msgstr ""
 
 #: client/app/account/signup/signup.html:22
 msgid "tablesurfer is only for students. Please check the allowed university email addresses <a ui-sref=\"universities\">here</a>."
+msgstr ""
+
+#: client/components/tsCampusMail/tsCampusMail.html:6
+msgid "tablesurfer is only for students. Please the allowed university email addresses <a ui-sref=\"universities\">here</a>."
 msgstr ""
 
 #: client/components/footer/footer.html:25
@@ -277,10 +292,6 @@ msgstr ""
 
 #: client/app/main/main.html:4
 msgid "The Cooking-Community <b>for Students!</b>"
-msgstr ""
-
-#: client/components/tsPhone/tsPhone.html:18
-msgid "Type in the received code e.g. 123456"
 msgstr ""
 
 #: client/components/footer/footer.html:6
@@ -311,8 +322,8 @@ msgstr ""
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:14
-msgid "We've sent you a verification code to <b>+{{currentUser.phone}}</b>"
+#: client/components/tsPhone/tsPhone.html:19
+msgid "We've sent you a verification code to"
 msgstr ""
 
 #: client/app/dashboard/partials/welcome/welcome.html:7
@@ -321,6 +332,10 @@ msgstr ""
 
 #: client/app/account/signup/signup.html:25
 msgid "What's your email address?"
+msgstr ""
+
+#: client/components/tsCampusMail/tsCampusMail.html:9
+msgid "What's your university email?"
 msgstr ""
 
 #: client/components/tsVerify/tsVerify.html:1

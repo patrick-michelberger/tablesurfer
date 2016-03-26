@@ -15,6 +15,7 @@
     "express": "^4.13.3",
     "express-jwt": "^3.0.0",
     "express-session": "^1.11.3",
+    "google-cdn-data": "0.1.23",
     "handlebars": "4.0.5",
     "jsonwebtoken": "^5.0.0",
     "lodash": "^3.10.1",
