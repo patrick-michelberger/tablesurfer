@@ -1,5 +1,6 @@
 ts-phone {
     display: block;
+    min-height: 175px;
 }
 
 ts-phone button {
@@ -10,19 +11,36 @@ ts-phone button {
 ts-phone .ts-phonecode button,
 ts-phone .ts-phonecode input {
     width: 100%;
-    height: 50px;
+    height: 55px;
     padding: 10px;
+    position: relative;
+    z-index: 0;
+    font-size: 1.5em;
+}
+
+ts-phone .ts-phonecode input {
+    margin-bottom: 5px;
+    height: 60px;
 }
 
 ts-phone a {
     cursor: pointer;
 }
 
-ts-phone p {
-    font-size: 1.2em;
+ts-phone .ts-btn-edit {
+    z-index: 20;
+    font-size: 3.0em;
+    right: 10px;
+    position: absolute;
+    top: 2px;
 }
 
+ts-phone p {
+    font-size: 1.2em;
+    text-align: justify;
+}
 
+ts-phone .fa-pencil-square-o {}
 
 ts-phone .ts-change-number {
     cursor: pointer;
@@ -30,28 +48,37 @@ ts-phone .ts-change-number {
     z-index: 200;
     font-size: 2.5em;
     right: 10px;
-    top: 33px;
+    top: 13px;
+}
+
+ts-phone .ts-user-phone {
+    color: black;
 }
 
 ts-phone .intl-tel-input,
 ts-phone .intl-tel-input input {
     width: 100%;
-    height: 55px;
-    font-size: 1.4em;
+    height: 60px;
+    font-size: 1.3em;
 }
 
 ts-phone .fa-whatsapp {
     position: absolute;
-    top: 5px;
+    top: 8px;
     right: 10px;
     font-size: 3.0em;
     z-index: 10;
 }
 
 ts-phone .ts-btn-save {
-    height: 55px;
     margin-top: -5px;
     margin-bottom: 15px;
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    font-size: 1.5em;
 }
 
 ts-phone form {
@@ -62,12 +89,7 @@ ts-phone .alert {
     position: absolute;
     width: 100%;
     border-radius: 0;
+    font-weight: 400;
 }
 
-ts-phone .ts-verification-code-sent {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 400;
-    text-transform: lowercase;
-}
+ts-phone .ts-verification-code-sent {}

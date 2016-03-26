@@ -5,7 +5,8 @@ angular.module('tablesurferApp')
         return {
             templateUrl: 'components/tsPhone/tsPhone.html',
             restrict: 'E',
-            scope: true,
+            scope: {
+            },
             link: function(scope, element, attrs) {
 
                 var currentUser = scope.currentUser = Auth.getCurrentUser();
@@ -64,6 +65,7 @@ angular.module('tablesurferApp')
                 };
 
                 scope.changeNumber = function() {
+                    console.log("change number...");
                     Auth.deletePhone(scope.currentUser.phone)
                         .then(function(user) {
                             scope.$emit('user:changed');

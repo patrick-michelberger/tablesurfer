@@ -1,23 +1,23 @@
 <form ng-hide="hasPhonecode()" name="phone" ng-submit="saveNumber()">
     <div ng-hide="isLoading">
-        <i class="fa fa-whatsapp hidden-xs"></i>
-        <a ng-click="changeNumber()"><i class="fa fa-pencil-square-o ts-change-number" ng-show="currentUser.verifiedPhone"></i></a>
-        <input id="phone" ng-disabled="currentUser.verifiedPhone" name="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone col-xs-12" auto-hide-dial-code="false" type="text" international-phone-number ng-model="currentUser.phone" required/>
-        <button ng-show="!currentUser.verifiedPhone" ng-disabled="phone.$invalid&&currentUser.verifiedPhone" class="ts-btn-save btn btn-primary" type="submit" translate>Send verification code to my phone</button>
-        <p>Rest assured, your number is only shared with another Tablesurfer member you attend a cooking session together.</p>
+        <i class="fa fa-whatsapp hidden-xs" ng-hide="currentUser.verifiedPhone"></i>
+        <a ng-click="changeNumber()"><i ng-click="changeNumber()" class="fa fa-pencil-square-o ts-change-number" ng-show="currentUser.verifiedPhone"></i></a>
+        <input id="phone" ng-disabled="currentUser.verifiedPhone" name="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone col-xs-12" national-mode="false" type="text" international-phone-number ng-model="currentUser.phone" required/>
+        <button ng-hide="currentUser.verifiedPhone" ng-disabled="phone.$invalid" class="ts-btn-save btn btn-primary" type="submit" translate>Send verification code to my phone</button>
+        <p ng-hide="currentUser.verifiedPhone">Rest assured, your number is only shared with another Tablesurfer member you attend a cooking session together.</p>
         <p ng-show="phoneChanged" class="alert alert-success" translate>Phone number successfully changed.</p>
     </div>
     <ts-loading ng-show="isLoading" style="margin-top:15px;"></ts-loading>
     <alert class="alert alert-success" ng-show="currentUser.verifiedPhone" translate>Verified phone number</alert>
 </form>
 <form ng-show="hasPhonecode(currentUser)" name="phonecode" class="ts-phonecode" ng-submit="submit()">
-    <span class="ts-verification-code-sent" translate>We've sent you a verification code to <b>+{{currentUser.phone}}</b></span>
-    <a ng-click="changeNumber()"><i class="fa fa-pencil-square-o"></i></a>
-    <br/>
-    <div ng-hide="isLoading">
-        <input type="text" name="code" ng-minlength="6" ng-maxlength="6" ng-model="currentUser.phonecode" placeholder="{{'Type in the received code e.g. 123456'|translate}}" required/>
+    <div ng-hide="isLoading" style="position:relative;">
+        <a class="ts-btn-edit" ng-click="changeNumber()"><i class="fa fa-pencil-square-o"></i></a>
+        <input type="text" name="code" ng-minlength="6" ng-maxlength="6" ng-model="currentUser.phonecode" placeholder="{{'Received code e.g. 123456'|translate}}" required/>
         <div class="alert alert-danger" ng-show="hasError" translate>Invalid code</div>
-        <button ng-show="phonecode.$valid" ng-disabled="phonecode.$invalid" class="ts-btn-save btn btn-default" type="submit" translate>Submit</button>
+        <button ng-disabled="phonecode.$invalid" class="ts-btn-save btn btn-primary" type="submit" translate>Submit</button>
+        <p class="ts-verification-code-sent" translate>We've sent you a verification code to </p>
+        <button class="ts-user-phone btn btn-default" ng-disabled="true">+{{currentUser.phone}}</button>
     </div>
     <ts-loading ng-show="isLoading"></ts-loading>
 </form>
