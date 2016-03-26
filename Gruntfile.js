@@ -37,6 +37,7 @@ module.exports = function(grunt) {
                 }]
             }
         },
+
         // Project settings
         pkg: grunt.file.readJSON('package.json'),
         yeoman: {
@@ -295,6 +296,14 @@ module.exports = function(grunt) {
                     '<%= yeoman.dist %>/<%= yeoman.client %>',
                     '<%= yeoman.dist %>/<%= yeoman.client %>/assets/images'
                 ],
+                blockReplacements: {
+                    js: function(block) {
+                        return '<script src="' + block.dest + '"><\/script>';
+                    },
+                    css: function(block) {
+                        return '<link rel="preload" href="' + block.dest + '" as="style" onload="this.rel="stylesheet"">' + '<noscript><link rel="stylesheet" href="' + block.dest + '"></noscript>';
+                    }
+                },
                 // This is so we update image references in our ng-templates
                 patterns: {
                     css: [
@@ -310,6 +319,9 @@ module.exports = function(grunt) {
         // The following *-min tasks produce minified files in the dist folder
         imagemin: {
             dist: {
+                options: {
+                    optimizationLevel: 3
+                },
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.client %>/assets/images',
@@ -381,6 +393,9 @@ module.exports = function(grunt) {
 
         // Replace Google CDN references
         cdnify: {
+            options: {
+                cdn: require('google-cdn-data')
+            },
             dist: {
                 html: ['<%= yeoman.dist %>/<%= yeoman.client %>/*.html']
             }
