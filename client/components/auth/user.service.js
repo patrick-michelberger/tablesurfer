@@ -24,6 +24,12 @@
                     controller: 'phone'
                 }
             },
+            changeEmail: {
+                method: 'PUT',
+                params: {
+                    controller: 'email'
+                }
+            },
             changeWeekdays: {
                 method: 'PUT',
                 params: {
