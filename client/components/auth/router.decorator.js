@@ -35,7 +35,7 @@
                         }
                         event.preventDefault();
                         return Auth.isLoggedIn(_.noop).then(is => {
-                            $state.go(is ? 'main' : 'login');
+                            $state.go(is ? 'dashboard' : 'login');
                         });
                     });
                 } else {

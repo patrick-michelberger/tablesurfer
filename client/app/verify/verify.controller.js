@@ -17,7 +17,7 @@ angular.module('tablesurferApp')
           $scope.status = 'success';
           
           $timeout(function() {
-              $location.path('/dashboard');
+              $location.path('/onboarding');
           }, 2000);
         })
         .catch( function(err) {

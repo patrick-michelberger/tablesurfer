@@ -302,6 +302,27 @@
             },
 
             /**
+             * Change email
+             *
+             * @param  {String}   email
+             * @param  {Function} callback - optional
+             * @return {Promise}
+             */
+            changeEmail(email, callback) {
+                var cb = callback || angular.noop;
+                return User.changeEmail({
+                    id: currentUser._id
+                }, {
+                    email: email
+                }, function(user) {
+                    currentUser.email = email;
+                    return cb(user);
+                }, function(err) {
+                    return cb(err);
+                }).$promise;
+            },
+
+            /**
              * Change user's preferred weekdays
              *
              * @param  {Array}   weekdays
