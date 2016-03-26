@@ -11,6 +11,7 @@ angular.module('tablesurferApp')
                 scope.user = {};
                 if (email) {
                     scope.user.email = email;
+                    checkEmail();
                 }
                 scope.errors = {};
                 scope.submitted = false;

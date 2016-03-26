@@ -3,13 +3,40 @@
 angular.module('tablesurferApp')
     .controller('OnboardingCtrl', function($rootScope, $scope, $state, $timeout, Auth) {
 
+        var currentStep = getCurrentStep();
         $scope.getCurrentUser = Auth.getCurrentUser;
-        $scope.currentProgress = 0;
+        $state.go('onboarding.' + currentStep);
 
-        var STEPS = ["EMAIL", "PERSONAL_INFO", "PHONE", "DATES", "COMPLETED"];
-        var currentIndex = getCurrentIndex();
-        $scope.status = getStatus();
+        $rootScope.$on('user:changed', function()  {
+            console.log("user changed...");
+            currentStep = getCurrentStep();
+        });
 
+        function getCurrentStep() {
+            var STEPS = ["email", "info", "phone", "weekdays", "complete"];
+            var currentUser = Auth.getCurrentUser();
+            if (!currentUser.verified) {
+                $scope.currentProgress = 25;
+                return STEPS[0];
+            }
+            if (!currentUser.first_name ||  !currentUser.last_name) {
+                $scope.currentProgress = 45;
+                return STEPS[1];
+            }
+            if (!currentUser.verifiedPhone) {
+                $scope.currentProgress = 65;
+                return STEPS[2];
+            }
+            if (!currentUser.weekdays && currentUser.weekdays.length < 1) {
+                return STEPS[3];
+                $scope.currentProgress = 85;
+
+            }
+            $scope.currentProgress = 100;
+            return STEPS[4];
+        };
+
+        /*
         function updateStatus() {
             $scope.status = STEPS[getCurrentIndex()];
         };
@@ -38,9 +65,6 @@ angular.module('tablesurferApp')
         function updateProgress() {
             var currentUser = Auth.getCurrentUser();
             var STATUS = STEPS[currentIndex];
-
-            console.log("status: ", STATUS);
-
             if (STATUS == 'EMAIL') {
                 $scope.currentProgress = 20;
             } else if (STATUS == 'PERSONAL_INFO') {
@@ -74,5 +98,6 @@ angular.module('tablesurferApp')
         };
 
         updateProgress();
+        */
 
     });

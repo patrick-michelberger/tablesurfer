@@ -1,2 +1,3 @@
 <ts-phone></ts-phone>
-<button ng-disabled="!getCurrentUser().verifiedPhone" class="btn btn-primary btn-block" ui-sref="onboarding.weekdays" translate>Next</button>
+<button  ng-show="getCurrentUser().verifiedPhone"  ng-disabled="!getCurrentUser().verifiedPhone" class="btn btn-primary btn-block" ui-sref="onboarding.weekdays" translate>Next</button>
+<a class="ts-btn-back" ui-sref="onboarding.info" translate>back</a>

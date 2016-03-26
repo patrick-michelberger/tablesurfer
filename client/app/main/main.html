@@ -1,8 +1,13 @@
 <div id="ts-main">
     <!-- Jumbotron Container START -->
     <div class="ts-jumbotron-container">
-        <h1 translate>The Cooking-Community <b>for Students!</b></h1>
-        <ts-signup class="col-sm-6 col-sm-offset-3 hidden-xs"></ts-signup>
+        <div class="ts-background-image" ng-style="{height:innerHeight}"></div>
+        <!--<h1 translate>The Cooking-Community <b>for Students!</b>         </h1>-->
+        <h1 translate>Freundschaften knüpfen zwischen Herd und Spülbecken! <br/><span class="ts-citation">Süddeutsche Zeitung</span></h1>
+        <div class="row">
+            <button class="btn btn-danger btn-how-to hidden-xs" ng-click="openHowToModal()">How it works</button>
+            <ts-signup class="col-sm-6 col-sm-offset-3 hidden-xs"></ts-signup>
+        </div>
     </div>
     <!-- Jumbotron Container END -->
     <!-- Supporters Container START -->
@@ -130,3 +135,22 @@
         tablesurfer
     </span>
 </div>
+<!-- Modal START -->
+<div class="modal" ui-if="howToModal" ui-state='howToModal'>
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+        <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <div class="modal-header">
+                <button class="close" ui-turn-off="howToModal">&times;</button>
+                <h4 class="modal-title" translate>How to.</h4>
+            </div>
+            <div class="modal-body">
+                <p>tablesurfer is currently only for students. A list of participating universities can be found <a ui-sref="universities" ui-turn-off="howToModal"><b>here.</b></a></p>
+            </div>
+            <div class="modal-footer">
+                <button ui-turn-off="howToModal" class="btn btn-default">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal END -->

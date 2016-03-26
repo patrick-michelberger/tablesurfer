@@ -44,11 +44,11 @@ msgstr ""
 msgid "and"
 msgstr ""
 
-#: client/app/main/main.html:126
+#: client/app/main/main.html:131
 msgid "anmelden"
 msgstr ""
 
-#: client/app/main/main.html:57
+#: client/app/main/main.html:62
 msgid "Anmeldung mit Deiner Campus-Email"
 msgstr ""
 
@@ -56,7 +56,12 @@ msgstr ""
 msgid "Ausgewählte Universitäten"
 msgstr ""
 
-#: client/app/main/main.html:84
+#: client/app/onboarding/onboarding.info.html:3
+#: client/app/onboarding/onboarding.phone.html:3
+msgid "back"
+msgstr ""
+
+#: client/app/main/main.html:89
 msgid "Bekannt aus"
 msgstr ""
 
@@ -76,11 +81,11 @@ msgstr ""
 msgid "Datenschutz"
 msgstr ""
 
-#: client/app/main/main.html:62
+#: client/app/main/main.html:67
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
-#: client/app/main/main.html:74
+#: client/app/main/main.html:79
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
 msgstr ""
 
@@ -102,8 +107,12 @@ msgstr ""
 msgid "first name"
 msgstr ""
 
-#: client/app/main/main.html:33
+#: client/app/main/main.html:38
 msgid "Freundschaften knüpfen zwischen Herd und Spülbecken!"
+msgstr ""
+
+#: client/app/main/main.html:6
+msgid "Freundschaften knüpfen zwischen Herd und Spülbecken! <br><span class=\"ts-citation\">Süddeutsche Zeitung</span>"
 msgstr ""
 
 #: client/components/footer/footer.html:19
@@ -118,6 +127,10 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: client/app/main/main.html:145
+msgid "How to."
+msgstr ""
+
 #: client/components/footer/footer.html:11
 msgid "Impressum"
 msgstr ""
@@ -126,11 +139,11 @@ msgstr ""
 msgid "Invalid code"
 msgstr ""
 
-#: client/app/main/main.html:125
+#: client/app/main/main.html:130
 msgid "jetzt mitmachen"
 msgstr ""
 
-#: client/app/main/main.html:73
+#: client/app/main/main.html:78
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
@@ -162,7 +175,7 @@ msgstr ""
 msgid "Ludwig-Maximilians-Universität München"
 msgstr ""
 
-#: client/app/main/main.html:58
+#: client/app/main/main.html:63
 msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
 msgstr ""
 
@@ -186,11 +199,11 @@ msgstr ""
 msgid "oder"
 msgstr ""
 
-#: client/app/main/main.html:68
+#: client/app/main/main.html:73
 msgid "Organisiert euren Kochabend im Chat!"
 msgstr ""
 
-#: client/app/main/main.html:13
+#: client/app/main/main.html:18
 msgid "Partner & Unterstützer"
 msgstr ""
 
@@ -245,11 +258,11 @@ msgstr ""
 msgid "sign up with Facebook"
 msgstr ""
 
-#: client/app/main/main.html:63
+#: client/app/main/main.html:68
 msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
 msgstr ""
 
-#: client/components/tsSignup/tsSignup.html:31
+#: client/components/tsSignup/tsSignup.html:30
 msgid "Sorry, no valid university email."
 msgstr ""
 
@@ -290,10 +303,6 @@ msgstr ""
 msgid "Terms of Services"
 msgstr ""
 
-#: client/app/main/main.html:4
-msgid "The Cooking-Community <b>for Students!</b>"
-msgstr ""
-
 #: client/components/footer/footer.html:6
 msgid "Über uns"
 msgstr ""
@@ -318,7 +327,7 @@ msgstr ""
 msgid "Von Studenten für Studenten"
 msgstr ""
 
-#: client/app/main/main.html:69
+#: client/app/main/main.html:74
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 

@@ -9,6 +9,7 @@ angular.module('tablesurferApp')
 
                 scope.user = {};
                 scope.isLoggedIn = Auth.isLoggedIn;
+                scope.noCampusMailHint = false;
 
                 scope.register = function(form) {
                     var email = scope.user.email;
