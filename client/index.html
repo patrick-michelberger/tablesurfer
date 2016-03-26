@@ -7,15 +7,20 @@
 <!--<![endif]-->
 
 <head>
-    <script src="https://use.typekit.net/sau4cgy.js"></script>
-    <script>
-    try {
-        Typekit.load({
-            async: true
-        });
-    } catch (e) {}
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Amatic+SC:400,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })(); 
+    !function(e){var t,a={kitId:"sau4cgy",scriptTimeout:3e3,async:!0},c=e.documentElement,i=setTimeout(function(){c.className=c.className.replace(/\bwf-loading\b/g,"")+" wf-inactive"},a.scriptTimeout),n=e.createElement("script"),s=!1,o=e.getElementsByTagName("script")[0];c.className+=" wf-loading",n.src="https://use.typekit.net/"+a.kitId+".js",n.async=!0,n.onload=n.onreadystatechange=function(){if(t=this.readyState,!(s||t&&"complete"!=t&&"loaded"!=t)){s=!0,clearTimeout(i);try{Typekit.load(a)}catch(e){}}},o.parentNode.insertBefore(n,o)}(document);
     </script>
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <base href="/">
@@ -36,6 +41,10 @@
     <!-- injector:css -->
     <!-- endinjector -->
     <!-- endbuild -->
+    <script>
+    !function(e){"use strict";var n=function(n,t,o){function i(e){return a.body?e():void setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var s=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=s[s.length-1]}var f=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=f.length;t--;)if(f[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
+    !function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(e){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),n=0;n<e.length;n++){var r=e[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(t.loadCSS(r.href,r),r.rel=null)}},!e.support()){e.poly();var n=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){t.clearInterval(n)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(n)})}}}(this);
+    </script>
 </head>
 
 <body ng-app="tablesurferApp">
@@ -72,20 +81,13 @@
     <!-- Modals END -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
+      ga('create', 'UA-75617983-1', 'auto');
+      ga('send', 'pageview');
     </script>
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js "></script>
@@ -113,7 +115,7 @@
     <script src="socket.io-client/socket.io.js "></script>
     <!-- endbuild -->
     <!-- build:js(.tmp) app/app.js -->
-    <script src="app/app.js "></script>
+    <script src="app/app.js"></script>
     <!-- injector:js -->
     <script src="app/admin/admin.module.js"></script>
     <script src="components/auth/auth.module.js"></script>
@@ -135,6 +137,8 @@
     <script src="app/imprint/imprint.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
+    <script src="app/onboarding/onboarding.controller.js"></script>
+    <script src="app/onboarding/onboarding.js"></script>
     <script src="app/presse/presse.controller.js"></script>
     <script src="app/presse/presse.js"></script>
     <script src="app/privacy/privacy.controller.js"></script>
@@ -157,8 +161,10 @@
     <script src="components/oauth-buttons/oauth-buttons.controller.js"></script>
     <script src="components/oauth-buttons/oauth-buttons.directive.js"></script>
     <script src="components/socket/socket.service.js"></script>
+    <script src="components/tsCampusMail/tsCampusMail.directive.js"></script>
     <script src="components/tsEmail/tsEmail.directive.js"></script>
     <script src="components/tsLoading/tsLoading.directive.js"></script>
+    <script src="components/tsName/tsName.directive.js"></script>
     <script src="components/tsPhone/tsPhone.directive.js"></script>
     <script src="components/tsSignup/tsSignup.directive.js"></script>
     <script src="components/tsSuccess/tsSuccess.directive.js"></script>
