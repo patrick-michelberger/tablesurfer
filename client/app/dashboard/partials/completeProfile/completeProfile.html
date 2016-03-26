@@ -1,73 +1,19 @@
 <div class="ts-complete-profile-form-container container">
-    <!-- Complete Form Container START -->
     <div class="col-sm-6 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
         <uib-progressbar animate="true" value="currentProgress" type="success" class="progress-striped active"></uib-progressbar>
-        <!-- Change Name Form START -->
-        <form ng-if="!getCurrentUser().verified" class="form" name="form" novalidate>
-            <div class="form-group" ng-class="{ 'has-success': form.fname.$valid && submitted,
-                                            'has-error': form.fname.$invalid && submitted }">
-                <label for="fname" translate>first name</label>
-                <input type="text" name="fname" class="form-control" ng-blur="changeFirstName(form)" ng-model="user.first_name" id="fname" autocomplete="given-name" required/>
-                <p class="help-block" ng-show="form.fname.$error.required && submitted" translate>
-                    A first name is required
-                </p>
-            </div>
-            <div class="form-group" ng-class="{ 'has-success': form.lname.$valid && submitted,
-                                            'has-error': form.lname.$invalid && submitted }">
-                <label for="lname" translate>last name</label>
-                <input type="text" name="lname" class="form-control" ng-blur="changeLastName(form)" ng-model="user.last_name" id="lname" autocomplete="family-name" required/>
-                <p class="help-block" ng-show="form.lname.$error.required && submitted" translate>
-                    A last name is required
-                </p>
-            </div>
-            <!-- Email Verification START -->
-            <ts-verify></ts-verify>
-            <!-- Email Verification END -->
-            <!-- Phone Verification START -->
-            <ts-phone ng-if="getCurrentUser().verified&&!getCurrentUser().verifiedPhone"></ts-phone>
-            <!-- Phone Verification END -->
-            <div class="hidden-xs">
-                <button class="btn btn-inverse btn-lg btn-complete-registration btn-block ts-btn-complete-registration btn-primary" type="submit" ng-disabled="form.$invalid||!getCurrentUser().verified" translate>
-                    next
-                </button>
-            </div>
-        </form>
-        <!-- Change Name Form END -->
-        <!-- Preferred Weekdays START -->
-        <ts-weekdays ng-if="getCurrentUser().verifiedPhone"></ts-weekdays>
-        <!-- Preferred Weekdays END -->
-    </div>
-    <!-- Complete Form Container END -->
-</div>
-<!-- Modal START -->
-<div ui-content-for="modals">
-    <div class="modal" ui-if="phoneModal" ui-state='phoneModal'>
-        <div class="modal-backdrop in"></div>
-        <div class="modal-dialog">
-            <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                <div class="modal-header">
-                    <button class="close" ui-turn-off="phoneModal">&times;</button>
-                    <h4 class="modal-title" translate>tablesurfer <i class="fa fa-heart-o"></i> whatsapp</h4>
-                </div>
-                <div class="modal-body col-sm-10 col-sm-offset-1">
-                    <!-- Phone Verification START -->
-                    <ts-phone></ts-phone>
-                    <!-- Phone Verification END -->
-                </div>
-                <div class="modal-footer"></div>
-            </div>
+        <!-- FACEBOOK -->
+        <div ng-if="getCurrentUser().provider=='facebook'">
+            <p>facebook login</p>
         </div>
+        <!-- LOCAL -->
+        <div ng-if="getCurrentUser().provider=='local'">
+            <!-- STEP 1 -->
+
+            status : {{status}}
+            <ts-campus-mail ng-show="status=='EMAIL'"></ts-campus-mail>
+            <ts-name ng-show="status=='PERSONAL_INFO'"></ts-name>
+        </div>
+        <button class="btn btn-default" ng-click="back()">Zurück</button>
+        <button class="btn btn-default" ng-click="next()">Weiter</button>
     </div>
-</div>
-<!-- Modal END -->
-<!-- Title START -->
-<div ui-content-for="title" translate>
-    <span ng-show="false" class="visible-xs">profile</span>
-    <span ng-hide="getCurrentUser().first_name&&getCurrentUser().last_name&&getCurrentUser().verified">complete your profile</span>
-    <span ng-show="getCurrentUser().first_name && getCurrentUser().last_name && getCurrentUser().verified && !(getCurrentUser().verifiedPhone == false)"></span>
-    <span ng-show="getCurrentUser().verifiedPhone == false">Type in received code</span>
-</div>
-<!-- Title END -->
-<div ui-content-for="footer">
-    <button class="btn btn-lg btn-primary btn-register btn-block" type="submit" ng-disabled="form.$invalid||!getCurrentUser().verified" translate>next</button>
 </div>
