@@ -17,6 +17,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/password/password.socket').register(socket);
   require('../api/country/country.socket').register(socket);
   require('../api/verifycode/verifycode.socket').register(socket);
   require('../api/university/university.socket').register(socket);

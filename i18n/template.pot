@@ -8,7 +8,7 @@ msgstr ""
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
-#: client/app/account/login/login.html:51
+#: client/app/account/login/login.html:54
 msgid "<span class=\"visible-xs\">login</span>"
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 msgid "anmelden"
 msgstr ""
 
-#: client/app/main/main.html:171
+#: client/app/main/main.html:170
 #: client/app/main/main.html:62
 msgid "Anmeldung mit Deiner Campus-Email"
 msgstr ""
@@ -74,6 +74,14 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
+#: client/app/account/forgotPassword/resetPassword.html:22
+msgid "Code is required."
+msgstr ""
+
+#: client/app/account/forgotPassword/forgotPassword.html:18
+msgid "Could not send forgot password mail."
+msgstr ""
+
 #: client/components/tsVerify/tsVerify.html:9
 msgid "Could not send verification email. Try again later."
 msgstr ""
@@ -82,12 +90,12 @@ msgstr ""
 msgid "Datenschutz"
 msgstr ""
 
-#: client/app/main/main.html:176
+#: client/app/main/main.html:175
 #: client/app/main/main.html:67
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
-#: client/app/main/main.html:188
+#: client/app/main/main.html:187
 #: client/app/main/main.html:79
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
 msgstr ""
@@ -110,6 +118,14 @@ msgstr ""
 msgid "first name"
 msgstr ""
 
+#: client/app/account/forgotPassword/resetPassword.html:20
+msgid "Forgot Password Code"
+msgstr ""
+
+#: client/app/account/login/login.html:38
+msgid "Forgot password?"
+msgstr ""
+
 #: client/app/main/main.html:38
 msgid "Freundschaften knüpfen zwischen Herd und Spülbecken!"
 msgstr ""
@@ -130,7 +146,7 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: client/app/main/main.html:165
+#: client/app/main/main.html:164
 msgid "How it works"
 msgstr ""
 
@@ -142,11 +158,15 @@ msgstr ""
 msgid "Invalid code"
 msgstr ""
 
+#: client/app/account/forgotPassword/resetPassword.html:26
+msgid "Invalid code or unable to send emails at this moment. Try again later."
+msgstr ""
+
 #: client/app/main/main.html:130
 msgid "jetzt mitmachen"
 msgstr ""
 
-#: client/app/main/main.html:187
+#: client/app/main/main.html:186
 #: client/app/main/main.html:78
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
@@ -159,7 +179,7 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
-#: client/app/account/login/login.html:49
+#: client/app/account/login/login.html:52
 msgid "login"
 msgstr ""
 
@@ -179,7 +199,7 @@ msgstr ""
 msgid "Ludwig-Maximilians-Universität München"
 msgstr ""
 
-#: client/app/main/main.html:172
+#: client/app/main/main.html:171
 #: client/app/main/main.html:63
 msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
 msgstr ""
@@ -204,7 +224,7 @@ msgstr ""
 msgid "oder"
 msgstr ""
 
-#: client/app/main/main.html:182
+#: client/app/main/main.html:181
 #: client/app/main/main.html:73
 msgid "Organisiert euren Kochabend im Chat!"
 msgstr ""
@@ -213,11 +233,13 @@ msgstr ""
 msgid "Partner & Unterstützer"
 msgstr ""
 
+#: client/app/account/forgotPassword/resetPassword.html:11
 #: client/app/account/login/login.html:20
 #: client/app/account/signup/signup.html:34
 msgid "Password"
 msgstr ""
 
+#: client/app/account/forgotPassword/resetPassword.html:13
 #: client/app/account/signup/signup.html:36
 msgid "Password must be at least 3 characters."
 msgstr ""
@@ -226,12 +248,17 @@ msgstr ""
 msgid "Phone number successfully changed."
 msgstr ""
 
+#: client/app/account/forgotPassword/forgotPassword.html:14
 #: client/app/account/login/login.html:27
 msgid "Please enter a valid email."
 msgstr ""
 
 #: client/app/account/login/login.html:24
 msgid "Please enter your email and password."
+msgstr ""
+
+#: client/app/account/forgotPassword/forgotPassword.html:11
+msgid "Please enter your email."
 msgstr ""
 
 #: client/components/footer/footer.html:8
@@ -250,11 +277,20 @@ msgstr ""
 msgid "register"
 msgstr ""
 
+#: client/app/account/forgotPassword/forgotPassword.html:4
+#: client/app/account/forgotPassword/resetPassword.html:4
+msgid "Reset Password"
+msgstr ""
+
+#: client/app/account/forgotPassword/forgotPassword.html:22
+msgid "Send Reset Link"
+msgstr ""
+
 #: client/components/tsPhone/tsPhone.html:6
 msgid "Send verification code to my phone"
 msgstr ""
 
-#: client/app/account/login/login.html:40
+#: client/app/account/login/login.html:43
 #: client/app/account/signup/signup.html:47
 #: client/components/navbar/navbar.html:23
 msgid "Sign up"
@@ -264,7 +300,7 @@ msgstr ""
 msgid "sign up with Facebook"
 msgstr ""
 
-#: client/app/main/main.html:177
+#: client/app/main/main.html:176
 #: client/app/main/main.html:68
 msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
 msgstr ""
@@ -281,6 +317,7 @@ msgstr ""
 msgid "Städte"
 msgstr ""
 
+#: client/app/account/forgotPassword/resetPassword.html:29
 #: client/app/verify/verify.html:10
 #: client/components/tsPhone/tsPhone.html:18
 msgid "Submit"
@@ -334,9 +371,13 @@ msgstr ""
 msgid "Von Studenten für Studenten"
 msgstr ""
 
-#: client/app/main/main.html:183
+#: client/app/main/main.html:182
 #: client/app/main/main.html:74
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
+msgstr ""
+
+#: client/app/account/forgotPassword/forgotPassword.html:20
+msgid "We have sent you an email to reset your password."
 msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:19

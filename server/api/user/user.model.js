@@ -11,6 +11,7 @@ import City from '../city/city.model';
 import mail from '../../components/mail';
 import config from '../../config/environment';
 import Whatsapp from '../../components/whatsapp';
+import Password from '../password/password.model';
 
 const authTypes = ['facebook'];
 
@@ -298,6 +299,39 @@ UserSchema.methods = {
 
     },
 
+    /**
+     * Create forgot password code and saves user
+     *
+     * @param {Function} callback
+     * @api public
+     */
+    createForgotPasswordCode: function(callback) {
+        var user = this;
+
+        Password.create({ email: user.email, user: user._id }, function(err, forgotpasswordcode) {
+            if (err) {
+                console.log(err);
+                return callback(err);
+            }
+            user.forgotpasswordcode = forgotpasswordcode._id;
+
+            user.save(function(err) {
+                if (err) {
+                    console.log(err);
+                    return callback(err);
+                }
+                var data = {
+                    to: user.email,
+                    url: config.domain + '/#/resetpassword/' + user.forgotpasswordcode,
+                    user: user.profile,
+                    template: 'forgotpassword.hbs',
+                    subject: 'Tablesurfer - You are guest'
+                };
+                mail.send(data, callback);
+            });
+        });
+    },
+    
     /**
      * Create verifycode and saves user
      *
