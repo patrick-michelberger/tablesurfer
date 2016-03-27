@@ -318,7 +318,8 @@ module.exports = function(grunt) {
                         return '<script src="' + block.dest + '"><\/script>';
                     },
                     css: function(block) {
-                        return '<link rel="preload" href="' + block.dest + '" as="style" onload="this.rel="stylesheet"">' + '<noscript><link rel="stylesheet" href="' + block.dest + '"></noscript>';
+                        return '<link rel="stylesheet" href="' + block.dest + '">';
+                        //return '<link rel="preload" href="' + block.dest + '" as="style" onload="this.rel="stylesheet"">' + '<noscript><link rel="stylesheet" href="' + block.dest + '"></noscript>';
                     }
                 },
                 // This is so we update image references in our ng-templates
