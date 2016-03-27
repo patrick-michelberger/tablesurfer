@@ -41,10 +41,10 @@
     <!-- injector:css -->
     <!-- endinjector -->
     <!-- endbuild -->
-    <script>
+    <!--<script>
     !function(e){"use strict";var n=function(n,t,o){function i(e){return a.body?e():void setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var s=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=s[s.length-1]}var f=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=f.length;t--;)if(f[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
     !function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(e){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),n=0;n<e.length;n++){var r=e[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(t.loadCSS(r.href,r),r.rel=null)}},!e.support()){e.poly();var n=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){t.clearInterval(n)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(n)})}}}(this);
-    </script>
+    </script>-->
 </head>
 
 <body ng-app="tablesurferApp">
@@ -82,6 +82,7 @@
             </div>
         </div>
     </div>
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -124,6 +125,7 @@
     <script src="components/auth/auth.module.js"></script>
     <script src="components/util/util.module.js"></script>
     <script src="app/universityList/universityList.controller.js"></script>
+    <script src="app/account/login/login.controller.js"></script>
     <script src="app/account/settings/settings.controller.js"></script>
     <script src="app/account/signup/signup.controller.js"></script>
     <script src="app/admin/admin.controller.js"></script>
@@ -166,6 +168,7 @@
     <script src="components/socket/socket.service.js"></script>
     <script src="components/tsCampusMail/tsCampusMail.directive.js"></script>
     <script src="components/tsEmail/tsEmail.directive.js"></script>
+    <script src="components/tsFixedModal/tsFixedModal.directive.js"></script>
     <script src="components/tsLoading/tsLoading.directive.js"></script>
     <script src="components/tsName/tsName.directive.js"></script>
     <script src="components/tsPhone/tsPhone.directive.js"></script>
@@ -173,7 +176,7 @@
     <script src="components/tsSuccess/tsSuccess.directive.js"></script>
     <script src="components/tsVerify/tsVerify.directive.js"></script>
     <script src="components/tsWeekdays/tsWeekdays.directive.js"></script>
-    <script src="app/account/login/login.controller.js"></script>
+    <script src="app/account/forgotPassword/forgotPassword.controller.js"></script>
     <script src="components/util/util.service.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->
