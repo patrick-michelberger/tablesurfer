@@ -1,3 +1,7 @@
+.has-modal-fixed navbar {
+    display: none!important;
+}
+
 .navbar-absolute-top {
     background-color: #fff;
     border-color: #fff;
@@ -6,6 +10,18 @@
 .navbar-absolute-top .ts-user-name a {
     margin-right: 0px;
     font-weight: 200;
+}
+
+.navbar-absolute-top a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: black;
+    color: black;
+}
+
+.navbar-absolute-top a:hover,
+.navbar-absolute-top a:focus {
+    color: black;
+    text-decoration: none;
 }
 
 .navbar-absolute-top .btn-navbar:hover,
