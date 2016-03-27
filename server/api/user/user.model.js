@@ -325,7 +325,7 @@ UserSchema.methods = {
                     url: config.domain + '/#/resetpassword/' + user.forgotpasswordcode,
                     user: user.profile,
                     template: 'forgotpassword.hbs',
-                    subject: 'Tablesurfer - You are guest'
+                    subject: 'Reset your password'
                 };
                 mail.send(data, callback);
             });

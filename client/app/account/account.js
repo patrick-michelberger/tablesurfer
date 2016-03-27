@@ -34,15 +34,10 @@ angular.module('tablesurferApp')
                 controllerAs: 'vm',
                 authenticate: true
             })
-            .state('forgotpassword', {
-                url: '/forgotpassword',
-                templateUrl: 'app/account/forgotPassword/forgotPassword.html',
-                controller: 'ForgotPasswordCtrl'
-            })
             .state('resetpassword', {
                 url: '/resetpassword/:forgotpasswordcode',
-                templateUrl: 'app/account/forgotPassword/resetPassword.html',
-                controller: 'ForgotPasswordCtrl'
+                templateUrl: 'app/account/resetPassword/resetPassword.html',
+                controller: 'ResetPasswordCtrl'
             });
     })
     .run(function($rootScope) {

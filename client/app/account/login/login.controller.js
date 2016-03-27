@@ -1,20 +1,19 @@
 'use strict';
 
 class LoginController {
-    constructor(Auth, $state, $scope, $rootScope, $http) {
+    constructor(Auth, $state, $scope, $rootScope, $http, $timeout) {
         this.user = {};
         this.$scope = $scope;
         this.$rootScope = $rootScope;
+        this.$timeout = $timeout;
+        this.$http = $http;
         this.errors = {};
         this.submitted = false;
         this.resetPassword = false;
 
         this.Auth = Auth;
         this.$state = $state;
-    }
-
-    openModal() {
-        this.$rootScope.Ui.turnOn('resetPassword');
+        this.status = 'notsubmitted';
     }
 
     login() {
@@ -37,23 +36,26 @@ class LoginController {
         }
     }
 
+    openModal() {
+        this.$rootScope.Ui.turnOn('forgotPassword');
+    }
+
     forgotpassword(form) {
-        console.log("forgotpasswordcode: ", form);
-
+        var self = this;
         this.status = 'submitted'
-
-        console.log("forgotpassword: ", form);
-
         if (form.$valid) {
             this.status = 'sending';
 
-            $http.post('/api/passwords', { email: this.email }).then(function() {
-                    this.status = 'success';
-                })
-                .catch(function(err) {
-                    console.log(err);
-                    this.status = 'error';
-                });
+
+            self.$timeout(function() {
+                self.$http.post('/api/passwords', { email: self.email }).then(function() {
+                        self.status = 'success';
+                    })
+                    .catch(function(err) {
+                        console.log("Error: ", err);
+                        self.status = 'error';
+                    });
+            }, 600);
 
         }
     }

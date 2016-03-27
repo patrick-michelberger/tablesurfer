@@ -59,7 +59,7 @@ exports.use = function(req, res) {
     if(err) { return handleError(res, err); }
     if(!forgotpassword) { return handleError(res, new Error('Invalid forgot password code.')); }
     
-    User.findOne({ Password: forgotpassword._id }, function(err, user) {
+    User.findOne({forgotpasswordcode: forgotpassword._id }, function(err, user) {
       if(err) { return handleError(res, err); }
       if(!user) { return handleError(res, new Error('Invalid forgot password code.')); }
       

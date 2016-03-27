@@ -135,7 +135,8 @@
         tablesurfer
     </span>
 </div>
-<!-- Modal START -->
+
+<!-- Modals START -->
 <div ui-content-for="modals">
     <div class="modal" ui-if="noCampusMailHint" ui-state='noCampusMailHint'>
         <div class="modal-backdrop in"></div>
@@ -148,13 +149,10 @@
                 <div class="modal-body">
                     <p> A list of participating universities and their corresponding university email domains can be found <a ui-sref="universities" ui-turn-off="noCampusMailHint">here.</a></p>
                 </div>
-                <div class="modal-footer">
-                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Modal END -->
 <div ui-content-for="modals-fixed">
     <div class="ts-fixed-modal" ui-if="howToModal" ui-state='howToModal'>
         <div class="modal-dialog">
@@ -192,3 +190,4 @@
         </div>
     </div>
 </div>
+<!-- Modals END -->

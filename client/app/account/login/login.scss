@@ -29,3 +29,15 @@
 #ts-login .ts-forgot-password {
     text-align: right;
 }
+
+#ts-forgot-password-modal .modal-body {
+    padding: 15px 15px 0px 15px;
+}
+
+#ts-forgot-password-modal input {
+    margin-bottom: 5px;
+}
+
+#ts-forgot-password-modal .modal-footer {
+    padding-top: 10px;
+}

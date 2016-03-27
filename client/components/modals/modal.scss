@@ -32,9 +32,14 @@
     text-decoration: underline;
 }
 
-#ts-modal p {
+#ts-modal p,
+#ts-modal .alert {
     font-size: 1.2em;
     text-align: justify;
+}
+
+#ts-modal .alert {
+    min-height: 55px;
 }
 
 @media (max-width: $screen-xs) {

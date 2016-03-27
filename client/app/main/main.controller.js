@@ -10,6 +10,5 @@ angular.module('tablesurferApp')
 
         $scope.openHowToModal = function() {
             $rootScope.Ui.turnOn('howToModal');
-
         };
     });

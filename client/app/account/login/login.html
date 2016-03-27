@@ -54,3 +54,42 @@
 <div ui-content-for="title" translate>
     <span class="visible-xs">login</span>
 </div>
+<div ui-content-for="modals">
+    <div id="ts-forgot-password-modal" class="modal" ui-if="forgotPassword" ui-state='forgotPassword'>
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog">
+            <div class="modal-content col-xs-12 col-md-5 col-md-offset-3 col-lg-4 col-lg-offset-4">
+                <div class="modal-header">
+                    <button class="close" ui-turn-off="forgotPassword">&times;</button>
+                    <h4 class="modal-title" translate>Reset Password</h4>
+                </div>
+                <div class="modal-body">
+                    <p> Enter the email address associated with your account, and we’ll email you a link to reset your password.</p>
+                    <form class="form" ng-submit="vm.forgotpassword(form)"  name="form" novalidate>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" ng-model="vm.email" required>
+                        </div>
+                        <div ng-show="form.email.$error.required && vm.status == 'submitted'" class="form-group has-error" style="height:50px;">
+                            <p class="help-block" translate>
+                                Please enter your email.
+                            </p>
+                        </div>
+                        <div class="alert alert-danger" ng-show="vm.status == 'error'" translate>Could not send forgot password mail.</div>
+                        <div class="alert" ng-show="vm.status == 'sending'">
+                            <ts-loading></ts-loading>
+                        </div>
+                        <div class="alert alert-success" ng-show="vm.status == 'success'" translate>We have sent you an email to reset your password.</div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="ts-btn-group">
+                        <button ng-click="vm.forgotpassword(form)" type="submit" ng-disabled="form.email.$invalid" class="btn ts-btn-success btn-primary btn-lg btn-login col-xs-12 col-sm-4" translate>
+                            Send Reset Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
