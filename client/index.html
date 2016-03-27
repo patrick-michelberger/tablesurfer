@@ -48,6 +48,9 @@
 </head>
 
 <body ng-app="tablesurferApp">
+    <!-- Modals START -->
+        <div id="ts-modal" ui-yield-to="modals"></div>
+    <!-- Modals END -->
     <!--[if lt IE 7]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -65,6 +68,9 @@
             <div class='app-content'>
                 <div class="scrollable ">
                     <div class="scrollable-content">
+                        <!-- Modals START -->
+        <div id="ts-modal-fixed" ui-yield-to="modals-fixed"></div>
+    <!-- Modals END -->
                         <!-- Content START -->
                         <div ui-view="" class="ts-ui-view"></div>
                         <!-- Content END -->
@@ -76,9 +82,6 @@
             </div>
         </div>
     </div>
-    <!-- Modals START -->
-    <div id="ts-modal" ui-yield-to="modals"></div>
-    <!-- Modals END -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

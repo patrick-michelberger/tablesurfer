@@ -5,7 +5,7 @@
         <!--<h1 translate>The Cooking-Community <b>for Students!</b>         </h1>-->
         <h1 translate>Freundschaften knüpfen zwischen Herd und Spülbecken! <br/><span class="ts-citation">Süddeutsche Zeitung</span></h1>
         <div class="row">
-            <button class="btn btn-danger btn-how-to hidden-xs" ng-click="openHowToModal()">How it works</button>
+            <button class="btn btn-danger btn-how-to" ng-click="openHowToModal()">How it works</button>
             <ts-signup class="col-sm-6 col-sm-offset-3 hidden-xs"></ts-signup>
         </div>
     </div>
@@ -136,21 +136,62 @@
     </span>
 </div>
 <!-- Modal START -->
-<div class="modal" ui-if="howToModal" ui-state='howToModal'>
-    <div class="modal-backdrop in"></div>
-    <div class="modal-dialog">
-        <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-            <div class="modal-header">
-                <button class="close" ui-turn-off="howToModal">&times;</button>
-                <h4 class="modal-title" translate>How to.</h4>
-            </div>
-            <div class="modal-body">
-                <p>tablesurfer is currently only for students. A list of participating universities can be found <a ui-sref="universities" ui-turn-off="howToModal"><b>here.</b></a></p>
-            </div>
-            <div class="modal-footer">
-                <button ui-turn-off="howToModal" class="btn btn-default">Close</button>
+<div ui-content-for="modals">
+    <div class="modal" ui-if="noCampusMailHint" ui-state='noCampusMailHint'>
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog">
+            <div class="modal-content col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                <div class="modal-header">
+                    <button class="close" ui-turn-off="noCampusMailHint">&times;</button>
+                    <h4 class="modal-title" translate>Sorry, tablesurfer is only for students.</h4>
+                </div>
+                <div class="modal-body">
+                    <p> A list of participating universities and their corresponding university email domains can be found <a ui-sref="universities" ui-turn-off="noCampusMailHint">here.</a></p>
+                </div>
+                <div class="modal-footer">
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Modal END -->
+
+<div ui-content-for="modals-fixed">
+    <div ui-if="howToModal" ui-state='howToModal'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header container">
+                    <button class="close" ui-turn-off="howToModal">&times;</button>
+                    <h4 class="modal-title" translate>How it works</h4>
+                </div>
+                <div class="modal-body container">
+                    <section class="row">
+                        <div class="ts-step col-sm-6 col-md-3">
+                            <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                            <h3 translate>Anmeldung mit Deiner Campus-Email</h3>
+                            <p translate>Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an.</p>
+                        </div>
+                        <div class="ts-step col-sm-6 col-md-3">
+                            <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                            <h3 translate>Deine Koch-Gruppe als WhatsApp Gruppe</h3>
+                            <p translate>Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste.
+                            </p>
+                        </div>
+                        <div class="ts-step col-sm-6 col-md-3">
+                            <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                            <h3 translate>Organisiert euren Kochabend im Chat!</h3>
+                            <p translate>Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?</p>
+                        </div>
+                        <div class="ts-step col-sm-6 col-md-3">
+                            <img src="https://placehold.it/350x350" class="img-responsive img-circle" />
+                            <h3 translate>Kocht zusammen und knüpft neue Freundschaften!</h3>
+                            <p translate>Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst.</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

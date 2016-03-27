@@ -48,6 +48,7 @@ msgstr ""
 msgid "anmelden"
 msgstr ""
 
+#: client/app/main/main.html:171
 #: client/app/main/main.html:62
 msgid "Anmeldung mit Deiner Campus-Email"
 msgstr ""
@@ -81,10 +82,12 @@ msgstr ""
 msgid "Datenschutz"
 msgstr ""
 
+#: client/app/main/main.html:176
 #: client/app/main/main.html:67
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
+#: client/app/main/main.html:188
 #: client/app/main/main.html:79
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
 msgstr ""
@@ -127,8 +130,8 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: client/app/main/main.html:145
-msgid "How to."
+#: client/app/main/main.html:165
+msgid "How it works"
 msgstr ""
 
 #: client/components/footer/footer.html:11
@@ -143,6 +146,7 @@ msgstr ""
 msgid "jetzt mitmachen"
 msgstr ""
 
+#: client/app/main/main.html:187
 #: client/app/main/main.html:78
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
@@ -175,6 +179,7 @@ msgstr ""
 msgid "Ludwig-Maximilians-Universität München"
 msgstr ""
 
+#: client/app/main/main.html:172
 #: client/app/main/main.html:63
 msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
 msgstr ""
@@ -199,6 +204,7 @@ msgstr ""
 msgid "oder"
 msgstr ""
 
+#: client/app/main/main.html:182
 #: client/app/main/main.html:73
 msgid "Organisiert euren Kochabend im Chat!"
 msgstr ""
@@ -258,12 +264,13 @@ msgstr ""
 msgid "sign up with Facebook"
 msgstr ""
 
+#: client/app/main/main.html:177
 #: client/app/main/main.html:68
 msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
 msgstr ""
 
-#: client/components/tsSignup/tsSignup.html:30
-msgid "Sorry, no valid university email."
+#: client/app/main/main.html:146
+msgid "Sorry, tablesurfer is only for students."
 msgstr ""
 
 #: client/components/footer/footer.html:33
@@ -327,6 +334,7 @@ msgstr ""
 msgid "Von Studenten für Studenten"
 msgstr ""
 
+#: client/app/main/main.html:183
 #: client/app/main/main.html:74
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""

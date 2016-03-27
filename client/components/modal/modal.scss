@@ -1,7 +1,8 @@
 #ts-modal .modal-content {
     border-radius: 0;
-    margin-top: 55px;
+    margin-top: 140px;
     padding: 0;
+    border: none;
 }
 
 #ts-modal .modal-header {
@@ -27,8 +28,82 @@
     color: #000;
 }
 
+#ts-modal a {
+    text-decoration: underline;
+}
+
+#ts-modal p {
+    font-size: 1.2em;
+    text-align: justify;
+}
+
 @media (max-width: $screen-xs) {
     #ts-modal .modal-content {
         margin-top: 0;
     }
+}
+
+
+/** #ts-modal-fixed **/
+
+#ts-modal-fixed .modal {
+    position: relative;
+}
+
+#ts-modal-fixed .modal-content {
+    min-height: 500px;
+    background-color: #79cccd;
+    color: #fff;
+    box-shadow: none;
+}
+
+#ts-modal-fixed .modal-dialog {
+    margin: 0;
+}
+
+#ts-modal-fixed .modal-header {
+    border: none;
+    text-align: left;
+    padding: 0;
+}
+
+#ts-modal-fixed .modal-header h4 {
+    font-size: 3.0em;
+    font-weight: 600;
+    padding: 5px 15px 0px 15px;
+}
+
+#ts-modal-fixed .modal-content h3 {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2.5em;
+    margin-top: 20px;
+    min-height: 114px;
+}
+
+#ts-modal-fixed .ts-step {
+    padding: 15px 25px 25px 25px;
+}
+
+#ts-modal-fixed p {
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+#ts-modal-fixed .modal-footer {
+    border: none;
+}
+
+#ts-modal-fixed .close {
+    color: #fff;
+    opacity: 1.0;
+    font-size: 4.5em;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+#ts-modal-fixed .modal-content {
+    border-radius: 0;
+    border: none;
 }
