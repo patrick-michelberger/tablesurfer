@@ -33,6 +33,16 @@ angular.module('tablesurferApp')
                 controller: 'SettingsController',
                 controllerAs: 'vm',
                 authenticate: true
+            })
+            .state('forgotpassword', {
+                url: '/forgotpassword',
+                templateUrl: 'app/account/forgotPassword/forgotPassword.html',
+                controller: 'ForgotPasswordCtrl'
+            })
+            .state('resetpassword', {
+                url: '/resetpassword/:forgotpasswordcode',
+                templateUrl: 'app/account/forgotPassword/resetPassword.html',
+                controller: 'ForgotPasswordCtrl'
             });
     })
     .run(function($rootScope) {

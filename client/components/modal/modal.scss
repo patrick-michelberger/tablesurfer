@@ -73,16 +73,21 @@
     padding: 5px 15px 0px 15px;
 }
 
+#ts-modal-fixed .modal-body {
+    padding: 15px 15px 0px 15px;
+}
+
 #ts-modal-fixed .modal-content h3 {
     text-align: center;
     font-family: 'Amatic SC', cursive;
     font-size: 2.5em;
     margin-top: 20px;
     min-height: 114px;
+    margin-bottom: 20px;
 }
 
 #ts-modal-fixed .ts-step {
-    padding: 15px 25px 25px 25px;
+    padding: 15px 25px 10px 25px;
 }
 
 #ts-modal-fixed p {
