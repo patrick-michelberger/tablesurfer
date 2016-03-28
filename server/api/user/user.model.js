@@ -38,8 +38,7 @@ var UserSchema = new Schema({
         type: Boolean
     },
     verified: {
-        type: Boolean,
-        default: false
+        type: Boolean
     },
     registrationCompleted: {
         type: Boolean,

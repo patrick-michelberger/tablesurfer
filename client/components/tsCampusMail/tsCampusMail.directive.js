@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('tablesurferApp')
-    .directive('tsCampusMail', function(Helpers, Auth) {
+    .directive('tsCampusMail', function($rootScope, Helpers, Auth) {
         return {
             templateUrl: 'components/tsCampusMail/tsCampusMail.html',
             restrict: 'EA',
             scope: {},
             link: function(scope, element, attrs) {
+                scope.getCurrentUser = Auth.getCurrentUser;
                 var email = Auth.getCurrentUser().email
                 scope.user = {};
                 if (email) {
@@ -23,8 +24,8 @@ angular.module('tablesurferApp')
                             if (isCampusMail && scope.form.$valid) {
                                 Auth.changeEmail(scope.user.email)
                                     .then(() => {
-                                        // Account created, redirect to home
                                         scope.submitted = false;
+                                        $rootScope.$emit('user:changed');
                                     })
                                     .catch(err => {
                                         err = err.data;
@@ -38,6 +39,8 @@ angular.module('tablesurferApp')
                                     });
                             }
                         });
+                    } else {
+                        $rootScope.$emit('user:changed');
                     }
                 };
 

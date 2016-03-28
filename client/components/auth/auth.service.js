@@ -377,13 +377,32 @@
 
             verifyPhone(phonecode, callback) {
                 var cb = callback || angular.noop;
-                return $http.get('/api/phonecodes/' + phonecode + '/used').then(function(response) {
+                return $http.get('/api/phonecodes/' + phonecode + '/used').success(function(response) {
                     if (response.data) {
                         currentUser.picture = response.data.picture;
                     }
+                    currentUser.verifiedPhone = true;
                     return response;
                 });
             },
+
+            /**
+             *  Create verification code
+             *
+             * @param {Function} callback - optional
+             * @return {Promise}
+             */
+
+            createVerificationCode(callback) {
+                var cb = callback || angular.noop;
+                return $http.post('/api/verifycodes').success(function() {
+                    currentUser.verified = false;
+                    callback()
+                }).catch(function(err) {
+                    callback(err);
+                });
+            },
+
 
             /**
              * Authenticate user with token and save it
@@ -413,8 +432,7 @@
                     function(err) {
                         return safeCb(callback)(err);
                     }).$promise;
-            },
-
+            }
         };
 
         return Auth;

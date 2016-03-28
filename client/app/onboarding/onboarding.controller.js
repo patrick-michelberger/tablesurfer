@@ -3,101 +3,182 @@
 angular.module('tablesurferApp')
     .controller('OnboardingCtrl', function($rootScope, $scope, $state, $timeout, Auth) {
 
-        var currentStep = getCurrentStep();
         $scope.getCurrentUser = Auth.getCurrentUser;
-        $state.go('onboarding.' + currentStep);
+
+        $scope.completeRegistration = function() {
+            Auth.setRegistrationCompleted(true);
+            $state.go('onboarding.complete');
+        };
 
         $rootScope.$on('user:changed', function()  {
-            console.log("user changed...");
-            currentStep = getCurrentStep();
+            var currentStep = updateStep($state.current.name);
         });
 
-        function getCurrentStep() {
-            var STEPS = ["email", "info", "phone", "weekdays", "complete"];
-            var currentUser = Auth.getCurrentUser();
-            if (!currentUser.verified) {
-                $scope.currentProgress = 25;
-                return STEPS[0];
-            }
-            if (!currentUser.first_name ||  !currentUser.last_name) {
-                $scope.currentProgress = 45;
-                return STEPS[1];
-            }
-            if (!currentUser.verifiedPhone) {
-                $scope.currentProgress = 65;
-                return STEPS[2];
-            }
-            if (!currentUser.weekdays && currentUser.weekdays.length < 1) {
-                return STEPS[3];
-                $scope.currentProgress = 85;
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
+            currentStep = updateStep(toState.name);
+        });
 
+        var currentStep = updateStep($state.current.name);
+        $state.go('onboarding.' + currentStep);
+
+
+        function updateStep(state) {
+            var currentUser = Auth.getCurrentUser();
+            var STEPS = ['email', 'info', 'phone', 'weekdays', 'complete'];
+            var currentStep = '';
+            var currentProgress = 0;
+
+
+            if (currentUser.registrationCompleted) {
+                // COMPLETE
+                currentStep = STEPS[4];
+                currentProgress = 100;
+            } else if (!currentUser.verified) {
+                // EMAIL
+                currentStep = STEPS[0];
+                if (currentUser.verified == false) {
+                    // email verification code sent
+                    currentProgress = 25;
+                } else {
+                    // email verification code not sent
+                    currentProgress = 15;
+                }
+            } else if (!currentUser.first_name || !currentUser.last_name) {
+                // INFO
+                currentStep = STEPS[1];
+                if (!currentUser.first_name && !currentUser.last_name) {
+                    // Both are missing
+                    currentProgress = 30
+                } else {
+                    // Either first_name or last_name is missing
+                    currentProgress = 35
+                }
+            } else if (!currentUser.verifiedPhone) {
+                // PHONE
+                currentStep = STEPS[2];
+                if (state === 'onboarding.phone') {
+                    // user is on phone settings page
+                    if (!currentUser.phone) {
+                        currentProgress = 65;
+                    } else {
+                        currentProgress = 75;
+                    }
+                } else {
+                    // user is still on previous page
+                    currentProgress = 55;
+                }
+            } else if (currentUser.weekdays.length < 1) {
+                // WEEKDAYS
+                currentStep = STEPS[3];
+                if (state == 'onboarding.weekdays') {
+                    currentProgress = 95
+                } else {
+                    // user is still on previous page
+                    currentProgress = 85;
+                }
+            } else {
+                // DEFAULT CASE
+                currentStep = STEPS[4];
+                currentProgress = 100;
             }
-            $scope.currentProgress = 100;
-            return STEPS[4];
+
+            $scope.currentProgress = currentProgress;
+            return currentStep;
         };
+
+
 
         /*
-        function updateStatus() {
-            $scope.status = STEPS[getCurrentIndex()];
-        };
+                $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
+                    console.log("$stateChangeStart: ", toState);
+                    currentStep = getCurrentStep(toState.name);
+                });
 
-        function updateStatus() {
-            $scope.status = STEPS[getCurrentIndex()];
-        };
-
-        function getCurrentIndex() {
-            var currentUser = Auth.getCurrentUser();
-            if (!currentUser.verified) {
-                return 0;
-            }
-            if (!currentUser.first_name ||  !currentUser.last_name) {
-                return 1;
-            }
-            if (!currentUser.verifiedPhone) {
-                return 2;
-            }
-            if (!currentUser.weekdays && currentUser.weekdays.length < 1) {
-                return 3
-            }
-            return 4;
-        };
-
-        function updateProgress() {
-            var currentUser = Auth.getCurrentUser();
-            var STATUS = STEPS[currentIndex];
-            if (STATUS == 'EMAIL') {
-                $scope.currentProgress = 20;
-            } else if (STATUS == 'PERSONAL_INFO') {
-                $scope.currentProgress = 40;
-            } else if (STATUS == 'PHONE') {
-                $scope.currentProgress = 60;
-            } else if (STATUS == 'DATES') {
-                $scope.currentProgress = 80;
-            } else if (STATUS == 'COMPLETED') {
-                $scope.currentProgress = 100;
-            }
-            console.log("progress: ", $scope.currentProgress);
-        };
+                $rootScope.$on('user:changed', function()  {
+                    console.log("user changed...");
+                    currentStep = getCurrentStep($state.current.name);
+                });
 
 
-        function getStatus() {
-            return STEPS[getCurrentIndex()];
-        };
+                var currentStep = getCurrentStep();
+                console.log("CURRENT STEP: ", currentStep);
+                $state.go('onboarding.' + currentStep);
 
 
-        $scope.back = function() {
-            currentIndex = currentIndex - 1;
-            $scope.status = STEPS[currentIndex];
-            updateProgress();
-        };
 
-        $scope.next = function() {
-            currentIndex = currentIndex + 1;
-            $scope.status = STEPS[currentIndex];
-            updateProgress();
-        };
 
-        updateProgress();
-        */
 
+        /*
+                function getCurrentStep() {
+                    var STEPS = ["email", "info", "phone", "weekdays", "complete"];
+                    var currentUser = Auth.getCurrentUser();
+                  console.log("currentUser: ", currentUser);
+                  console.log("$state.current.name: ", $state.current.name);
+                    if (currentUser.verified == false) {
+                        $scope.currentProgress = 25;
+                        return STEPS[0];
+                    }
+                    if (!currentUser.verified) {
+                        $scope.currentProgress = 15;
+                        return STEPS[0];
+                    }
+                    if (!currentUser.first_name && !currentUser.last_name) {
+                        $scope.currentProgress = 20;
+                        return STEPS[1];
+                    }
+                    if (!currentUser.first_name ||  !currentUser.last_name) {
+                        $scope.currentProgress = 35;
+                        return STEPS[1];
+                    }
+                    if (currentUser.first_name &&  currentUser.last_name && state === 'onboarding.info') {
+                        $scope.currentProgress = 45;
+                        return STEPS[1];
+                    }
+                    if (currentUser.first_name &&  currentUser.last_name && state === 'onboarding.phone') {
+                        $scope.currentProgress = 55;
+                        return STEPS[2];
+                    }
+                    if (!currentUser.verifiedPhone) {
+                        $scope.currentProgress = 65;
+                        return STEPS[2];
+                    }
+                    if (!currentUser.weekdays && currentUser.weekdays.length < 1) {
+                        return STEPS[3];
+                        $scope.currentProgress = 85;
+
+                    }
+                    $scope.currentProgress = 100;
+                    return STEPS[4];
+                };
+
+                /*
+                $rootScope.$on('user:changed', function()  {
+                    console.log("user changed...");
+                    currentStep = getCurrentStep();
+                });
+
+                function getCurrentStep() {
+                    var STEPS = ["email", "info", "phone", "weekdays", "complete"];
+                    var currentUser = Auth.getCurrentUser();
+                    if (!currentUser.verified) {
+                        $scope.currentProgress = 25;
+                        return STEPS[0];
+                    }
+                    if (!currentUser.first_name ||  !currentUser.last_name) {
+                        $scope.currentProgress = 45;
+                        return STEPS[1];
+                    }
+                    if (!currentUser.verifiedPhone) {
+                        $scope.currentProgress = 65;
+                        return STEPS[2];
+                    }
+                    if (!currentUser.weekdays && currentUser.weekdays.length < 1) {
+                        return STEPS[3];
+                        $scope.currentProgress = 85;
+
+                    }
+                    $scope.currentProgress = 100;
+                    return STEPS[4];
+                };
+                */
     });

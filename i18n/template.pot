@@ -57,11 +57,6 @@ msgstr ""
 msgid "Ausgewählte Universitäten"
 msgstr ""
 
-#: client/app/onboarding/onboarding.info.html:3
-#: client/app/onboarding/onboarding.phone.html:3
-msgid "back"
-msgstr ""
-
 #: client/app/main/main.html:89
 msgid "Bekannt aus"
 msgstr ""
@@ -208,10 +203,10 @@ msgstr ""
 msgid "next"
 msgstr ""
 
-#: client/app/onboarding/onboarding.email.html:2
-#: client/app/onboarding/onboarding.info.html:2
-#: client/app/onboarding/onboarding.phone.html:2
-#: client/app/onboarding/onboarding.weekdays.html:2
+#: client/app/onboarding/partials/onboarding.email.html:2
+#: client/app/onboarding/partials/onboarding.info.html:2
+#: client/app/onboarding/partials/onboarding.phone.html:2
+#: client/app/onboarding/partials/onboarding.weekdays.html:2
 msgid "Next"
 msgstr ""
 

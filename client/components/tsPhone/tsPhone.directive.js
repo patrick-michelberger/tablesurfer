@@ -5,8 +5,7 @@ angular.module('tablesurferApp')
         return {
             templateUrl: 'components/tsPhone/tsPhone.html',
             restrict: 'E',
-            scope: {
-            },
+            scope: {},
             link: function(scope, element, attrs) {
 
                 var currentUser = scope.currentUser = Auth.getCurrentUser();
@@ -38,20 +37,20 @@ angular.module('tablesurferApp')
 
                     Auth.changePhone(phone)
                         .then(function(user) {
-                            scope.$emit('user:changed');
+                            $rootScope.$emit('user:changed');
                             scope.isLoading = false;
                             scope.phoneChanged = true;
                             $timeout(function() {
                                 scope.phoneChanged = false;
                             }, 1500);
                         });
-                    
+
                 };
 
                 scope.submit = function() {
                     scope.isLoading = true;
                     Auth.verifyPhone(scope.currentUser.phonecode).then(function(response) {
-                        scope.$emit('user:changed');
+                        $rootScope.$emit('user:changed');
                         scope.isLoading = false;
                         scope.currentUser.verifiedPhone = true;
                     }).catch(function(err) {
@@ -68,7 +67,7 @@ angular.module('tablesurferApp')
                     console.log("change number...");
                     Auth.deletePhone(scope.currentUser.phone)
                         .then(function(user) {
-                            scope.$emit('user:changed');
+                            $rootScope.$emit('user:changed');
                         });
                 };
             }
