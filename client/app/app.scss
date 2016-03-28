@@ -82,14 +82,13 @@ body.has-modal-fixed .app-body {
 
 a {
     text-decoration: none;
-    -webkit-tap-highlight-color: #ff5a5f;
-    color: #ff5a5f;
+    color: black;
     font-weight: 400;
 }
 
 a:hover,
 a:focus {
-    color: #ff5a5f;
+    color: black;
     text-decoration: underline;
 }
 
@@ -144,8 +143,6 @@ $brand-danger: red;
 @import 'admin/admin.scss';
 @import 'agb/agb.scss';
 @import 'dashboard/dashboard.scss';
-@import 'dashboard/partials/completeProfile/completeProfile.scss';
-@import 'dashboard/partials/welcome/welcome.scss';
 @import 'faq/faq.scss';
 @import 'imprint/imprint.scss';
 @import 'main/main.scss';

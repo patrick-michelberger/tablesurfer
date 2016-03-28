@@ -20,14 +20,6 @@ msgstr ""
 msgid "<span class=\"visible-xs\">universities</span>"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfileOLD.html:45
-msgid ""
-"<span ng-show=\"false\" class=\"visible-xs\">profile</span>\n"
-"    <span ng-hide=\"getCurrentUser().first_name&&getCurrentUser().last_name&&getCurrentUser().verified\">complete your profile</span>\n"
-"    <span ng-show=\"getCurrentUser().first_name && getCurrentUser().last_name && getCurrentUser().verified && !(getCurrentUser().verifiedPhone == false)\"></span>\n"
-"    <span ng-show=\"getCurrentUser().verifiedPhone == false\">Type in received code</span>"
-msgstr ""
-
 #: client/components/tsName/tsName.html:7
 msgid "A first name is required"
 msgstr ""
@@ -69,7 +61,7 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
-#: client/app/onboarding/partials/onboarding.weekdays.html:3
+#: client/app/onboarding/partials/onboarding.weekdays.html:4
 msgid "Complete Registration"
 msgstr ""
 
@@ -203,13 +195,9 @@ msgstr ""
 msgid "New password"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfileOLD.html:53
-msgid "next"
-msgstr ""
-
-#: client/app/onboarding/partials/onboarding.email.html:3
-#: client/app/onboarding/partials/onboarding.info.html:3
-#: client/app/onboarding/partials/onboarding.phone.html:3
+#: client/app/onboarding/partials/onboarding.email.html:4
+#: client/app/onboarding/partials/onboarding.info.html:4
+#: client/app/onboarding/partials/onboarding.phone.html:4
 msgid "Next"
 msgstr ""
 
@@ -259,6 +247,10 @@ msgstr ""
 
 #: client/app/account/signup/signup.html:44
 msgid "Privacy Policy"
+msgstr ""
+
+#: client/app/onboarding/partials/onboarding.complete.html:4
+msgid "Profile Overview"
 msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:18
@@ -318,10 +310,6 @@ msgstr ""
 msgid "tablesurfer"
 msgstr ""
 
-#: client/app/dashboard/partials/completeProfile/completeProfileOLD.html:31
-msgid "tablesurfer <i class=\"fa fa-heart-o\"></i> whatsapp"
-msgstr ""
-
 #: client/app/account/signup/signup.html:22
 msgid "tablesurfer is only for students. Please check the allowed university email addresses <a ui-sref=\"universities\">here</a>."
 msgstr ""
@@ -373,10 +361,6 @@ msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:22
 msgid "We've sent you a verification code to"
-msgstr ""
-
-#: client/app/dashboard/partials/welcome/welcome.html:7
-msgid "Welcome {{getCurrentUser().first_name}}"
 msgstr ""
 
 #: client/app/account/signup/signup.html:25

@@ -37,3 +37,30 @@
     line-height: 0.9em;
     height: 55px;
 }
+
+@media (min-width: $screen-sm) {
+    .ts-ui-view {
+        height: 100%;
+        position: relative;
+    }
+    #ts-onboarding-phone,
+    #ts-onboarding-email,
+    #ts-onboarding-info,
+    #ts-onboarding-weekdays {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+    #ts-onboarding-phone {
+        margin-top: -210px;
+    }
+    #ts-onboarding-email {
+        margin-top: -230px;
+    }
+    #ts-onboarding-info {
+        margin-top: -210px;
+    }
+    #ts-onboarding-weekdays {
+        margin-top: -310px;
+    }
+}

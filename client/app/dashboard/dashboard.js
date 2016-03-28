@@ -6,16 +6,13 @@ angular.module('tablesurferApp')
             .state('dashboard', {
                 url: '/dashboard',
                 authenticate: 'true',
+                data: {
+                    hideFooter: true
+                },
                 views: {
                     "": {
                         templateUrl: 'app/dashboard/dashboard.html',
                         controller: 'DashboardCtrl'
-                    },
-                    'completeProfile@dashboard': {
-                        templateUrl: 'app/dashboard/partials/completeProfile/completeProfile.html'
-                    },
-                    'welcome@dashboard': {
-                        templateUrl: 'app/dashboard/partials/welcome/welcome.html'
                     }
                 }
             });

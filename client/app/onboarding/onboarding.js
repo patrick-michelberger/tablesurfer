@@ -7,8 +7,10 @@ angular.module('tablesurferApp')
                 url: '/onboarding',
                 authenticate: 'true',
                 templateUrl: 'app/onboarding/onboarding.html',
-                controller: 'OnboardingCtrl'
-
+                controller: 'OnboardingCtrl',
+                data: {
+                    hideFooter: true
+                }
             })
             .state('onboarding.email', {
                 url: '/email',

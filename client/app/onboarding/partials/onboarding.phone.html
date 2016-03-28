@@ -1,4 +1,6 @@
-<ts-phone></ts-phone>
-<div class="row">
-    <button ng-show="getCurrentUser().verifiedPhone" ng-disabled="!getCurrentUser().verifiedPhone" class="btn btn-primary btn-block" ui-sref="onboarding.weekdays" translate>Next</button>
+<div id="ts-onboarding-phone">
+    <ts-phone></ts-phone>
+    <div class="row">
+        <button ng-show="getCurrentUser().verifiedPhone" ng-disabled="!getCurrentUser().verifiedPhone" class="btn btn-primary btn-block" ui-sref="onboarding.weekdays" translate>Next</button>
+    </div>
 </div>

@@ -8,5 +8,4 @@ angular.module('tablesurferApp')
                 $state.go('onboarding');
             }
         });
-
     });

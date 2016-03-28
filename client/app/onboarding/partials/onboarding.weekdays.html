@@ -1,4 +1,6 @@
-<ts-weekdays></ts-weekdays>
-<div class="row">
-    <button ng-disabled="getCurrentUser().weekdays.length<1" class="btn btn-primary btn-block" ng-click="completeRegistration()" translate>Complete Registration</button>
+<div id="ts-onboarding-weekdays">
+    <ts-weekdays class="row"></ts-weekdays>
+    <div class="row">
+        <button ng-disabled="getCurrentUser().weekdays.length<1" class="btn btn-primary btn-block" ng-click="completeRegistration()" translate>Complete Registration</button>
+    </div>
 </div>
