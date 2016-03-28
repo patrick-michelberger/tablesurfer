@@ -1,18 +1,20 @@
-<form class="form" name="form" novalidate>
-    <div class="form-group" ng-class="{ 'has-success': form.fname.$valid && form.fname.$dirty,
+<div class="row">
+    <form class="form" name="form" novalidate>
+        <div class="form-group" ng-class="{ 'has-success': form.fname.$valid && form.fname.$dirty,
                                             'has-error': form.fname.$invalid && form.fname.$dirty }">
-        <label for="fname" translate>first name</label>
-        <input type="text" name="fname" class="form-control" ng-blur="changeFirstName(form)" ng-model="user.first_name" id="fname"  autocomplete="given-name" />
-        <p class="help-block" ng-show="form.fname.$error.required && form.fname.$dirty" translate>
-            A first name is required
-        </p>
-    </div>
-    <div class="form-group" ng-class="{ 'has-success': form.lname.$valid && form.lname.$dirty,
+            <label for="fname" translate>first name</label>
+            <input type="text" name="fname" class="form-control" ng-blur="changeFirstName(form)" ng-model="user.first_name" id="fname" autocomplete="given-name" required/>
+            <p class="help-block" ng-show="form.fname.$error.required && form.fname.$dirty" translate>
+                A first name is required
+            </p>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': form.lname.$valid && form.lname.$dirty,
                                             'has-error': form.lname.$invalid && form.lname.$dirty}">
-        <label for="lname" translate>last name</label>
-        <input type="text" name="lname" class="form-control" ng-blur="changeLastName(form)" ng-model="user.last_name" id="lname" autocomplete="family-name" required/>
-        <p class="help-block" ng-show="form.lname.$error.required && form.lname.$dirty" translate>
-            A last name is required
-        </p>
-    </div>
-</form>
+            <label for="lname" translate>last name</label>
+            <input type="text" name="lname" class="form-control" ng-blur="changeLastName(form)" ng-model="user.last_name" id="lname" autocomplete="family-name" required/>
+            <p class="help-block" ng-show="form.lname.$error.required && form.lname.$dirty" translate>
+                A last name is required
+            </p>
+        </div>
+    </form>
+</div>

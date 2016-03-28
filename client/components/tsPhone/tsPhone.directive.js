@@ -10,6 +10,7 @@ angular.module('tablesurferApp')
 
                 var currentUser = scope.currentUser = Auth.getCurrentUser();
 
+                // scope properties
                 scope.hasPhonecode = function() {
                     if (currentUser.verifiedPhone === false) {
                         return true;
@@ -22,9 +23,7 @@ angular.module('tablesurferApp')
                     return (!currentUser.phone || currentUser.phone.length < 1 || !currentUser.verifiedPhone) ? false : true;
                 };
 
-                // ACTIONS
                 scope.saveNumber = function() {
-                    console.log("save number...");
                     scope.isLoading = true;
                     var phone = scope.currentUser.phone;
 
@@ -35,32 +34,34 @@ angular.module('tablesurferApp')
                         scope.currentUser.phone = phone.replace('0', '');
                     }
 
-                    Auth.changePhone(phone)
-                        .then(function(user) {
-                            $rootScope.$emit('user:changed');
-                            scope.isLoading = false;
-                            scope.phoneChanged = true;
-                            $timeout(function() {
+                    $timeout(function() {
+                        Auth.changePhone(phone)
+                            .then(function(user) {
+                                $rootScope.$emit('user:changed');
+                                scope.phoneChanged = true;
+                                scope.isLoading = false;
                                 scope.phoneChanged = false;
-                            }, 1500);
-                        });
-
+                            });
+                    }, 1000);
                 };
 
                 scope.submit = function() {
                     scope.isLoading = true;
-                    Auth.verifyPhone(scope.currentUser.phonecode).then(function(response) {
-                        $rootScope.$emit('user:changed');
-                        scope.isLoading = false;
-                        scope.currentUser.verifiedPhone = true;
-                    }).catch(function(err) {
-                        scope.isLoading = false;
-                        scope.hasError = true;
-                        delete scope.currentUser.phonecode;
-                        $timeout(function() {
-                            scope.hasError = false;
-                        }, 1500);
-                    });
+                    $timeout(function() {
+                        Auth.verifyPhone(scope.currentUser.phonecode).then(function(response) {
+                            scope.isLoading = false;
+                            scope.currentUser.verifiedPhone = true;
+                            $rootScope.$emit('user:changed');
+                        }).catch(function(err) {
+                            scope.isLoading = false;
+                            scope.hasError = true;
+                            delete scope.currentUser.phonecode;
+                            $timeout(function() {
+                                scope.hasError = false;
+                            }, 2000);
+                        });
+                    }, 1000);
+
                 };
 
                 scope.changeNumber = function() {

@@ -7,13 +7,9 @@ angular.module('tablesurferApp')
             restrict: 'EA',
             scope: {},
             link: function(scope, element, attrs) {
+                // scope varibales
                 scope.getCurrentUser = Auth.getCurrentUser;
-                var email = Auth.getCurrentUser().email
                 scope.user = {};
-                if (email) {
-                    scope.user.email = email;
-                    checkEmail();
-                }
                 scope.errors = {};
                 scope.submitted = false;
 
@@ -44,6 +40,15 @@ angular.module('tablesurferApp')
                     }
                 };
 
+                // initialization
+                Auth.getCurrentUser(function(currentUser) {
+                    if (currentUser && currentUser.email) {
+                        scope.user.email = currentUser.email;
+                        checkEmail();
+                    }
+                });
+
+                // helpers
                 function checkEmail(callback) {
                     callback = callback || angular.noop;
                     var email = scope.user.email;

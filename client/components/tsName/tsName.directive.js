@@ -9,6 +9,7 @@ angular.module('tablesurferApp')
                 var currentUser = Auth.getCurrentUser();
                 var errors = {};
 
+                // scope properties
                 scope.user = Auth.getCurrentUser();
                 scope.getCurrentUser = Auth.getCurrentUser;
 

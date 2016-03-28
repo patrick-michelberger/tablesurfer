@@ -1,12 +1,14 @@
-<div class="alert alert-warning ts-not-verified" ng-click="sendVerificationEmail(getCurrentUser().email)" role="alert" ng-show="getStatus() == 'unverified'" translate>
-    Your email is not verified. Check your email for a verification email or
-    <a href="">send a new one</a>. {{ status.sent }}
-    <i class="fa fa-paper-plane-o"></i>
-</div>
-<div class="alert alert-default" role="alert" ng-show="getStatus() == 'sending'" style="padding-top:25px;">
-    <ts-loading></ts-loading>
-</div>
-<div class="alert alert-warning" role="alert" ng-show="getStatus() == 'error'" translate>Could not send verification email. Try again later.</div>
-<div class="alert alert-success" role="alert" ng-show="getStatus() == 'sent'">
-    <ts-success translate>Verification email sent <i class="fa fa-check-circle-o"></i></ts-success>
+<div class="row">
+    <div class="alert alert-warning ts-not-verified" ng-click="sendVerificationEmail(getCurrentUser().email)" role="alert" ng-show="getStatus() == 'unverified'" translate>
+        Your email is not verified. Check your email for a verification email or
+        <a href="">send a new one</a>. {{ status.sent }}
+        <i class="fa fa-paper-plane-o"></i>
+    </div>
+    <div class="alert alert-default" role="alert" ng-show="getStatus() == 'sending'" style="padding-top:25px;">
+        <ts-loading></ts-loading>
+    </div>
+    <div class="alert alert-warning" role="alert" ng-show="getStatus() == 'error'" translate>Could not send verification email. Try again later.</div>
+    <div class="alert alert-success" role="alert" ng-show="getStatus() == 'sent'">
+        <ts-success translate>Verification email sent <i class="fa fa-check-circle-o"></i></ts-success>
+    </div>
 </div>

@@ -6,8 +6,9 @@ angular.module('tablesurferApp')
         // scope properties
         $scope.getCurrentUser = Auth.getCurrentUser;
         $scope.completeRegistration = function() {
-            Auth.setRegistrationCompleted(true);
-            $state.go('onboarding.complete');
+            Auth.setRegistrationCompleted(true, function() {
+                $state.go('onboarding.complete');
+            });
         };
 
         // listeners
@@ -37,10 +38,12 @@ angular.module('tablesurferApp')
 
                 if (currentUser.registrationCompleted) {
                     // COMPLETE
+                    console.log("COMPLETE CASE");
                     currentStep = STEPS[4];
                     currentProgress = 100;
                 } else if (!currentUser.verified) {
                     // EMAIL
+                    console.log("EMAIL CASE");
                     currentStep = STEPS[0];
                     if (currentUser.verified == false) {
                         // email verification code sent
@@ -51,6 +54,7 @@ angular.module('tablesurferApp')
                     }
                 } else if (!currentUser.first_name || !currentUser.last_name) {
                     // INFO
+                    console.log("INFO CASE");
                     currentStep = STEPS[1];
                     if (!currentUser.first_name && !currentUser.last_name) {
                         // Both are missing
@@ -61,6 +65,7 @@ angular.module('tablesurferApp')
                     }
                 } else if (!currentUser.verifiedPhone) {
                     // PHONE
+                    console.log("PHONE CASE");
                     currentStep = STEPS[2];
                     if (state === 'onboarding.phone') {
                         // user is on phone settings page
@@ -73,8 +78,9 @@ angular.module('tablesurferApp')
                         // user is still on previous page
                         currentProgress = 55;
                     }
-                } else if (currentUser.weekdays.length < 1) {
+                } else if (!currentUser.registrationCompleted) {
                     // WEEKDAYS
+                    console.log("WEEKDAYS CASE");
                     currentStep = STEPS[3];
                     if (state == 'onboarding.weekdays') {
                         currentProgress = 95
@@ -84,6 +90,7 @@ angular.module('tablesurferApp')
                     }
                 } else {
                     // DEFAULT CASE
+                    console.log("DEFAULT CASE");
                     currentStep = STEPS[4];
                     currentProgress = 100;
                 }

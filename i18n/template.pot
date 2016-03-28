@@ -28,11 +28,11 @@ msgid ""
 "    <span ng-show=\"getCurrentUser().verifiedPhone == false\">Type in received code</span>"
 msgstr ""
 
-#: client/components/tsName/tsName.html:6
+#: client/components/tsName/tsName.html:7
 msgid "A first name is required"
 msgstr ""
 
-#: client/components/tsName/tsName.html:14
+#: client/components/tsName/tsName.html:15
 msgid "A last name is required"
 msgstr ""
 
@@ -69,11 +69,15 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
+#: client/app/onboarding/partials/onboarding.weekdays.html:3
+msgid "Complete Registration"
+msgstr ""
+
 #: client/app/account/login/login.html:78
 msgid "Could not send forgot password mail."
 msgstr ""
 
-#: client/components/tsVerify/tsVerify.html:9
+#: client/components/tsVerify/tsVerify.html:10
 msgid "Could not send verification email. Try again later."
 msgstr ""
 
@@ -105,7 +109,7 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: client/components/tsName/tsName.html:4
+#: client/components/tsName/tsName.html:5
 msgid "first name"
 msgstr ""
 
@@ -141,7 +145,7 @@ msgstr ""
 msgid "Impressum"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:17
+#: client/components/tsPhone/tsPhone.html:19
 msgid "Invalid code"
 msgstr ""
 
@@ -158,7 +162,7 @@ msgstr ""
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
-#: client/components/tsName/tsName.html:12
+#: client/components/tsName/tsName.html:13
 msgid "last name"
 msgstr ""
 
@@ -203,10 +207,9 @@ msgstr ""
 msgid "next"
 msgstr ""
 
-#: client/app/onboarding/partials/onboarding.email.html:2
-#: client/app/onboarding/partials/onboarding.info.html:2
-#: client/app/onboarding/partials/onboarding.phone.html:2
-#: client/app/onboarding/partials/onboarding.weekdays.html:2
+#: client/app/onboarding/partials/onboarding.email.html:3
+#: client/app/onboarding/partials/onboarding.info.html:3
+#: client/app/onboarding/partials/onboarding.phone.html:3
 msgid "Next"
 msgstr ""
 
@@ -258,7 +261,7 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:16
+#: client/components/tsPhone/tsPhone.html:18
 msgid "Received code e.g. 123456"
 msgstr ""
 
@@ -307,7 +310,7 @@ msgstr ""
 
 #: client/app/account/resetPassword/resetPassword.html:17
 #: client/app/verify/verify.html:10
-#: client/components/tsPhone/tsPhone.html:18
+#: client/components/tsPhone/tsPhone.html:20
 msgid "Submit"
 msgstr ""
 
@@ -347,11 +350,11 @@ msgstr ""
 msgid "User succesfully verified. You will be redirected shortly. <i class=\"fa fa-circle-o-notch fa-spin\"></i>"
 msgstr ""
 
-#: client/components/tsVerify/tsVerify.html:11
+#: client/components/tsVerify/tsVerify.html:12
 msgid "Verification email sent <i class=\"fa fa-check-circle-o\"></i>"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:11
+#: client/components/tsPhone/tsPhone.html:13
 msgid "Verified phone number"
 msgstr ""
 
@@ -368,7 +371,7 @@ msgstr ""
 msgid "We have sent you an email to reset your password."
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:19
+#: client/components/tsPhone/tsPhone.html:22
 msgid "We've sent you a verification code to"
 msgstr ""
 
@@ -384,9 +387,9 @@ msgstr ""
 msgid "What's your university email?"
 msgstr ""
 
-#: client/components/tsVerify/tsVerify.html:1
+#: client/components/tsVerify/tsVerify.html:2
 msgid ""
 "Your email is not verified. Check your email for a verification email or\r\n"
-"    <a href=\"\">send a new one</a>. {{ status.sent }}\r\n"
-"    <i class=\"fa fa-paper-plane-o\"></i>"
+"        <a href=\"\">send a new one</a>. {{ status.sent }}\r\n"
+"        <i class=\"fa fa-paper-plane-o\"></i>"
 msgstr ""

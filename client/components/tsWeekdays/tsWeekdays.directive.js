@@ -7,14 +7,8 @@ angular.module('tablesurferApp')
             restrict: 'EA',
             link: function(scope, element, attrs) {
 
-                var currentUser = Auth.getCurrentUser();
-
+                // scope propterties
                 scope.weekdays = {};
-
-                currentUser.weekdays.forEach(function(day) {
-                    scope.weekdays[day] = true;
-                });
-
                 scope.preferences = [];
 
                 scope.$watchCollection('weekdays', function() {
@@ -37,6 +31,13 @@ angular.module('tablesurferApp')
                             console.log("Err: ", err);
                         });
                 };
+
+                // initialization
+                Auth.getCurrentUser(function(currentUser) {
+                    currentUser.weekdays.forEach(function(day) {
+                        scope.weekdays[day] = true;
+                    });
+                });
             }
         };
     });
