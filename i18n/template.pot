@@ -225,6 +225,10 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
+#: client/app/dashboard/dashboard.html:33
+msgid "Phone"
+msgstr ""
+
 #: client/components/tsPhone/tsPhone.html:8
 msgid "Phone number successfully changed."
 msgstr ""
@@ -253,6 +257,10 @@ msgstr ""
 msgid "Profile Overview"
 msgstr ""
 
+#: client/app/dashboard/dashboard.html:58
+msgid "Profile Picture"
+msgstr ""
+
 #: client/components/tsPhone/tsPhone.html:18
 msgid "Received code e.g. 123456"
 msgstr ""
@@ -263,6 +271,10 @@ msgstr ""
 
 #: client/app/account/login/login.html:64
 msgid "Reset Password"
+msgstr ""
+
+#: client/components/tsPhoto/tsPhoto.html:11
+msgid "Save"
 msgstr ""
 
 #: client/app/account/login/login.html:87
@@ -334,12 +346,25 @@ msgstr ""
 msgid "Universities"
 msgstr ""
 
+#: client/app/dashboard/dashboard.html:22
+msgid "University E-Mail"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:9
+msgid "Upload Profile Picture"
+msgstr ""
+
 #: client/app/verify/verify.html:19
 msgid "User succesfully verified. You will be redirected shortly. <i class=\"fa fa-circle-o-notch fa-spin\"></i>"
 msgstr ""
 
 #: client/components/tsVerify/tsVerify.html:12
 msgid "Verification email sent <i class=\"fa fa-check-circle-o\"></i>"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:23
+#: client/app/dashboard/dashboard.html:34
+msgid "Verified"
 msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:13

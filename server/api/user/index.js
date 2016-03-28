@@ -17,6 +17,7 @@ router.put('/:id/weekdays', auth.isAuthenticated(), controller.changeWeekdays);
 router.put('/:id/registration', auth.isAuthenticated(), controller.setRegistrationCompleted);
 router.put('/:id/firstname', auth.isAuthenticated(), controller.changeFirstName);
 router.put('/:id/lastname', auth.isAuthenticated(), controller.changeLastName);
+router.post('/:id/picture', auth.isAuthenticated(), controller.uploadPicture);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 

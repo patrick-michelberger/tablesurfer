@@ -228,3 +228,17 @@
 #ts-main .ts-features-container section {
     height: 630px;
 }
+
+/**
+ * How To Modal
+ */
+
+#ts-how-to-modal .modal-content {
+    min-height: 500px;
+    background-color: #79cccd;
+    color: #fff;
+}
+
+#ts-how-to-modal .close {
+    color: #fff!important;
+}

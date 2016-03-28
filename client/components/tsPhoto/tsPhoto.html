@@ -1,0 +1,24 @@
+<form name="myForm">
+    <div class="col-sm-6">
+        <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+            <img-crop image="picFile  | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+            </img-crop>
+        </div>
+        <button ng-hide="picFile" class="btn btn-danger btn-block" ngf-select ng-model="picFile" accept="image/*">
+            Upload a photo</button>
+        <button ng-show="picFile" class="ts-btn-trash btn col-xs-6 col-sm-12" ng-click="picFile=null;"><i class="fa fa-trash-o"></i>
+        </button>
+        <button ng-show="picFile" class="ts-btn-upload btn btn-primary col-xs-6 col-sm-12" ng-click="upload(croppedDataUrl, picFile.name)" translate>Save</button>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+        <div class="ts-final-area">
+            <img class="ts-final-image" ng-src="{{croppedDataUrl}}" />
+        </div>
+        <!--<button ng-show="picFile" class="ts-btn-upload btn btn-primary" ng-click="upload(croppedDataUrl, picFile.name)" translate>Save</button>-->
+    </div>
+    <span class="progress" ng-show="progress >= 0">
+          <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+        </span>
+    <span ng-show="result">Upload Successful</span>
+    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+</form>

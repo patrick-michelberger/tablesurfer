@@ -133,6 +133,26 @@ exports.changeFirstName = function(req, res, next) {
 };
 
 /**
+ * Change a users's profile picture 
+ */
+exports.uploadPicture = function(req, res, next) {
+    var userId = req.user._id;
+    var picture = req.body.picture;
+    console.log("uploadPicture for :", userId);
+    console.log("req.body: ", req.body);
+
+    User.findById(userId, function(err, user) {
+        console.log("save picture: ", picture);
+        user.picture = picture;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
+
+
+/**
  * Change a users's last name
  */
 exports.changeLastName = function(req, res, next) {

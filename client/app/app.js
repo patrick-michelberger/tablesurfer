@@ -14,7 +14,9 @@ angular.module('tablesurferApp', [
         'gettext',
         'internationalPhoneNumber',
         'ui.bootstrap',
-        'ui.bootstrap.progressbar'
+        'ui.bootstrap.progressbar',
+        'ngFileUpload',
+        'ngImgCrop'
     ])
     .config(function($urlRouterProvider, $locationProvider) {
         $urlRouterProvider

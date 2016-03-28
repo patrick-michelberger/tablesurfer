@@ -3,11 +3,63 @@
         <div class="row">
             <div class="ts-welcome-container container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-4">
-                        <img src="https://a2.muscache.com/im/pictures/c7d8c8b5-cb26-4adf-826e-a2a699274b5d.jpg?aki_policy=profile_x_medium" class="img-responsive" />
+                    <div class="col-lg-3 col-md-4 col-sm-4">
+                        <!-- NO PROFILE PICTURE YET -->
+                        <div ng-hide="getCurrentUser().picture" class="ts-profile-picture-placeholder" ng-click="uploadPicture()">
+                            <span translate>Upload Profile Picture</span>
+                        </div>
+                        <!-- PROFILE PICTURE AVAILABLE -->
+                        <div ng-show="getCurrentUser().picture">
+                            <img ng-src="{{getCurrentUser().picture}}" class="img-responsive" />
+                        </div>
+                        <!-- SHORT USER INFO -->
+                        <div class="ts-user-info">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div class="media">
+                                        <i class="fa fa-check pull-left"></i>
+                                        <div class="media-body">
+                                            <div translate>University E-Mail</div>
+                                            <div class="text-muted" translate>
+                                                Verified
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="media">
+                                        <i class="fa fa-check pull-left"></i>
+                                        <div class="media-body">
+                                            <div translate>Phone</div>
+                                            <div class="text-muted" translate>
+                                                Verified
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="col-lg-9 col-md-8 col-sm-8">
                         <ts-weekdays></ts-weekdays>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ui-content-for="modals-fixed">
+    <div id="ts-profile-picture-modal" class="ts-fixed-modal" ui-if="uploadPictureModal" ui-state='uploadPictureModal'>
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" ui-turn-off="uploadPictureModal">&times;</button>
+                    <h4 class="modal-title" translate>Profile Picture</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="margin-top:25px;">
+                        <ts-photo></ts-photo>
                     </div>
                 </div>
             </div>

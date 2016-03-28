@@ -28,6 +28,8 @@ module.exports = function(config) {
       'client/bower_components/intl-tel-input/lib/libphonenumber/build/utils.js',
       'client/bower_components/international-phone-number/releases/international-phone-number.js',
       'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'client/bower_components/ng-file-upload/ng-file-upload.js',
+      'client/bower_components/ng-img-crop/compile/minified/ng-img-crop.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

@@ -35,6 +35,14 @@ label {
 }
 
 
+/* Lists */
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+
 /* ALERTS */
 
 .alert {
@@ -160,6 +168,7 @@ $brand-danger: red;
 @import '../components/tsLoading/tsLoading.scss';
 @import '../components/tsName/tsName.scss';
 @import '../components/tsPhone/tsPhone.scss';
+@import '../components/tsPhoto/tsPhoto.scss';
 @import '../components/tsSignup/tsSignup.scss';
 @import '../components/tsSuccess/tsSuccess.scss';
 @import '../components/tsVerify/tsVerify.scss';

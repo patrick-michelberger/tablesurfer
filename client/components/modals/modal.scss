@@ -56,9 +56,6 @@
 }
 
 #ts-modal-fixed .modal-content {
-    min-height: 500px;
-    background-color: #79cccd;
-    color: #fff;
     box-shadow: none;
 }
 
@@ -75,7 +72,7 @@
 #ts-modal-fixed .modal-header h4 {
     font-size: 3.0em;
     font-weight: 600;
-    padding: 5px 15px 0px 15px;
+    padding: 10px 75px 0px 15px;
 }
 
 #ts-modal-fixed .modal-body {
@@ -105,7 +102,7 @@
 }
 
 #ts-modal-fixed .close {
-    color: #fff;
+    color: #000;
     opacity: 1.0;
     font-size: 4.5em;
     position: absolute;

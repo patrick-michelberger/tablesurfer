@@ -1,0 +1,53 @@
+ts-photo .cropArea {
+    overflow: hidden;
+    height: 350px;
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+}
+
+ts-photo .ts-final-area {
+    height: 350px;
+}
+
+ts-photo form .progress {
+    line-height: 15px;
+}
+
+ts-photo .progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+ts-photo .progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+ts-photo .ts-final-image {
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+    top: 50%;
+    margin-top: -100px;
+}
+
+ts-photo .btn {
+    margin-top: 20px;
+}
+
+ts-photo .ts-btn-upload {
+
+}
+
+ts-photo .btn {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.0;
+}
+
+ts-photo .ts-btn-trash {
+    background-color: white;
+}
