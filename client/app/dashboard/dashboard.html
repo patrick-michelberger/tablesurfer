@@ -65,19 +65,33 @@
                             <div class="panel-body">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <div class="media">
+                                        <div class="media" ng-show="getCurrentUser().university">
+                                            <i class="fa fa-university pull-left"></i>
                                             <div class="media-body">
                                                 <div class="ts-title" translate>School</div>
+                                                <div class="text-muted" translate>
+                                                    {{getCurrentUser().university.name}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media" ng-show="getCurrentUser().currentCity">
+                                            <i class="fa fa-home pull-left"></i>
+                                            <div class="media-body">
+                                                <div class="ts-title" translate>Current City</div>
                                                 <div class="text-muted" translate>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="media">
+                                        <div class="media" ng-show="getCurrentUser().gender">
+                                            <i class="fa fa-male pull-left"></i>
                                             <div class="media-body">
-                                                <div class="ts-title" translate>Current City</div>
-                                                <div class="text-muted" translate>
+                                                <div class="ts-title" translate>Gender</div>
+                                                <div class="text-muted">
+                                                    {{getCurrentUser().gender}}
                                                 </div>
                                             </div>
                                         </div>
@@ -92,9 +106,9 @@
                         </ul>
                     </div>
                     <div class="col-lg-9 col-md-8 col-sm-8">
-                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <!--<div class="alert alert-success alert-dismissible" role="alert">
                             <strong>Warning!</strong> BeHtter check yourself, you're not looking too good.
-                        </div>
+                        </div>-->
                         <!-- Weekdays Panel -->
                         <div class="ts-panel-weekdays panel panel-default">
                             <div class="panel-heading" translate>Your preferred weekdays</div>

@@ -11,7 +11,7 @@ var validationError = function(res, err) {
     return res.status(422).json(err);
 };
 
-var populateFields = "currentCity";
+var populateFields = "currentCity university";
 
 /**
  * Get list of users

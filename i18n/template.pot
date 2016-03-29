@@ -4,6 +4,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: client/app/dashboard/dashboard.html:72
+msgid "{{getCurrentUser().university.name}}"
+msgstr ""
+
 #: client/components/footer/footer.html:54
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
@@ -77,7 +81,7 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:90
+#: client/app/dashboard/dashboard.html:104
 msgid "Change profile picture"
 msgstr ""
 
@@ -93,7 +97,7 @@ msgstr ""
 msgid "Could not send verification email. Try again later."
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:79
+#: client/app/dashboard/dashboard.html:82
 msgid "Current City"
 msgstr ""
 
@@ -139,6 +143,10 @@ msgstr ""
 
 #: client/app/main/main.html:6
 msgid "Freundschaften knüpfen zwischen Herd und Spülbecken! <br><span class=\"ts-citation\">Süddeutsche Zeitung</span>"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:92
+msgid "Gender"
 msgstr ""
 
 #: client/components/footer/footer.html:19
@@ -288,7 +296,7 @@ msgstr ""
 msgid "Profile Overview"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:118
+#: client/app/dashboard/dashboard.html:132
 msgid "Profile Picture"
 msgstr ""
 
@@ -308,7 +316,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:70
+#: client/app/dashboard/dashboard.html:71
 msgid "School"
 msgstr ""
 
@@ -320,7 +328,7 @@ msgstr ""
 msgid "Send verification code to my phone"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:91
+#: client/app/dashboard/dashboard.html:105
 msgid "Settings"
 msgstr ""
 
@@ -443,6 +451,6 @@ msgid ""
 "        <i class=\"fa fa-paper-plane-o\"></i>"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:100
+#: client/app/dashboard/dashboard.html:114
 msgid "Your preferred weekdays"
 msgstr ""

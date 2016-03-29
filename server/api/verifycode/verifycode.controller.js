@@ -4,6 +4,8 @@ var _ = require('lodash');
 var Verify = require('./verifycode.model');
 var Auth = require('../../auth/auth.service');
 var User = require('../user/user.model');
+var University = require('../university/university.model');
+
 
 // Get list of verifys
 exports.index = function(req, res) {

@@ -330,7 +330,7 @@ UserSchema.methods = {
             });
         });
     },
-    
+
     /**
      * Create verifycode and saves user
      *
@@ -345,22 +345,35 @@ UserSchema.methods = {
                 console.log(err);
                 return callback(err);
             }
-            user.verifycode = verifycode._id;
-            user.verified = false;
-            user.save(function(err) {
+
+            checkCampusMail(user.email, function(err, university) {
                 if (err) {
                     return callback(err);
+                } else if (!university) {
+                    return callback({
+                        "error": "No university found for email domain."
+                    });
+                } else {
+                    user.university = university;
+                    user.verifycode = verifycode._id;
+                    user.verified = false;
+                    user.save(function(err) {
+                        if (err) {
+                            return callback(err);
+                        }
+
+                        var data = {
+                            to: user.email,
+                            url: config.domain + '/verify/' + user.verifycode,
+                            template: 'verify.hbs',
+                            subject: 'tablesurfer.org - verify your email'
+                        };
+
+                        mail.send(data, callback);
+                    });
                 }
-
-                var data = {
-                    to: user.email,
-                    url: config.domain + '/verify/' + user.verifycode,
-                    template: 'verify.hbs',
-                    subject: 'tablesurfer.org - verify your email'
-                };
-
-                mail.send(data, callback);
             });
+
         });
     },
 };
@@ -375,6 +388,28 @@ var createRandomPhonecode = function() {
         numbers[i] = randomIntInc(1, 9);
     }
     return numbers.join("");
+};
+
+var checkCampusMail = function(email, callback) {
+    var regex = /(\w+\.\w+)$/;
+    var match = regex.exec(email);
+    if (match && match[0]) {
+        var domain = match[0];
+        University.findOne({
+            'domain': domain
+        }, function(err, university) {
+            if (err) {
+                callback(err, false);
+            } else if (university) {
+                callback(false, university);
+            } else {
+                callback(false, false);
+            }
+        });
+    } else {
+        callback(false, false);
+    }
+
 };
 
 export default mongoose.model('User', UserSchema);

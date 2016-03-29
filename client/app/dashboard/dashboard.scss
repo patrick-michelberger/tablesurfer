@@ -87,10 +87,24 @@
     font-weight: 400;
 }
 
-.ts-about-me > li {
-    margin: 10px 0!important;
+.ts-about-me li {
+    margin: 20px 0!important;
 }
 
+.ts-about-me .fa {
+    padding-right: 10px;
+    left: 5px;
+    font-size: 2.0em;
+    top: 5px;
+    position: relative;
+    width: 40px;
+    color: black;
+    text-align: right;
+}
+
+.ts-about-me .panel-body {
+    padding: 0px 15px 0px 15px;
+}
 
 /**
  * Profile Picture Modal
