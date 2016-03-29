@@ -8,6 +8,10 @@ msgstr ""
 msgid "{{getCurrentUser().university.name}}"
 msgstr ""
 
+#: client/components/tsNotifications/tsNotifications.html:6
+msgid "{{notification.title}}"
+msgstr ""
+
 #: client/components/footer/footer.html:54
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
@@ -300,7 +304,7 @@ msgstr ""
 msgid "Profile Overview"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:155
+#: client/app/dashboard/dashboard.html:144
 msgid "Profile Picture"
 msgstr ""
 
@@ -393,10 +397,6 @@ msgstr ""
 msgid "Terms of Services"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:126
-msgid "The 14-day review period has ended. Your review from Dante E Rossella Balestra is now public."
-msgstr ""
-
 #: client/components/footer/footer.html:6
 msgid "Über uns"
 msgstr ""
@@ -463,6 +463,6 @@ msgid ""
 "        <i class=\"fa fa-paper-plane-o\"></i>"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:137
+#: client/app/dashboard/dashboard.html:126
 msgid "Your preferred weekdays"
 msgstr ""

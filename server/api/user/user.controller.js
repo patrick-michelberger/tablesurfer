@@ -6,6 +6,7 @@ var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
 var AWS = require('../../components/aws');
 var fs = require('fs');
+var Notification = require('../notification/notification.model');
 
 var validationError = function(res, err) {
     return res.status(422).json(err);
@@ -257,6 +258,20 @@ exports.me = function(req, res, next) {
         if (err) return next(err);
         if (!user) return res.status(401).send('Unauthorized');
         res.json(user);
+    });
+};
+
+/**
+ * Get notifications
+ */
+exports.showNotifications = function(req, res, next) {
+    var userId = req.user._id;
+    Notification.find({
+        to: userId
+    }).exec(function(err, notifications) {
+        if (err) return next(err);
+        if (!notifications) return res.status(401).send('Unauthorized');
+        res.json(notifications);
     });
 };
 

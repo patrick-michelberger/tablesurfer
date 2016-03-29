@@ -79,6 +79,7 @@
     color: $ts_red;
 }
 
+
 /**
  * About Me 
  */
@@ -105,6 +106,16 @@
 .ts-about-me .panel-body {
     padding: 0px 15px 0px 15px;
 }
+
+
+/**
+ * Notifcations Panel
+ */
+
+#ts-dashboard .ts-panel-notifcations .panel-body {
+    padding: 0px 15px 0px 15px;
+}
+
 
 /**
  * Profile Picture Modal

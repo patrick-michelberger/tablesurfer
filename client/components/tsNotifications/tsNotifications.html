@@ -1,0 +1,15 @@
+<ul class="list-unstyled">
+    <li ng-repeat="notification in notifications">
+        <div class="media">
+            <i class="fa fa-close pull-right" ng-click="delete(notification._id)"></i>
+            <div class="media-body">
+                <div class="ts-title" translate>
+                    {{notification.title}}
+                </div>
+                <div class="text-muted">
+                    {{notification.message}}
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
