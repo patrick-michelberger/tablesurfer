@@ -90,6 +90,26 @@
             },
 
             /**
+             * Change gender
+             *
+             * @param  {String}  gender     - user's gender,
+             * @param  {Function} callback - optional, function(error, user)
+             * @return {Promise}
+             */
+            changeGender(gender, callback) {
+                return User.changeGender({ id: currentUser._id }, {
+                        gender: gender
+                    }, function(data) {
+                        currentUser.gender = gender;
+                        return safeCb(callback)(null);
+                    },
+                    function(err) {
+                        Auth.logout();
+                        return safeCb(callback)(err);
+                    }).$promise;
+            },
+
+            /**
              * Change last name
              *
              * @param  {String}   lastName      - user's last name

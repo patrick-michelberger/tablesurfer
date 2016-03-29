@@ -30,6 +30,12 @@ angular.module('tablesurferApp')
                 templateUrl: 'app/onboarding/partials/onboarding.phone.html',
                 reload: false
             })
+            .state('onboarding.gender', {
+                url: '/gender',
+                authenticate: 'true',
+                templateUrl: 'app/onboarding/partials/onboarding.gender.html',
+                reload: false
+            })
             .state('onboarding.weekdays', {
                 url: '/weekdays',
                 authenticate: 'true',

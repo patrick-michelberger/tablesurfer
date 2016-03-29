@@ -135,6 +135,21 @@ exports.changeFirstName = function(req, res, next) {
 };
 
 /**
+ * Change a users's gender
+ */
+exports.changeGender = function(req, res, next) {
+    var userId = req.user._id;
+    var gender = req.body.gender;
+    User.findById(userId, function(err, user) {
+        user.gender = gender;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.status(200).send('OK');
+        });
+    });
+};
+
+/**
  * Change a users's profile picture 
  */
 exports.uploadPicture = function(req, res, next) {

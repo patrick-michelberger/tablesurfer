@@ -42,6 +42,12 @@
                     controller: 'firstname'
                 }
             },
+            changeGender: {
+                method: 'PUT',
+                params: {
+                    controller: 'gender'
+                }
+            },
             changeLastName: {
                 method: 'PUT',
                 params: {
