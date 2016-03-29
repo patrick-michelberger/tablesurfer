@@ -4,6 +4,8 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
+var AWS = require('../../components/aws');
+var fs = require('fs');
 
 var validationError = function(res, err) {
     return res.status(422).json(err);
@@ -136,17 +138,23 @@ exports.changeFirstName = function(req, res, next) {
  * Change a users's profile picture 
  */
 exports.uploadPicture = function(req, res, next) {
-    var userId = req.user._id;
-    var picture = req.body.picture;
-    console.log("uploadPicture for :", userId);
-    console.log("req.body: ", req.body);
+    var file = req.files.file;
+    fs.readFile(file.path, function(err, imageData) {
+        fs.unlinkSync(file.path);
+        AWS.uploadS3('tablesurfer', "profile_pictures/" + file.name, imageData, file.type, function(err, s3Url) {
+            if (err) {
+                console.log("Error uploading to S3: ", err);
+            }
+            var userId = req.user._id;
+            var picture = s3Url;
 
-    User.findById(userId, function(err, user) {
-        console.log("save picture: ", picture);
-        user.picture = picture;
-        user.save(function(err) {
-            if (err) return validationError(res, err);
-            res.status(200).send('OK');
+            User.findById(userId, function(err, user) {
+                user.picture = picture;
+                user.save(function(err) {
+                    if (err) return validationError(res, err);
+                    res.status(200).send({picture: s3Url});
+                });
+            });
         });
     });
 };

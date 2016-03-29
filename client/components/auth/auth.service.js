@@ -2,7 +2,7 @@
 
 (function() {
 
-    function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
+    function AuthService($rootScope, $location, $http, $cookies, $q, appConfig, Util, User, Upload) {
         var safeCb = Util.safeCb;
         var currentUser = {};
         var userRoles = appConfig.userRoles || [];
@@ -320,6 +320,28 @@
                 }, function(err) {
                     return cb(err);
                 }).$promise;
+            },
+
+            /**
+             * Change profile picture 
+             *
+             * @param  {String}   picture data url
+             * @param  {Function} callback - optional
+             * @return {Promise}
+             */
+            changePicture(picture, callback) {
+                var cb = callback || angular.noop;
+
+                return Upload.upload({
+                    url: '/api/users/' + currentUser._id + '/picture',
+                    method: 'POST',
+                    file: Upload.dataUrltoBlob(picture, currentUser._id + '')
+                }).then(function(resp) {
+                    currentUser.picture = resp.data.picture + "?timestamp=" + new Date().getTime();
+                    return cb(currentUser);
+                }, function(resp) {
+                    return cb(resp.status);
+                });
             },
 
             /**

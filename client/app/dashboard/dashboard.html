@@ -5,15 +5,17 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-4">
                         <!-- NO PROFILE PICTURE YET -->
-                        <div ng-hide="getCurrentUser().picture" class="ts-profile-picture-placeholder" ng-click="uploadPicture()">
-                            <span translate>Upload Profile Picture</span>
+                        <div ng-hide="getCurrentUser().picture">
+                            <div class="ts-profile-picture-placeholder" ng-click="uploadPicture()">
+                                <span translate>Upload Profile Picture</span>
+                            </div>
                         </div>
                         <!-- PROFILE PICTURE AVAILABLE -->
                         <div ng-show="getCurrentUser().picture">
                             <img ng-src="{{getCurrentUser().picture}}" class="img-responsive" />
                         </div>
-                        <!-- SHORT USER INFO -->
-                        <div class="ts-user-info">
+                        <!-- Verification Info -->
+                        <div class="ts-verification-info">
                             <ul class="list-unstyled">
                                 <li>
                                     <div class="media">
@@ -39,9 +41,49 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- About Me -->
+                        <div class="ts-about-me panel panel-default">
+                            <div class="panel-heading" translate>About Me</div>
+                            <div class="panel-body">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="ts-title" translate>School</div>
+                                                <div class="text-muted" translate>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media">
+                                            <div class="media-body">
+                                                <div class="ts-title" translate>Current City</div>
+                                                <div class="text-muted" translate>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Short Links -->
+                        <ul class="list-unstyled">
+                            <li><a href="" ng-click="uploadPicture()" translate>Change profile picture</a></li>
+                            <li><a href="" ui-sref="settings" translate>Settings</a></li>
+                        </ul>
                     </div>
                     <div class="col-lg-9 col-md-8 col-sm-8">
-                        <ts-weekdays></ts-weekdays>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <strong>Warning!</strong> BeHtter check yourself, you're not looking too good.
+                        </div>
+                        <!-- Weekdays Panel -->
+                        <div class="ts-panel-weekdays panel panel-default">
+                            <div class="panel-heading" translate>Your preferred weekdays</div>
+                            <div class="panel-body">
+                                <ts-weekdays></ts-weekdays>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,10 @@ msgstr ""
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
+#: client/components/tsPhoto/tsPhoto.html:11
+msgid "<i class=\"fa fa-circle-o-notch fa-spin\"></i>"
+msgstr ""
+
 #: client/app/account/login/login.html:54
 msgid "<span class=\"visible-xs\">login</span>"
 msgstr ""
@@ -26,6 +30,10 @@ msgstr ""
 
 #: client/components/tsName/tsName.html:15
 msgid "A last name is required"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:46
+msgid "About Me"
 msgstr ""
 
 #: client/components/footer/footer.html:10
@@ -61,6 +69,10 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
+#: client/app/dashboard/dashboard.html:72
+msgid "Change profile picture"
+msgstr ""
+
 #: client/app/onboarding/partials/onboarding.weekdays.html:4
 msgid "Complete Registration"
 msgstr ""
@@ -71,6 +83,10 @@ msgstr ""
 
 #: client/components/tsVerify/tsVerify.html:10
 msgid "Could not send verification email. Try again later."
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:61
+msgid "Current City"
 msgstr ""
 
 #: client/components/footer/footer.html:9
@@ -174,7 +190,7 @@ msgstr ""
 msgid "login with Facebook"
 msgstr ""
 
-#: client/components/navbar/navbar.html:44
+#: client/components/navbar/navbar.html:45
 msgid "Logout"
 msgstr ""
 
@@ -225,7 +241,7 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:33
+#: client/app/dashboard/dashboard.html:35
 msgid "Phone"
 msgstr ""
 
@@ -257,7 +273,7 @@ msgstr ""
 msgid "Profile Overview"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:58
+#: client/app/dashboard/dashboard.html:100
 msgid "Profile Picture"
 msgstr ""
 
@@ -273,8 +289,12 @@ msgstr ""
 msgid "Reset Password"
 msgstr ""
 
-#: client/components/tsPhoto/tsPhoto.html:11
+#: client/components/tsPhoto/tsPhoto.html:14
 msgid "Save"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:52
+msgid "School"
 msgstr ""
 
 #: client/app/account/login/login.html:87
@@ -283,6 +303,10 @@ msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:6
 msgid "Send verification code to my phone"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:73
+msgid "Settings"
 msgstr ""
 
 #: client/app/account/login/login.html:43
@@ -346,11 +370,11 @@ msgstr ""
 msgid "Universities"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:22
+#: client/app/dashboard/dashboard.html:24
 msgid "University E-Mail"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:9
+#: client/app/dashboard/dashboard.html:10
 msgid "Upload Profile Picture"
 msgstr ""
 
@@ -362,8 +386,8 @@ msgstr ""
 msgid "Verification email sent <i class=\"fa fa-check-circle-o\"></i>"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:23
-#: client/app/dashboard/dashboard.html:34
+#: client/app/dashboard/dashboard.html:25
+#: client/app/dashboard/dashboard.html:36
 msgid "Verified"
 msgstr ""
 
@@ -401,4 +425,8 @@ msgid ""
 "Your email is not verified. Check your email for a verification email or\r\n"
 "        <a href=\"\">send a new one</a>. {{ status.sent }}\r\n"
 "        <i class=\"fa fa-paper-plane-o\"></i>"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:82
+msgid "Your preferred weekdays"
 msgstr ""

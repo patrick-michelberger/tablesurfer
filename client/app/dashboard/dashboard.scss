@@ -28,8 +28,8 @@
 #ts-dashboard .ts-profile-picture-placeholder {
     background: #F8F8F8;
     border: 5px dashed #DDD;
-    height: 220px;
-    width: 220px;
+    width: 100%;
+    padding-bottom: 100%;
     text-align: center;
     padding-top: 25px;
     position: relative;
@@ -40,7 +40,7 @@
     position: absolute;
     top: 50%;
     display: block;
-    margin-top: -15px;
+    margin-top: -10px;
     font-size: 1.2em;
     font-weight: 600;
     width: 100%;
@@ -49,25 +49,39 @@
     cursor: pointer;
 }
 
+
 /** 
- * User Profile Info
+ * Verification Info
  */
 
-.ts-user-info {
+.ts-verification-info {
     margin: 25px 0;
 }
 
-.ts-user-info > ul > li  {
+.ts-verification-info > ul > li {
     margin: 10px 0;
 }
 
-.ts-user-info .fa-check {
+.ts-verification-info .fa-check {
     padding-right: 10px;
     left: 5px;
     font-size: 2.0em;
     top: 5px;
     color: green;
     position: relative;
+}
+
+
+/**
+ * About Me 
+ */
+
+.ts-about-me .ts-title {
+    font-weight: 400;
+}
+
+.ts-about-me > li {
+    margin: 10px 0!important;
 }
 
 

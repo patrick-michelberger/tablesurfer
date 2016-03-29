@@ -1,44 +1,24 @@
 'use strict';
 
 angular.module('tablesurferApp')
-    .directive('tsPhoto', function(Auth, $timeout, Upload, $http) {
+    .directive('tsPhoto', function(Auth, $rootScope, $timeout, Upload, $http) {
         return {
             templateUrl: 'components/tsPhoto/tsPhoto.html',
             restrict: 'EA',
-            link: function(scope, element, attrs) {
+            link: function(scope, element, attrss) {
                 scope.getCurrentUser = Auth.getCurrentUser;
 
                 scope.upload = function(dataUrl, name) {
                     var currentUser = Auth.getCurrentUser();
+                    scope.isUploading = true;
 
-
-                    $http.post('/api/users/' + currentUser._id + '/picture', {
-                        picture: dataUrl
-                    });
-
-                    /*
-                    Upload.upload({
-                        url: '/api/users/' + currentUser._id + '/picture',
-                        data: {
-                            picture: dataUrl
-                        },
-                    }).then(function(response) {
-                        $timeout(function() {
-                            scope.result = response.data;
-                        });
+                    Auth.changePicture(dataUrl).then(function(response) {
+                        scope.isUploading = false;
+                        $rootScope.Ui.turnOff('uploadPictureModal');
                     }, function(response) {
                         if (response.status > 0) scope.errorMsg = response.status + ': ' + response.data;
-                    }, function(evt) {
-                        scope.progress = parseInt(100.0 * evt.loaded / evt.total);
+                        scope.isUploading = false;
                     });
-
-
-                    /*
-                                            data: {
-                            picture: Upload.dataUrltoBlob(dataUrl, name)
-                        },
-                        */
-
                 }
             }
         };

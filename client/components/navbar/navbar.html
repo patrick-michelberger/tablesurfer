@@ -41,6 +41,7 @@
         <li ng-show="nav.isLoggedIn()" class="ts-user-name">
             <a ui-sref="dashboard">{{ nav.getCurrentUser().first_name }} {{ nav.getCurrentUser().last_name }}</a>
         </li>
+        <li ng-show="nav.isLoggedIn()"><a ui-sref="settings"><i class="fa fa-cog fa-fw"></i></a></li>
         <li ng-show="nav.isLoggedIn()"><a ui-sref="logout" translate>Logout</a></li>
         <!-- Logged In END -->
     </ul>

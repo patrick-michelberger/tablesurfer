@@ -43,14 +43,23 @@ label {
 }
 
 
+/* Panels */
+
+.panel {
+    border-radius: 0;
+}
+
+.panel .panel-heading {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
 /* ALERTS */
 
 .alert {
     border-radius: 0;
-    margin-bottom: 0px;
 }
 
-.alert-danger {}
 
 body.has-modal-fixed .app-body {
     padding-top: 0!important;

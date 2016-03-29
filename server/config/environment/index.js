@@ -62,10 +62,15 @@ var all = {
     },
 
     mail: {
-        username: process.env.GMAIL_USERNAME || 'username',
-        password: process.env.GMAIL_PASSWORD || 'password',
+        username: process.env.GMAIL_USERNAME ||  'username',
+        password: process.env.GMAIL_PASSWORD ||  'password',
         service: 'gmail'
     },
+
+    aws: {
+        accessKey: process.env.AWS_ACCESS_KEY || 'key',
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ||  'secret',
+    }
 };
 
 // Export the config object based on the NODE_ENV
