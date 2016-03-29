@@ -81,7 +81,7 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:104
+#: client/app/dashboard/dashboard.html:107
 msgid "Change profile picture"
 msgstr ""
 
@@ -239,6 +239,10 @@ msgstr ""
 msgid "Not Verified"
 msgstr ""
 
+#: client/app/dashboard/dashboard.html:119
+msgid "Notifications"
+msgstr ""
+
 #: client/app/account/login/login.html:12
 #: client/app/account/signup/signup.html:15
 msgid "oder"
@@ -296,8 +300,12 @@ msgstr ""
 msgid "Profile Overview"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:132
+#: client/app/dashboard/dashboard.html:155
 msgid "Profile Picture"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:104
+msgid "Quick Links"
 msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:18
@@ -328,7 +336,7 @@ msgstr ""
 msgid "Send verification code to my phone"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:105
+#: client/app/dashboard/dashboard.html:108
 msgid "Settings"
 msgstr ""
 
@@ -383,6 +391,10 @@ msgstr ""
 
 #: client/app/account/signup/signup.html:44
 msgid "Terms of Services"
+msgstr ""
+
+#: client/app/dashboard/dashboard.html:126
+msgid "The 14-day review period has ended. Your review from Dante E Rossella Balestra is now public."
 msgstr ""
 
 #: client/components/footer/footer.html:6
@@ -451,6 +463,6 @@ msgid ""
 "        <i class=\"fa fa-paper-plane-o\"></i>"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:114
+#: client/app/dashboard/dashboard.html:137
 msgid "Your preferred weekdays"
 msgstr ""
