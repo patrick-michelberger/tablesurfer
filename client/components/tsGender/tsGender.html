@@ -1,0 +1,13 @@
+<div class="row">
+    <div ng-if="!radioModel" class="ts-gender-placeholder"></div>
+    <iframe ng-if="radioModel == 'male'" src="//giphy.com/embed/137qcedBZRpVTy" width="480" height="260" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <iframe ng-if="radioModel == 'female'" src="//giphy.com/embed/12r9y6xhai5P7a" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+</div>
+<div class="row">
+    <button class="btn btn-primary col-xs-6" ng-model="radioModel" uib-btn-radio="'male'" translate>
+        <i class="fa fa-male"></i> Male
+    </button>
+    <button class="btn btn-primary col-xs-6" ng-model="radioModel" uib-btn-radio="'female'" translate>
+        <i class="fa fa-female"></i> Female
+    </button>
+</div>

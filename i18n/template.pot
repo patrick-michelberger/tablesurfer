@@ -12,6 +12,14 @@ msgstr ""
 msgid "<i class=\"fa fa-circle-o-notch fa-spin\"></i>"
 msgstr ""
 
+#: client/components/tsGender/tsGender.html:10
+msgid "<i class=\"fa fa-female\"></i> Female"
+msgstr ""
+
+#: client/components/tsGender/tsGender.html:7
+msgid "<i class=\"fa fa-male\"></i> Male"
+msgstr ""
+
 #: client/app/account/login/login.html:54
 msgid "<span class=\"visible-xs\">login</span>"
 msgstr ""
@@ -212,6 +220,7 @@ msgid "New password"
 msgstr ""
 
 #: client/app/onboarding/partials/onboarding.email.html:4
+#: client/app/onboarding/partials/onboarding.gender.html:4
 #: client/app/onboarding/partials/onboarding.info.html:4
 #: client/app/onboarding/partials/onboarding.phone.html:4
 msgid "Next"
