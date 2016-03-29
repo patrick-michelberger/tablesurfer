@@ -18,7 +18,7 @@
                         <div class="ts-verification-info">
                             <ul class="list-unstyled">
                                 <li>
-                                    <div class="media">
+                                    <div class="media" ng-show="getCurrentUser().verified">
                                         <i class="fa fa-check pull-left"></i>
                                         <div class="media-body">
                                             <div translate>University E-Mail</div>
@@ -27,14 +27,32 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="media" ng-hide="getCurrentUser().verified">
+                                        <i class="fa fa-exclamation pull-left"></i>
+                                        <div class="media-body">
+                                            <div translate>University E-Mail</div>
+                                            <div class="text-muted" translate>
+                                                Not Verified
+                                            </div>
+                                        </div>
+                                    </div>
                                 </li>
                                 <li>
-                                    <div class="media">
+                                    <div class="media" ng-show="getCurrentUser().verified">
                                         <i class="fa fa-check pull-left"></i>
                                         <div class="media-body">
                                             <div translate>Phone</div>
                                             <div class="text-muted" translate>
                                                 Verified
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media" ng-hide="getCurrentUser().verified">
+                                        <i class="fa fa-exclamation pull-left"></i>
+                                        <div class="media-body">
+                                            <div translate>Phone</div>
+                                            <div class="text-muted" translate>
+                                                Not Verified
                                             </div>
                                         </div>
                                     </div>

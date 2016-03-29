@@ -62,15 +62,22 @@
     margin: 10px 0;
 }
 
-.ts-verification-info .fa-check {
+.ts-verification-info .fa-check,
+.ts-verification-info .fa-exclamation {
     padding-right: 10px;
     left: 5px;
     font-size: 2.0em;
     top: 5px;
-    color: green;
     position: relative;
 }
 
+.ts-verification-info .fa-check {
+    color: $ts_green;
+}
+
+.ts-verification-info .fa-exclamation {
+    color: $ts_red;
+}
 
 /**
  * About Me 

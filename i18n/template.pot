@@ -32,7 +32,7 @@ msgstr ""
 msgid "A last name is required"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:46
+#: client/app/dashboard/dashboard.html:64
 msgid "About Me"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:72
+#: client/app/dashboard/dashboard.html:90
 msgid "Change profile picture"
 msgstr ""
 
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Could not send verification email. Try again later."
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:61
+#: client/app/dashboard/dashboard.html:79
 msgid "Current City"
 msgstr ""
 
@@ -217,6 +217,11 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: client/app/dashboard/dashboard.html:34
+#: client/app/dashboard/dashboard.html:54
+msgid "Not Verified"
+msgstr ""
+
 #: client/app/account/login/login.html:12
 #: client/app/account/signup/signup.html:15
 msgid "oder"
@@ -241,7 +246,8 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:35
+#: client/app/dashboard/dashboard.html:44
+#: client/app/dashboard/dashboard.html:53
 msgid "Phone"
 msgstr ""
 
@@ -273,7 +279,7 @@ msgstr ""
 msgid "Profile Overview"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:100
+#: client/app/dashboard/dashboard.html:118
 msgid "Profile Picture"
 msgstr ""
 
@@ -293,7 +299,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:52
+#: client/app/dashboard/dashboard.html:70
 msgid "School"
 msgstr ""
 
@@ -305,7 +311,7 @@ msgstr ""
 msgid "Send verification code to my phone"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:73
+#: client/app/dashboard/dashboard.html:91
 msgid "Settings"
 msgstr ""
 
@@ -371,6 +377,7 @@ msgid "Universities"
 msgstr ""
 
 #: client/app/dashboard/dashboard.html:24
+#: client/app/dashboard/dashboard.html:33
 msgid "University E-Mail"
 msgstr ""
 
@@ -387,7 +394,7 @@ msgid "Verification email sent <i class=\"fa fa-check-circle-o\"></i>"
 msgstr ""
 
 #: client/app/dashboard/dashboard.html:25
-#: client/app/dashboard/dashboard.html:36
+#: client/app/dashboard/dashboard.html:45
 msgid "Verified"
 msgstr ""
 
@@ -427,6 +434,6 @@ msgid ""
 "        <i class=\"fa fa-paper-plane-o\"></i>"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:82
+#: client/app/dashboard/dashboard.html:100
 msgid "Your preferred weekdays"
 msgstr ""

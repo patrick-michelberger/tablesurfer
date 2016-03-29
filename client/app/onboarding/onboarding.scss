@@ -36,6 +36,7 @@
     font-size: 1.5em;
     line-height: 0.9em;
     height: 55px;
+    padding: 5px;
 }
 
 @media (min-width: $screen-sm) {
@@ -46,7 +47,8 @@
     #ts-onboarding-phone,
     #ts-onboarding-email,
     #ts-onboarding-info,
-    #ts-onboarding-weekdays {
+    #ts-onboarding-weekdays,
+    #ts-onboarding-complete {
         position: absolute;
         top: 50%;
         width: 100%;
@@ -62,5 +64,8 @@
     }
     #ts-onboarding-weekdays {
         margin-top: -310px;
+    }
+    #ts-onboarding-complete {
+        margin-top: -210px;
     }
 }
