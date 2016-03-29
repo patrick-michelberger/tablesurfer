@@ -10,6 +10,7 @@
 .navbar-absolute-top .ts-user-name a {
     margin-right: 0px;
     font-weight: 200;
+    text-transform: lowercase;
 }
 
 .navbar-absolute-top a {
@@ -101,7 +102,8 @@ body > div.app > navbar > div > div > button > i {
     padding-top: 15px;
     margin-left: 15px;
     margin-right: 15px;
-    font-weight: 600;
+    font-weight: 400;
+    text-transform: lowercase;
 }
 
 .navbar-left>li.active>a {
