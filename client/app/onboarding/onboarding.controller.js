@@ -10,6 +10,7 @@ angular.module('tablesurferApp')
                 $state.go('onboarding.complete');
             });
         };
+        $scope.firstStep = true;
 
         // listeners
         $rootScope.$on('user:changed', function()  {
@@ -33,9 +34,6 @@ angular.module('tablesurferApp')
             var currentProgress = 0;
 
             Auth.getCurrentUser(function(currentUser) {
-                console.log("currentUser: ", currentUser);
-                console.log("currentUser.email: ", currentUser.email);
-
                 if (currentUser.registrationCompleted) {
                     // COMPLETE
                     console.log("COMPLETE CASE");
@@ -51,6 +49,8 @@ angular.module('tablesurferApp')
                     } else {
                         // email verification code not sent
                         currentProgress = 15;
+                        // open welcome modal
+                        $rootScope.Ui.turnOn('welcomeHint');
                     }
                 } else if (!currentUser.first_name || !currentUser.last_name) {
                     // INFO
@@ -67,7 +67,7 @@ angular.module('tablesurferApp')
                     // GENDER
                     console.log("GENDER CASE");
                     currentStep = STEPS[2];
-                    currentProgress = 45;    
+                    currentProgress = 45;
                 } else if (!currentUser.verifiedPhone) {
                     // PHONE
                     console.log("PHONE CASE");
@@ -75,6 +75,8 @@ angular.module('tablesurferApp')
                     if (state === 'onboarding.phone') {
                         // user is on gender settings page
                         if (!currentUser.phone) {
+                            // open phone modal
+                            $rootScope.Ui.turnOn('phoneHint');
                             currentProgress = 65;
                         } else {
                             currentProgress = 75;
@@ -89,9 +91,12 @@ angular.module('tablesurferApp')
                     currentStep = STEPS[4];
                     if (state == 'onboarding.weekdays') {
                         currentProgress = 95
+                        $rootScope.Ui.turnOn('weekdaysHint');
+
                     } else {
                         // user is still on previous page
                         currentProgress = 85;
+                        // open phone modal
                     }
                 } else {
                     // DEFAULT CASE

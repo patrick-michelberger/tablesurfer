@@ -1,11 +1,11 @@
-<form name="myForm">
-    <div class="col-sm-6">
+<div class="col-sm-6">
+    <div class="col-lg-8 col-lg-offset-3">
         <div ngf-drop ng-model="picFile" ngf-pattern="image/*" ngf-max-size="20MB" ngf-min-height="200" ngf-resize="{width: 300, height: 300}" class="cropArea">
             <img-crop image="picFile  | ngfDataUrl" result-image-size="300" result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
             </img-crop>
         </div>
         <button ng-hide="picFile" class="btn btn-danger btn-block" ngf-select ng-model="picFile" accept="image/*">
-            Upload a photo</button>
+            Upload photo</button>
         <button ng-show="picFile" class="ts-btn-trash btn col-xs-6 col-sm-12" ng-click="picFile=null;"><i class="fa fa-trash-o"></i>
         </button>
         <button ng-show="isUploading" class="ts-btn-upload btn col-xs-6 col-sm-12" ng-disabled="true" translate>
@@ -13,14 +13,18 @@
         </button>
         <button ng-show="picFile&&!isUploading" class="ts-btn-upload btn btn-primary col-xs-6 col-sm-12" ng-click="upload(croppedDataUrl, picFile.name)" translate>Save</button>
     </div>
-    <div class="col-sm-6 hidden-xs">
-        <div class="ts-final-area">
+</div>
+<div class="col-sm-6 hidden-xs">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div ng-show="picFile" class="ts-final-area">
             <img class="ts-final-image" ng-src="{{croppedDataUrl}}" />
+            <h3 translate>Does this look right?</h3>
+            <p>This is a preview of your tablesurfer profile picture. Make any changes on the left and press 'save'.</p>
+        </div>
+        <div ng-hide="picFile" class="ts-description-photo">
+            <h3 translate>Add your photo</h3>
+            <p translate>The tablesurfer community is built on trust. Put a face to your name so your host or guest knows it’s you.</p>
         </div>
     </div>
-    <span class="progress" ng-show="progress >= 0">
-          <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
-        </span>
-    <span ng-show="result">Upload Successful</span>
-    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+</div>
 </form>

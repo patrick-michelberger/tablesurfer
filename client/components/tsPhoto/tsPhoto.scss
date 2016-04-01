@@ -5,8 +5,23 @@ ts-photo .cropArea {
     border: 5px dashed #DDD;
 }
 
-ts-photo .ts-final-area {
-    height: 350px;
+ts-photo .ts-final-area h3 {
+    margin-top: 5px!important;
+    font-weight: 600;
+    min-height: initial!important;
+    margin-bottom: 10px!important;
+}
+
+ts-photo .ts-final-area p {
+    text-align: center!important;
+}
+
+ts-photo .ts-final-area img {
+    position: relative;
+    left: 50%;
+    margin-left: -150px;
+    margin-bottom: 15px;
+    margin-top: 5px;
 }
 
 ts-photo form .progress {
@@ -25,24 +40,16 @@ ts-photo .progress div {
     width: 0;
 }
 
-ts-photo .ts-final-image {
-    position: relative;
-    left: 50%;
-    margin-left: -150px;
-    top: 50%;
-    margin-top: -150px;
-}
+ts-photo .ts-final-image {}
 
 ts-photo .btn {
     margin-top: 20px;
 }
 
-ts-photo .ts-btn-upload {
-
-}
+ts-photo .ts-btn-upload {}
 
 ts-photo .btn {
-    font-size: 2.5em;
+    font-size: 2.0em;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1.0;
@@ -50,4 +57,21 @@ ts-photo .btn {
 
 ts-photo .ts-btn-trash {
     background-color: white;
+}
+
+ts-photo .ts-description-photo {
+    top: -55px;
+    position: relative;
+    margin-top: 50%;
+}
+
+ts-photo .ts-description-photo p {
+    text-align: center!important;
+}
+
+#ts-modal-fixed ts-photo .ts-description-photo h3 {
+    min-height: initial!important;
+    margin-bottom: 5px;
+    font-size: 3em;
+    font-weight: 600;
 }

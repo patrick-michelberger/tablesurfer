@@ -12,6 +12,7 @@ angular.module('tablesurferApp')
                 scope.user = {};
                 scope.errors = {};
                 scope.submitted = false;
+                scope.emailDisabled = false;
 
                 scope.changeEmail = function() {
                     scope.submitted = true;
@@ -45,6 +46,9 @@ angular.module('tablesurferApp')
                     if (currentUser && currentUser.email) {
                         scope.user.email = currentUser.email;
                         checkEmail();
+                    }
+                    if (currentUser.provider == 'local') {
+                        scope.emailDisabled = true;
                     }
                 });
 

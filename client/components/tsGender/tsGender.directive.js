@@ -9,6 +9,12 @@ angular.module('tablesurferApp')
 
                 scope.user = {};
 
+                Auth.getCurrentUser(function(currentUser) {
+                    if (currentUser.gender) {
+                        scope.user.gender = currentUser.gender;
+                    } 
+                });
+
                 scope.$watch('user.gender', function() {
                 	var gender = scope.user.gender;
                     if (gender) {

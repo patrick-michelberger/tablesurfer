@@ -29,6 +29,11 @@ label {
     width: 100%;
 }
 
+b,
+strong {
+    font-weight: 400;
+}
+
 .progress {
     height: 35px;
     border-radius: 0;
@@ -54,12 +59,12 @@ label {
     font-weight: 400;
 }
 
+
 /* ALERTS */
 
 .alert {
     border-radius: 0;
 }
-
 
 body.has-modal-fixed .app-body {
     padding-top: 0!important;

@@ -1,10 +1,10 @@
 <form ng-hide="hasPhonecode()" class="row" name="phone" ng-submit="saveNumber()">
     <div ng-hide="isLoading">
         <i class="fa fa-whatsapp hidden-xs" ng-hide="currentUser.verifiedPhone"></i>
-        <a ng-click="changeNumber()"><i ng-click="changeNumber()" class="fa fa-pencil-square-o ts-change-number" ng-show="currentUser.verifiedPhone"></i></a>
+        <i ng-click="changeNumber()" class="fa fa-pencil-square-o ts-change-number" ng-show="currentUser.verifiedPhone"></i>
         <input id="phone" ng-disabled="currentUser.verifiedPhone" name="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone col-xs-12" national-mode="false" type="text" international-phone-number ng-model="currentUser.phone" required/>
         <button ng-hide="currentUser.verifiedPhone" ng-disabled="phone.$invalid" class="ts-btn-save btn btn-primary" type="submit" translate>Send verification code to my phone</button>
-        <p ng-hide="currentUser.verifiedPhone">Rest assured, your number is only shared with another Tablesurfer member you attend a cooking session together.</p>
+        <p ng-hide="currentUser.verifiedPhone"></p>
         <p ng-show="phoneChanged" class="alert alert-success" translate>Phone number successfully changed.</p>
     </div>
     <div ng-show="isLoading" class="alert">

@@ -24,6 +24,7 @@ angular.module('tablesurferApp')
           console.log(err);
           $scope.status = 'error'
         });
+        
     };
     
     // cast verify on startup

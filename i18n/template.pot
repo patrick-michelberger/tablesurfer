@@ -20,12 +20,28 @@ msgstr ""
 msgid "<i class=\"fa fa-circle-o-notch fa-spin\"></i>"
 msgstr ""
 
+#: client/app/verify/verify.html:20
+msgid "<i class=\"fa fa-circle-o-notch fa-spin\"></i> User succesfully verified. You will be redirected shortly."
+msgstr ""
+
+#: client/app/verify/verify.html:17
+msgid "<i class=\"fa fa-exclamation-triangle\"></i> Error verifying user."
+msgstr ""
+
 #: client/components/tsGender/tsGender.html:10
 msgid "<i class=\"fa fa-female\"></i> Female"
 msgstr ""
 
 #: client/components/tsGender/tsGender.html:7
 msgid "<i class=\"fa fa-male\"></i> Male"
+msgstr ""
+
+#: client/app/account/settings/settings.html:28
+msgid "<span class=\"ng-scope\" translate=\"\">Password</span>"
+msgstr ""
+
+#: client/app/account/settings/settings.html:5
+msgid "<span class=\"ng-scope\" translate=\"\">Profile Information</span>"
 msgstr ""
 
 #: client/app/account/login/login.html:54
@@ -40,6 +56,12 @@ msgstr ""
 msgid "<span class=\"visible-xs\">universities</span>"
 msgstr ""
 
+#: client/app/onboarding/onboarding.html:20
+msgid ""
+"<span ng-show=\"firstStep\">Welcome to Tablesurfer</span>\r\n"
+"                        <span ng-hide=\"firstStep\">Check your email</span>"
+msgstr ""
+
 #: client/components/tsName/tsName.html:7
 msgid "A first name is required"
 msgstr ""
@@ -52,8 +74,16 @@ msgstr ""
 msgid "About Me"
 msgstr ""
 
+#: client/components/tsPhoto/tsPhoto.html:25
+msgid "Add your photo"
+msgstr ""
+
 #: client/components/footer/footer.html:10
 msgid "AGB"
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:56
+msgid "All right"
 msgstr ""
 
 #: client/app/account/signup/signup.html:44
@@ -93,6 +123,14 @@ msgstr ""
 msgid "Complete Registration"
 msgstr ""
 
+#: client/app/account/settings/settings.html:46
+msgid "Confirm New Password"
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:51
+msgid "Confirm your phone number"
+msgstr ""
+
 #: client/app/account/login/login.html:78
 msgid "Could not send forgot password mail."
 msgstr ""
@@ -105,6 +143,10 @@ msgstr ""
 msgid "Current City"
 msgstr ""
 
+#: client/app/account/settings/settings.html:32
+msgid "Current Password"
+msgstr ""
+
 #: client/components/footer/footer.html:9
 msgid "Datenschutz"
 msgstr ""
@@ -114,6 +156,10 @@ msgstr ""
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
+#: client/components/tsPhoto/tsPhoto.html:21
+msgid "Does this look right?"
+msgstr ""
+
 #: client/app/main/main.html:185
 #: client/app/main/main.html:79
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
@@ -121,12 +167,7 @@ msgstr ""
 
 #: client/app/account/login/login.html:16
 #: client/app/account/signup/signup.html:20
-#: client/components/tsCampusMail/tsCampusMail.html:4
 msgid "Email"
-msgstr ""
-
-#: client/app/verify/verify.html:17
-msgid "Error verifying user."
 msgstr ""
 
 #: client/components/footer/footer.html:7
@@ -149,8 +190,13 @@ msgstr ""
 msgid "Freundschaften knüpfen zwischen Herd und Spülbecken! <br><span class=\"ts-citation\">Süddeutsche Zeitung</span>"
 msgstr ""
 
+#: client/app/account/settings/settings.html:12
 #: client/app/dashboard/dashboard.html:92
 msgid "Gender"
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:38
+msgid "Get Started"
 msgstr ""
 
 #: client/components/footer/footer.html:19
@@ -231,6 +277,10 @@ msgstr ""
 msgid "New password"
 msgstr ""
 
+#: client/app/account/settings/settings.html:39
+msgid "New Password"
+msgstr ""
+
 #: client/app/onboarding/partials/onboarding.email.html:4
 #: client/app/onboarding/partials/onboarding.gender.html:4
 #: client/app/onboarding/partials/onboarding.info.html:4
@@ -252,6 +302,10 @@ msgstr ""
 msgid "oder"
 msgstr ""
 
+#: client/app/onboarding/onboarding.html:39
+msgid "OK"
+msgstr ""
+
 #: client/app/main/main.html:179
 #: client/app/main/main.html:73
 msgid "Organisiert euren Kochabend im Chat!"
@@ -262,6 +316,7 @@ msgid "Partner & Unterstützer"
 msgstr ""
 
 #: client/app/account/login/login.html:20
+#: client/app/account/settings/settings.html:28
 #: client/app/account/signup/signup.html:34
 msgid "Password"
 msgstr ""
@@ -271,6 +326,7 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
+#: client/app/account/settings/settings.html:21
 #: client/app/dashboard/dashboard.html:44
 #: client/app/dashboard/dashboard.html:53
 msgid "Phone"
@@ -300,12 +356,12 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: client/app/onboarding/partials/onboarding.complete.html:4
-msgid "Profile Overview"
+#: client/app/account/settings/settings.html:5
+msgid "Profile Information"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:144
-msgid "Profile Picture"
+#: client/app/onboarding/partials/onboarding.complete.html:4
+msgid "Profile Overview"
 msgstr ""
 
 #: client/app/dashboard/dashboard.html:104
@@ -330,6 +386,10 @@ msgstr ""
 
 #: client/app/dashboard/dashboard.html:71
 msgid "School"
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:73
+msgid "Select weekdays"
 msgstr ""
 
 #: client/app/account/login/login.html:87
@@ -377,7 +437,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: client/app/verify/verify.html:23
+#: client/app/verify/verify.html:25
 msgid "tablesurfer"
 msgstr ""
 
@@ -389,12 +449,36 @@ msgstr ""
 msgid "tablesurfer is only for students. Please the allowed university email addresses <a ui-sref=\"universities\">here</a>."
 msgstr ""
 
+#: client/app/onboarding/onboarding.html:28
+msgid ""
+"Tablesurfers are <b>real students with real homes</b>.\r\n"
+"                            <br>That’s why you’ll have to confirm a few, quick details to activate your account."
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:33
+msgid ""
+"Tap the link in the email we sent you.\r\n"
+"                            <br>Confirming your email verifies you as a student."
+msgstr ""
+
 #: client/components/footer/footer.html:25
 msgid "Technische Universität München"
 msgstr ""
 
+#: client/app/onboarding/onboarding.html:68
+msgid "Tell us your preferred weekdays"
+msgstr ""
+
 #: client/app/account/signup/signup.html:44
 msgid "Terms of Services"
+msgstr ""
+
+#: client/components/tsPhoto/tsPhoto.html:26
+msgid "The tablesurfer community is built on trust. Put a face to your name so your host or guest knows it’s you."
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:55
+msgid "This is so we can create a Whatsapp Group for your table. Rest assured, your number is only shared with another tablesurfer member you attend a cooking session together."
 msgstr ""
 
 #: client/components/footer/footer.html:6
@@ -412,10 +496,6 @@ msgstr ""
 
 #: client/app/dashboard/dashboard.html:10
 msgid "Upload Profile Picture"
-msgstr ""
-
-#: client/app/verify/verify.html:19
-msgid "User succesfully verified. You will be redirected shortly. <i class=\"fa fa-circle-o-notch fa-spin\"></i>"
 msgstr ""
 
 #: client/components/tsVerify/tsVerify.html:12
@@ -465,4 +545,8 @@ msgstr ""
 
 #: client/app/dashboard/dashboard.html:126
 msgid "Your preferred weekdays"
+msgstr ""
+
+#: client/components/tsCampusMail/tsCampusMail.html:4
+msgid "Your University Email"
 msgstr ""

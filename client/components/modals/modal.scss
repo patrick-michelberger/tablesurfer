@@ -9,6 +9,7 @@
     text-align: center;
     border: none;
     background-color: #edefed;
+    padding: 5px 0px 10px 0px;
 }
 
 #ts-modal .modal-footer {
@@ -16,13 +17,14 @@
 }
 
 #ts-modal .modal-header h4 {
-    font-size: 1.5em;
+    font-size: 3.0em;
     font-weight: bold;
+    font-family: 'Amatic SC', cursive;
 }
 
 #ts-modal .close {
     position: absolute;
-    top: 2px;
+    top: 10px;
     right: 10px;
     font-size: 4em;
     color: #000;
@@ -72,11 +74,11 @@
 #ts-modal-fixed .modal-header h4 {
     font-size: 3.0em;
     font-weight: 600;
-    padding: 10px 75px 0px 15px;
+    padding: 5px 0px 10px 0px;
 }
 
 #ts-modal-fixed .modal-body {
-    padding: 15px 15px 0px 15px;
+    padding: 0px 15px 0px 15px;
 }
 
 #ts-modal-fixed .modal-content h3 {

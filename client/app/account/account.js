@@ -28,6 +28,9 @@ angular.module('tablesurferApp')
                 controllerAs: 'vm'
             })
             .state('settings', {
+                data: {
+                    'hideFooter': true
+                },
                 url: '/settings',
                 templateUrl: 'app/account/settings/settings.html',
                 controller: 'SettingsController',

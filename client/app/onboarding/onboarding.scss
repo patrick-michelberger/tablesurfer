@@ -65,3 +65,29 @@
         margin-top: -210px;
     }
 }
+
+
+/**
+ * Welcome Modal
+ */
+
+#ts-welcome-modal .modal-body {
+    height: 215px;
+}
+
+#ts-welcome-modal p {
+    text-align: center!important;
+}
+
+#ts-welcome-modal .fa-graduation-cap,
+#ts-phone-modal .fa-whatsapp,
+#ts-welcome-modal .fa-envelope-o,
+#ts-weekdays-modal .fa-calendar-check-o {
+    font-size: 6em;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    margin-left: -45px;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}

@@ -13,10 +13,12 @@
             </div>
         </form>
     </div>
-    <div class="col-sm-12">
-        <div class="alert alert-danger" ng-show="status == 'error'" translate>Error verifying user.</div>
-        <ts-loading ng-show="status == 'sending'"></ts-loading>
-        <div class="alert alert-success" ng-show="status == 'success'" translate>User succesfully verified. You will be redirected shortly. <i class="fa fa-circle-o-notch fa-spin"></i>
+    <div class="row">
+        <div class="alert alert-danger" ng-show="status == 'error'" translate>
+            <i class="fa fa-exclamation-triangle"></i> Error verifying user.
+        </div>
+        <div class="alert alert-success" ng-show="status == 'success'" translate>
+            <i class="fa fa-circle-o-notch fa-spin"></i> User succesfully verified. You will be redirected shortly.
         </div>
     </div>
 </div>

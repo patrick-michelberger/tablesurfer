@@ -1,21 +1,21 @@
-<div id="ts-dashboard">
+<div ng-if="getCurrentUser().registrationCompleted" id="ts-dashboard">
     <div class="ts-dashboard-container container">
         <div class="row">
             <div class="ts-welcome-container container">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-4">
                         <!-- NO PROFILE PICTURE YET -->
-                        <div ng-hide="getCurrentUser().picture">
+                        <div ng-hide="getCurrentUser().picture" class="hidden-xs">
                             <div class="ts-profile-picture-placeholder" ng-click="uploadPicture()">
                                 <span translate>Upload Profile Picture</span>
                             </div>
                         </div>
                         <!-- PROFILE PICTURE AVAILABLE -->
-                        <div ng-show="getCurrentUser().picture">
+                        <div ng-show="getCurrentUser().picture" class="hidden-xs">
                             <img ng-src="{{getCurrentUser().picture}}" class="img-responsive" />
                         </div>
                         <!-- Verification Info -->
-                        <div class="ts-verification-info">
+                        <div class="ts-verification-info hidden-xs">
                             <ul class="list-unstyled">
                                 <li>
                                     <div class="media" ng-show="getCurrentUser().verified">
@@ -38,7 +38,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="media" ng-show="getCurrentUser().verified">
+                                    <div class="media" ng-show="getCurrentUser().verifiedPhone">
                                         <i class="fa fa-check pull-left"></i>
                                         <div class="media-body">
                                             <div translate>Phone</div>
@@ -47,7 +47,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="media" ng-hide="getCurrentUser().verified">
+                                    <div class="media" ng-hide="getCurrentUser().verifiedPhone">
                                         <i class="fa fa-exclamation pull-left"></i>
                                         <div class="media-body">
                                             <div translate>Phone</div>
@@ -60,7 +60,7 @@
                             </ul>
                         </div>
                         <!-- About Me -->
-                        <div class="ts-about-me panel panel-default">
+                        <div class="ts-about-me panel panel-default hidden-xs">
                             <div class="panel-heading" translate>About Me</div>
                             <div class="panel-body">
                                 <ul class="list-unstyled">
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <!-- Short Links -->
-                        <div class="ts-about-me panel panel-default">
+                        <div class="ts-about-me panel panel-default hidden-xs">
                             <div class="panel-heading" translate>Quick Links</div>
                             <div class="panel-body">
                                 <ul class="list-unstyled">
@@ -115,7 +115,7 @@
                             <strong>Warning!</strong> BeHtter check yourself, you're not looking too good.
                         </div>-->
                         <!-- Notifications Panel -->
-                        <div class="ts-panel-notifcations panel panel-default">
+                        <div class="ts-panel-notifcations panel panel-default hidden-xs">
                             <div class="panel-heading" translate>Notifications</div>
                             <div class="panel-body">
                                 <ts-notifications></ts-notifications>
@@ -141,7 +141,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button class="close" ui-turn-off="uploadPictureModal">&times;</button>
-                    <h4 class="modal-title" translate>Profile Picture</h4>
+                    <h4 class="modal-title" translate></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row" style="margin-top:25px;">

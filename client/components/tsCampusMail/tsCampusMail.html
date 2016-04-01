@@ -1,8 +1,8 @@
 <form class="form row" name="form" novalidate>
     <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted && isCampusMail,
                                             'has-error': form.email.$invalid && submitted }">
-        <label translate>Email</label>
-        <input ng-disabled="getCurrentUser().verified" type="email" name="email" ng-blur="changeEmail()" class="form-control" ng-model="user.email" required mongoose-error/>
+        <label translate>Your University Email</label>
+        <input ng-disabled="getCurrentUser().verified||emailDisabled" type="email" name="email" ng-blur="changeEmail()" class="form-control" ng-model="user.email" required mongoose-error/>
         <div class="alert alert-danger help-block" ng-show="!isCampusMail && submitted && user.email.length" translate>
             tablesurfer is only for students. Please the allowed university email addresses <a ui-sref="universities">here</a>.
         </div>

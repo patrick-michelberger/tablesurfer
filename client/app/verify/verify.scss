@@ -1,7 +1,23 @@
 #ts-verify-container .alert {
-	font-size: 1.2em;
-    font-weight: 400;
+    font-size: 1.2em;
+    font-weight: 200;
     text-align: center;
-    position: relative;
-    margin-top: 25px;
+    position: absolute;
+    top: 50%;
+    margin-top: -110px;
+    width: 210px;
+    height: 170px;
+    left: 50%;
+    margin-left: -105px;
+}
+
+#ts-verify-container .fa-spin,
+#ts-verify-container .fa-exclamation-triangle {
+    font-size: 3.0em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+#ts-verify-container .alert-danger {
+	padding-top: 40px;
 }

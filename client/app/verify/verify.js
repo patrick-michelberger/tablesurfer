@@ -5,6 +5,9 @@ angular.module('tablesurferApp')
     $stateProvider
       .state('verify', {
         url: '/verify/:verifycode',
+        data: {
+        	hideFooter: true
+        },
         templateUrl: 'app/verify/verify.html',
         controller: 'VerifyCtrl'
       });
