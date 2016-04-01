@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: client/app/dashboard/dashboard.html:73
+#: client/app/dashboard/dashboard.html:78
 msgid "{{getCurrentUser().university.name}}"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "A last name is required"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:65
+#: client/app/dashboard/dashboard.html:70
 msgid "About Me"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 msgid "By signing up, I agree to the"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:108
+#: client/app/dashboard/dashboard.html:113
 msgid "Change profile picture"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Could not send verification email. Try again later."
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:83
+#: client/app/dashboard/dashboard.html:88
 msgid "Current City"
 msgstr ""
 
@@ -183,7 +183,7 @@ msgid "Freundschaften knüpfen zwischen Herd und Spülbecken! <br><span class=\"
 msgstr ""
 
 #: client/app/account/settings/settings.html:12
-#: client/app/dashboard/dashboard.html:93
+#: client/app/dashboard/dashboard.html:98
 msgid "Gender"
 msgstr ""
 
@@ -232,6 +232,11 @@ msgstr ""
 msgid "last name"
 msgstr ""
 
+#: client/app/dashboard/dashboard.html:28
+#: client/app/dashboard/dashboard.html:39
+msgid "LinkedIn Profile"
+msgstr ""
+
 #: client/app/account/signup/signup.html:59
 msgid "Log in"
 msgstr ""
@@ -276,12 +281,12 @@ msgstr ""
 msgid "Not at campus anymore?"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:35
-#: client/app/dashboard/dashboard.html:55
+#: client/app/dashboard/dashboard.html:40
+#: client/app/dashboard/dashboard.html:60
 msgid "Not Verified"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:120
+#: client/app/dashboard/dashboard.html:125
 msgid "Notifications"
 msgstr ""
 
@@ -315,8 +320,8 @@ msgid "Password must be at least 3 characters."
 msgstr ""
 
 #: client/app/account/settings/settings.html:21
-#: client/app/dashboard/dashboard.html:45
-#: client/app/dashboard/dashboard.html:54
+#: client/app/dashboard/dashboard.html:50
+#: client/app/dashboard/dashboard.html:59
 msgid "Phone"
 msgstr ""
 
@@ -352,7 +357,7 @@ msgstr ""
 msgid "Profile Overview"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:105
+#: client/app/dashboard/dashboard.html:110
 msgid "Quick Links"
 msgstr ""
 
@@ -372,7 +377,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:72
+#: client/app/dashboard/dashboard.html:77
 msgid "School"
 msgstr ""
 
@@ -388,7 +393,7 @@ msgstr ""
 msgid "Send verification code to my phone"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:109
+#: client/app/dashboard/dashboard.html:114
 msgid "Settings"
 msgstr ""
 
@@ -485,8 +490,8 @@ msgstr ""
 msgid "Universities"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:24
-#: client/app/dashboard/dashboard.html:34
+#: client/app/dashboard/dashboard.html:26
+#: client/app/dashboard/dashboard.html:37
 msgid "University E-Mail"
 msgstr ""
 
@@ -498,8 +503,8 @@ msgstr ""
 msgid "Verification email sent <i class=\"fa fa-check-circle-o\"></i>"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:26
-#: client/app/dashboard/dashboard.html:46
+#: client/app/dashboard/dashboard.html:29
+#: client/app/dashboard/dashboard.html:51
 msgid "Verified"
 msgstr ""
 
@@ -528,7 +533,8 @@ msgstr ""
 msgid "What's your university email?"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:25
+#: client/app/dashboard/dashboard.html:27
+#: client/app/dashboard/dashboard.html:38
 msgid "XING Profile"
 msgstr ""
 
@@ -539,7 +545,7 @@ msgid ""
 "        <i class=\"fa fa-paper-plane-o\"></i>"
 msgstr ""
 
-#: client/app/dashboard/dashboard.html:127
+#: client/app/dashboard/dashboard.html:132
 msgid "Your preferred weekdays"
 msgstr ""
 
