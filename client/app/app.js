@@ -24,7 +24,13 @@ angular.module('tablesurferApp', [
 
         $locationProvider.html5Mode(true);
     })
-    .run(function(gettextCatalog) {
+    .run(function(gettextCatalog, $rootScope, $anchorScroll, $timeout, $window) {
         gettextCatalog.setCurrentLanguage('de');
         /*gettextCatalog.debug = true;*/
+
+        $rootScope.$on('$stateChangeSuccess', function() {
+            var elem = angular.element(document.getElementById('ts-scrollable-content'));
+            var scrollableContentController = elem.controller('scrollableContent');
+            scrollableContentController.scrollTo(0);
+        })
     })

@@ -15,17 +15,21 @@
         <div class="col-sm-4">
             <h4 translate>Städte ({{cities.length}})</h4>
             <ul>
-                <li ng-repeat="city in cities">
+                <li ng-repeat="city in cities | limitTo: 15">
                     <a ng-href="/cities/{{city}}">{{city}}</a>
                 </li>
+                <li>...</li>
             </ul>
+            <button ui-sref="cities" class="btn btn-default btn-block">all cities</button>
         </div>
         <div class="col-sm-4">
             <h4 translate>Universitäten ({{universities.length}})</h4>
             <ul>
-                <li ng-repeat="university in universities"> <a ng-href="{{university.web_page}}" target="_blank">
+                <li ng-repeat="university in universities | limitTo: 15"> <a ng-href="{{university.web_page}}" target="_blank">
 {{university.name}}</a></li>
+                <li>...</li>
             </ul>
+            <button ui-sref="universities" class="btn btn-default btn-block">all universities</button>
         </div>
     </div>
     <div class="ts-social-container row">

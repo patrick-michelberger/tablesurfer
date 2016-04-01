@@ -26,6 +26,8 @@ footer.footer ul {
 
 footer.footer ul li {
     color: $ts-black;
+    height: 25px;
+    overflow: hidden;
 }
 
 footer.footer .list-inline {
@@ -41,7 +43,6 @@ footer.footer .ts-social-container .fa {
 footer.footer .ts-legal-hint-container {
     text-align: center;
 }
-
 
 .has-modal-fixed .navbar-absolute-bottom {
     display: none!important;
