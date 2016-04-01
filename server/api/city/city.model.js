@@ -6,11 +6,7 @@ var mongoose = require('mongoose'),
 var CitySchema = new Schema({
 	"name" : String,
 	"latitude" : String,
-	"longitude" : String,
-	"universities" : [{
-		"type": mongoose.Schema.ObjectId,
-		"ref" : "University"
-	}]
+	"longitude" : String
 }, {
 	collection: 'cities'
 });

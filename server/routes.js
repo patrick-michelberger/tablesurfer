@@ -11,7 +11,6 @@ export default function(app) {
   // Insert routes below
   app.use('/api/notifications', require('./api/notification'));
   app.use('/api/passwords', require('./api/password'));
-  app.use('/api/countries', require('./api/country'));
   app.use('/api/verifycodes', require('./api/verifycode'));
   app.use('/api/universities', require('./api/university'));
   app.use('/api/cities', require('./api/city'));

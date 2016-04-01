@@ -7,7 +7,8 @@ var UniversitySchema = new Schema({
     "name": String,
     "web_page": String,
     "country": String,
-    "domain": String
+    "domain": String,
+    "city": String
 }, {
     collection: 'universities'
 });
