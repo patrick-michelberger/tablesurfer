@@ -12,7 +12,7 @@ msgstr ""
 msgid "{{notification.title}}"
 msgstr ""
 
-#: client/components/footer/footer.html:54
+#: client/components/footer/footer.html:51
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
@@ -99,16 +99,8 @@ msgstr ""
 msgid "Anmeldung mit Deiner Campus-Email"
 msgstr ""
 
-#: client/components/footer/footer.html:23
-msgid "Ausgewählte Universitäten"
-msgstr ""
-
 #: client/app/main/main.html:89
 msgid "Bekannt aus"
-msgstr ""
-
-#: client/components/footer/footer.html:18
-msgid "Berlin"
 msgstr ""
 
 #: client/app/account/signup/signup.html:44
@@ -199,14 +191,6 @@ msgstr ""
 msgid "Get Started"
 msgstr ""
 
-#: client/components/footer/footer.html:19
-msgid "Hamburg"
-msgstr ""
-
-#: client/components/footer/footer.html:27
-msgid "Hochschule für angewandte Wissenschaften München"
-msgstr ""
-
 #: client/components/navbar/navbar.html:21
 msgid "Home"
 msgstr ""
@@ -260,17 +244,9 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: client/components/footer/footer.html:26
-msgid "Ludwig-Maximilians-Universität München"
-msgstr ""
-
 #: client/app/main/main.html:169
 #: client/app/main/main.html:63
 msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
-msgstr ""
-
-#: client/components/footer/footer.html:17
-msgid "München"
 msgstr ""
 
 #: client/app/account/resetPassword/resetPassword.html:8
@@ -423,12 +399,12 @@ msgstr ""
 msgid "Sorry, tablesurfer is only for students."
 msgstr ""
 
-#: client/components/footer/footer.html:33
+#: client/components/footer/footer.html:30
 msgid "Sprich mit uns"
 msgstr ""
 
 #: client/components/footer/footer.html:15
-msgid "Städte"
+msgid "Städte ({{cities.length}})"
 msgstr ""
 
 #: client/app/account/resetPassword/resetPassword.html:17
@@ -461,10 +437,6 @@ msgid ""
 "                            <br>Confirming your email verifies you as a student."
 msgstr ""
 
-#: client/components/footer/footer.html:25
-msgid "Technische Universität München"
-msgstr ""
-
 #: client/app/onboarding/onboarding.html:68
 msgid "Tell us your preferred weekdays"
 msgstr ""
@@ -483,6 +455,10 @@ msgstr ""
 
 #: client/components/footer/footer.html:6
 msgid "Über uns"
+msgstr ""
+
+#: client/components/footer/footer.html:21
+msgid "Universitäten ({{universities.length}})"
 msgstr ""
 
 #: client/components/navbar/navbar.html:22

@@ -12,19 +12,16 @@
             </ul>
         </div>
         <div class="col-sm-4">
-            <h4 translate>Städte</h4>
+            <h4 translate>Städte ({{cities.length}})</h4>
             <ul>
-                <li translate>München</li>
-                <li translate>Berlin</li>
-                <li translate>Hamburg</li>
+                <li ng-repeat="city in cities">{{city}}</li>
             </ul>
         </div>
         <div class="col-sm-4">
-            <h4 translate>Ausgewählte Universitäten</h4>
+            <h4 translate>Universitäten ({{universities.length}})</h4>
             <ul>
-                <li translate>Technische Universität München</li>
-                <li translate>Ludwig-Maximilians-Universität München</li>
-                <li translate>Hochschule für angewandte Wissenschaften München</li>
+                <li ng-repeat="university in universities"> <a ng-href="{{university.web_page}}" target="_blank">
+{{university.name}}</a></li>
             </ul>
         </div>
     </div>

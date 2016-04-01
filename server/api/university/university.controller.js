@@ -24,11 +24,11 @@ exports.index = function(req, res) {
         query.domain = req.query.domain;
     }
 
-    University.find(query, function(err, universitys) {
+    University.find(query, function(err, universities) {
         if (err) {
             return handleError(res, err);
         }
-        return res.status(200).json(universitys);
+        return res.status(200).json(universities);
     });
 };
 
@@ -51,6 +51,8 @@ exports.indexCities = function(req, res) {
     if (country) {
         query.country = country;
     }
+
+    console.log("query: ", query);
 
     University.find(query).exec(function(err, universities) {
         if (err) {

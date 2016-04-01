@@ -15,7 +15,7 @@ var City = require('../api/city/city.model');
 var Country = require('../api/country/country.model');
 var User = require('../api/user/user.model');
 
-var universities = require('../../university-domains-list/world_universities_and_domains.json');
+var universities = require('../../university-domains-list/germany.json');
 var countries = [{
     name: "Germany"
 }, {
