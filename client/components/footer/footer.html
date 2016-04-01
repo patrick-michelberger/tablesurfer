@@ -14,7 +14,9 @@
         <div class="col-sm-4">
             <h4 translate>Städte ({{cities.length}})</h4>
             <ul>
-                <li ng-repeat="city in cities">{{city}}</li>
+                <li ng-repeat="city in cities">
+                    <a ng-href="/cities/{{city}}">{{city}}</a>
+                </li>
             </ul>
         </div>
         <div class="col-sm-4">

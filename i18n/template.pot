@@ -12,7 +12,7 @@ msgstr ""
 msgid "{{notification.title}}"
 msgstr ""
 
-#: client/components/footer/footer.html:51
+#: client/components/footer/footer.html:53
 msgid "© 2016 tablesurfer. Alle Rechte vorbehalten."
 msgstr ""
 
@@ -399,7 +399,7 @@ msgstr ""
 msgid "Sorry, tablesurfer is only for students."
 msgstr ""
 
-#: client/components/footer/footer.html:30
+#: client/components/footer/footer.html:32
 msgid "Sprich mit uns"
 msgstr ""
 
@@ -457,7 +457,7 @@ msgstr ""
 msgid "Über uns"
 msgstr ""
 
-#: client/components/footer/footer.html:21
+#: client/components/footer/footer.html:23
 msgid "Universitäten ({{universities.length}})"
 msgstr ""
 
