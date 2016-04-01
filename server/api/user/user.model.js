@@ -32,6 +32,7 @@ var UserSchema = new Schema({
     salt: String,
     locale: String,
     facebook: {},
+    linkedin: {},
     picture: String,
     phone: String,
     verifiedPhone: {
