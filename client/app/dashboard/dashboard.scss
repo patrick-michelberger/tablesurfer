@@ -63,6 +63,7 @@
 }
 
 .ts-verification-info .fa-check,
+.ts-verification-info .fa-xing,
 .ts-verification-info .fa-exclamation {
     padding-right: 10px;
     left: 5px;
@@ -71,8 +72,14 @@
     position: relative;
 }
 
-.ts-verification-info .fa-check {
+.ts-verification-info .fa-check,
+.ts-verification-info .fa-xing {
     color: $ts_green;
+}
+
+.ts-verification-info .fa-xing {
+    padding-right: 14px;
+    padding-left: 3px;
 }
 
 .ts-verification-info .fa-exclamation {

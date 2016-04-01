@@ -23,6 +23,10 @@ ts-phone .ts-phonecode input {
     height: 60px;
 }
 
+ts-phone svg {
+    position: absolute;
+}
+
 ts-phone a {
     cursor: pointer;
     color: black;

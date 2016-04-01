@@ -10,7 +10,7 @@ router
     .get('/', passport.authenticate('linkedin', {
         failureRedirect: '/signup',
         session: false,
-        scope: ['r_basicprofile']
+        scope: ['r_basicprofile', 'r_emailaddress']
     }))
     .get('/callback', passport.authenticate('linkedin', {
         failureRedirect: '/signup',

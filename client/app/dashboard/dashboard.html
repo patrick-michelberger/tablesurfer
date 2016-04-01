@@ -19,9 +19,10 @@
                             <ul class="list-unstyled">
                                 <li>
                                     <div class="media" ng-show="getCurrentUser().verified">
-                                        <i class="fa fa-check pull-left"></i>
+                                        <i class="fa fa-xing pull-left"></i>
                                         <div class="media-body">
-                                            <div translate>University E-Mail</div>
+                                            <div ng-show="getCurrentUser().provider=='local' || getCurrentUser().provider=='facebook'" translate>University E-Mail</div>
+                                            <div ng-show="getCurrentUser().provider=='xing'" translate>XING Profile</div>
                                             <div class="text-muted" translate>
                                                 Verified
                                             </div>

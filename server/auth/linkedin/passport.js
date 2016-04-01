@@ -28,10 +28,10 @@ exports.setup = function(User, config) {
             'picture-urls::(original)',
             'picture-url',
             'site-standard-profile-request',
-            'api-standard-profile-request'
+            'api-standard-profile-request',
+            'email-address'
         ]
     }, function(token, tokenSecret, profile, done) {
-        console.log("linkedin profile: ", profile);
         User.findOne({
                 'linkedin.id': profile.id
             },
@@ -45,7 +45,9 @@ exports.setup = function(User, config) {
                         last_name: profile.name.familyName,
                         role: 'user',
                         provider: 'linkedin',
-                        linkedin: profile._json
+                        linkedin: profile._json,
+                        email: profile._json.emailAddress,
+                        verified: true
                     };
 
                     if (profile._json.pictureUrls && profile._json.pictureUrls.values && profile._json.pictureUrls.values[0]) {

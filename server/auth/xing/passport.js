@@ -6,9 +6,8 @@ exports.setup = function(User, config) {
         consumerKey: config.xing.apiKey,
         consumerSecret: config.xing.apiSecret,
         callbackURL: config.xing.callbackURL,
-        profileFields: ['id', 'first_name', 'last_name', 'active_email']
+        profileFields: ['id', 'first_name', 'last_name', 'active_email', 'photo_urls']
     }, function(token, tokenSecret, profile, done) {
-        console.log("linkedin profile: ", profile);
         User.findOne({
                 'xing.id': profile.id
             },
@@ -20,9 +19,12 @@ exports.setup = function(User, config) {
                     var jsonObj = {
                         first_name: profile.name.givenName,
                         last_name: profile.name.familyName,
+                        email: profile._json.active_email,
+                        verified: true,
+                        picture: profile._json.photo_urls.size_1024x1024,
                         role: 'user',
                         provider: 'xing',
-                        linkedin: profile._json
+                        xing: profile._json
                     };
 
                     user = new User(jsonObj);
