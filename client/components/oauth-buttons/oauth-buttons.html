@@ -5,7 +5,13 @@
     <span ng-show="OauthButtons.$state.includes('login')" translate>login with Facebook</span>
 </a>
 <!-- CORPORATE LOGIN -->
-<a ng-show="OauthButtons.isCorporate" ng-class="classes" ng-click="OauthButtons.loginOauth('linkedin')" class="btn btn-social btn-linkedin">
-    <i class="fa fa-linkedin"></i>
-    <span ng-show="OauthButtons.$state.includes('signup')" translate>sign up with LinkedIn</span>
-</a>
+<div ng-show="OauthButtons.isCorporate">
+    <a ng-class="classes" ng-click="OauthButtons.loginOauth('linkedin')" class="btn btn-social btn-linkedin">
+        <i class="fa fa-linkedin"></i>
+        <span ng-show="OauthButtons.$state.includes('signup')" translate>sign up with LinkedIn</span>
+    </a>
+    <a ng-class="classes" ng-click="OauthButtons.loginOauth('xing')" class="btn btn-social btn-xing">
+        <i class="fa fa-xing"></i>
+        <span ng-show="OauthButtons.$state.includes('signup')" translate>sign up with Xing</span>
+    </a>
+</div>

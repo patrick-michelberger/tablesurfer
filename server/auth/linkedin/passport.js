@@ -6,7 +6,30 @@ exports.setup = function(User, config) {
         consumerKey: config.linkedin.apiKey,
         consumerSecret: config.linkedin.apiSecret,
         callbackURL: config.linkedin.callbackURL,
-        profileFields: ['id', 'first-name', 'last-name', 'headline']
+        profileFields: [
+            'id',
+            'first-name',
+            'last-name',
+            'maiden-name',
+            'public-profile-url',
+            'formatted-name',
+            'phonetic-first-name',
+            'phonetic-last-name',
+            'formatted-phonetic-name',
+            'headline',
+            'location',
+            'industry',
+            'current-share',
+            'num-connections',
+            'num-connections-capped',
+            'summary',
+            'specialties',
+            'positions',
+            'picture-urls::(original)',
+            'picture-url',
+            'site-standard-profile-request',
+            'api-standard-profile-request'
+        ]
     }, function(token, tokenSecret, profile, done) {
         console.log("linkedin profile: ", profile);
         User.findOne({
@@ -17,14 +40,19 @@ exports.setup = function(User, config) {
                     return done(err);
                 }
                 if (!user) {
-                    user = new User({
-                        first_name: profile.name.firstName,
-                        last_name: profile.name.lastName,
+                    var jsonObj = {
+                        first_name: profile.name.givenName,
+                        last_name: profile.name.familyName,
                         role: 'user',
                         provider: 'linkedin',
-                        picture: 'http://api.linkedin.com/v1/people/' + profile.id + '/picture-url',
-                        facebook: profile._json
-                    });
+                        linkedin: profile._json
+                    };
+
+                    if (profile._json.pictureUrls && profile._json.pictureUrls.values && profile._json.pictureUrls.values[0]) {
+                        jsonObj.picture = profile._json.pictureUrls.values[0];
+                    }
+
+                    user = new User(jsonObj);
                     user.save(function(err) {
                         if (err) done(err);
                         return done(err, user);

@@ -1,5 +1,6 @@
 oauth-buttons .btn-facebook,
-oauth-buttons .btn-linkedin {
+oauth-buttons .btn-linkedin,
+oauth-buttons .btn-xing {
     padding-top: 20px;
     padding-bottom: 20px;
     height: 50px;
@@ -19,23 +20,36 @@ oauth-buttons .btn-linkedin {
     border-color: #006fa6;
     border-bottom-color: #006fa6;
     background-color: #006fa6;
+    margin-top: 20px;
+}
+
+oauth-buttons .btn-xing {
+    color: #fff;
+    border-color: #006567;
+    border-bottom-color: #006567;
+    background-color: #006567;
+    margin-top: 15px!important;
+    margin-bottom: 20px!important;
 }
 
 oauth-buttons .btn-facebook span,
-oauth-buttons .btn-linkedin span {
+oauth-buttons .btn-linkedin span,
+oauth-buttons .btn-xing span {
     top: -8px;
     position: relative;
     font-size: 1.1em;
 }
 
 oauth-buttons .btn-facebook .fa,
-oauth-buttons .btn-linkedin .fa {
+oauth-buttons .btn-linkedin .fa,
+oauth-buttons .btn-xing .fa {
     top: -10px;
     position: relative;
     font-size: 2.2em;
 }
 
-oauth-buttons .btn-linkedin .fa {
+oauth-buttons .btn-linkedin .fa,
+oauth-buttons .btn-xing .fa {
     margin-right: 10px;
 }
 

@@ -33,6 +33,7 @@ var UserSchema = new Schema({
     locale: String,
     facebook: {},
     linkedin: {},
+    xing: {},
     picture: String,
     phone: String,
     verifiedPhone: {

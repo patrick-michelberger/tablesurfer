@@ -55,6 +55,13 @@ var all = {
         callbackURL: (process.env.DOMAIN || '') + '/auth/linkedin/callback'
     },
 
+    xing: {
+        apiKey: process.env.XING_API_KEY || 'id',
+        apiSecret: process.env.XING_SECRET_KEY || 'secret',
+        callbackURL: (process.env.DOMAIN || '') + '/auth/xing/callback'
+    },
+
+
     twitter: {
         clientID: process.env.TWITTER_ID || 'id',
         clientSecret: process.env.TWITTER_SECRET || 'secret',

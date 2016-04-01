@@ -11,6 +11,7 @@ require('./facebook/passport').setup(User, config);
 require('./google/passport').setup(User, config);
 require('./twitter/passport').setup(User, config);
 require('./linkedin/passport').setup(User, config);
+require('./xing/passport').setup(User, config);
 
 var router = express.Router();
 
@@ -19,5 +20,7 @@ router.use('/facebook', require('./facebook'));
 router.use('/twitter', require('./twitter'));
 router.use('/google', require('./google'));
 router.use('/linkedin', require('./linkedin'));
+router.use('/xing', require('./xing'));
+
 
 export default router;

@@ -7,12 +7,11 @@ import { setTokenCookie } from '../auth.service';
 var router = express.Router();
 
 router
-    .get('/', passport.authenticate('linkedin', {
+    .get('/', passport.authenticate('xing', {
         failureRedirect: '/signup',
-        session: false,
-        scope: ['r_basicprofile']
+        session: false
     }))
-    .get('/callback', passport.authenticate('linkedin', {
+    .get('/callback', passport.authenticate('xing', {
         failureRedirect: '/signup',
         session: false
     }), setTokenCookie);

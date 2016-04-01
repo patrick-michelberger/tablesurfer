@@ -48,7 +48,7 @@ msgstr ""
 msgid "<span class=\"visible-xs\">login</span>"
 msgstr ""
 
-#: client/app/account/signup/signup.html:64
+#: client/app/account/signup/signup.html:70
 msgid "<span class=\"visible-xs\">signup</span>"
 msgstr ""
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "All right"
 msgstr ""
 
-#: client/app/account/signup/signup.html:42
+#: client/app/account/signup/signup.html:49
 msgid "and"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Bekannt aus"
 msgstr ""
 
-#: client/app/account/signup/signup.html:42
+#: client/app/account/signup/signup.html:49
 msgid "By signing up, I agree to the"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst,
 msgstr ""
 
 #: client/app/account/login/login.html:16
-#: client/app/account/signup/signup.html:18
+#: client/app/account/signup/signup.html:24
 msgid "Email"
 msgstr ""
 
@@ -189,6 +189,10 @@ msgstr ""
 
 #: client/app/onboarding/onboarding.html:38
 msgid "Get Started"
+msgstr ""
+
+#: client/app/account/signup/signup.html:9
+msgid "Get to know people with different professional and academic background even after your time at university."
 msgstr ""
 
 #: client/components/footer/footer.html:4
@@ -228,7 +232,7 @@ msgstr ""
 msgid "last name"
 msgstr ""
 
-#: client/app/account/signup/signup.html:52
+#: client/app/account/signup/signup.html:59
 msgid "Log in"
 msgstr ""
 
@@ -268,6 +272,10 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: client/app/account/signup/signup.html:8
+msgid "Not at campus anymore?"
+msgstr ""
+
 #: client/app/dashboard/dashboard.html:34
 #: client/app/dashboard/dashboard.html:54
 msgid "Not Verified"
@@ -278,7 +286,7 @@ msgid "Notifications"
 msgstr ""
 
 #: client/app/account/login/login.html:12
-#: client/app/account/signup/signup.html:13
+#: client/app/account/signup/signup.html:18
 msgid "oder"
 msgstr ""
 
@@ -297,12 +305,12 @@ msgstr ""
 
 #: client/app/account/login/login.html:20
 #: client/app/account/settings/settings.html:28
-#: client/app/account/signup/signup.html:32
+#: client/app/account/signup/signup.html:38
 msgid "Password"
 msgstr ""
 
 #: client/app/account/resetPassword/resetPassword.html:10
-#: client/app/account/signup/signup.html:34
+#: client/app/account/signup/signup.html:40
 msgid "Password must be at least 3 characters."
 msgstr ""
 
@@ -332,7 +340,7 @@ msgstr ""
 msgid "Presse"
 msgstr ""
 
-#: client/app/account/signup/signup.html:42
+#: client/app/account/signup/signup.html:49
 msgid "Privacy Policy"
 msgstr ""
 
@@ -352,7 +360,7 @@ msgstr ""
 msgid "Received code e.g. 123456"
 msgstr ""
 
-#: client/app/account/signup/signup.html:62
+#: client/app/account/signup/signup.html:68
 msgid "register"
 msgstr ""
 
@@ -385,7 +393,7 @@ msgid "Settings"
 msgstr ""
 
 #: client/app/account/login/login.html:43
-#: client/app/account/signup/signup.html:45
+#: client/app/account/signup/signup.html:52
 #: client/components/navbar/navbar.html:23
 msgid "Sign up"
 msgstr ""
@@ -394,8 +402,12 @@ msgstr ""
 msgid "sign up with Facebook"
 msgstr ""
 
-#: client/components/oauth-buttons/oauth-buttons.html:10
+#: client/components/oauth-buttons/oauth-buttons.html:11
 msgid "sign up with LinkedIn"
+msgstr ""
+
+#: client/components/oauth-buttons/oauth-buttons.html:15
+msgid "sign up with Xing"
 msgstr ""
 
 #: client/app/main/main.html:174
@@ -425,7 +437,7 @@ msgstr ""
 msgid "tablesurfer"
 msgstr ""
 
-#: client/app/account/signup/signup.html:20
+#: client/app/account/signup/signup.html:26
 msgid "tablesurfer is only for students. Please check the allowed university email addresses <a ui-sref=\"universities\">here</a>."
 msgstr ""
 
@@ -449,7 +461,7 @@ msgstr ""
 msgid "Tell us your preferred weekdays"
 msgstr ""
 
-#: client/app/account/signup/signup.html:42
+#: client/app/account/signup/signup.html:49
 msgid "Terms of Services"
 msgstr ""
 
@@ -508,7 +520,7 @@ msgstr ""
 msgid "We've sent you a verification code to"
 msgstr ""
 
-#: client/app/account/signup/signup.html:23
+#: client/app/account/signup/signup.html:29
 msgid "What's your email address?"
 msgstr ""
 
