@@ -2,12 +2,12 @@
 
 "use strict";
 
-var mongoURI = process.env.MONGOHQ_URL || 'mongodb://localhost/tablesurfer-dev';
+var mongoURI = 'mongodb://localhost/tablesurfer-dev';
 var mongoose = require('mongoose');
 mongoose.connect(mongoURI);
 
 var University = require('../server/api/university/university.model');
-var universitiesJSON = require('../university-domains-list/world_universities_and_domains.json');
+var universitiesJSON = require('../university-domains-list/germany.json');
 
 console.log("inserting universities...");
 University.find({}).remove(function() {
