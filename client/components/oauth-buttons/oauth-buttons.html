@@ -1,10 +1,11 @@
-<a ng-class="classes" ng-click="OauthButtons.loginOauth('facebook')" class="btn btn-social btn-facebook">
+<!-- CAMPUS LOGIN -->
+<a ng-hide="OauthButtons.isCorporate" ng-class="classes" ng-click="OauthButtons.loginOauth('facebook')" class="btn btn-social btn-facebook">
     <i class="fa fa-facebook"></i>
     <span ng-show="OauthButtons.$state.includes('signup')" translate>sign up with Facebook</span>
     <span ng-show="OauthButtons.$state.includes('login')" translate>login with Facebook</span>
 </a>
-<!--
-<p style="text-align:center;" translate>
-tablesurfer postet nicht ohne Deine Erlaubnis an Deinen FB Account.	
-</p>
--->
+<!-- CORPORATE LOGIN -->
+<a ng-show="OauthButtons.isCorporate" ng-class="classes" ng-click="OauthButtons.loginOauth('linkedin')" class="btn btn-social btn-linkedin">
+    <i class="fa fa-linkedin"></i>
+    <span ng-show="OauthButtons.$state.includes('signup')" translate>sign up with LinkedIn</span>
+</a>

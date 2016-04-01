@@ -1,8 +1,5 @@
-oauth-buttons .btn-facebook {
-    border-color: #4568b2;
-    border-bottom-color: #2d4575;
-    background-color: #4568b2;
-    color: #fff;
+oauth-buttons .btn-facebook,
+oauth-buttons .btn-linkedin {
     padding-top: 20px;
     padding-bottom: 20px;
     height: 50px;
@@ -10,16 +7,36 @@ oauth-buttons .btn-facebook {
     font-weight: 200;
 }
 
-oauth-buttons .btn-facebook span {
+oauth-buttons .btn-facebook {
+    color: #fff;
+    border-color: #4568b2;
+    border-bottom-color: #2d4575;
+    background-color: #4568b2;
+}
+
+oauth-buttons .btn-linkedin {
+    color: #fff;
+    border-color: #006fa6;
+    border-bottom-color: #006fa6;
+    background-color: #006fa6;
+}
+
+oauth-buttons .btn-facebook span,
+oauth-buttons .btn-linkedin span {
     top: -8px;
     position: relative;
     font-size: 1.1em;
 }
 
-oauth-buttons .btn-facebook .fa {
+oauth-buttons .btn-facebook .fa,
+oauth-buttons .btn-linkedin .fa {
     top: -10px;
     position: relative;
     font-size: 2.2em;
+}
+
+oauth-buttons .btn-linkedin .fa {
+    margin-right: 10px;
 }
 
 oauth-buttons .btn:hover {

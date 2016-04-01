@@ -3,8 +3,8 @@ var LinkedInStrategy = require('passport-linkedin').Strategy;
 
 exports.setup = function(User, config) {
     passport.use(new LinkedInStrategy({
-        consumerKey: config.linkedin.apiKey
-        consumerSecret: config.linkedin.secretKey,
+        consumerKey: config.linkedin.apiKey,
+        consumerSecret: config.linkedin.apiSecret,
         callbackURL: config.linkedin.callbackURL,
         profileFields: ['id', 'first-name', 'last-name', 'headline']
     }, function(token, tokenSecret, profile, done) {

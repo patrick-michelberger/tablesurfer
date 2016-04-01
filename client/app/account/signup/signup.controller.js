@@ -7,7 +7,9 @@ class SignupController {
     submitted = false;
     //end-non-standard
 
-    constructor(Auth, $state, $stateParams, $scope, Helpers) {
+    constructor(Auth, $state, $stateParams, $scope, $location, Helpers) {
+
+        this.isCorporate = $location.search().corporate || false;
         this.$scope = $scope;
         this.Auth = Auth;
         this.Helpers = Helpers;
