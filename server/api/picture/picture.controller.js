@@ -11,28 +11,6 @@
 
 import _ from 'lodash';
 import Picture from './picture.model';
-import ig from 'instagram-node';
-import config from '../../config/environment'
-
-// instagram initialization
-console.log("config.instagram.accessToken: ", config.instagram.accessToken);
-var instagram = ig.instagram();
-instagram.use({ access_token: config.instagram.accessToken });
-instagram.use({
-    client_id: config.instagram.clientId,
-    client_secret: config.instagram.clientSecret
-});
-
-instagram.tag('tablesurfer', function(err, result, remaining, limit) {
-  if (err) {
-    console.log("err: ", err);
-  } else {
-    console.log("result: ", result);  
-  }
-});
-
-
-
 
 function respondWithResult(res, statusCode) {
     statusCode = statusCode || 200;
