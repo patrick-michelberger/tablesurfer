@@ -155,6 +155,10 @@ msgstr ""
 msgid "cities &"
 msgstr ""
 
+#: client/components/tsPhone/tsPhone.html:18
+msgid "Code e.g. 123456"
+msgstr ""
+
 #: client/app/onboarding/partials/onboarding.weekdays.html:4
 msgid "Complete Registration"
 msgstr ""
@@ -474,12 +478,12 @@ msgstr ""
 msgid "Quick Links"
 msgstr ""
 
-#: client/components/tsPhone/tsPhone.html:18
-msgid "Received code e.g. 123456"
-msgstr ""
-
 #: client/app/account/signup/signup.html:68
 msgid "register"
+msgstr ""
+
+#: client/app/account/resetPassword/resetPassword.html:26
+msgid "reset password"
 msgstr ""
 
 #: client/app/account/login/login.html:64
@@ -503,7 +507,7 @@ msgid "Send Reset Link"
 msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:6
-msgid "Send verification code to my phone"
+msgid "Send verification code"
 msgstr ""
 
 #: client/app/dashboard/dashboard.html:114

@@ -39,6 +39,14 @@
     padding: 5px;
 }
 
+#ts-onboarding-email,
+#ts-onboarding-info,
+#ts-onboarding-gender,
+#ts-onboarding-phone {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 @media (min-width: $screen-sm) {
     #ts-onboarding-phone,
     #ts-onboarding-email,
@@ -90,4 +98,10 @@
     margin-left: -45px;
     margin-bottom: 25px;
     margin-top: 15px;
+}
+
+@media (max-width: $screen-xs) {
+    #ts-welcome-modal .modal-body {
+        height: 260px;
+    }
 }

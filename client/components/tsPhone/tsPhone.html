@@ -3,7 +3,7 @@
         <i class="fa fa-whatsapp hidden-xs" ng-hide="currentUser.verifiedPhone"></i>
         <i ng-click="changeNumber()" class="fa fa-pencil-square-o ts-change-number" ng-show="currentUser.verifiedPhone"></i>
         <input id="phone" ng-disabled="currentUser.verifiedPhone" name="phonenumber" preferred-countries="de, fr, it, es, pt, us, se" default-country="de" class="ts-input-phone col-xs-12" national-mode="false" type="text" international-phone-number ng-model="currentUser.phone" required/>
-        <button ng-hide="currentUser.verifiedPhone" ng-disabled="phone.$invalid" class="ts-btn-save btn btn-primary" type="submit" translate>Send verification code to my phone</button>
+        <button ng-hide="currentUser.verifiedPhone" ng-disabled="phone.$invalid" class="ts-btn-save btn btn-primary" type="submit" translate>Send verification code</button>
         <p ng-hide="currentUser.verifiedPhone"></p>
         <p ng-show="phoneChanged" class="alert alert-success" translate>Phone number successfully changed.</p>
     </div>
@@ -15,7 +15,7 @@
 <form ng-show="hasPhonecode(currentUser)" class="row" name="phonecode" class="ts-phonecode" ng-submit="submit()">
     <div ng-hide="isLoading" style="position:relative;">
         <a class="ts-btn-edit" ng-click="changeNumber()"><i class="fa fa-pencil-square-o"></i></a>
-        <input type="text" name="code" ng-minlength="6" ng-maxlength="6" ng-model="currentUser.phonecode" placeholder="{{'Received code e.g. 123456'|translate}}" required/>
+        <input type="text" name="code" ng-minlength="6" ng-maxlength="6" ng-model="currentUser.phonecode" placeholder="{{'Code e.g. 123456'|translate}}" required/>
         <div class="alert alert-danger" ng-show="hasError" translate>Invalid code</div>
         <button ng-disabled="phonecode.$invalid" ng-hide="hasError" class="ts-btn-save btn btn-primary" type="submit" translate>Submit</button>
         <div ng-hide="hasError">

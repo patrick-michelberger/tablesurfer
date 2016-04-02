@@ -36,8 +36,16 @@
 
 #ts-modal p,
 #ts-modal .alert {
-    font-size: 1.2em;
     text-align: justify;
+    margin-bottom: 5px;
+}
+
+#ts-modal p {
+    font-size: 1.2em;
+}
+
+#ts-modal .alert {
+    font-size: 1.0em;
 }
 
 #ts-modal .alert {
@@ -47,6 +55,9 @@
 @media (max-width: $screen-xs) {
     #ts-modal .modal-content {
         margin-top: 0;
+    }
+    #ts-modal .modal-dialog {
+        margin: 15px;
     }
 }
 
