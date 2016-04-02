@@ -1,0 +1,55 @@
+#ts-cities {
+    margin-bottom: 25px;
+}
+
+#ts-cities h1 {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-size: 3.0em;
+    font-weight: 600;
+}
+
+#ts-cities h3 .fa-map-marker {
+    margin-right: 10px;
+}
+
+#ts-cities h3 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.0em;
+    font-weight: bold;
+}
+
+#ts-cities ul li {
+    height: auto;
+}
+
+#ts-cities .ts-universities {
+    margin: 20px 25px;
+}
+
+#ts-cities .ts-universities li {
+    margin: 25px 0;
+}
+
+#ts-cities .ts-domain {
+    color: $ts-orange;
+    font-weight: 400;
+}
+
+#ts-cities h4 {
+    position: relative;
+    padding-left: 30px;
+}
+
+#ts-cities h4 i {
+    position: absolute;
+    left: 0;
+}
+
+#ts-cities .ts-universities .ts-website {
+    position: relative;
+    margin-left: 5px;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: #565a5c;
+}

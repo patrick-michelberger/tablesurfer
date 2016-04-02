@@ -3,8 +3,8 @@
 angular.module('tablesurferApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('press', {
-        url: '/press',
-        template: '<presse></presse>'
+      .state('social', {
+        url: '/social',
+        template: '<social></social>'
       });
   });

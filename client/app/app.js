@@ -16,7 +16,8 @@ angular.module('tablesurferApp', [
         'ui.bootstrap',
         'ui.bootstrap.progressbar',
         'ngFileUpload',
-        'ngImgCrop'
+        'ngImgCrop',
+        'leaflet-directive'
     ])
     .config(function($urlRouterProvider, $locationProvider) {
         $urlRouterProvider

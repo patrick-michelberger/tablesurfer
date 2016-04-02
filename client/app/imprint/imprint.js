@@ -5,6 +5,9 @@ angular.module('tablesurferApp')
     $stateProvider
       .state('imprint', {
         url: '/imprint',
-        template: '<imprint></imprint>'
+        template: '<imprint></imprint>',
+        data: {
+        	hideFooter: true
+        }
       });
   });

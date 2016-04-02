@@ -6,11 +6,17 @@ angular.module('tablesurferApp')
             .state('citiesDetail', {
                 url: '/cities/:name',
                 templateUrl: 'app/cities/cities.html',
-                controller: 'CityCtrl'
+                controller: 'CityCtrl',
+                data: {
+                    hideFooter: true
+                },
             })
             .state('cities', {
                 url: '/cities',
                 templateUrl: 'app/cities/cities.html',
-                controller: 'CityCtrl'
+                controller: 'CityCtrl',
+                data: {
+                    hideFooter: true
+                }
             });
     });

@@ -4,6 +4,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: client/app/cities/cities.html:9
+msgid "{{cities.length}} cities & {{numberUnversities}} universities and counting ;)"
+msgstr ""
+
 #: client/app/dashboard/dashboard.html:78
 msgid "{{getCurrentUser().university.name}}"
 msgstr ""
@@ -52,7 +56,7 @@ msgstr ""
 msgid "<span class=\"visible-xs\">signup</span>"
 msgstr ""
 
-#: client/app/universityList/universityList.html:26
+#: client/app/universityList/universityList.html:35
 msgid "<span class=\"visible-xs\">universities</span>"
 msgstr ""
 
@@ -74,11 +78,22 @@ msgstr ""
 msgid "About Me"
 msgstr ""
 
+#: client/components/navbar/navbar.html:23
+msgid "about us"
+msgstr ""
+
+#: client/app/about/about.html:5
+#: client/components/tsSubnav/tsSubnav.html:3
+msgid "About us"
+msgstr ""
+
 #: client/components/tsPhoto/tsPhoto.html:25
 msgid "Add your photo"
 msgstr ""
 
+#: client/app/agb/agb.html:5
 #: client/components/footer/footer.html:11
+#: client/components/tsSubnav/tsSubnav.html:7
 msgid "AGB"
 msgstr ""
 
@@ -148,6 +163,12 @@ msgstr ""
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
+#: client/app/agb/agb.html:9
+msgid ""
+"Do you still have questions about privacy on tablesurfer?\r\n"
+"                <a href=\"mailto:sprichmituns@tablesurfer.de\">sprichmituns@tablesurfer.de</a>"
+msgstr ""
+
 #: client/components/tsPhoto/tsPhoto.html:21
 msgid "Does this look right?"
 msgstr ""
@@ -162,7 +183,9 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+#: client/app/faq/faq.html:5
 #: client/components/footer/footer.html:8
+#: client/components/tsSubnav/tsSubnav.html:4
 msgid "FAQ"
 msgstr ""
 
@@ -199,6 +222,10 @@ msgstr ""
 msgid "Heim und Herd."
 msgstr ""
 
+#: client/app/faq/faq.html:6
+msgid "Here you can find some common questions or ask your own ones."
+msgstr ""
+
 #: client/components/navbar/navbar.html:21
 msgid "Home"
 msgstr ""
@@ -211,6 +238,11 @@ msgstr ""
 msgid "Impressum"
 msgstr ""
 
+#: client/app/imprint/imprint.html:5
+#: client/components/tsSubnav/tsSubnav.html:8
+msgid "Imprint"
+msgstr ""
+
 #: client/components/tsPhone/tsPhone.html:19
 msgid "Invalid code"
 msgstr ""
@@ -221,6 +253,14 @@ msgstr ""
 
 #: client/app/main/main.html:130
 msgid "jetzt mitmachen"
+msgstr ""
+
+#: client/app/faq/faq.html:36
+msgid "Just write them in the chat. They will surely understand this."
+msgstr ""
+
+#: client/app/faq/faq.html:33
+msgid "Just write them in the chat. Your guests have stated before, that they will have enough space in their kitchen for this date. So they will propably find a different kitchen to cook in."
 msgstr ""
 
 #: client/app/main/main.html:184
@@ -245,7 +285,7 @@ msgstr ""
 msgid "login"
 msgstr ""
 
-#: client/components/navbar/navbar.html:24
+#: client/components/navbar/navbar.html:25
 msgid "Login"
 msgstr ""
 
@@ -253,7 +293,7 @@ msgstr ""
 msgid "login with Facebook"
 msgstr ""
 
-#: client/components/navbar/navbar.html:45
+#: client/components/navbar/navbar.html:46
 msgid "Logout"
 msgstr ""
 
@@ -275,6 +315,18 @@ msgstr ""
 #: client/app/onboarding/partials/onboarding.info.html:4
 #: client/app/onboarding/partials/onboarding.phone.html:4
 msgid "Next"
+msgstr ""
+
+#: client/app/faq/faq.html:9
+msgid "No, tablesurfer.de is made for students and will always be for free."
+msgstr ""
+
+#: client/app/faq/faq.html:24
+msgid "No, you can't. There have been many projects around which where just like tablesurfer.de. A lot of them failed because people were not willing to be the host. We want that tablesurfer.de will stay fair and we think everyone can be a good host. Your guests will definitely support you. :)"
+msgstr ""
+
+#: client/app/faq/faq.html:27
+msgid "No, you cannot do that yet. We wanted to keep it simple in the beginning, but this feature is already on our to-do list. ;)"
 msgstr ""
 
 #: client/app/account/signup/signup.html:8
@@ -329,6 +381,10 @@ msgstr ""
 msgid "Phone number successfully changed."
 msgstr ""
 
+#: client/app/social/social.html:4
+msgid "Pinnwand"
+msgstr ""
+
 #: client/app/account/login/login.html:27
 msgid "Please enter a valid email."
 msgstr ""
@@ -341,8 +397,21 @@ msgstr ""
 msgid "Please enter your email."
 msgstr ""
 
+#: client/components/tsSubnav/tsSubnav.html:5
+msgid "Press"
+msgstr ""
+
+#: client/app/presse/presse.html:5
+msgid "Press & Media"
+msgstr ""
+
 #: client/components/footer/footer.html:9
 msgid "Presse"
+msgstr ""
+
+#: client/app/privacy/privacy.html:5
+#: client/components/tsSubnav/tsSubnav.html:6
+msgid "Privacy"
 msgstr ""
 
 #: client/app/account/signup/signup.html:49
@@ -399,7 +468,7 @@ msgstr ""
 
 #: client/app/account/login/login.html:43
 #: client/app/account/signup/signup.html:52
-#: client/components/navbar/navbar.html:23
+#: client/components/navbar/navbar.html:24
 msgid "Sign up"
 msgstr ""
 
@@ -466,12 +535,24 @@ msgstr ""
 msgid "Tell us your preferred weekdays"
 msgstr ""
 
+#: client/app/faq/faq.html:18
+msgid "Tell your friends and get in contact with us. It doesn't matter if you want to spread stickers, if you are asking for a neat feature or you want to vent your anger. We appreciate every form of help, suggestions and criticism."
+msgstr ""
+
 #: client/app/account/signup/signup.html:49
 msgid "Terms of Services"
 msgstr ""
 
 #: client/components/tsPhoto/tsPhoto.html:26
 msgid "The tablesurfer community is built on trust. Put a face to your name so your host or guest knows it’s you."
+msgstr ""
+
+#: client/app/agb/agb.html:6
+msgid "The use of tablesurfer is completely free and you can delete your account at any time. tablesurfer is a non-profit beyond university project by students. Nonetheless we have to refer to the following terms of use in order to protect us from a possible chance to go to prison. :)"
+msgstr ""
+
+#: client/app/faq/faq.html:30
+msgid "This feature will be added in the future, too. Just apply alone for now. if you should be the host, ask in the chat if your guests would like to have another guests. Students will propably take it easy."
 msgstr ""
 
 #: client/app/onboarding/onboarding.html:55
@@ -484,6 +565,10 @@ msgstr ""
 
 #: client/components/footer/footer.html:26
 msgid "Universitäten ({{universities.length}})"
+msgstr ""
+
+#: client/app/universityList/universityList.html:6
+msgid "universities"
 msgstr ""
 
 #: client/components/navbar/navbar.html:22
@@ -517,6 +602,10 @@ msgstr ""
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 
+#: client/app/faq/faq.html:12
+msgid "We didn't want that tablesurfer.de becomes a generic dating site. We offer students, that they can meet people from all universities in Munich and that they get to know people who are studying a different subject."
+msgstr ""
+
 #: client/app/account/login/login.html:82
 msgid "We have sent you an email to reset your password."
 msgstr ""
@@ -536,6 +625,14 @@ msgstr ""
 #: client/app/dashboard/dashboard.html:27
 #: client/app/dashboard/dashboard.html:38
 msgid "XING Profile"
+msgstr ""
+
+#: client/app/faq/faq.html:15
+msgid "You can find an overview of all allowed campus email addresses"
+msgstr ""
+
+#: client/app/faq/faq.html:21
+msgid "You only meet your dinner group once. On the next date you will get a new group. If you want, you can meet your group again outside of tablesurfer.de. You can still use the chat after the dinner took place."
 msgstr ""
 
 #: client/components/tsVerify/tsVerify.html:2

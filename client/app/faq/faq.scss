@@ -1,0 +1,29 @@
+#ts-faq {
+    margin-bottom: 80px;
+}
+
+#ts-faq h1 {
+    font-size: 3.0em;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+#ts-faq .panel {
+    border-radius: 0;
+    margin-top: 15px;
+}
+
+
+#ts-faq p.lead {
+	text-align: justify;
+	font-size: 1.5em;
+}
+
+#ts-faq h4 a {
+	font-weight: 400;
+}
+
+#ts-faq .panel-default > .panel-heading + .panel-collapse > .panel-body {
+	font-size: 1.1em;
+}

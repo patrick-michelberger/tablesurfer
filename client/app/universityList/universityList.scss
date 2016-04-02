@@ -1,4 +1,4 @@
-#ts-university-list {
+/*#ts-university-list {
     margin-top: 15px;
 }
 
@@ -28,4 +28,25 @@
 #ts-university-list h4 {
     text-transform: lowercase;
     font-weight: 600;
+}
+
+*/
+#ts-university-list{
+    margin-bottom: 25px;
+}
+
+#ts-university-list h1 {
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-size: 4.5em;
+    font-weight: 600;
+}
+
+#ts-university-list h3 .fa-map-marker {
+    margin-right: 10px;
+}
+
+#ts-university-list ul li {
+    height: 50px;
 }

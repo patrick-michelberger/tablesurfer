@@ -5,8 +5,9 @@ var mongoose = require('mongoose'),
 
 var CitySchema = new Schema({
 	"name" : String,
-	"latitude" : String,
-	"longitude" : String
+	"latitude" : Number,
+	"longitude" : Number,
+	"universities": []
 }, {
 	collection: 'cities'
 });

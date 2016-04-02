@@ -16,6 +16,8 @@ var Country = require('../api/country/country.model');
 var User = require('../api/user/user.model');
 
 var universities = require('../../university-domains-list/germany.json');
+var cities = require('../../university-domains-list/cities.json');
+
 var countries = [{
     name: "Germany"
 }, {
@@ -39,24 +41,11 @@ University.find({}).remove(function() {
                 function(err) {});
         });
 
-        /*
         City.find({}).remove(function() {
-            City.create({
-                    "name": "Munich",
-                    "latitude": "48.8",
-                    "longitude": "11.35",
-                    "universities": [LMU, TUM]
-                }, {
-                    "name": "Hamburg",
-                    "latitude": "53.33",
-                    "longitude": "10.2",
-                    "universities": [UH]
-                },
-                function(err, Munich, Hamburg) {
-
-                });
+            City.create(cities,
+                function(err) {});
         });
-        */
+
     });
 });
 

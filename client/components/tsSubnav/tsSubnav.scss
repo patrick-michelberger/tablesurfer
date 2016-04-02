@@ -1,0 +1,32 @@
+ts-subnav .container {
+    background-color: #5cb85c;
+    height: 40px;
+    color: #fff;
+}
+
+ts-subnav ul {
+    list-style: none;
+    padding-left: 0px;
+    padding-top: 5px;
+}
+
+ts-subnav ul li {
+    float: left;
+    margin-right: 25px;
+}
+
+ts-subnav ul li a {
+    font-size: 1.5em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+ts-subnav a:hover,
+ts-subnav a:focus {
+    color: #fff;
+}
+
+ts-subnav ul li.active {
+    text-decoration: underline;
+}

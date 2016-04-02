@@ -80,6 +80,12 @@ var all = {
         service: 'gmail'
     },
 
+    instagram: {
+        accessToken: process.env.INSTAGRAM_ACCESS_TOKEN || 'token',
+        clientId: process.env.INSTAGRAM_CLIENT_ID || 'id',
+        clientSecret: process.env.INSTAGRAM_CLIENT_SECRET || 'secret'
+    },
+
     aws: {
         accessKey: process.env.AWS_ACCESS_KEY || 'key',
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ||  'secret',
