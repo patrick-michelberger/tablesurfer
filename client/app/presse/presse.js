@@ -5,6 +5,9 @@ angular.module('tablesurferApp')
     $stateProvider
       .state('press', {
         url: '/press',
-        template: '<presse></presse>'
+        template: '<presse></presse>',
+        data: {
+        	hideFooter: true
+        }
       });
   });

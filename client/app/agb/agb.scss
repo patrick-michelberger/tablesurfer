@@ -23,3 +23,19 @@
     font-weight: 400;
     margin: 20px 0px;
 }
+
+
+@media (max-width: $screen-sm) {
+    #ts-agb p.lead {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    #ts-agb p.lead {
+        margin-top: 20px;
+    }
+    #ts-agb {
+        margin-bottom: 0px;
+    }
+}

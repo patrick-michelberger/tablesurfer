@@ -14,16 +14,24 @@
     margin-top: 15px;
 }
 
-
 #ts-faq p.lead {
-	text-align: justify;
-	font-size: 1.5em;
+    text-align: justify;
+    font-size: 1.5em;
 }
 
 #ts-faq h4 a {
-	font-weight: 400;
+    font-weight: 400;
 }
 
 #ts-faq .panel-default > .panel-heading + .panel-collapse > .panel-body {
-	font-size: 1.1em;
+    font-size: 1.1em;
+}
+
+@media (max-width: $screen-sm) {
+    #ts-faq p.lead {
+        margin-top: 20px;
+    }
+    #ts-faq {
+        margin-bottom: 0px;
+    }
 }

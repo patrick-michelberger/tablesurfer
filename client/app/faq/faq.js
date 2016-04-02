@@ -5,6 +5,9 @@ angular.module('tablesurferApp')
     $stateProvider
       .state('faq', {
         url: '/faq',
-        template: '<faq></faq>'
+        template: '<faq></faq>',
+        data: {
+        	hideFooter: true
+        }
       });
   });

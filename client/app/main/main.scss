@@ -1,244 +1,273 @@
-/**
+    /**
  * General 
  */
-
-#ts-main h1,
-#ts-main h2,
-#ts-main h3 {
-    text-align: center;
-    font-family: 'Amatic SC', cursive;
-}
-
-#ts-main h1 {
-    font-size: 4.0em;
-}
-
-#ts-main h2 {
-    font-size: 3.0em;
-}
-
-#ts-main h3 {
-    font-size: 2.0em;
-}
-
-
-/**
+    
+    #ts-main h1,
+    #ts-main h2,
+    #ts-main h3 {
+        text-align: center;
+        font-family: 'Amatic SC', cursive;
+    }
+    
+    #ts-main h1 {
+        font-size: 4.0em;
+    }
+    
+    #ts-main h2 {
+        font-size: 3.0em;
+    }
+    
+    #ts-main h3 {
+        font-size: 2.0em;
+    }
+    /**
  * Jumbotron
  */
-
-#ts-main .ts-jumbotron-container {
-    position: relative;
-}
-
-#ts-main .ts-jumbotron-container .ts-background-image {
-    opacity: 0.75;
-    background-size: cover;
-}
-
-#ts-main .btn-how-to {
-    position: absolute;
-    bottom: 130px;
-    left: 50%;
-    margin-left: -85px;
-    width: 170px;
-    padding: 9px 27px;
-    font-size: 16px;
-    opacity: 0.85;
-}
-
-@media (min-width: $screen-xs) {
+    
+    #ts-main .ts-jumbotron-container {
+        position: relative;
+    }
+    
     #ts-main .ts-jumbotron-container .ts-background-image {
-        background: url(https://s3.eu-central-1.amazonaws.com/tablesurfer/ts-home-background.jpg) no-repeat top left;
+        opacity: 0.75;
+        background-size: cover;
+        max-height: 935px;
     }
-}
-
-@media (max-width: $screen-xs) {
-    #ts-main .ts-jumbotron-container .ts-background-image {
-        background: url(https://s3.eu-central-1.amazonaws.com/tablesurfer/ts-home-background-small.jpg) no-repeat top center;
+    
+    #ts-main .btn-how-to {
+        position: absolute;
+        bottom: 130px;
+        left: 50%;
+        margin-left: -85px;
+        width: 170px;
+        padding: 9px 27px;
+        font-size: 16px;
+        opacity: 0.85;
     }
-}
-
-#ts-main .ts-jumbotron-container h1 {
-    position: absolute;
-    bottom: 65px;
-    font-size: 4.0em;
-    color: #fff;
-    text-align: left;
-    top: 15px;
-    padding-left: 15px;
-    max-width: 465px;
-}
-
-#ts-main .ts-citation {
-    font-size: 16px;
-    font-family: "canada-type-gibson", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    position: absolute;
-    margin-top: 10px;
-}
-
-#ts-main .ts-jumbotron-container ts-signup {
-    bottom: 20px;
-    position: absolute;
-}
-
-@media (max-width: $screen-xs) {
+    
+    @media (min-width: $screen-xs) {
+        #ts-main .ts-jumbotron-container .ts-background-image {
+            background: url(https://s3.eu-central-1.amazonaws.com/tablesurfer/ts-home-background.jpg) no-repeat top left;
+        }
+    }
+    
+    @media (max-width: $screen-xs) {
+        #ts-main .btn-how-to {
+            bottom: 80px;
+        }
+        #ts-main .ts-jumbotron-container .ts-background-image {
+            background: url(https://s3.eu-central-1.amazonaws.com/tablesurfer/ts-home-background-small.jpg) no-repeat top center;
+        }
+    }
+    
     #ts-main .ts-jumbotron-container h1 {
-        font-size: 3.5em;
-        bottom: 110px;
-        top: 35%;
+        position: absolute;
+        bottom: 65px;
+        font-size: 4.0em;
+        color: #fff;
+        text-align: left;
+        top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 465px;
     }
-}
-
-@media (min-width: $screen-sm) {
-    #ts-main .ts-jumbotron-container h1 {
-        width: 470px;
+    
+    #ts-main .ts-citation {
+        font-size: 16px;
+        font-family: "canada-type-gibson", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: absolute;
+        margin-top: 10px;
     }
-}
-
-@media (min-width: $screen-lg) {
-    #ts-main .ts-jumbotron-container h1 {
-        width: 500px;
+    
+    #ts-main .ts-jumbotron-container ts-signup {
+        bottom: 20px;
+        position: absolute;
     }
-}
-
-
-/**
+    
+    @media (max-width: $screen-xs) {
+        #ts-main .ts-jumbotron-container h1 {
+            font-size: 3.5em;
+            bottom: 110px;
+            top: 35%;
+        }
+    }
+    
+    @media (min-width: $screen-sm) {
+        #ts-main .ts-jumbotron-container h1 {
+            width: 470px;
+        }
+    }
+    
+    @media (min-width: $screen-lg) {
+        #ts-main .ts-jumbotron-container h1 {
+            width: 500px;
+        }
+    }
+    /**
  * Photo Gallery 
  */
-
-#ts-main .ts-photo-gallery-container {
-    padding-top: 100px;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-#ts-main .ts-photo-gallery-container section {
-    margin-top: 100px;
-}
-
-#ts-main .ts-photo-gallery-container .ts-image-container {
-    padding: 10px 10px 5px 5px;
-}
-
-@media (max-width: $screen-md) {
-    #ts-main .ts-photo-gallery-container .img-responsive {
-        width: 100%;
+    
+    #ts-main .ts-photo-gallery-container {
+        padding-top: 100px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
-}
-
-
-/**
+    
+    #ts-main .ts-photo-gallery-container section {
+        margin-top: 100px;
+    }
+    
+    #ts-main .ts-photo-gallery-container .ts-image-container {
+        padding: 10px 10px 5px 5px;
+    }
+    
+    @media (max-width: $screen-md) {
+        #ts-main .ts-photo-gallery-container .img-responsive {
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: $screen-xs) {
+        #ts-main .ts-photo-gallery-container .ts-image-container {
+            padding: 0;
+        }
+        #ts-main .ts-photo-gallery-container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    /**
  * How To
  */
-
-#ts-main .ts-how-to-container {
-    min-height: 630px;
-}
-
-#ts-main .ts-how-to-container .img-circle {
-    padding: 30px;
-}
-
-#ts-main .ts-how-to-container .row {
-    padding-top: 60px;
-}
-
-#ts-main .ts-how-to-container p {
-    text-align: center;
-}
-
-
-/**
+    
+    #ts-main .ts-how-to-container .img-circle {
+        padding: 30px;
+    }
+    
+    #ts-main .ts-how-to-container .row {
+        padding-top: 60px;
+    }
+    
+    #ts-main .ts-how-to-container p {
+        text-align: center;
+    }
+    /**
  * Supporters
  */
-
-#ts-main .ts-supporters-container {
-    margin: 0px;
-}
-
-#ts-main .ts-supporters-container h3 {
-    text-align: left;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #000;
-}
-
-#ts-main .ts-supporters-container .ts-logos-container {
-    margin-top: 20px;
-}
-
-#ts-main .ts-supporters-container .img-responsive {
-    margin: 15px 0px;
-}
-
-@media (min-width: $screen-sm) {
-    #ts-main .ts-supporters-container .img-responsive {
-        max-width: 220px;
+    
+    #ts-main .ts-supporters-container {
+        margin: 0px;
     }
-}
-
-
-/** 
+    
+    #ts-main .ts-supporters-container h3 {
+        text-align: left;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #000;
+    }
+    
+    #ts-main .ts-supporters-container .ts-logos-container {
+        margin-top: 20px;
+    }
+    
+    #ts-main .ts-supporters-container .img-responsive {
+        margin: 15px 0px;
+    }
+    
+    @media (min-width: $screen-sm) {
+        #ts-main .ts-supporters-container .img-responsive {
+            max-width: 220px;
+        }
+    }
+    
+    @media (max-width: $screen-xs) {
+        #ts-main .ts-supporters-container h3 {
+            text-align: center;
+        }
+    }
+    /** 
  * Press
  */
-
-#ts-main .ts-press-container {
-    background-color: $ts-light-blue;
-}
-
-#ts-main .ts-press-container h3 {
-    text-align: left;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #000;
-}
-
-#ts-main .ts-press-container .ts-logos-container {
-    height: 150px;
-    padding-top: 20px;
-}
-
-#ts-main .ts-press-container .ts-logo-m945 {
-    width: 110px;
-    position: relative;
-    left: 50%;
-    margin-left: -55px;
-}
-
-@media (min-width: $screen-sm) {
-    #ts-main .ts-press-container .img-responsive {
-        max-width: 220px;
+    
+    #ts-main .ts-press-container {
+        background-color: $ts-light-blue;
+        margin-top: 80px;
     }
-    #ts-main .ts-press-container .ts-logo-goethe {
-        width: 190px;
-        margin-top: 5px;
+    
+    #ts-main .ts-press-container h3 {
+        text-align: left;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #000;
     }
-    #ts-main .ts-press-container .ts-logo-sz {
-        margin-top: 25px;
+    
+    #ts-main .ts-press-container .ts-logos-container {
+        height: 150px;
+        padding-top: 20px;
     }
-}
-
-
-/**
+    
+    #ts-main .ts-press-container .ts-logo-m945 {
+        width: 110px;
+        position: relative;
+        left: 50%;
+        margin-left: -55px;
+    }
+    
+    @media (min-width: $screen-sm) {
+        #ts-main .ts-press-container .img-responsive {
+            max-width: 220px;
+        }
+        #ts-main .ts-press-container .ts-logo-goethe {
+            width: 190px;
+            margin-top: 5px;
+        }
+        #ts-main .ts-press-container .ts-logo-sz {
+            margin-top: 25px;
+        }
+    }
+    
+    @media (max-width: $screen-sm) {
+        #ts-main .ts-press-container {
+            margin-top: 40px;
+        }
+    }
+    /**
  * Features 
  */
-
-#ts-main .ts-features-container section {
-    height: 630px;
-}
-
-/**
+    
+    #ts-main .ts-features-container section {
+        height: 630px;
+    }
+    /**
  * How To Modal
  */
-
-#ts-how-to-modal .modal-content {
-    min-height: 500px;
-    background-color: #79cccd;
-    color: #fff;
-}
-
-#ts-how-to-modal .close {
-    color: #fff!important;
-}
+    
+    #ts-how-to-modal .modal-content {
+        min-height: 500px;
+        background-color: #79cccd;
+        color: #fff;
+    }
+    
+    #ts-how-to-modal .close {
+        color: #fff!important;
+    }
+    
+    @media (min-width: $screen-xs) and (max-width: $screen-md) {
+        #ts-how-to-modal .img-responsive {
+            left: 50%;
+            position: relative;
+            margin-left: -175px;
+            margin-bottom: 40px;
+        }
+        #ts-how-to-modal .modal-content h3 {
+            min-height: 75px!important;
+        }
+    }
+    
+    @media (max-width: $screen-sm) {
+        #ts-how-to-modal .modal-content h3 {
+            min-height: auto!important;
+        }
+    }

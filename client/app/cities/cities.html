@@ -3,26 +3,26 @@
         <leaflet id="mymap" defaults="defaults" lf-center="center" geojson="geojson" markers="markers" height="480px" width="100%"></leaflet>
     </div>
     <div class="row">
-        <div class="hidden-xs col-sm-2"></div>
-        <div class="col-sm-9">
-            <h1 ng-show="city">{{city}}</h1>
-            <h1 ng-hide="city" translate>{{cities.length}} cities & {{numberUnversities}} universities and counting ;)</h1>
+        <div class="col-sm-10 col-sm-offset-1">
+            <h1>{{cities.length}} <span translate>cities &</span> <br class="visible-xs"/> {{numberUnversities}} <span translate>universities</span></h1>
             <ul class="list-unstyled">
                 <li ng-repeat="city in cities">
                     <h3><i class="fa fa-map-marker"></i>{{city.name}}</h3>
                     <ul class="ts-universities list-unstyled">
                         <li ng-repeat="university in city.universities">
                             <h4>
-                                <i class="fa fa-university"></i>
                                 {{university.name}}
                             </h4>
                             <span class="ts-domain">*.{{university.domain}}</span>
                             <a ng-href="{{university.web_page}}" class="ts-website" target="_blank">Website</a>
                         </li>
                     </ul>
+                    <hr/>
                 </li>
             </ul>
         </div>
     </div>
 </div>
+<div ui-content-for="title" translate>
+    <span class="visible-xs" translate>universities</span>
 </div>

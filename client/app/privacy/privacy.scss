@@ -12,3 +12,12 @@
 #ts-privacy h3 {
     font-weight: 400;
 }
+
+@media (max-width: $screen-sm) {
+    #ts-privacy {
+        padding-top: 20px;
+    }
+    #ts-privacy {
+        margin-bottom: 20px;
+    }
+}

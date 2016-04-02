@@ -11,6 +11,7 @@
 
 #ts-about .img-responsive {
     -webkit-filter: grayscale(0.4);
+    padding: 0px 5% 0px 5%;
 }
 
 #ts-about h2 {
@@ -29,4 +30,32 @@
 #ts-about .ts-degree {
     font-size: 1.2em;
     text-align: center;
+}
+
+#ts-about .ts-team-member {
+    margin-bottom: 25px;
+}
+
+@media (max-width: $screen-xs) {
+    #ts-about .img-responsive {
+        padding: 0px 15% 0px 15%;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    #ts-about p.lead {
+        margin-top: 20px;
+    }
+    #ts-about {
+        margin-bottom: 0px;
+    }
+    #ts-about .img-responsive {
+        padding: 0px 30% 0px 30%;
+    }
+}
+
+@media (max-width: $screen-md) {
+    #ts-about .img-responsive {
+        padding: 0px 15% 0px 15%;
+    }
 }

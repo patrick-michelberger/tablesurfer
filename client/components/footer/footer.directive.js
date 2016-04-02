@@ -14,7 +14,6 @@ angular.module('tablesurferApp')
 
                 $http.get('/api/universities?country=Germany').success(function(universities) {
                     scope.universities = universities;
-                    console.log("scope.universities: ", scope.universities);
                 });
             }
         };

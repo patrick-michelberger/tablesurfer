@@ -5,6 +5,9 @@ angular.module('tablesurferApp')
     $stateProvider
       .state('privacy', {
         url: '/privacy',
-        template: '<privacy></privacy>'
+        template: '<privacy></privacy>',
+        data: {
+        	hideFooter: true
+        }
       });
   });

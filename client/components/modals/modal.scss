@@ -74,11 +74,11 @@
 #ts-modal-fixed .modal-header h4 {
     font-size: 3.0em;
     font-weight: 600;
-    padding: 5px 0px 10px 0px;
+    padding: 5px 0px 10px 25px;
 }
 
 #ts-modal-fixed .modal-body {
-    padding: 0px 15px 0px 15px;
+    padding: 0px 15px 15px 15px;
 }
 
 #ts-modal-fixed .modal-content h3 {
@@ -109,10 +109,17 @@
     font-size: 4.5em;
     position: absolute;
     top: 5px;
-    right: 15px;
+    right: 25px;
 }
 
 #ts-modal-fixed .modal-content {
     border-radius: 0;
     border: none;
+}
+
+@media (max-width: $screen-xs) {
+    #ts-modal-fixed .modal-header h4 {
+        font-size: 2.5em;
+        padding: 10px 0px 10px 10px;
+    }
 }

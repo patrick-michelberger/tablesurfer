@@ -2,21 +2,29 @@
     margin-bottom: 25px;
 }
 
+
+/* Hack for disable map scrolling */
+
+#ts-cities .angular-leaflet-map {
+    z-index: -4!important;
+}
+
 #ts-cities h1 {
     margin-bottom: 25px;
     margin-top: 25px;
-    font-size: 3.0em;
+    font-size: 2.5em;
     font-weight: 600;
 }
 
 #ts-cities h3 .fa-map-marker {
     margin-right: 10px;
+    color: $ts-red;
 }
 
 #ts-cities h3 {
     font-family: 'Amatic SC', cursive;
-    font-size: 3.0em;
-    font-weight: bold;
+    font-size: 2.5em;
+    font-weight: 400;
 }
 
 #ts-cities ul li {
@@ -32,18 +40,22 @@
 }
 
 #ts-cities .ts-domain {
-    color: $ts-orange;
+    color: $ts-black;
     font-weight: 400;
 }
 
 #ts-cities h4 {
     position: relative;
-    padding-left: 30px;
+    font-weight: 200;
+    line-height: 1.5em;
 }
 
 #ts-cities h4 i {
     position: absolute;
     left: 0;
+    top: 4px;
+    font-size: 1.1em;
+    color: #565a5c;
 }
 
 #ts-cities .ts-universities .ts-website {

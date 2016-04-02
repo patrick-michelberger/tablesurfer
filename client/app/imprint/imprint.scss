@@ -20,3 +20,18 @@
 #ts-imprint p {
     text-align: justify;
 }
+
+@media (max-width: $screen-sm) {
+    #ts-imprint p.lead {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    #ts-imprint p.lead {
+        margin-top: 20px;
+    }
+    #ts-imprint {
+        margin-bottom: 40px;
+    }
+}

@@ -4,10 +4,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: client/app/cities/cities.html:9
-msgid "{{cities.length}} cities & {{numberUnversities}} universities and counting ;)"
-msgstr ""
-
 #: client/app/dashboard/dashboard.html:78
 msgid "{{getCurrentUser().university.name}}"
 msgstr ""
@@ -48,16 +44,40 @@ msgstr ""
 msgid "<span class=\"ng-scope\" translate=\"\">Profile Information</span>"
 msgstr ""
 
+#: client/app/about/about.html:41
+msgid "<span class=\"visible-xs\" translate=\"\">about us</span>"
+msgstr ""
+
+#: client/app/agb/agb.html:112
+msgid "<span class=\"visible-xs\" translate=\"\">agb</span>"
+msgstr ""
+
+#: client/app/faq/faq.html:42
+msgid "<span class=\"visible-xs\" translate=\"\">faq</span>"
+msgstr ""
+
+#: client/app/imprint/imprint.html:29
+msgid "<span class=\"visible-xs\" translate=\"\">imprint</span>"
+msgstr ""
+
+#: client/app/presse/presse.html:13
+msgid "<span class=\"visible-xs\" translate=\"\">press</span>"
+msgstr ""
+
+#: client/app/privacy/privacy.html:18
+msgid "<span class=\"visible-xs\" translate=\"\">privacy</span>"
+msgstr ""
+
+#: client/app/cities/cities.html:26
+msgid "<span class=\"visible-xs\" translate=\"\">universities</span>"
+msgstr ""
+
 #: client/app/account/login/login.html:54
 msgid "<span class=\"visible-xs\">login</span>"
 msgstr ""
 
 #: client/app/account/signup/signup.html:70
 msgid "<span class=\"visible-xs\">signup</span>"
-msgstr ""
-
-#: client/app/universityList/universityList.html:35
-msgid "<span class=\"visible-xs\">universities</span>"
 msgstr ""
 
 #: client/app/onboarding/onboarding.html:20
@@ -78,6 +98,7 @@ msgstr ""
 msgid "About Me"
 msgstr ""
 
+#: client/app/about/about.html:42
 #: client/components/navbar/navbar.html:23
 msgid "about us"
 msgstr ""
@@ -89,6 +110,10 @@ msgstr ""
 
 #: client/components/tsPhoto/tsPhoto.html:25
 msgid "Add your photo"
+msgstr ""
+
+#: client/app/agb/agb.html:113
+msgid "agb"
 msgstr ""
 
 #: client/app/agb/agb.html:5
@@ -105,16 +130,16 @@ msgstr ""
 msgid "and"
 msgstr ""
 
-#: client/app/main/main.html:131
+#: client/app/main/main.html:149
 msgid "anmelden"
 msgstr ""
 
-#: client/app/main/main.html:168
+#: client/app/main/main.html:185
 #: client/app/main/main.html:62
 msgid "Anmeldung mit Deiner Campus-Email"
 msgstr ""
 
-#: client/app/main/main.html:89
+#: client/app/main/main.html:107
 msgid "Bekannt aus"
 msgstr ""
 
@@ -124,6 +149,10 @@ msgstr ""
 
 #: client/app/dashboard/dashboard.html:113
 msgid "Change profile picture"
+msgstr ""
+
+#: client/app/cities/cities.html:7
+msgid "cities &"
 msgstr ""
 
 #: client/app/onboarding/partials/onboarding.weekdays.html:4
@@ -158,22 +187,20 @@ msgstr ""
 msgid "Datenschutz"
 msgstr ""
 
-#: client/app/main/main.html:173
+#: client/app/main/main.html:190
 #: client/app/main/main.html:67
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
 #: client/app/agb/agb.html:9
-msgid ""
-"Do you still have questions about privacy on tablesurfer?\r\n"
-"                <a href=\"mailto:sprichmituns@tablesurfer.de\">sprichmituns@tablesurfer.de</a>"
+msgid "Do you still have questions about privacy on tablesurfer?"
 msgstr ""
 
 #: client/components/tsPhoto/tsPhoto.html:21
 msgid "Does this look right?"
 msgstr ""
 
-#: client/app/main/main.html:185
+#: client/app/main/main.html:202
 #: client/app/main/main.html:79
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
 msgstr ""
@@ -181,6 +208,10 @@ msgstr ""
 #: client/app/account/login/login.html:16
 #: client/app/account/signup/signup.html:24
 msgid "Email"
+msgstr ""
+
+#: client/app/faq/faq.html:43
+msgid "faq"
 msgstr ""
 
 #: client/app/faq/faq.html:5
@@ -230,12 +261,16 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: client/app/main/main.html:162
+#: client/app/main/main.html:179
 msgid "How it works"
 msgstr ""
 
 #: client/components/footer/footer.html:12
 msgid "Impressum"
+msgstr ""
+
+#: client/app/imprint/imprint.html:30
+msgid "imprint"
 msgstr ""
 
 #: client/app/imprint/imprint.html:5
@@ -251,7 +286,7 @@ msgstr ""
 msgid "Invalid code or unable to send emails at this moment. Try again later."
 msgstr ""
 
-#: client/app/main/main.html:130
+#: client/app/main/main.html:148
 msgid "jetzt mitmachen"
 msgstr ""
 
@@ -263,7 +298,7 @@ msgstr ""
 msgid "Just write them in the chat. Your guests have stated before, that they will have enough space in their kitchen for this date. So they will propably find a different kitchen to cook in."
 msgstr ""
 
-#: client/app/main/main.html:184
+#: client/app/main/main.html:201
 #: client/app/main/main.html:78
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
@@ -297,7 +332,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: client/app/main/main.html:169
+#: client/app/main/main.html:186
 #: client/app/main/main.html:63
 msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
 msgstr ""
@@ -351,12 +386,13 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: client/app/main/main.html:179
+#: client/app/main/main.html:196
 #: client/app/main/main.html:73
 msgid "Organisiert euren Kochabend im Chat!"
 msgstr ""
 
 #: client/app/main/main.html:18
+#: client/app/main/main.html:88
 msgid "Partner & Unterstützer"
 msgstr ""
 
@@ -397,6 +433,10 @@ msgstr ""
 msgid "Please enter your email."
 msgstr ""
 
+#: client/app/presse/presse.html:14
+msgid "press"
+msgstr ""
+
 #: client/components/tsSubnav/tsSubnav.html:5
 msgid "Press"
 msgstr ""
@@ -407,6 +447,10 @@ msgstr ""
 
 #: client/components/footer/footer.html:9
 msgid "Presse"
+msgstr ""
+
+#: client/app/privacy/privacy.html:19
+msgid "privacy"
 msgstr ""
 
 #: client/app/privacy/privacy.html:5
@@ -484,12 +528,12 @@ msgstr ""
 msgid "sign up with Xing"
 msgstr ""
 
-#: client/app/main/main.html:174
+#: client/app/main/main.html:191
 #: client/app/main/main.html:68
 msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
 msgstr ""
 
-#: client/app/main/main.html:147
+#: client/app/main/main.html:164
 msgid "Sorry, tablesurfer is only for students."
 msgstr ""
 
@@ -567,7 +611,8 @@ msgstr ""
 msgid "Universitäten ({{universities.length}})"
 msgstr ""
 
-#: client/app/universityList/universityList.html:6
+#: client/app/cities/cities.html:27
+#: client/app/cities/cities.html:7
 msgid "universities"
 msgstr ""
 
@@ -597,7 +642,7 @@ msgstr ""
 msgid "Verified phone number"
 msgstr ""
 
-#: client/app/main/main.html:180
+#: client/app/main/main.html:197
 #: client/app/main/main.html:74
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""

@@ -13,7 +13,6 @@
     font-size: 1.4em;
 }
 
-
 .sidebar-left .list-group {
     font-size: 1.2em;
 }
@@ -22,3 +21,9 @@
     border-bottom: 4px solid #000;
 }
 
+.sidebar-left .list-group {
+    margin: 20px 5px 20px 10px;
+    font-weight: 600;
+    text-transform: lowercase;
+    cursor: pointer;
+}

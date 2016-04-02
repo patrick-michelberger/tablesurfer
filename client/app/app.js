@@ -29,9 +29,10 @@ angular.module('tablesurferApp', [
         gettextCatalog.setCurrentLanguage('de');
         /*gettextCatalog.debug = true;*/
 
+        // Scroll to top on each route change
         $rootScope.$on('$stateChangeSuccess', function() {
             var elem = angular.element(document.getElementById('ts-scrollable-content'));
             var scrollableContentController = elem.controller('scrollableContent');
             scrollableContentController.scrollTo(0);
-        })
+        });
     })

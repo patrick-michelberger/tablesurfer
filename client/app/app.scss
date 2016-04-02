@@ -98,8 +98,12 @@ body.has-modal-fixed .app-body {
     padding-top: 0;
     padding-bottom: 0;
     color: #fff;
-    text-transform: lowercase;
     height: 51px;
+}
+
+.navbar-app {
+    border-color: #fff;
+    background: #fff;
 }
 
 a {
@@ -174,7 +178,6 @@ $brand-danger: red;
 @import 'presse/presse.scss';
 @import 'privacy/privacy.scss';
 @import 'social/social.scss';
-@import 'universityList/universityList.scss';
 @import 'verify/verify.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modals/modal.scss';

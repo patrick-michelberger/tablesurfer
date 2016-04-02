@@ -17,3 +17,18 @@
 #ts-press .ts-email {
     font-size: 1.5em;
 }
+
+@media (max-width: $screen-sm) {
+    #ts-press p.lead {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    #ts-press p.lead {
+        margin-top: 20px;
+    }
+    #ts-press {
+        margin-bottom: 0px;
+    }
+}
