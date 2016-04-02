@@ -240,6 +240,10 @@ msgstr ""
 msgid "Freundschaften knüpfen zwischen Herd und Spülbecken! <br><span class=\"ts-citation\">Süddeutsche Zeitung</span>"
 msgstr ""
 
+#: client/app/onboarding/onboarding.html:84
+msgid "gender"
+msgstr ""
+
 #: client/app/account/settings/settings.html:12
 #: client/app/dashboard/dashboard.html:98
 msgid "Gender"
@@ -411,6 +415,14 @@ msgstr ""
 msgid "Password must be at least 3 characters."
 msgstr ""
 
+#: client/app/onboarding/onboarding.html:83
+msgid "personal info"
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:85
+msgid "phone"
+msgstr ""
+
 #: client/app/account/settings/settings.html:21
 #: client/app/dashboard/dashboard.html:50
 #: client/app/dashboard/dashboard.html:59
@@ -435,6 +447,10 @@ msgstr ""
 
 #: client/app/account/login/login.html:74
 msgid "Please enter your email."
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:86
+msgid "preferred weekdays"
 msgstr ""
 
 #: client/app/presse/presse.html:14
@@ -644,6 +660,10 @@ msgstr ""
 
 #: client/components/tsPhone/tsPhone.html:13
 msgid "Verified phone number"
+msgstr ""
+
+#: client/app/onboarding/onboarding.html:82
+msgid "verify email"
 msgstr ""
 
 #: client/app/main/main.html:197

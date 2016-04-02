@@ -76,3 +76,13 @@
         </div>
     </div>
 </div>
+<!-- TITLE FOR MOBILE -->
+<div ui-content-for="title">
+    <div class="visible-xs">
+        <span ng-show="currentState =='email'" translate>verify email</span>
+        <span ng-show="currentState =='info'" translate>personal info</span>
+        <span ng-show="currentState =='gender'" translate>gender</span>
+        <span ng-show="currentState =='phone'" translate>phone</span>
+        <span ng-show="currentState =='weekdays'" translate>preferred weekdays</span>
+    </div>
+</div>

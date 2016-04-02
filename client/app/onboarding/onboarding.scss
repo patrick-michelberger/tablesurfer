@@ -74,6 +74,16 @@
     }
 }
 
+@media (max-width: $screen-xs) {
+    #ts-onboarding-weekdays {
+        margin-top: -25px;
+    }
+    #ts-onboarding-weekdays .btn-primary {
+        top: -15px;
+        position: relative;
+    }
+}
+
 
 /**
  * Welcome Modal

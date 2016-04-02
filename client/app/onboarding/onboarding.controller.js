@@ -2,7 +2,6 @@
 
 angular.module('tablesurferApp')
     .controller('OnboardingCtrl', function($rootScope, $scope, $state, $timeout, Auth) {
-
         // scope properties
         $scope.getCurrentUser = Auth.getCurrentUser;
         $scope.completeRegistration = function() {
@@ -106,6 +105,8 @@ angular.module('tablesurferApp')
                 }
 
                 $scope.currentProgress = currentProgress;
+                $scope.currentState = currentStep;
+                console.log("new state: ", $scope.currentState);
                 callback(currentStep);
             });
         };
