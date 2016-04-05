@@ -130,16 +130,16 @@ msgstr ""
 msgid "and"
 msgstr ""
 
-#: client/app/main/main.html:149
+#: client/app/main/main.html:161
 msgid "anmelden"
 msgstr ""
 
-#: client/app/main/main.html:185
-#: client/app/main/main.html:62
+#: client/app/main/main.html:199
+#: client/app/main/main.html:65
 msgid "Anmeldung mit Deiner Campus-Email"
 msgstr ""
 
-#: client/app/main/main.html:107
+#: client/app/main/main.html:119
 msgid "Bekannt aus"
 msgstr ""
 
@@ -191,8 +191,8 @@ msgstr ""
 msgid "Datenschutz"
 msgstr ""
 
-#: client/app/main/main.html:190
-#: client/app/main/main.html:67
+#: client/app/main/main.html:206
+#: client/app/main/main.html:73
 msgid "Deine Koch-Gruppe als WhatsApp Gruppe"
 msgstr ""
 
@@ -204,8 +204,8 @@ msgstr ""
 msgid "Does this look right?"
 msgstr ""
 
-#: client/app/main/main.html:202
-#: client/app/main/main.html:79
+#: client/app/main/main.html:222
+#: client/app/main/main.html:91
 msgid "Du willst nicht dauernd Gastgeber sein? Sobald du einmal Gastgeber warst, garantieren wir dir, dass du bei deinen nächsten drei Dinnern als Gast ausgewählt wirst."
 msgstr ""
 
@@ -269,7 +269,7 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: client/app/main/main.html:179
+#: client/app/main/main.html:191
 msgid "How it works"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Invalid code or unable to send emails at this moment. Try again later."
 msgstr ""
 
-#: client/app/main/main.html:148
+#: client/app/main/main.html:160
 msgid "jetzt mitmachen"
 msgstr ""
 
@@ -306,8 +306,8 @@ msgstr ""
 msgid "Just write them in the chat. Your guests have stated before, that they will have enough space in their kitchen for this date. So they will propably find a different kitchen to cook in."
 msgstr ""
 
-#: client/app/main/main.html:201
-#: client/app/main/main.html:78
+#: client/app/main/main.html:221
+#: client/app/main/main.html:90
 msgid "Kocht zusammen und knüpft neue Freundschaften!"
 msgstr ""
 
@@ -340,8 +340,8 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: client/app/main/main.html:186
-#: client/app/main/main.html:63
+#: client/app/main/main.html:200
+#: client/app/main/main.html:66
 msgid "Melde dich mit deiner Campus E-Mail-Adresse, z.B. sven.svenson@campus.lmu.de, als Tablesurfer an."
 msgstr ""
 
@@ -394,13 +394,13 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: client/app/main/main.html:196
-#: client/app/main/main.html:73
+#: client/app/main/main.html:214
+#: client/app/main/main.html:82
 msgid "Organisiert euren Kochabend im Chat!"
 msgstr ""
 
+#: client/app/main/main.html:100
 #: client/app/main/main.html:18
-#: client/app/main/main.html:88
 msgid "Partner & Unterstützer"
 msgstr ""
 
@@ -548,12 +548,12 @@ msgstr ""
 msgid "sign up with Xing"
 msgstr ""
 
-#: client/app/main/main.html:191
-#: client/app/main/main.html:68
+#: client/app/main/main.html:207
+#: client/app/main/main.html:74
 msgid "Sobald wir drei andere Studenten gefunden haben, erstellen wir für dich eine WhatsApp-Gruppe mit deiner Koch-Gruppe. Wir bestimmen jeweils einen Gastgeber und drei Gäste."
 msgstr ""
 
-#: client/app/main/main.html:164
+#: client/app/main/main.html:176
 msgid "Sorry, tablesurfer is only for students."
 msgstr ""
 
@@ -666,8 +666,8 @@ msgstr ""
 msgid "verify email"
 msgstr ""
 
-#: client/app/main/main.html:197
-#: client/app/main/main.html:74
+#: client/app/main/main.html:215
+#: client/app/main/main.html:83
 msgid "Was wird gekocht? Wer bringt welche Zutaten mit? Wie lautet die Adresse des Gastgebers?"
 msgstr ""
 

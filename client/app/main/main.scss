@@ -151,6 +151,37 @@
     #ts-main .ts-how-to-container p {
         text-align: center;
     }
+    
+    .ts-icon-container {
+        height: 210px;
+    }
+    
+    .ts-icon-container .ts-campus-mail,
+    .ts-icon-container .fa-whatsapp,
+    .ts-icon-container .fa-comments,
+    .ts-icon-container .fa-cutlery {
+        font-size: 8em;
+        left: 50%;
+        position: relative;
+        top: 50%;
+        margin-top: -55px;
+    }
+    
+    .ts-icon-container .ts-campus-mail {
+        margin-left: -65px;
+    }
+    
+    .ts-icon-container .fa-comments {
+        margin-left: -50px;
+    }
+    
+    .ts-icon-container .fa-cutlery {
+        margin-left: -50px;
+    }
+    
+    .ts-icon-container .fa-whatsapp {
+        margin-left: -50px;
+    }
     /**
  * Supporters
  */
