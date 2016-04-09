@@ -26,7 +26,7 @@ angular.module('tablesurferApp', [
         $locationProvider.html5Mode(true);
     })
     .run(function(gettextCatalog, $rootScope, $anchorScroll, $timeout, $window) {
-        gettextCatalog.setCurrentLanguage('de');
+        gettextCatalog.setCurrentLanguage('en');
         /*gettextCatalog.debug = true;*/
 
         // Scroll to top on each route change

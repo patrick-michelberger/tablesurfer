@@ -1,19 +1,20 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h4 translate>Heim und Herd.</h4>
-            <p>Wir sind eine Koch-Community für Studierende von Studierenden. Knüpfe neue Freundschaften - abseits der Uni.</p>
+            <h4 translate>tastes like Mutti's</h4>
+            <p><span translate>A cooking-community for students.</span>
+                <br/><span translate>Made with love by students in Munich.</span></p>
             <ul>
-                <li ui-sref-active="active"><a ui-sref="about" translate>Über uns</a></li>
+                <li ui-sref-active="active"><a ui-sref="about" translate>About us</a></li>
                 <li ui-sref-active="active"><a ui-sref="faq" translate>FAQ</a></li>
-                <li ui-sref-active="active"><a ui-sref="press" translate>Presse</a></li>
-                <li ui-sref-active="active"><a ui-sref="privacy" translate>Datenschutz</a></li>
-                <li ui-sref-active="active"><a ui-sref="agb" translate>AGB</a></li>
-                <li ui-sref-active="active"><a ui-sref="imprint" translate>Impressum</a></li>
+                <li ui-sref-active="active"><a ui-sref="press" translate>Press</a></li>
+                <li ui-sref-active="active"><a ui-sref="privacy" translate>Privacy</a></li>
+                <li ui-sref-active="active"><a ui-sref="agb" translate>Terms and conditions</a></li>
+                <li ui-sref-active="active"><a ui-sref="imprint" translate>Imprint</a></li>
             </ul>
         </div>
         <div class="col-sm-4">
-            <h4 translate>Städte ({{cities.length}})</h4>
+            <h4 translate>Cities ({{cities.length}})</h4>
             <ul>
                 <li ng-repeat="city in cities | limitTo: 15">
                     <a ng-href="universities">{{city}}</a>
@@ -23,7 +24,7 @@
             <button ui-sref="universities" class="btn btn-default btn-block">all cities</button>
         </div>
         <div class="col-sm-4">
-            <h4 translate>Universitäten ({{universities.length}})</h4>
+            <h4 translate>Universities ({{universities.length}})</h4>
             <ul>
                 <li ng-repeat="university in universities | limitTo: 15"> <a ng-href="{{university.web_page}}" target="_blank">
 {{university.name}}</a></li>
@@ -34,7 +35,7 @@
     </div>
     <div class="ts-social-container row">
         <div class="col-xs-12">
-            <h4 translate>Sprich mit uns</h4>
+            <h4 translate>Speak with us</h4>
             <ul class="list-inline">
                 <li>
                     <a href="mailto:hallo@tablesurfer.org" class="email">
@@ -55,8 +56,8 @@
         </div>
     </div>
     <div class="ts-legal-hint-container row">
-        <div class="col-xs-12" translate>
-            © 2016 tablesurfer. Alle Rechte vorbehalten.
+        <div class="col-xs-12">
+            © 2016 tablesurfer. <span translate>All rights reserved</span>.
         </div>
     </div>
 </div>

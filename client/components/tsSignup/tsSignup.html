@@ -3,9 +3,9 @@
     <div class="form-group">
         <div class="input-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                                 'has-error': form.email.$invalid && submitted }">
-            <input ng-disabled="isChecking" type="email" name="email" class="form-control" ng-model="user.email" placeholder="University E-Mail" required="" />
+            <input ng-disabled="isChecking" type="email" name="email" class="form-control" ng-model="user.email" placeholder="{{'university email e.g. sven.svenson@tum.de'|translate}}" required="" />
             <div class="input-group-btn">
-                <button type="submit" ng-hide="isChecking" class="btn btn-primary" ng-disabled="form.email.$invalid">los geht's</button>
+                <button type="submit" ng-hide="isChecking" class="btn btn-primary" ng-disabled="form.email.$invalid" translate>Here we go</button>
                 <button type="button" ng-show="isChecking" class="btn btn-default" ng-disabled="true"><i class="fa fa-circle-o-notch fa-spin"></i> checking
                 </button>
             </div>
