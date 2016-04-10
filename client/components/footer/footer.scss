@@ -1,58 +1,58 @@
-footer.footer {
+footer .ts-footer-container {
     padding-top: 35px;
     font-size: 16px;
     line-height: 1.5em;
     background-color: $ts-light-grey;
 }
 
-footer.footer .row {
+footer .ts-footer-container .row {
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-footer.footer h4 {
+footer .ts-footer-container h4 {
     font-size: 1.0em;
     font-weight: 600;
     height: 30px;
 }
 
-footer.footer ul {
+footer .ts-footer-container ul {
     padding-left: 0;
     list-style: none;
     margin-top: 0;
     margin-bottom: 10.5px;
 }
 
-footer.footer ul li {
+footer .ts-footer-container ul li {
     color: $ts-black;
     height: 25px;
     overflow: hidden;
 }
 
-footer.footer ul li a {
+footer .ts-footer-container ul li a {
     color: #565a5c;
 }
 
-footer.footer ul li.active {
+footer .ts-footer-container ul li.active {
     text-decoration: underlin;
 }
 
-footer.footer .list-inline {
+footer .ts-footer-container .list-inline {
     padding-left: 0;
     list-style: none;
     margin-left: -5px;
 }
 
-footer.footer .ts-social-container .fa {
+footer .ts-footer-container .ts-social-container .fa {
     font-size: 2.5em;
 }
 
-footer.footer .ts-social-container ul li {
+footer .ts-footer-container .ts-social-container ul li {
     height: 50px;
 }
 
-footer.footer .ts-legal-hint-container {
+footer .ts-footer-container .ts-legal-hint-container {
     text-align: center;
 }
 

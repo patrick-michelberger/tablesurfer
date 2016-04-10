@@ -18,8 +18,8 @@ ts-subnav ul li {
 ts-subnav ul li a {
     font-size: 1.3em;
     color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
+    text-transform: lowercase;
+    font-weight: 100;
     line-height: 1.6em;
 }
 
@@ -28,6 +28,11 @@ ts-subnav a:focus {
     color: #fff;
 }
 
-ts-subnav ul li.active {
-    text-decoration: underline;
+ts-subnav ul li.active a {
+    font-weight: 400;
+}
+
+ts-subnav ul a:hover {
+    opacity: .8!important;
+    text-decoration: none!important;
 }

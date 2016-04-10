@@ -71,7 +71,7 @@ body > div.app > navbar > div > div > button > i {
     font-style: normal;
     font-weight: 600;
     font-size: 1.6em;
-    padding-top: 15px;
+    padding: 15px 12px; 
 }
 
 .navbar-left>li {
@@ -101,12 +101,16 @@ body > div.app > navbar > div > div > button > i {
     padding-top: 15px;
     margin-left: 15px;
     margin-right: 15px;
-    font-weight: 600;
+    font-weight: 100;
     text-transform: lowercase;
 }
 
+.navbar-left>li>a:hover {
+    opacity: .7!important;
+}
+
 .navbar-left>li.active>a {
-    border-bottom: 2px solid #000;
+    font-weight: 400;
 }
 
 .navbar-left .ts-btn-language {
