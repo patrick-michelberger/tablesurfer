@@ -130,7 +130,7 @@ msgstr ""
 msgid "All rights reserved"
 msgstr ""
 
-#: client/app/main/main.html:39
+#: client/app/main/main.html:42
 msgid "An easy way to get to know each other besides university, clubs and bars."
 msgstr ""
 
@@ -138,11 +138,11 @@ msgstr ""
 msgid "and"
 msgstr ""
 
-#: client/app/main/main.html:161
+#: client/app/main/main.html:164
 msgid "anmelden"
 msgstr ""
 
-#: client/app/main/main.html:119
+#: client/app/main/main.html:122
 msgid "Bekannt aus"
 msgstr ""
 
@@ -154,8 +154,8 @@ msgstr ""
 msgid "Change profile picture"
 msgstr ""
 
-#: client/app/main/main.html:218
-#: client/app/main/main.html:84
+#: client/app/main/main.html:221
+#: client/app/main/main.html:87
 msgid "Chat about what you want to cook, when you want to meet and what you bring with you. One of you will be chosen as the host who should offer a location for the meetup e.g. in a kitchen, in a park or at a barbecuing area."
 msgstr ""
 
@@ -183,8 +183,8 @@ msgstr ""
 msgid "Confirm your phone number"
 msgstr ""
 
-#: client/app/main/main.html:224
-#: client/app/main/main.html:90
+#: client/app/main/main.html:227
+#: client/app/main/main.html:93
 msgid "Cook together and have fun!"
 msgstr ""
 
@@ -264,8 +264,8 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: client/app/main/main.html:191
-#: client/app/main/main.html:8
+#: client/app/main/main.html:11
+#: client/app/main/main.html:194
 msgid "How it works"
 msgstr ""
 
@@ -287,7 +287,7 @@ msgstr ""
 msgid "Invalid code or unable to send emails at this moment. Try again later."
 msgstr ""
 
-#: client/app/main/main.html:160
+#: client/app/main/main.html:163
 msgid "jetzt mitmachen"
 msgstr ""
 
@@ -332,11 +332,11 @@ msgstr ""
 msgid "Made with love by students in Munich."
 msgstr ""
 
-#: client/app/main/main.html:38
+#: client/app/main/main.html:41
 msgid "Making friends between the cooker and the sink!"
 msgstr ""
 
-#: client/app/main/main.html:6
+#: client/app/main/main.html:9
 msgid "Making friends between the cooker and the sink! <br><span class=\"ts-citation\">Süddeutsche Zeitung</span>"
 msgstr ""
 
@@ -389,12 +389,12 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: client/app/main/main.html:199
-#: client/app/main/main.html:65
+#: client/app/main/main.html:202
+#: client/app/main/main.html:68
 msgid "Only for Students."
 msgstr ""
 
-#: client/app/main/main.html:100
+#: client/app/main/main.html:103
 msgid "Partner & Unterstützer"
 msgstr ""
 
@@ -486,8 +486,8 @@ msgstr ""
 msgid "Quick Links"
 msgstr ""
 
-#: client/app/main/main.html:209
-#: client/app/main/main.html:75
+#: client/app/main/main.html:212
+#: client/app/main/main.html:78
 msgid "Randomized tables"
 msgstr ""
 
@@ -545,12 +545,12 @@ msgstr ""
 msgid "sign up with Xing"
 msgstr ""
 
-#: client/app/main/main.html:201
-#: client/app/main/main.html:67
+#: client/app/main/main.html:204
+#: client/app/main/main.html:70
 msgid "Sign up with your university email to join the community e.g. sven.svenson@campus.lmu.de"
 msgstr ""
 
-#: client/app/main/main.html:176
+#: client/app/main/main.html:179
 msgid "Sorry, tablesurfer is only for students."
 msgstr ""
 
@@ -564,7 +564,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: client/app/main/main.html:18
+#: client/app/main/main.html:21
 msgid "Supporters"
 msgstr ""
 
@@ -586,8 +586,8 @@ msgid ""
 "                            <br>That’s why you’ll have to confirm a few, quick details to activate your account."
 msgstr ""
 
-#: client/app/main/main.html:225
-#: client/app/main/main.html:91
+#: client/app/main/main.html:228
+#: client/app/main/main.html:94
 msgid "tablesurfing is an easy way to get to know each other besides university, clubs and bars."
 msgstr ""
 
@@ -684,8 +684,8 @@ msgstr ""
 msgid "We have sent you an email to reset your password."
 msgstr ""
 
-#: client/app/main/main.html:210
-#: client/app/main/main.html:76
+#: client/app/main/main.html:213
+#: client/app/main/main.html:79
 msgid "We will form groups of four tablesurfers. Our matching algorithm prefers mixed-gender groups with different academic background and common preferred weekdays."
 msgstr ""
 
@@ -701,8 +701,8 @@ msgstr ""
 msgid "What's your university email?"
 msgstr ""
 
-#: client/app/main/main.html:217
-#: client/app/main/main.html:83
+#: client/app/main/main.html:220
+#: client/app/main/main.html:86
 msgid "WhatsApp Group Chat"
 msgstr ""
 

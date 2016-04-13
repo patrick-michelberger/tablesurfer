@@ -39,7 +39,6 @@ strong {
     border-radius: 0;
 }
 
-
 /* Lists */
 
 .list-unstyled {
@@ -178,6 +177,7 @@ $brand-danger: red;
 @import 'presse/presse.scss';
 @import 'privacy/privacy.scss';
 @import 'social/social.scss';
+@import 'speakingBubble/speakingBubble.scss';
 @import 'verify/verify.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modals/modal.scss';
