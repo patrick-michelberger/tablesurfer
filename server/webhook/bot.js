@@ -73,12 +73,28 @@ class Bot extends EventEmitter {
                     }, (err, user) => {
                         if (err) return res.end()
                         
-                        if(!user) {
-                          // create new user
-                          // fill all fields, that facebook gives us (name, id, maybe gender ...)
-                        }
                         // append user object to event
                         event.user = user;
+                      
+                        if(!user)
+                        {
+                          event.state = "newUser";
+                          // create new user
+                          // fill all fields, that facebook gives us (name, id, maybe gender ...)
+                        } else if(!user.email) {
+                          event.state = "askEmail";
+                          
+                          // add campusMail to user
+                          // create verify code
+                          // save user
+                          // send verify code message with resend button
+                        } else if (!user.verified) {
+                          event.state = "askVerifyCode";
+                          
+                        } else if (!user.weekdays || user.weekdays.length === 0) {
+                          // send weekday buttons
+                          event.state = "askWeekdays";
+                        }
                                             
                         // handle inbound messages
                         if (event.message) {

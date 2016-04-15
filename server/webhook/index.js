@@ -9,23 +9,10 @@ const Bot = require('./bot.js')
 let bot = new Bot({
     token: config.facebook.pageToken,
     verify: config.facebook.verifyToken
-})
+});
 
 bot.on('message', (payload, reply) => {
-    var state = "";
-    
-    let user = payload.user;
-    if(!user.email)
-    {
-      // send email question
-      state = "askEmail";
-    } else if (!user.verified) {
-      // send verify code question with resend button
-      state = "askVerifyCode";
-    } else if (!user.weekdays || user.weekdays.length === 0) {
-      // send weekday buttons
-      state = "askWeekdays";
-    }
+    // handle received message
     
     console.log("message...");
     reply({ text: 'hey!' }, (err, info) => {})
