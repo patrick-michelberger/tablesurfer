@@ -156,7 +156,7 @@ class Bot extends EventEmitter {
       });
     }
     
-    askForStatus(recpientId) {
+    askForStatus(recipientId) {
       let messageData = {
         "attachment": {
           "type": "template",
