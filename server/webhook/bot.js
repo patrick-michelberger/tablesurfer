@@ -1,7 +1,7 @@
 'use strict'
 const EventEmitter = require('events').EventEmitter;
 const request = require('request');
-const User = require('../api/user/user.model');
+import User from '../api/user/user.model';
 
 class Bot extends EventEmitter {
     constructor(opts) {
@@ -69,63 +69,60 @@ class Bot extends EventEmitter {
 
     middleware() {
         return (req, res) => {
+            var self = this;
+
 
             if (this.verify_token && req.method === 'GET') return this.verify(this.verify_token)(req, res)
             if (req.method !== 'POST') return res.end()
-
-            console.log("POST request from facebook...");
 
             let entries = req.body.entry
 
             entries.forEach((entry) => {
                 let events = entry.messaging
-                
+
                 events.forEach((event) => {
-                    
-                    let sender_id = event.sender.id;
-                    
+
+                    let senderId = event.sender.id;
+
                     // lookup user with provider = facebook and id = sender.id
                     User.findOne({
-                      facebook_id: sender_id
+                        messengerId: senderId
                     }, (err, user) => {
                         if (err) return res.end()
-                        
+
                         // append user object to event
                         event.user = user;
-                      
-                        if(!user)
-                        {
-                          event.state = "newUser";
-                          // create new user
-                          // fill all fields, that facebook gives us (name, id, maybe gender ...)
-                        } else if(!user.email) {
-                          event.state = "askEmail";
-                          
-                          // add campusMail to user
-                          // create verify code
-                          // save user
-                          // send verify code message with resend button
+
+                        if (!user) {
+                            event.state = "newUser";
+                            // create new user
+                        } else if (!user.email) {
+                            event.state = "askEmail";
+                            // add campusMail to user
+                            // create verify code
+                            // save user
+                            // send verify code message with resend button
                         } else if (!user.verified) {
-                          event.state = "askVerifyCode";
-                          
+                            event.state = "askVerifyCode";
+
                         } else if (!user.weekdays || user.weekdays.length === 0) {
-                          // send weekday buttons
-                          event.state = "askWeekdays";
+                            // send weekday buttons
+                            event.state = "askWeekdays";
                         }
-                                            
+
                         // handle inbound messages
                         if (event.message) {
-                            this._handleEvent('message', event)
+                            self._handleEvent('message', event)
                         }
 
                         // handle postbacks
                         if (event.postback) {
-                            this._handleEvent('postback', event)
+                            self._handleEvent('postback', event)
                         }
 
                         // handle message delivered
                         if (event.delivery) {
-                            this._handleEvent('delivery', event)
+                            self._handleEvent('delivery', event)
                         }
                     });
                 })

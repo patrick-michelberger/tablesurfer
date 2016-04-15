@@ -2,6 +2,8 @@
 
 import express from 'express';
 import config from '../config/environment';
+import User from '../api/user/user.model';
+import request from 'request';
 
 const router = express.Router();
 const Bot = require('./bot.js')
@@ -12,73 +14,79 @@ let bot = new Bot({
 });
 
 bot.on('message', (payload, reply) => {
-    // handle received message
-    
-    console.log("message...");
-    reply({ text: 'hey!' }, (err, info) => {})
+    if (payload.state == 'newUser') {
+        bot.getProfile(payload.sender.id, (err, profile) => {
+            var user = new User({
+                first_name: profile.first_name,
+                last_name: profile.last_name,
+                picture: profile.profile_pic,
+                messengerId: payload.sender.id
+            });
+            user.save(function(err) {
+                if (err) {
+                    reply({ text: 'Hey ' + profile.first_name  + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
+                } else {
+                    reply({ text: 'Hey ' + profile.first_name  + ', welcome to tablesurfer!' }, (err, info) => {});
+                }
+            });
+        });
+    } else  {
+        // handle received message
+        //reply({ text: 'hey whats up!' }, (err, info) => {});
+    	sendGenericMessage(payload.sender.id);
+    }
 })
+
+function sendGenericMessage(sender) {
+  var messageData = {
+    "attachment": {
+      "type": "template",
+      "payload": {
+        "template_type": "generic",
+        "elements": [{
+          "title": "First card",
+          "subtitle": "Element #1 of an hscroll",
+          "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+          "buttons": [{
+            "type": "web_url",
+            "url": "https://www.messenger.com/",
+            "title": "Web url"
+          }, {
+            "type": "postback",
+            "title": "Postback",
+            "payload": "Payload for first element in a generic bubble",
+          }],
+        },{
+          "title": "Second card",
+          "subtitle": "Element #2 of an hscroll",
+          "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+          "buttons": [{
+            "type": "postback",
+            "title": "Postback",
+            "payload": "Payload for second element in a generic bubble",
+          }],
+        }]
+      }
+    }
+  };
+  request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: config.facebook.pageToken},
+    method: 'POST',
+    json: {
+      recipient: {id:sender},
+      message: messageData,
+    }
+  }, function(error, response, body) {
+    if (error) {
+      console.log('Error sending message: ', error);
+    } else if (response.body.error) {
+      console.log('Error: ', response.body.error);
+    }
+  });
+}
 
 router
     .all('/', bot.middleware());
-
-/*
-router
-    .get('/facebook', function(req, res) {
-        // Callback URL for webhook subscription verification
-        if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9') {
-            res.send(req.query['hub.challenge']);
-        } else {
-            res.send('Error, wrong validation token');
-        }
-    })
-    .post('/facebook', function(req, res) {
-        
-        console.log("POST request from Facebook: ");
-        console.log("----------------------------");
-        console.log("Object Type: ", req.body.object);
-        console.log("List of changes: ", req.body.entry);
-        console.log("X-Hub-Signature", req.get('X-Hub-Signature'));        
-        
-        messaging_events = req.body.entry[0].messaging;
-        for (i = 0; i < messaging_events.length; i++) {
-            event = req.body.entry[0].messaging[i];
-            sender = event.sender.id;
-            if (event.message && event.message.text) {
-                text = event.message.text;
-                // Handle a text message from this sender
-                sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200));
-            }
-        }
-     
-
-        res.sendStatus(200);
-    });
-
-
-function sendTextMessage(sender, text) {
-    messageData = {
-        text: text
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: { access_token: token },
-        method: 'POST',
-        json: {
-            recipient: { id: sender },
-            message: messageData,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending message: ', error);
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        }
-    });
-}
-
-function verifySignature(payload) {
-	var signature = 'sha1=' + OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), ENV['SECRET_TOKEN'], payload);
-}
-*/
 
 export default router;
