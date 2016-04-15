@@ -2,6 +2,7 @@
 const EventEmitter = require('events').EventEmitter;
 const request = require('request');
 import User from '../api/user/user.model';
+import config from '../config/environment';
 
 class Bot extends EventEmitter {
     constructor(opts) {
