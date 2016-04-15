@@ -157,31 +157,6 @@ class Bot extends EventEmitter {
       });
     }
     
-    askForEmail(recipientId) {
-      let messageData = {
-        "attachment": {
-          "type":"template",
-          "payload":{
-            "template_type":"button",
-            "text":"Bist du ein Student?",
-            "buttons":[
-              {
-                "type":"postback",
-                "title":"Ja",
-                "payload": "yes"
-              },
-              {
-                "type":"postback",
-                "title":"Nein",
-                "payload": "no"
-              }
-            ]
-          }
-        }
-      }
-      this._request(recipientId, messageData);
-    }
-    
     askForStatus(recipientId) {
       let messageData = {
         "attachment": {
@@ -207,7 +182,7 @@ class Bot extends EventEmitter {
       this._request(recipientId, messageData);
     }
     
-    askForVerifyCode(recipientId) {
+    askForVerifycode(recipientId) {
       let messageData = {
         "attachment": {
           "type":"template",
@@ -219,7 +194,8 @@ class Bot extends EventEmitter {
                 "type":"postback",
                 "title":"Nochmal senden?",
                 "payload": "resend"
-              }            ]
+              }
+            ]
           }
         }
       }

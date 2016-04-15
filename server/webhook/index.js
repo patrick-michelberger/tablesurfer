@@ -39,12 +39,13 @@ bot.on('message', (payload, reply) => {
       let user = payload.user;
       
       user.email = email;
-      user.createVerifyCode(function(err){
+      user.createVerifycode(function(err){
         if(err) {
+          console.log(err);
           reply({'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.'});
           return;
         }
-        bot.askForVerifyCode(payload.sender.id);
+        bot.askForVerifycode(payload.sender.id);
       });
     } else {
       reply({ text: 'Hey!' }, (err, info) => {});

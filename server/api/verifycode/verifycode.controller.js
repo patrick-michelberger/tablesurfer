@@ -69,6 +69,8 @@ exports.use = function(req, res) {
         verify.save(function(err) {
           if(err) { return handleError(res, err); }
           req.user = user;
+          // TODO: adapt to messenger platform
+          // set to verified and redirect to messenger
           Auth.setTokenCookieWithoutRedirect(req, res);
         });
       });
