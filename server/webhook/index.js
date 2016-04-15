@@ -17,7 +17,7 @@ bot.on('message', (payload, reply) => {
 })
 
 router
-    .get('/', bot.middleware());
+    .all('/', bot.middleware());
 
 /*
 router
