@@ -135,6 +135,61 @@ class Bot extends EventEmitter {
     _handleEvent(type, event) {
         this.emit(type, event, this.sendMessage.bind(this, event.sender.id))
     }
+    
+    _request(recipientId, messageData) {
+      request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {
+          access_token: config.facebook.pageToken
+        },
+        method: 'POST',
+        json: {
+          recipient: {id: recipientId},
+          message: messageData,
+        }
+      }, function(error, response, body) {
+        if (error) {
+          console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+          console.log('Error: ', response.body.error);
+        }
+      });
+    }
+    
+    askForStatus(recpientId) {
+      let messageData = {
+        "attachment": {
+          "type": "template",
+          "payload": {
+            "template_type": "generic",
+            "elements": [{
+              "title": "First card",
+              "subtitle": "Element #1 of an hscroll",
+              "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+              "buttons": [{
+                "type": "web_url",
+                "url": "https://www.messenger.com/",
+                "title": "Web url"
+              }, {
+                "type": "postback",
+                "title": "Postback",
+                "payload": "Payload for first element in a generic bubble",
+              }],
+            },{
+              "title": "Second card",
+              "subtitle": "Element #2 of an hscroll",
+              "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+              "buttons": [{
+                "type": "postback",
+                "title": "Postback",
+                "payload": "Payload for second element in a generic bubble",
+              }],
+            }]
+          }
+        }
+      }
+      this._request(recipientId, messageData);
+    }
 }
 
 module.exports = Bot
