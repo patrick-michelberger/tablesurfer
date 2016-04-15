@@ -1,6 +1,7 @@
 'use strict'
-const EventEmitter = require('events').EventEmitter
-const request = require('request')
+const EventEmitter = require('events').EventEmitter;
+const request = require('request');
+const User = require('../api/user/user.model');
 
 class Bot extends EventEmitter {
     constructor(opts) {
@@ -78,22 +79,55 @@ class Bot extends EventEmitter {
 
             entries.forEach((entry) => {
                 let events = entry.messaging
-
+                
                 events.forEach((event) => {
-                    // handle inbound messages
-                    if (event.message) {
-                        this._handleEvent('message', event)
-                    }
+                    
+                    let sender_id = event.sender.id;
+                    
+                    // lookup user with provider = facebook and id = sender.id
+                    User.findOne({
+                      facebook_id: sender_id
+                    }, (err, user) => {
+                        if (err) return res.end()
+                        
+                        // append user object to event
+                        event.user = user;
+                      
+                        if(!user)
+                        {
+                          event.state = "newUser";
+                          // create new user
+                          // fill all fields, that facebook gives us (name, id, maybe gender ...)
+                        } else if(!user.email) {
+                          event.state = "askEmail";
+                          
+                          // add campusMail to user
+                          // create verify code
+                          // save user
+                          // send verify code message with resend button
+                        } else if (!user.verified) {
+                          event.state = "askVerifyCode";
+                          
+                        } else if (!user.weekdays || user.weekdays.length === 0) {
+                          // send weekday buttons
+                          event.state = "askWeekdays";
+                        }
+                                            
+                        // handle inbound messages
+                        if (event.message) {
+                            this._handleEvent('message', event)
+                        }
 
-                    // handle postbacks
-                    if (event.postback) {
-                        this._handleEvent('postback', event)
-                    }
+                        // handle postbacks
+                        if (event.postback) {
+                            this._handleEvent('postback', event)
+                        }
 
-                    // handle message delivered
-                    if (event.delivery) {
-                        this._handleEvent('delivery', event)
-                    }
+                        // handle message delivered
+                        if (event.delivery) {
+                            this._handleEvent('delivery', event)
+                        }
+                    });
                 })
             })
 

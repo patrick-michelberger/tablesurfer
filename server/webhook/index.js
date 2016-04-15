@@ -9,9 +9,11 @@ const Bot = require('./bot.js')
 let bot = new Bot({
     token: config.facebook.pageToken,
     verify: config.facebook.verifyToken
-})
+});
 
 bot.on('message', (payload, reply) => {
+    // handle received message
+    
     console.log("message...");
     reply({ text: 'hey!' }, (err, info) => {})
 })

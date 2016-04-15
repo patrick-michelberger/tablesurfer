@@ -28,6 +28,7 @@ var UserSchema = new Schema({
         default: 'user'
     },
     password: String,
+    facebook_id: String,
     provider: String,
     salt: String,
     locale: String,
