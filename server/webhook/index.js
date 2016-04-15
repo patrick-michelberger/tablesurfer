@@ -14,7 +14,7 @@ let bot = new Bot({
 });
 
 bot.on('message', (payload, reply) => {
-    if (payload.state == 'newUser') {
+    if (payload.state === 'newUser') {
         bot.getProfile(payload.sender.id, (err, profile) => {
             var user = new User({
                 first_name: profile.first_name,
@@ -27,15 +27,35 @@ bot.on('message', (payload, reply) => {
                     reply({ text: 'Hey ' + profile.first_name  + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
                 } else {
                     reply({ text: 'Hey ' + profile.first_name  + ', welcome to tablesurfer!' }, (err, info) => {});
+                    
+                    // handle received message
+                    //reply({ text: 'hey whats up!' }, (err, info) => {});
+                    bot.askForStatus(payload.sender.id);
                 }
             });
         });
+    } else if (payload.state === 'askEmail') {
+      let email = payload.message.text;
+      let user = payload.user;
+      
+      user.email = email;
+      user.createVerifyCode(function(err){
+        if(err) {
+          reply({'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.'});
+          return;
+        }
+        bot.askForVerifyCode(payload.sender.id);
+      });
     } else {
-      // handle received message
-      //reply({ text: 'hey whats up!' }, (err, info) => {});
-    	bot.askForStatus(payload.sender.id);
+      reply({ text: 'Hey!' }, (err, info) => {});
     }
-})
+});
+
+bot.on('postback', (payload, reply) => {
+  console.log('Received postback payload', payload);
+  
+  
+});
 
 router.all('/', bot.middleware());
 

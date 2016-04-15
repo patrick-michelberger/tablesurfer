@@ -157,35 +157,69 @@ class Bot extends EventEmitter {
       });
     }
     
+    askForEmail(recipientId) {
+      let messageData = {
+        "attachment": {
+          "type":"template",
+          "payload":{
+            "template_type":"button",
+            "text":"Bist du ein Student?",
+            "buttons":[
+              {
+                "type":"postback",
+                "title":"Ja",
+                "payload": "yes"
+              },
+              {
+                "type":"postback",
+                "title":"Nein",
+                "payload": "no"
+              }
+            ]
+          }
+        }
+      }
+      this._request(recipientId, messageData);
+    }
+    
     askForStatus(recipientId) {
       let messageData = {
         "attachment": {
-          "type": "template",
-          "payload": {
-            "template_type": "generic",
-            "elements": [{
-              "title": "First card",
-              "subtitle": "Element #1 of an hscroll",
-              "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
-              "buttons": [{
-                "type": "web_url",
-                "url": "https://www.messenger.com/",
-                "title": "Web url"
-              }, {
-                "type": "postback",
-                "title": "Postback",
-                "payload": "Payload for first element in a generic bubble",
-              }],
-            },{
-              "title": "Second card",
-              "subtitle": "Element #2 of an hscroll",
-              "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-              "buttons": [{
-                "type": "postback",
-                "title": "Postback",
-                "payload": "Payload for second element in a generic bubble",
-              }],
-            }]
+          "type":"template",
+          "payload":{
+            "template_type":"button",
+            "text":"Bist du ein Student?",
+            "buttons":[
+              {
+                "type":"postback",
+                "title":"Ja",
+                "payload": "yes"
+              },
+              {
+                "type":"postback",
+                "title":"Nein",
+                "payload": "no"
+              }
+            ]
+          }
+        }
+      }
+      this._request(recipientId, messageData);
+    }
+    
+    askForVerifyCode(recipientId) {
+      let messageData = {
+        "attachment": {
+          "type":"template",
+          "payload":{
+            "template_type":"button",
+            "text":"Wie lautet der Verifizierungscode, den wir an deine E-Mail Adresse gesendet haben?",
+            "buttons":[
+              {
+                "type":"postback",
+                "title":"Nochmal senden?",
+                "payload": "resend"
+              }            ]
           }
         }
       }
