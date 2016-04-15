@@ -12,6 +12,21 @@ let bot = new Bot({
 })
 
 bot.on('message', (payload, reply) => {
+    var state = "";
+    
+    let user = payload.user;
+    if(!user.email)
+    {
+      // send email question
+      state = "askEmail";
+    } else if (!user.verified) {
+      // send verify code question with resend button
+      state = "askVerifyCode";
+    } else if (!user.weekdays || user.weekdays.length === 0) {
+      // send weekday buttons
+      state = "askWeekdays";
+    }
+    
     console.log("message...");
     reply({ text: 'hey!' }, (err, info) => {})
 })
