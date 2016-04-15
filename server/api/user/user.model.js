@@ -10,7 +10,7 @@ import University from '../university/university.model';
 import City from '../city/city.model';
 import mail from '../../components/mail';
 import config from '../../config/environment';
-import Whatsapp from '../../components/whatsapp';
+//import Whatsapp from '../../components/whatsapp';
 import Password from '../password/password.model';
 
 const authTypes = ['facebook'];
