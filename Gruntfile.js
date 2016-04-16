@@ -27,9 +27,58 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-gettext');
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-critical');
+    
+    // used for tablesurfer task to add and commit
+    grunt.loadNpmTasks('grunt-git');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
+        gitpull: {
+          dist: {
+            options: {
+              cwd: './dist'
+              //remote: 'origin',
+              //branch: 'master'
+            }
+          }
+        },
+        
+        gitpush: {
+          dist: {
+            options: {
+              cwd: './dist'
+              //remote: 'origin',
+              //branch: 'master'
+            }
+          }
+        },
+      
+        gitadd: {
+          dist: {
+            options: {
+              cwd: './dist',
+              all: true,
+              force: true
+            },
+            files: {
+              src: ['.']
+            }
+          }
+        },
+        
+        gitcommit: {
+          dist: {
+            options: {
+              message: 'Build',
+              cwd: './dist',
+              allowEmpty: true
+            },
+            files: {
+              src: ['.']
+            }
+          }
+        },
+      
         responsive_images: {
             dev: {
                 files: [{
@@ -874,6 +923,18 @@ module.exports = function(grunt) {
         'usemin',
         'nggettext_extract',
         'nggettext_compile'
+    ]);
+    
+    grunt.registerTask('tablesurfer', [
+        // pull all changes
+        'gitpull:dist',
+        // copy all files
+        'clean:dist',
+        'copy:dist',
+        // upload
+        'gitadd:dist',
+        'gitcommit:dist',
+        'gitpush:dist'
     ]);
 
     grunt.registerTask('default', [
