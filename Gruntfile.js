@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     // Define the configuration for all the tasks
     grunt.initConfig({
         gitpull: {
-          dist: {
+          stage: {
             options: {
               cwd: './dist'
               //remote: 'origin',
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         },
         
         gitpush: {
-          dist: {
+          stage: {
             options: {
               cwd: './dist'
               //remote: 'origin',
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         },
       
         gitadd: {
-          dist: {
+          stage: {
             options: {
               cwd: './dist',
               all: true,
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         },
         
         gitcommit: {
-          dist: {
+          stage: {
             options: {
               message: 'Build',
               cwd: './dist',
@@ -251,6 +251,16 @@ module.exports = function(grunt) {
                     src: [
                         '.tmp',
                         '<%= yeoman.dist %>/!(.git*|.openshift|Procfile)**'
+                    ]
+                }]
+            },
+            // delete everything except client and university-domains-list
+            stage: {
+              files: [{
+                    dot: true,
+                    src: [
+                        '.tmp',
+                        '<%= yeoman.dist %>/!(.git*|.openshift|Procfile|client*|university-domains-list*)**'
                     ]
                 }]
             },
@@ -485,6 +495,19 @@ module.exports = function(grunt) {
 
         // Copies remaining files to places other tasks can use
         copy: {
+            stage: {
+                files: [{
+                    expand: true,
+                    dest: '<%= yeoman.dist %>',
+                    src: [
+                        'package.json',
+                        'university-domains-list/**/*',
+                        '<%= yeoman.server %>/**/*',
+                        '!<%= yeoman.server %>/config/local.env.sample.js'
+                    ]
+                }]
+            },
+          
             dist: {
                 files: [{
                     expand: true,
@@ -927,14 +950,15 @@ module.exports = function(grunt) {
     
     grunt.registerTask('stage', [
         // pull all changes
-        'gitpull:dist',
-        // copy all files
-        'clean:dist',
-        'copy:dist',
+        'gitpull:stage',
+        // delete server
+        'clean:stage',
+        // copy only server
+        'copy:stage',
         // upload
-        'gitadd:dist',
-        'gitcommit:dist',
-        'gitpush:dist'
+        'gitadd:stage',
+        'gitcommit:stage',
+        'gitpush:stage'
     ]);
 
     grunt.registerTask('default', [
