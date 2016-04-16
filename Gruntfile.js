@@ -30,9 +30,35 @@ module.exports = function(grunt) {
     
     // used for tablesurfer task to add and commit
     grunt.loadNpmTasks('grunt-git');
+    
+    // linting before stage
+    grunt.loadNpmTasks('grunt-jslint');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
+        jslint: {
+          server: {
+            src: [
+              'server/**.js'
+            ],
+            exclude: [
+              'server/config.js'
+            ],
+            directives: {
+              es6: true,
+              node: true
+            },
+            options: {
+              edition: 'latest', // specify an edition of jslint or use 'dir/mycustom-jslint.js' for own path
+              log: 'server-lint.log',
+              //junit: 'server-junit.xml',
+              //jslintXml: 'server-jslint.xml',
+              //checkstyle: 'server-checkstyle.xml',
+              errorsOnly: true, // only display errors
+            }
+          }
+        },
+          
         gitpull: {
           stage: {
             options: {
@@ -946,6 +972,10 @@ module.exports = function(grunt) {
         'usemin',
         'nggettext_extract',
         'nggettext_compile'
+    ]);
+    
+    grunt.registerTask('lint', [
+        'jslint:server'
     ]);
     
     grunt.registerTask('stage', [
