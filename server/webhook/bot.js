@@ -4,8 +4,6 @@ const request = require('request');
 import User from '../api/user/user.model';
 import config from '../config/environment';
 
-var Knwl = require("knwl.js");
-
 class Bot extends EventEmitter {
     constructor(opts) {
         super()
@@ -190,7 +188,7 @@ class Bot extends EventEmitter {
           "type":"template",
           "payload":{
             "template_type":"button",
-            "text":"Wie lautet der Verifizierungscode, den wir an deine E-Mail Adresse gesendet haben?",
+            "text":"Gehe bitte auf den Verifizierungslink, den wir an deine E-Mail Adresse gesendet haben.",
             "buttons":[
               {
                 "type":"postback",
