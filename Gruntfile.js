@@ -925,7 +925,7 @@ module.exports = function(grunt) {
         'nggettext_compile'
     ]);
     
-    grunt.registerTask('tablesurfer', [
+    grunt.registerTask('stage', [
         // pull all changes
         'gitpull:dist',
         // copy all files
