@@ -6,6 +6,12 @@ var Auth = require('../../auth/auth.service');
 var User = require('../user/user.model');
 var University = require('../university/university.model');
 
+const Bot = require('../../webhook/bot.js')
+
+let bot = new Bot({
+    token: config.facebook.pageToken,
+    verify: config.facebook.verifyToken
+});
 
 // Get list of verifys
 exports.index = function(req, res) {
@@ -68,10 +74,20 @@ exports.use = function(req, res) {
         if(err) { return handleError(res, err); }
         verify.save(function(err) {
           if(err) { return handleError(res, err); }
-          req.user = user;
-          // TODO: adapt to messenger platform
-          // set to verified and redirect to messenger
-          Auth.setTokenCookieWithoutRedirect(req, res);
+          
+          if(user.messengerId) {
+            // person registered with messenger
+            
+            // send facebook message
+            bot.sendMessage(user.messengerId, {'text': 'Wir haben dich verifiziert.'}, (err) => {
+              if(err) { return handleError(res, err); }
+              // TODO: add entry point address
+              res.redirect('/');
+            });
+          } else {
+            req.user = user;
+            Auth.setTokenCookieWithoutRedirect(req, res);
+          }
         });
       });
     });
