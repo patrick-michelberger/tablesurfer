@@ -35,8 +35,13 @@ bot.on('message', (payload, reply) => {
             });
         });
     } else if (payload.state === 'askEmail') {
-      let email = payload.message.text;
       let user = payload.user;
+      let email = parseEmail(payload.message.text);
+      
+      if(!email) {
+        reply({'text': 'Dein letzter Text enthielt leider keine E-Mail Adresse.'});
+        return;
+      }
       
       user.email = email;
       user.createVerifycode(function(err){
@@ -47,10 +52,25 @@ bot.on('message', (payload, reply) => {
         }
         bot.askForVerifycode(payload.sender.id);
       });
+    } else if (state === 'askVerifycode') {
+      // We want to keep the verify code over the website.
+      reply({'text': 'Du bist noch nicht verifiziert.'});
     } else {
       reply({ text: 'Hey!' }, (err, info) => {});
     }
 });
+
+var parseEmail = (string) => {
+    let k = new Knwl();
+    k.init(string);
+    let emails = k.get('emails');
+    
+    if(emails.length === 1) {
+      return emails[1];
+    } else {
+      return null;
+    }
+};
 
 bot.on('postback', (payload, reply) => {
   console.log('Received postback payload', payload);

@@ -4,6 +4,8 @@ const request = require('request');
 import User from '../api/user/user.model';
 import config from '../config/environment';
 
+var Knwl = require("knwl.js");
+
 class Bot extends EventEmitter {
     constructor(opts) {
         super()
@@ -104,7 +106,7 @@ class Bot extends EventEmitter {
                             // save user
                             // send verify code message with resend button
                         } else if (!user.verified) {
-                            event.state = "askVerifyCode";
+                            event.state = "askVerifycode";
 
                         } else if (!user.weekdays || user.weekdays.length === 0) {
                             // send weekday buttons
