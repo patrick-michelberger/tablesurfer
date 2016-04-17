@@ -136,70 +136,65 @@ class Bot extends EventEmitter {
     _handleEvent(type, event) {
         this.emit(type, event, this.sendMessage.bind(this, event.sender.id))
     }
-    
+
     _request(recipientId, messageData) {
-      request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {
-          access_token: config.facebook.pageToken
-        },
-        method: 'POST',
-        json: {
-          recipient: {id: recipientId},
-          message: messageData,
-        }
-      }, function(error, response, body) {
-        if (error) {
-          console.log('Error sending message: ', error);
-        } else if (response.body.error) {
-          console.log('Error: ', response.body.error);
-        }
-      });
+        request({
+            url: 'https://graph.facebook.com/v2.6/me/messages',
+            qs: {
+                access_token: config.facebook.pageToken
+            },
+            method: 'POST',
+            json: {
+                recipient: { id: recipientId },
+                message: messageData,
+            }
+        }, function(error, response, body) {
+            if (error) {
+                console.log('Error sending message: ', error);
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error);
+            }
+        });
     }
-    
+
     askForStatus(recipientId) {
-      let messageData = {
-        "attachment": {
-          "type":"template",
-          "payload":{
-            "template_type":"button",
-            "text":"Bist du ein Student?",
-            "buttons":[
-              {
-                "type":"postback",
-                "title":"Ja",
-                "payload": "yes"
-              },
-              {
-                "type":"postback",
-                "title":"Nein",
-                "payload": "no"
-              }
-            ]
-          }
-        }
-      }
-      this._request(recipientId, messageData);
+        let messageData = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": "Bist du ein Student?",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Ja",
+                        "payload": "student_status_yes"
+                    }, {
+                        "type": "postback",
+                        "title": "Nein",
+                        "payload": "student_status_no"
+                    }]
+                }
+            }
+        };
+        this._request(recipientId, messageData);
     }
-    
+
     askForVerifycode(recipientId) {
-      let messageData = {
-        "attachment": {
-          "type":"template",
-          "payload":{
-            "template_type":"button",
-            "text":"Gehe bitte auf den Verifizierungslink, den wir an deine E-Mail Adresse gesendet haben.",
-            "buttons":[
-              {
-                "type":"postback",
-                "title":"Nochmal senden?",
-                "payload": "resend"
-              }
-            ]
-          }
+        let messageData = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": "Gehe bitte auf den Verifizierungslink, den wir an deine E-Mail Adresse gesendet haben.",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Nochmal senden?",
+                        "payload": "resend_verifycode"
+                    }]
+                }
+            }
         }
-      }
-      this._request(recipientId, messageData);
+        this._request(recipientId, messageData);
     }
 }
 

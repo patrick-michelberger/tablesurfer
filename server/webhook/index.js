@@ -42,7 +42,7 @@ bot.on('message', (payload, reply) => {
                 if (err) {
                     reply({ text: 'Hey ' + profile.first_name + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
                 } else {
-                    reply({ text: 'Hey ' + profile.first_name + ', welcome to tablesurfer!' }, (err, info) => {});
+                    reply({ text: 'Hey ' + profile.first_name + ', willkommen bei tablesurfer!' }, (err, info) => {});
 
                     // handle received message
                     //reply({ text: 'hey whats up!' }, (err, info) => {});
@@ -89,10 +89,32 @@ var parseEmail = (string) => {
 };
 
 bot.on('postback', (payload, reply) => {
-    if (payload.postback.payload === 'yes' && payload.state === 'askEmail') {
-        reply({ 'text': 'Wie lautet deine Uni-Mail-Adresse? (z.B. sven.mustermann@tum.de)' });
-    } else if (payload.postback.payload === 'no') {
-        reply({ 'text': 'Tablesurfer ist nur für Studenten.' });
+    console.log("payload: ", payload.postback.payload);
+    switch (payload.postback.payload) {
+        case 'student_status_yes':
+            if (payload.state === 'askEmail') {
+                reply({ 'text': 'Wie lautet deine Uni-Mail-Adresse? (z.B. sven.mustermann@tum.de)' });
+            } else {
+                reply({ 'text': 'Deine Campus-Email ' + payload.email + ' wurde schon verifiziert.' });
+            }
+            break;
+        case 'student_status_no':
+            reply({ 'text': 'Tablesurfer ist nur für Studenten.' });
+            break;
+        case 'resend_verifycode':
+            console.log("sending email...");
+            payload.user.createVerifycode(function(err) {
+                if (err) {
+                    console.log(err);
+                    reply({ 'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.' });
+                    return;
+                }
+                bot.askForVerifycode(payload.sender.id);
+                reply({ 'text': 'Wir haben dir nochmal eine Email an ' + payload.user.email + ' geschickt.'});
+            });
+            break;
+        default:
+            reply({ 'text': 'Sorry, dieses Befehl kennen wir leider nicht.' });
     }
 });
 
