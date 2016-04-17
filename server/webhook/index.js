@@ -16,21 +16,20 @@ let bot = new Bot({
 });
 
 bot.on('message', (payload, reply) => {
-    
+
     // special messages
-    if(payload.message.text === 'Vergiss mich.' && payload.user)
-    {
-      payload.user.remove((err) => {
-        if(err) {
-          console.log(err);
-          reply({'text': 'Wir konnten dich nicht vergessen.'});
-          return;
-        }
-        reply({'text': 'Bis zum nächsten mal.'});
-        return;
-      });
+    if (payload.message.text === 'Vergiss mich.' && payload.user) {
+        payload.user.remove((err) => {
+            if (err) {
+                console.log(err);
+                reply({ 'text': 'Wir konnten dich nicht vergessen.' });
+                return;
+            }
+            reply({ 'text': 'Bis zum nächsten mal.' });
+            return;
+        });
     }
-  
+
     if (payload.state === 'newUser') {
         bot.getProfile(payload.sender.id, (err, profile) => {
             var user = new User({
@@ -41,10 +40,10 @@ bot.on('message', (payload, reply) => {
             });
             user.save(function(err) {
                 if (err) {
-                    reply({ text: 'Hey ' + profile.first_name  + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
+                    reply({ text: 'Hey ' + profile.first_name + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
                 } else {
-                    reply({ text: 'Hey ' + profile.first_name  + ', welcome to tablesurfer!' }, (err, info) => {});
-                    
+                    reply({ text: 'Hey ' + profile.first_name + ', welcome to tablesurfer!' }, (err, info) => {});
+
                     // handle received message
                     //reply({ text: 'hey whats up!' }, (err, info) => {});
                     bot.askForStatus(payload.sender.id);
@@ -52,28 +51,28 @@ bot.on('message', (payload, reply) => {
             });
         });
     } else if (payload.state === 'askEmail') {
-      let user = payload.user;
-      let email = parseEmail(payload.message.text);
-      
-      if(!email) {
-        reply({'text': 'Dein letzter Text enthielt leider keine E-Mail Adresse.'});
-        return;
-      }
-      
-      user.email = email;
-      user.createVerifycode(function(err){
-        if(err) {
-          console.log(err);
-          reply({'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.'});
-          return;
+        let user = payload.user;
+        let email = parseEmail(payload.message.text);
+
+        if (!email) {
+            reply({ 'text': 'Dein letzter Text enthielt leider keine E-Mail Adresse.' });
+            return;
         }
-        bot.askForVerifycode(payload.sender.id);
-      });
+
+        user.email = email;
+        user.createVerifycode(function(err) {
+            if (err) {
+                console.log(err);
+                reply({ 'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.' });
+                return;
+            }
+            bot.askForVerifycode(payload.sender.id);
+        });
     } else if (payload.state === 'askVerifycode') {
-      // We want to keep the verify code over the website.
-      reply({'text': 'Du bist noch nicht verifiziert.'});
+        // We want to keep the verify code over the website.
+        reply({ 'text': 'Du bist noch nicht verifiziert.' });
     } else {
-      reply({ text: 'Hey!' }, (err, info) => {});
+        reply({ text: 'Hey!' }, (err, info) => {});
     }
 });
 
@@ -81,23 +80,20 @@ var parseEmail = (string) => {
     let k = new Knwl();
     k.init(string);
     let emails = k.get('emails');
-    
-    if(emails.length > 0) {
-      return emails[0].address;
+
+    if (emails.length > 0) {
+        return emails[0].address;
     } else {
-      return null;
+        return null;
     }
 };
 
 bot.on('postback', (payload, reply) => {
-  console.log('Received postback payload', payload);
-  if(payload.state === 'askEmail') {
-    if(payload.postback.payload === 'yes') {
-      reply({'text': 'Wie lautet deine Uni-Mail-Adresse? (z.B. sven.mustermann@tum.de)'});
-    } else if(payload.postback.payload === 'no') {
-      reply({'text': 'Tablesurfer ist nur für Studenten.'});
+    if (payload.postback.payload === 'yes' && payload.state === 'askEmail') {
+        reply({ 'text': 'Wie lautet deine Uni-Mail-Adresse? (z.B. sven.mustermann@tum.de)' });
+    } else if (payload.postback.payload === 'no') {
+        reply({ 'text': 'Tablesurfer ist nur für Studenten.' });
     }
-  }
 });
 
 router.all('/', bot.middleware());
