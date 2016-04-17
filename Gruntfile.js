@@ -27,9 +27,84 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-gettext');
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-critical');
+    
+    // used for tablesurfer task to add and commit
+    grunt.loadNpmTasks('grunt-git');
+    
+    // linting before stage
+    grunt.loadNpmTasks('grunt-jslint');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
+        jslint: {
+          server: {
+            src: [
+              'server/**.js'
+            ],
+            exclude: [
+              'server/config.js'
+            ],
+            directives: {
+              es6: true,
+              node: true
+            },
+            options: {
+              edition: 'latest', // specify an edition of jslint or use 'dir/mycustom-jslint.js' for own path
+              log: 'server-lint.log',
+              //junit: 'server-junit.xml',
+              //jslintXml: 'server-jslint.xml',
+              //checkstyle: 'server-checkstyle.xml',
+              errorsOnly: true, // only display errors
+            }
+          }
+        },
+          
+        gitpull: {
+          stage: {
+            options: {
+              cwd: './dist'
+              //remote: 'origin',
+              //branch: 'master'
+            }
+          }
+        },
+        
+        gitpush: {
+          stage: {
+            options: {
+              cwd: './dist'
+              //remote: 'origin',
+              //branch: 'master'
+            }
+          }
+        },
+      
+        gitadd: {
+          stage: {
+            options: {
+              cwd: './dist',
+              all: true,
+              force: true
+            },
+            files: {
+              src: ['.']
+            }
+          }
+        },
+        
+        gitcommit: {
+          stage: {
+            options: {
+              message: 'Build',
+              cwd: './dist',
+              allowEmpty: true
+            },
+            files: {
+              src: ['.']
+            }
+          }
+        },
+      
         responsive_images: {
             dev: {
                 files: [{
@@ -202,6 +277,16 @@ module.exports = function(grunt) {
                     src: [
                         '.tmp',
                         '<%= yeoman.dist %>/!(.git*|.openshift|Procfile)**'
+                    ]
+                }]
+            },
+            // delete everything except client and university-domains-list
+            stage: {
+              files: [{
+                    dot: true,
+                    src: [
+                        '.tmp',
+                        '<%= yeoman.dist %>/!(.git*|.openshift|Procfile|client*|university-domains-list*)**'
                     ]
                 }]
             },
@@ -436,6 +521,19 @@ module.exports = function(grunt) {
 
         // Copies remaining files to places other tasks can use
         copy: {
+            stage: {
+                files: [{
+                    expand: true,
+                    dest: '<%= yeoman.dist %>',
+                    src: [
+                        'package.json',
+                        'university-domains-list/**/*',
+                        '<%= yeoman.server %>/**/*',
+                        '!<%= yeoman.server %>/config/local.env.sample.js'
+                    ]
+                }]
+            },
+          
             dist: {
                 files: [{
                     expand: true,
@@ -874,6 +972,23 @@ module.exports = function(grunt) {
         'usemin',
         'nggettext_extract',
         'nggettext_compile'
+    ]);
+    
+    grunt.registerTask('lint', [
+        'jslint:server'
+    ]);
+    
+    grunt.registerTask('stage', [
+        // pull all changes
+        'gitpull:stage',
+        // delete server
+        'clean:stage',
+        // copy only server
+        'copy:stage',
+        // upload
+        'gitadd:stage',
+        'gitcommit:stage',
+        'gitpush:stage'
     ]);
 
     grunt.registerTask('default', [

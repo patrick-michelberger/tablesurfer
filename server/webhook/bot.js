@@ -104,7 +104,7 @@ class Bot extends EventEmitter {
                             // save user
                             // send verify code message with resend button
                         } else if (!user.verified) {
-                            event.state = "askVerifyCode";
+                            event.state = "askVerifycode";
 
                         } else if (!user.weekdays || user.weekdays.length === 0) {
                             // send weekday buttons
@@ -188,7 +188,7 @@ class Bot extends EventEmitter {
           "type":"template",
           "payload":{
             "template_type":"button",
-            "text":"Wie lautet der Verifizierungscode, den wir an deine E-Mail Adresse gesendet haben?",
+            "text":"Gehe bitte auf den Verifizierungslink, den wir an deine E-Mail Adresse gesendet haben.",
             "buttons":[
               {
                 "type":"postback",
