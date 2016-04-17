@@ -62,9 +62,9 @@ module.exports = function(grunt) {
         gitpull: {
           stage: {
             options: {
-              cwd: './dist'
-              //remote: 'origin',
-              //branch: 'master'
+              cwd: './dist',
+              remote: 'origin',
+              branch: 'master'
             }
           }
         },
@@ -72,9 +72,9 @@ module.exports = function(grunt) {
         gitpush: {
           stage: {
             options: {
-              cwd: './dist'
-              //remote: 'origin',
-              //branch: 'master'
+              cwd: './dist',
+              remote: 'origin',
+              branch: 'master'
             }
           }
         },
