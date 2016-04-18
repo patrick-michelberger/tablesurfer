@@ -20,16 +20,12 @@ curl -X POST -H "Content-Type: application/json" -d '{
                   {
                     "type":"postback",
                     "title":"Anmelden",
-                    "payload": {
-                      type: "signup"
-                    }
+                    "payload": "signup"
                   },
                   {
                     "type":"postback",
                     "title":"Sprache wählen",
-                    "payload": {
-                      type: "change_language"
-                    }
+                    "payload": "change_language"
                   }
                 ]
               }
