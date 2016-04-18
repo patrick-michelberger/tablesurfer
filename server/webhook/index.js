@@ -109,7 +109,6 @@ bot.on('postback', (payload, reply) => {
                     reply({ 'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.' });
                     return;
                 }
-                bot.askForVerifycode(payload.sender.id);
                 reply({ 'text': 'Wir haben dir nochmal eine Email an ' + payload.user.email + ' geschickt.'});
             });
             break;
