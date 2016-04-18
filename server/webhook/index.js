@@ -95,22 +95,53 @@ bot.on('postback', (payload, reply) => {
             if (payload.state === 'askEmail') {
                 reply({ 'text': 'Wie lautet deine Uni-Mail-Adresse? (z.B. sven.mustermann@tum.de)' });
             } else {
-                reply({ 'text': 'Deine Campus-Email ' + payload.email + ' wurde schon verifiziert.' });
+                reply({ 'text': 'Deine Campus-Email ' + payload.user.email + ' wurde schon verifiziert.' });
             }
             break;
         case 'student_status_no':
             reply({ 'text': 'Tablesurfer ist nur für Studenten.' });
             break;
         case 'resend_verifycode':
-            console.log("sending email...");
-            payload.user.createVerifycode(function(err) {
-                if (err) {
-                    console.log(err);
-                    reply({ 'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.' });
-                    return;
-                }
-                reply({ 'text': 'Wir haben dir nochmal eine Email an ' + payload.user.email + ' geschickt.'});
-            });
+            if (!payload.user.verified) {
+                payload.user.createVerifycode(function(err) {
+                    if (err) {
+                        console.log(err);
+                        reply({ 'text': 'Wir konnten deine E-Mail Adresse leider nicht abspeichern. Probiere es später nochmal.' });
+                        return;
+                    }
+                    reply({ 'text': 'Wir haben dir nochmal eine Email an ' + payload.user.email + ' geschickt.' });
+                });
+            } else {
+                reply({ 'text': 'Deine Email ' + payload.user.email + ' wurde schon verifiziert.' });
+            }
+            break;
+        case 'preferred_weekdays_monday':
+            reply({ 'text': 'Montag gespeichert!' });
+            break;
+        case 'preferred_weekdays_tuesday':
+            reply({ 'text': 'Dienstag gespeichert!' });
+            break;
+        case 'preferred_weekdays_wednesday':
+            reply({ 'text': 'Mittwoch gespeichert!' });
+            break;
+        case 'preferred_weekdays_thursday':
+            reply({ 'text': 'Donnerstag gespeichert!' });
+
+            break;
+        case 'preferred_weekdays_friday':
+            reply({ 'text': 'Freitag gespeichert!' });
+
+            break;
+        case 'preferred_weekdays_saturday':
+            reply({ 'text': 'Samstag gespeichert!' });
+
+            break;
+        case 'preferred_weekdays_sunday':
+            reply({ 'text': 'Sonntag gespeichert!' });
+
+            break;
+        case 'preferred_weekdays_finished':
+            reply({ 'text': 'Deine bevorzugten Tage lauten ...'});
             break;
         default:
             reply({ 'text': 'Sorry, dieses Befehl kennen wir leider nicht.' });

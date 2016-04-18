@@ -196,6 +196,53 @@ class Bot extends EventEmitter {
         }
         this._request(recipientId, messageData);
     }
+
+    askPreferredWeekdays() {
+        let messageData = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": "Deine bevorzugten Wochentage?",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Montag",
+                        "payload": "preferred_weekdays_monday"
+                    }, {
+                        "type": "postback",
+                        "title": "Dienstag",
+                        "payload": "preferred_weekdays_montag"
+                    },{
+                        "type": "postback",
+                        "title": "Mittwoch",
+                        "payload": "preferred_weekdays_mittwoch"
+                    },{
+                        "type": "postback",
+                        "title": "Donnerstag",
+                        "payload": "preferred_weekdays_thursday"
+                    }, {
+                        "type": "postback",
+                        "title": "Freitag",
+                        "payload": "preferred_weekdays_friday"
+                    },{
+                        "type": "postback",
+                        "title": "Samstag",
+                        "payload": "preferred_weekdays_saturday"
+                    },{
+                        "type": "postback",
+                        "title": "Sonntag",
+                        "payload": "preferred_weekdays_sunday"
+                    }, {
+                        "type": "postback",
+                        "title": "Fertig",
+                        "payload": "preferred_weekdays_finished"
+                    }]
+                }
+            }
+        };
+        console.log("messageData: ", messageData);
+        this._request(recipientId, messageData);
+    }
 }
 
 module.exports = Bot
