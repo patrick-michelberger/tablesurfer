@@ -80,7 +80,7 @@ exports.use = function(req, res) {
             // person registered with messenger
             
             // send facebook message
-            bot.sendMessage(user.messengerId, {'text': 'Wir haben dich verifiziert.'}, (err) => {
+            bot.askPreferredWeekdays(user.messengerId, (err) => {
               if(err) { return handleError(res, err); }
               
               let entry = 'https://m.me/tablesurfer';

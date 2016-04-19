@@ -31,24 +31,15 @@ bot.on('message', (payload, reply) => {
     }
 
     if (payload.state === 'newUser') {
-        bot.getProfile(payload.sender.id, (err, profile) => {
-            var user = new User({
-                first_name: profile.first_name,
-                last_name: profile.last_name,
-                picture: profile.profile_pic,
-                messengerId: payload.sender.id
-            });
-            user.save(function(err) {
-                if (err) {
-                    reply({ text: 'Hey ' + profile.first_name + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
-                } else {
-                    reply({ text: 'Hey ' + profile.first_name + ', willkommen bei tablesurfer!' }, (err, info) => {});
-
-                    // handle received message
-                    //reply({ text: 'hey whats up!' }, (err, info) => {});
-                    bot.askForStatus(payload.sender.id);
-                }
-            });
+        bot.saveUser(payload.sender.id, (err, profile) => {
+            if (err) {
+                reply({ text: 'Hey ' + profile.first_name + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
+            } else {
+                reply({ text: 'Hey ' + profile.first_name + ', willkommen bei tablesurfer!' }, (err, info) => {});
+                // handle received message
+                //reply({ text: 'hey whats up!' }, (err, info) => {});
+                bot.askForStatus(payload.sender.id);
+            }
         });
     } else if (payload.state === 'askEmail') {
         let user = payload.user;
@@ -91,6 +82,24 @@ var parseEmail = (string) => {
 bot.on('postback', (payload, reply) => {
     console.log("payload: ", payload.postback.payload);
     switch (payload.postback.payload) {
+        case 'change_language':
+            reply({ 'text': 'change_language' });
+            break;
+        case 'signup':
+            console.log("payload.state: ", payload.state);
+            if (payload.state === 'newUser') {
+                bot.saveUser(payload.sender.id, (err, profile) => {
+                    if (err) {
+                        reply({ text: 'Hey ' + profile.first_name + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
+                    } else {
+                        reply({ text: 'Hey ' + profile.first_name + ', willkommen bei tablesurfer!' }, (err, info) => {});
+                        // handle received message
+                        //reply({ text: 'hey whats up!' }, (err, info) => {});
+                        bot.askForStatus(payload.sender.id);
+                    }
+                });
+            }
+            break;
         case 'student_status_yes':
             if (payload.state === 'askEmail') {
                 reply({ 'text': 'Wie lautet deine Uni-Mail-Adresse? (z.B. sven.mustermann@tum.de)' });
@@ -141,7 +150,7 @@ bot.on('postback', (payload, reply) => {
 
             break;
         case 'preferred_weekdays_finished':
-            reply({ 'text': 'Deine bevorzugten Tage lauten ...'});
+            reply({ 'text': 'Deine bevorzugten Tage lauten ...' });
             break;
         default:
             reply({ 'text': 'Sorry, dieses Befehl kennen wir leider nicht.' });
@@ -150,4 +159,5 @@ bot.on('postback', (payload, reply) => {
 
 router.all('/', bot.middleware());
 
-export default router;
+export
+default router;

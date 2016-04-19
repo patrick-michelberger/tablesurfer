@@ -16,6 +16,22 @@ class Bot extends EventEmitter {
         this.verify_token = opts.verify || false
     }
 
+    saveUser(id, cb) {
+        if (!cb) cb = Function.prototype
+        this.getProfile(id, (err, profile) => {
+            var user = new User({
+                first_name: profile.first_name,
+                last_name: profile.last_name,
+                picture: profile.profile_pic,
+                messengerId: id
+            });
+            user.save((err) => {
+                cb(err, user);
+            });
+        });
+
+    }
+
     getProfile(id, cb) {
         if (!cb) cb = Function.prototype
         request({
@@ -197,8 +213,9 @@ class Bot extends EventEmitter {
         this._request(recipientId, messageData);
     }
 
-    askPreferredWeekdays() {
-        let messageData = {
+    askPreferredWeekdays(recipientId, cb) {
+        if (!cb) cb = Function.prototype
+        let messageData1 = {
             "attachment": {
                 "type": "template",
                 "payload": {
@@ -212,11 +229,22 @@ class Bot extends EventEmitter {
                         "type": "postback",
                         "title": "Dienstag",
                         "payload": "preferred_weekdays_montag"
-                    },{
+                    }, {
                         "type": "postback",
                         "title": "Mittwoch",
                         "payload": "preferred_weekdays_mittwoch"
-                    },{
+                    }]
+                }
+            }
+        };
+
+        let messageData2 = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": "Deine bevorzugten Wochentage?",
+                    "buttons": [{
                         "type": "postback",
                         "title": "Donnerstag",
                         "payload": "preferred_weekdays_thursday"
@@ -224,24 +252,17 @@ class Bot extends EventEmitter {
                         "type": "postback",
                         "title": "Freitag",
                         "payload": "preferred_weekdays_friday"
-                    },{
+                    }, {
                         "type": "postback",
                         "title": "Samstag",
                         "payload": "preferred_weekdays_saturday"
-                    },{
-                        "type": "postback",
-                        "title": "Sonntag",
-                        "payload": "preferred_weekdays_sunday"
-                    }, {
-                        "type": "postback",
-                        "title": "Fertig",
-                        "payload": "preferred_weekdays_finished"
                     }]
                 }
             }
         };
-        console.log("messageData: ", messageData);
-        this._request(recipientId, messageData);
+        this.sendMessage(recipientId, messageData1, () => {
+            this.sendMessage(recipientId, messageData2, cb);
+        });
     }
 }
 
