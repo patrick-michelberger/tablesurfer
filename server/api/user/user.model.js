@@ -1,17 +1,17 @@
 'use strict';
 
-import crypto from 'crypto';
-import mongoose from 'mongoose';
+const crypto = require('crypto');
+const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-import { Schema } from 'mongoose';
-import Phonecode from '../phonecode/phonecode.model';
-import Verify from '../verifycode/verifycode.model';
-import University from '../university/university.model';
-import City from '../city/city.model';
-import mail from '../../components/mail';
-import config from '../../config/environment';
-//import Whatsapp from '../../components/whatsapp';
-import Password from '../password/password.model';
+const Schema = mongoose.Schema;
+const Phonecode = require('../phonecode/phonecode.model');
+const Verify = require('../verifycode/verifycode.model');
+const University = require('../university/university.model');
+const City = require('../city/city.model');
+const mail = require('../../components/mail');
+const config = require('../../config/environment');
+//const Whatsapp = require('../../components/whatsapp';
+const Password = require('../password/password.model');
 
 const authTypes = ['facebook'];
 
@@ -416,4 +416,4 @@ var checkCampusMail = function(email, callback) {
 
 };
 
-export default mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

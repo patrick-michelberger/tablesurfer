@@ -1,6 +1,8 @@
-import _ from 'lodash'
-import User from '../server/api/user/user.model'
-import Table from '../server/api/table/table.model'
+'use strict';
+
+let _ = require('lodash');
+let User = require('../server/api/user/user.model');
+let Table = require('../server/api/table/table.model');
 
 // users has to be longer than 4
 // User[] -> {host: user, guest: User[], rest: User[] }
@@ -77,7 +79,7 @@ function main() {
   
   // filter users by city and day
   let filtered = _.filter(user =>
-    _.includes(user.weekdays, day) && user.city = city);
+    _.includes(user.weekdays, day) && user.city == city);
   if(filtered.length < 4) {
     console.log("Not enough users for", day, "in", city);
     return;
@@ -96,7 +98,11 @@ function main() {
       console.log("Matching users error", err);
       return;
     }
-    
     console.log("Succesfully created table", table._id, "for", day, "in", city);
+    
+    // TODO: notify users
+    // TODO: mark users/only find users, that have no table
   });
 };
+
+main();
