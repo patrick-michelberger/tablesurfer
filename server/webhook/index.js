@@ -124,34 +124,6 @@ bot.on('postback', (payload, reply) => {
                 reply({ 'text': 'Deine Email ' + payload.user.email + ' wurde schon verifiziert.' });
             }
             break;
-        case 'preferred_weekdays_monday':
-            reply({ 'text': 'Montag gespeichert!' });
-            break;
-        case 'preferred_weekdays_tuesday':
-            reply({ 'text': 'Dienstag gespeichert!' });
-            break;
-        case 'preferred_weekdays_wednesday':
-            reply({ 'text': 'Mittwoch gespeichert!' });
-            break;
-        case 'preferred_weekdays_thursday':
-            reply({ 'text': 'Donnerstag gespeichert!' });
-
-            break;
-        case 'preferred_weekdays_friday':
-            reply({ 'text': 'Freitag gespeichert!' });
-
-            break;
-        case 'preferred_weekdays_saturday':
-            reply({ 'text': 'Samstag gespeichert!' });
-
-            break;
-        case 'preferred_weekdays_sunday':
-            reply({ 'text': 'Sonntag gespeichert!' });
-
-            break;
-        case 'preferred_weekdays_finished':
-            reply({ 'text': 'Deine bevorzugten Tage lauten ...' });
-            break;
         default:
             reply({ 'text': 'Sorry, dieses Befehl kennen wir leider nicht.' });
     }

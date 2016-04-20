@@ -215,53 +215,8 @@ class Bot extends EventEmitter {
 
     askPreferredWeekdays(recipientId, cb) {
         if (!cb) cb = Function.prototype
-        let messageData1 = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "button",
-                    "text": "Deine bevorzugten Wochentage?",
-                    "buttons": [{
-                        "type": "postback",
-                        "title": "Montag",
-                        "payload": "preferred_weekdays_monday"
-                    }, {
-                        "type": "postback",
-                        "title": "Dienstag",
-                        "payload": "preferred_weekdays_montag"
-                    }, {
-                        "type": "postback",
-                        "title": "Mittwoch",
-                        "payload": "preferred_weekdays_mittwoch"
-                    }]
-                }
-            }
-        };
-
-        let messageData2 = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "button",
-                    "text": "Deine bevorzugten Wochentage?",
-                    "buttons": [{
-                        "type": "postback",
-                        "title": "Donnerstag",
-                        "payload": "preferred_weekdays_thursday"
-                    }, {
-                        "type": "postback",
-                        "title": "Freitag",
-                        "payload": "preferred_weekdays_friday"
-                    }, {
-                        "type": "postback",
-                        "title": "Samstag",
-                        "payload": "preferred_weekdays_saturday"
-                    }]
-                }
-            }
-        };
-        this.sendMessage(recipientId, messageData1, () => {
-            this.sendMessage(recipientId, messageData2, cb);
+        this.sendMessage(recipientId, {
+            "text": "Deine bevorzugten Wochentage?"
         });
     }
 }
