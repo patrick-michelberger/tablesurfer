@@ -91,6 +91,10 @@ var all = {
     aws: {
         accessKey: process.env.AWS_ACCESS_KEY || 'key',
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ||  'secret',
+    },
+
+    wit: {
+        token: process.env.WIT_TOKEN || 'token'
     }
 };
 
