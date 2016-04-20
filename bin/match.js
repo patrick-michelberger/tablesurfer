@@ -65,44 +65,108 @@ function findGuest(users, gender) {
   };
 };
 
+function createTable(users) {
+  // find a group and create a table
+  let found = findGroup(users);
+  
+  let rest = found.rest;
+  let table = new Table();
+  table.day = day;
+  table.host = found.host._id;
+  table.guests = _.map(found.guests, guest => guest._id);
+  // TODO: set example date
+  
+  return {
+    table: table,
+    rest: rest,
+  };
+};
+
+function createTables(users) {
+  let created = createTable(users);
+  let table = created.table;
+  let rest = created.rest;
+  
+  table.save((err) => {
+    if(err) {
+      console.log('Matching users error', err);
+      return;
+    }
+    console.log('Succesfully created table', table._id, 'for', day, 'in', city);
+    
+    // TODO: notify users
+    if(rest.length < 4) {
+      console.log('We are done');
+      console.log('Over:', rest);
+      return;
+    }
+
+    // call createTables recursively
+    createTables(rest);
+  });
+};
+
+function findUsers(callback) {
+  User.find({}, (err, users) => {
+    if(err) {
+      callback(err);
+      return;
+    }
+    
+    Table.find({}, (err, tables) => {
+      if(err) {
+        callback(err);
+        return;
+      }
+      
+      // filter users whose tables are in the past
+      // 1. get tables of user
+      // 2. are all tables in the past?
+      let filtered = _.filter(users, user => {
+        let uid = user._id;
+        let userTables = _.filter(tables, table =>
+          table.host == uid || _.includes(table.guests, uid)
+        );
+        
+        // TODO: use a week old instead of this
+        return _.every(userTables, table => table.time < now);
+      });
+      
+      callback(null, filtered);
+    });    
+  });
+};
+
 function main() {
   // find users that need a table
+  // TODO: mark users/only find users, that have no table
+  
   let users = []
+  
+  if(users.length === 0) {
+    console.log('No users found.');
+    return;
+  }
+  
+  console.log('Found', users.length, 'users without table.');
   
   // pick a city
   let cities = _.map(users, user => user.city);
-  let city = _.sample(city);
+  let city = _.sample(cities);
   
   // pick a day
-  const days = _.flatMap(users, user => user.weekdays);
+  const days = _.flatten(_.map(users, user => user.weekdays));
   let day = _.sample(days);
   
   // filter users by city and day
   let filtered = _.filter(user =>
     _.includes(user.weekdays, day) && user.city == city);
   if(filtered.length < 4) {
-    console.log("Not enough users for", day, "in", city);
+    console.log('Not enough users for', day, 'in', city);
     return;
   }
   
-  // find a group and create a table
-  let found = findGroup(filtered);
-  
-  let table = new Table();
-  table.day = day;
-  table.host = found.host._id;
-  table.guests = [found.guests[0]._id, found.guests[1]._id,
-    found.guests[2]._id];
-  table.save((err) => {
-    if(err) {
-      console.log("Matching users error", err);
-      return;
-    }
-    console.log("Succesfully created table", table._id, "for", day, "in", city);
-    
-    // TODO: notify users
-    // TODO: mark users/only find users, that have no table
-  });
+  createTables(users);
 };
 
 main();
