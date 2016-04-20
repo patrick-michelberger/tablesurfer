@@ -67,6 +67,7 @@ var UserSchema = new Schema({
         "type": mongoose.Schema.ObjectId,
         "ref": "University"
     },
+    wasGuestXTimes :  Number,
     weekdays: []
 });
 
