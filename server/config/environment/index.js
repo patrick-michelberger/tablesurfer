@@ -45,6 +45,7 @@ var all = {
 
     facebook: {
         clientID: process.env.FACEBOOK_ID || 'id',
+        pageId: process.env.FACEBOOK_PAGE_ID || 'page id',
         clientSecret: process.env.FACEBOOK_SECRET || 'secret',
         pageToken: process.env.FACEBOOK_PAGE_TOKEN || 'page token',
         verifyToken: process.env.FACEBOOK_VERIFY_TOKEN || 'verify token',

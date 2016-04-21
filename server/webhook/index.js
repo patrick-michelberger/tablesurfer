@@ -4,6 +4,7 @@ import express from 'express';
 import config from '../config/environment';
 import User from '../api/user/user.model';
 import request from 'request';
+var _ = require('lodash');
 
 var Knwl = require("knwl.js");
 
@@ -17,6 +18,7 @@ let bot = new Bot({
 
 bot.on('message', (payload, reply) => {
 
+    console.log("Payload.state ", payload.state);
     // special messages
     if (payload.message.text === 'Vergiss mich.' && payload.user) {
         payload.user.remove((err) => {
@@ -62,8 +64,26 @@ bot.on('message', (payload, reply) => {
     } else if (payload.state === 'askVerifycode') {
         // We want to keep the verify code over the website.
         reply({ 'text': 'Du bist noch nicht verifiziert.' });
+    } else if (payload.state === 'askWeekdays' && payload.message) {
+        bot.askWit(payload.message.text, function(error, response) {
+            if (error) {
+                console.log('Oops! Got an error: ' + error);
+            } else {
+                const weekdaysEntities = response && response.outcomes && response.outcomes.length > 0 && response.outcomes[0] && response.outcomes[0].entities && response.outcomes[0].entities['weekday_type'];
+                var weekdays = _.pluck(weekdaysEntities, 'value');
+
+                var weekdaysString = weekdays.map((weekday) => {
+                    return weekday.toUpperCase();
+                });
+
+                reply({ 'text': "Super, wir haben " + weekdaysString + " als deine bevorzugten Wochentage abgespeichert!" });
+                reply({ 'text': "Sobald wir eine passende Tablesurfer Gruppe für dich gefunden haben, melden wir uns nochmal bei dir :)" });
+            }
+        });
     } else {
-        reply({ text: 'Hey!' }, (err, info) => {});
+        bot.askWit(payload.message.text, function(response) {
+            reply({ 'text': response });
+        });
     }
 });
 
@@ -80,13 +100,11 @@ var parseEmail = (string) => {
 };
 
 bot.on('postback', (payload, reply) => {
-    console.log("payload: ", payload.postback.payload);
     switch (payload.postback.payload) {
         case 'change_language':
             reply({ 'text': 'change_language' });
             break;
         case 'signup':
-            console.log("payload.state: ", payload.state);
             if (payload.state === 'newUser') {
                 bot.saveUser(payload.sender.id, (err, profile) => {
                     if (err) {

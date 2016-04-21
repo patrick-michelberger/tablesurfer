@@ -1,9 +1,117 @@
 'use strict'
 const EventEmitter = require('events').EventEmitter;
 const request = require('request');
-import User from '../api/user/user.model';
-import config from '../config/environment';
+const User = require('../api/user/user.model');
+const config = require('../config/environment');
 
+const WIT_TOKEN = config.wit.token;
+const FACEBOOK_PAGE_ID = config.facebook.pageId;
+const FACEBOOK_ACCESS_TOKEN = config.facebook.pageToken;
+
+const sendMessage = (recipient, payload, cb) => {
+    if (!cb) cb = Function.prototype
+    request({
+        method: 'POST',
+        uri: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {
+            access_token: FACEBOOK_ACCESS_TOKEN
+        },
+        json: {
+            recipient: { id: recipient },
+            message: payload
+        }
+    }, (err, res, body) => {
+        if (err) return cb(err)
+        if (body.error) return cb(body.error)
+
+        cb(null, body)
+    })
+};
+
+// This will contain all user sessions.
+// Each session has an entry:
+// sessionId -> {fbid: facebookUserId, context: sessionState}
+const sessions = {};
+
+const findOrCreateSession = (fbid) => {
+    let sessionId;
+    // Let's see if we already have a session for the user fbid
+    Object.keys(sessions).forEach(k => {
+        if (sessions[k].fbid === fbid) {
+            sessionId = k;
+        }
+    });
+    if (!sessionId) {
+        // No session found for user fbid, let's create a new one
+        sessionId = new Date().toISOString();
+        sessions[sessionId] = { fbid: fbid, context: {} };
+    }
+    return sessionId;
+};
+/*
+const firstEntityValue = (entities, entity) => {
+    const val = entities && entities[entity] &&
+        Array.isArray(entities[entity]) &&
+        entities[entity].length > 0 &&
+        entities[entity][0].value;
+    if (!val) {
+        return null;
+    }
+    return typeof val === 'object' ? val.value : val;
+};
+*/
+
+const getEntityValues = (response, entity) => {
+    const entities = response && response.outcomes && response.outcomes.length > 0 && response.outcomes[0];
+    if (!entities) {
+        return null;
+    }
+    return _.pluck(entities, 'value');
+}
+
+// wit bot actions
+const actions = {
+    say(sessionId, context, message, cb) {
+        // Our bot has something to say!
+        // Let's retrieve the Facebook user whose session belongs to
+        const recipientId = sessions[sessionId].fbid;
+        if (recipientId) {
+            // Yay, we found our recipient!
+            // Let's forward our bot response to her.
+            sendMessage(recipientId, {
+                "text": message
+            }, (err, data) => {
+                if (err) {
+                    console.log(
+                        'Oops! An error occurred while forwarding the response to',
+                        recipientId,
+                        ':',
+                        err
+                    );
+                }
+
+                // Let's give the wheel back to our bot
+                cb();
+            });
+        } else {
+            console.log('Oops! Couldn\'t find user for session:', sessionId);
+            // Giving the wheel back to our bot
+            cb();
+        }
+    },
+    merge(sessionId, context, entities, message, cb) {
+        cb(context);
+    },
+    error(sessionId, context, error) {
+        console.log(error.message);
+    },
+};
+
+// setting up wit bot
+const Wit = require('node-wit').Wit;
+const client = new Wit(WIT_TOKEN, actions);
+
+// tablesurfer bot
 class Bot extends EventEmitter {
     constructor(opts) {
         super()
@@ -49,27 +157,6 @@ class Bot extends EventEmitter {
         })
     }
 
-    sendMessage(recipient, payload, cb) {
-        if (!cb) cb = Function.prototype
-
-        request({
-            method: 'POST',
-            uri: 'https://graph.facebook.com/v2.6/me/messages',
-            qs: {
-                access_token: this.token
-            },
-            json: {
-                recipient: { id: recipient },
-                message: payload
-            }
-        }, (err, res, body) => {
-            if (err) return cb(err)
-            if (body.error) return cb(body.error)
-
-            cb(null, body)
-        })
-    }
-
     verify(token) {
         return (req, res) => {
             if (req.method === 'GET') {
@@ -88,7 +175,6 @@ class Bot extends EventEmitter {
         return (req, res) => {
             var self = this;
 
-
             if (this.verify_token && req.method === 'GET') return this.verify(this.verify_token)(req, res)
             if (req.method !== 'POST') return res.end()
 
@@ -99,58 +185,82 @@ class Bot extends EventEmitter {
 
                 events.forEach((event) => {
 
-                    let senderId = event.sender.id;
+                    if (event.recipient.id == FACEBOOK_PAGE_ID) {
+                        // Got a new message!
 
-                    // lookup user with provider = facebook and id = sender.id
-                    User.findOne({
-                        messengerId: senderId
-                    }, (err, user) => {
-                        if (err) return res.end()
+                        // Retrieve the Facebook user ID of the sender
+                        const senderId = event.sender.id;
+                        // Retrieve the user's current session, or create one if it doesn't exist
+                        // This is needed for the wit bot to figure out the conversation history
+                        const sessionId = findOrCreateSession(senderId);
 
-                        // append user object to event
-                        event.user = user;
-
-                        if (!user) {
-                            event.state = "newUser";
-                            // create new user
-                        } else if (!user.email) {
-                            event.state = "askEmail";
-                            // add campusMail to user
-                            // create verify code
-                            // save user
-                            // send verify code message with resend button
-                        } else if (!user.verified) {
-                            event.state = "askVerifycode";
-
-                        } else if (!user.weekdays || user.weekdays.length === 0) {
-                            // send weekday buttons
-                            event.state = "askWeekdays";
+                        if (event.message && event.message.attachments) {
+                            // Received an attachment
+                            sendMessage(
+                                senderId,
+                                'Sorry we can only process text messages for now.'
+                            );
+                        } else if (event.message && event.message.text) {
+                            // received a text message
+                        } else if (event.payload) {
+                            // received payload data
+                        } else if (event.delivery) {
+                            // received delivery message
+                        } else {
+                            // don't know the command
                         }
+                        // lookup user with provider = facebook and id = sender.id
+                        User.findOne({
+                            messengerId: senderId
+                        }, (err, user) => {
+                            if (err) return res.end()
 
-                        // handle inbound messages
-                        if (event.message) {
-                            self._handleEvent('message', event)
-                        }
+                            console.log("found user: ", user);
 
-                        // handle postbacks
-                        if (event.postback) {
-                            self._handleEvent('postback', event)
-                        }
+                            // append user object to event
+                            event.user = user;
 
-                        // handle message delivered
-                        if (event.delivery) {
-                            self._handleEvent('delivery', event)
-                        }
-                    });
-                })
+                            if (!user) {
+                                event.state = "newUser";
+                                // create new user
+                            } else if (!user.email) {
+                                event.state = "askEmail";
+                                // add campusMail to user
+                                // create verify code
+                                // save user
+                                // send verify code message with resend button
+                            } else if (!user.verified) {
+                                event.state = "askVerifycode";
+
+                            } else if (!user.weekdays || user.weekdays.length === 0) {
+                                // send weekday buttons
+                                event.state = "askWeekdays";
+                            }
+
+                            // handle inbound messages
+                            if (event.message) {
+                                self._handleEvent('message', event);
+                            }
+
+                            // handle postbacks
+                            if (event.postback) {
+                                self._handleEvent('postback', event);
+                            }
+
+                            // handle message delivered
+                            if (event.delivery) {
+                                self._handleEvent('delivery', event);
+                            }
+                        });
+                    }
+                });
             })
-
             res.json({ status: 'ok' });
         }
     }
 
     _handleEvent(type, event) {
-        this.emit(type, event, this.sendMessage.bind(this, event.sender.id))
+        this.emit(type, event, sendMessage.bind(this, event.sender.id))
     }
 
     _request(recipientId, messageData) {
@@ -215,8 +325,45 @@ class Bot extends EventEmitter {
 
     askPreferredWeekdays(recipientId, cb) {
         if (!cb) cb = Function.prototype
-        this.sendMessage(recipientId, {
+        sendMessage(recipientId, {
             "text": "Deine bevorzugten Wochentage?"
+        });
+    }
+
+    runWitActions(sessionId, msg) {
+        // Let's forward the message to the Wit.ai Bot Engine
+        // This will run all actions until our bot has nothing left to do
+        client.runActions(
+            sessionId, // the user's current session
+            msg, // the user's message 
+            sessions[sessionId].context, // the user's current session state
+            (error, context) => {
+                if (error) {
+                    console.log('Oops! Got an error from Wit:', error);
+                } else {
+                    // Our bot did everything it has to do.
+                    // Now it's waiting for further messages to proceed.
+                    console.log('Waiting for futher messages.');
+
+                    // Based on the session state, you might want to reset the session.
+                    // This depends heavily on the business logic of your bot.
+                    // Example:
+                    // if (context['done']) {
+                    //   delete sessions[sessionId];
+                    // }
+
+                    // Updating the user's current session state
+                    sessions[sessionId].context = context;
+                }
+            }
+        );
+    }
+
+    askWit(message, cb) {
+        if (!cb) cb = Function.prototype
+        client.message(message, (error, data) => {
+            console.log("cb");
+            cb(error, data);
         });
     }
 }
