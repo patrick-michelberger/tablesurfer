@@ -305,6 +305,28 @@ class Bot extends EventEmitter {
         this._request(recipientId, messageData);
     }
 
+    askForLanguage(recipientId) {
+        let messageData = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "button",
+                    "text": "Welche Sprache sprichst du?",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Deutsch",
+                        "payload": "language_german"
+                    }, {
+                        "type": "postback",
+                        "title": "English",
+                        "payload": "language_english"
+                    }]
+                }
+            }
+        };
+        this._request(recipientId, messageData);
+    }
+
     askForVerifycode(recipientId) {
         let messageData = {
             "attachment": {

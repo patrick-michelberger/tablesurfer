@@ -31,7 +31,7 @@ var UserSchema = new Schema({
     messengerId: String,
     provider: String,
     salt: String,
-    locale: String,
+    language: String,
     facebook: {},
     linkedin: {},
     xing: {},
@@ -67,7 +67,7 @@ var UserSchema = new Schema({
         "type": mongoose.Schema.ObjectId,
         "ref": "University"
     },
-    wasGuestXTimes :  Number,
+    wasGuestXTimes: Number,
     weekdays: []
 });
 
@@ -332,6 +332,24 @@ UserSchema.methods = {
                 };
                 mail.send(data, callback);
             });
+        });
+    },
+
+    /**
+     *  Change user's current language
+     *
+     * @param {String} language
+     * @param {Function} callback
+     * @api public
+     */
+    changeLanguage: function(language, callback) {
+        this.language = language
+        this.save(function(err) {
+            if (err) {
+                console.log(err);
+                return callback(err);
+            }
+            callback();
         });
     },
 

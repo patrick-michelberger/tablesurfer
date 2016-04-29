@@ -102,7 +102,7 @@ var parseEmail = (string) => {
 bot.on('postback', (payload, reply) => {
     switch (payload.postback.payload) {
         case 'change_language':
-            reply({ 'text': 'change_language' });
+            bot.askForLanguage(payload.sender.id);
             break;
         case 'signup':
             if (payload.state === 'newUser') {
@@ -127,6 +127,40 @@ bot.on('postback', (payload, reply) => {
             break;
         case 'student_status_no':
             reply({ 'text': 'Tablesurfer ist nur für Studenten.' });
+            break;
+        case 'language_german':
+            User.findOne({ messengerId: payload.sender.id }, function(err, user) {
+                if (err) {
+                    console.log(err);
+                } else if (!user) {
+                    console.log("No user found!");
+                } else {
+                    user.changeLanguage('DE', (err) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            reply({ "text": "Servus " + user.first_name + ", wir haben deine Sprache auf Deutsch geändert." });
+                        }
+                    });
+                }
+            });
+            break;
+        case 'language_english':
+            User.findOne({ messengerId: payload.sender.id }, function(err, user) {
+                if (err) {
+                    console.log(err);
+                } else if (!user) {
+                    console.log("No user found!");
+                } else {
+                    user.changeLanguage('DE', (err) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            reply({ "text": "Hi " + user.first_name + ", we've changed your language to English" });
+                        }
+                    });
+                }
+            });
             break;
         case 'resend_verifycode':
             if (!payload.user.verified) {
