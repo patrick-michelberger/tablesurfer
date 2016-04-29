@@ -3,7 +3,7 @@ const EventEmitter = require('events').EventEmitter;
 const request = require('request');
 const User = require('../api/user/user.model');
 const config = require('../config/environment');
-
+    
 const WIT_TOKEN = config.wit.token;
 const FACEBOOK_PAGE_ID = config.facebook.pageId;
 const FACEBOOK_ACCESS_TOKEN = config.facebook.pageToken;
@@ -209,13 +209,12 @@ class Bot extends EventEmitter {
                         } else {
                             // don't know the command
                         }
+
                         // lookup user with provider = facebook and id = sender.id
                         User.findOne({
                             messengerId: senderId
                         }, (err, user) => {
                             if (err) return res.end()
-
-                            console.log("found user: ", user);
 
                             // append user object to event
                             event.user = user;
@@ -236,9 +235,6 @@ class Bot extends EventEmitter {
                                 // send weekday buttons
                                 event.state = "askWeekdays";
                             }
-
-                            // language 
-                            event.language = user.language || 'DE';
 
                             // handle inbound messages
                             if (event.message) {
@@ -367,7 +363,6 @@ class Bot extends EventEmitter {
           cb(null);
         });
     }
-
 
     runWitActions(sessionId, msg) {
         // Let's forward the message to the Wit.ai Bot Engine
