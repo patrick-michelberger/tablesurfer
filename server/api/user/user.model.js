@@ -31,7 +31,10 @@ var UserSchema = new Schema({
     messengerId: String,
     provider: String,
     salt: String,
-    language: String,
+    language: {
+        type: String,
+        default: 'DE'
+    },
     facebook: {},
     linkedin: {},
     xing: {},
