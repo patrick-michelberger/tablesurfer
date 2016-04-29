@@ -329,6 +329,20 @@ class Bot extends EventEmitter {
             "text": "Deine bevorzugten Wochentage?"
         });
     }
+    
+    reply(recipientId, text, cb) {
+        if (!cb) cb = Function.prototype
+        sendMessage(recipientId, {
+            "text": text
+        }, (err) => {
+          if(err) {
+            cb(err);
+            return;
+          }
+          cb(null);
+        });
+    }
+
 
     runWitActions(sessionId, msg) {
         // Let's forward the message to the Wit.ai Bot Engine
