@@ -16,9 +16,12 @@ let bot = new Bot({
     verify: config.facebook.verifyToken
 });
 
+/**
+ * INCOMING MESSAGES FROM FB MESSENGER
+ */
 bot.on('message', (payload, reply) => {
     // special messages
-    if (payload.message.text === 'Vergiss mich.' && payload.user) {
+    if (payload.message.text === 'delete' && payload.user) {
         payload.user.remove((err) => {
             if (err) {
                 console.log(err);
@@ -44,12 +47,10 @@ bot.on('message', (payload, reply) => {
     } else if (payload.state === 'askEmail') {
         let user = payload.user;
         let email = parseEmail(payload.message.text);
-
         if (!email) {
             reply({ 'text': 'Dein letzter Text enthielt leider keine E-Mail Adresse.' });
             return;
         }
-
         user.email = email;
         user.createVerifycode(function(err) {
             if (err) {
@@ -73,7 +74,6 @@ bot.on('message', (payload, reply) => {
                 var weekdaysString = weekdays.map((weekday) => {
                     return weekday.toUpperCase();
                 });
-
                 reply({ 'text': "Super, wir haben " + weekdaysString + " als deine bevorzugten Wochentage abgespeichert!" });
                 reply({ 'text': "Sobald wir eine passende Tablesurfer Gruppe für dich gefunden haben, melden wir uns nochmal bei dir :)" });
             }
@@ -85,18 +85,9 @@ bot.on('message', (payload, reply) => {
     }
 });
 
-var parseEmail = (string) => {
-    let k = new Knwl();
-    k.init(string);
-    let emails = k.get('emails');
-
-    if (emails.length > 0) {
-        return emails[0].address;
-    } else {
-        return null;
-    }
-};
-
+/**
+ * INCOMING ACTIONS FROM FB MESSENGER
+ */
 bot.on('postback', (payload, reply) => {
     switch (payload.postback.payload) {
         case 'change_language':
@@ -188,6 +179,22 @@ bot.on('postback', (payload, reply) => {
             reply({ 'text': 'Sorry, dieses Befehl kennen wir leider nicht.' });
     }
 });
+
+/**
+ * HELPERS
+ */
+
+ var parseEmail = (string) => {
+    let k = new Knwl();
+    k.init(string);
+    let emails = k.get('emails');
+
+    if (emails.length > 0) {
+        return emails[0].address;
+    } else {
+        return null;
+    }
+};
 
 router.all('/', bot.middleware());
 
