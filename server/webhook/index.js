@@ -17,8 +17,6 @@ let bot = new Bot({
 });
 
 bot.on('message', (payload, reply) => {
-
-    console.log("Payload.state ", payload.state);
     // special messages
     if (payload.message.text === 'Vergiss mich.' && payload.user) {
         payload.user.remove((err) => {
@@ -102,7 +100,17 @@ var parseEmail = (string) => {
 bot.on('postback', (payload, reply) => {
     switch (payload.postback.payload) {
         case 'change_language':
-            bot.askForLanguage(payload.sender.id);
+            if (payload.state === 'newUser') {
+                bot.saveUser(payload.sender.id, (err, profile) => {
+                    if (err) {
+                        reply({ text: 'Hey ' + profile.first_name + ', your signup failed. We work on it! Please try it later again.' }, (err, info) => {});
+                    } else {
+                        bot.askForLanguage(payload.sender.id);
+                    }
+                });
+            } else {
+                bot.askForLanguage(payload.sender.id);
+            }
             break;
         case 'signup':
             if (payload.state === 'newUser') {
