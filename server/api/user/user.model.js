@@ -9,17 +9,11 @@ const Verify = require('../verifycode/verifycode.model');
 const University = require('../university/university.model');
 const City = require('../city/city.model');
 const mail = require('../../components/mail');
-const Bot = require('../../webhook/bot.js');
 const config = require('../../config/environment');
 //const Whatsapp = require('../../components/whatsapp';
 const Password = require('../password/password.model');
 
 const authTypes = ['facebook'];
-
-let bot = new Bot({
-    token: config.facebook.pageToken,
-    verify: config.facebook.verifyToken
-});
 
 var UserSchema = new Schema({
     first_name: String,
@@ -407,74 +401,6 @@ UserSchema.methods = {
 
         });
     },
-
-  sendMail: function(data, callback) {
-    var user = this;
-    // Send to fake address if table is just for test purposes
-    var to = config.env === 'development' ? config.fakemail : user.email;
-    
-    var obj = {
-      to: to,
-      user: user.profile,
-    };
-    
-    mail.send(_.merge(data,obj), callback);
-  },
-  
-  sendFacebookMessage: function(text, callback) {
-    var user = this;
-    bot.reply(user.messengerId, text, callback);
-  },
-   
-   /**
-   * Notify user that he is guest on a table
-   * @param {Object} table
-   * @param {Function} callback
-   * @api public
-   */
-  sendGuestNotification: function(table, callback) {
-    var user = this;
-    var data = {
-      url: config.domain  + '/#/tables/'+table._id,
-      table: table,
-      template: 'guest.hbs',
-      subject: 'Tablesurfer - You are guest'
-    };
-    user.sendMail(data, (err) => {
-      if(err) {
-        callback(err);
-        return;
-      }
-      // TODO send nicer view with profile pictures and info about table
-      var text = 'We found a table for you. :)';
-      user.sendFacebookMessage(text, callback);
-    });
-  },
-  
-  /**
-   * Notify user that he is host on a table
-   * @param {Object} table
-   * @param {Function} callback
-   * @api public
-   */
-  sendHostNotification: function(table, callback) {
-    var user = this;
-    var data = {
-      url: config.domain  + '/#/tables/'+table._id,
-      table: table,
-      template: 'host.hbs',
-      subject: 'Tablesurfer - You are guest'
-    };
-    user.sendMail(data, (err) => {
-      if(err) {
-        callback(err);
-        return;
-      }
-      // TODO send nicer view with profile pictures and info about table
-      var text = 'We found a table for you. :)';
-      user.sendFacebookMessage(text, callback);
-    });
-  },
 };
 
 // Create random phonecode
