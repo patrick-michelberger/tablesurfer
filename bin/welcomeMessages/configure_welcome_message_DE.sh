@@ -13,9 +13,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
             "elements":[
               {
                 "title":"Willkommen bei Tablesurfer!",
-                "item_url":"https://www.petersbowlerhats.com",
-                "image_url":"https://www.petersbowlerhats.com/img/hat.jpeg",
-                "subtitle":"An easy way to get to know each other besides university, clubs and bars.",
+                "item_url":"https://tablesurfer.org",
+                "image_url":"https://s3.eu-central-1.amazonaws.com/tablesurfer/ts-home-background.jpg",
+                "subtitle":"",
                 "buttons":[
                   {
                     "type":"postback",
