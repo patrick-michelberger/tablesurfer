@@ -237,6 +237,9 @@ class Bot extends EventEmitter {
                                 event.state = "askWeekdays";
                             }
 
+                            // language 
+                            event.language = user.language || 'DE';
+
                             // handle inbound messages
                             if (event.message) {
                                 self._handleEvent('message', event);
