@@ -27,84 +27,102 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-gettext');
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-critical');
-    
+
     // used for tablesurfer task to add and commit
     grunt.loadNpmTasks('grunt-git');
-    
+
     // linting before stage
     grunt.loadNpmTasks('grunt-jslint');
+
+
+    // Create pot file for translations
+    grunt.loadNpmTasks('grunt-pot');
+
 
     // Define the configuration for all the tasks
     grunt.initConfig({
         jslint: {
-          server: {
-            src: [
-              'server/**.js'
-            ],
-            exclude: [
-              'server/config.js'
-            ],
-            directives: {
-              es6: true,
-              node: true
-            },
-            options: {
-              edition: 'latest', // specify an edition of jslint or use 'dir/mycustom-jslint.js' for own path
-              log: 'server-lint.log',
-              //junit: 'server-junit.xml',
-              //jslintXml: 'server-jslint.xml',
-              //checkstyle: 'server-checkstyle.xml',
-              errorsOnly: true, // only display errors
+            server: {
+                src: [
+                    'server/**.js'
+                ],
+                exclude: [
+                    'server/config.js'
+                ],
+                directives: {
+                    es6: true,
+                    node: true
+                },
+                options: {
+                    edition: 'latest', // specify an edition of jslint or use 'dir/mycustom-jslint.js' for own path
+                    log: 'server-lint.log',
+                    //junit: 'server-junit.xml',
+                    //jslintXml: 'server-jslint.xml',
+                    //checkstyle: 'server-checkstyle.xml',
+                    errorsOnly: true, // only display errors
+                }
             }
-          }
         },
-          
+
         gitpull: {
-          stage: {
-            options: {
-              cwd: './dist',
-              remote: 'origin',
-              branch: 'master'
+            stage: {
+                options: {
+                    cwd: './dist',
+                    remote: 'origin',
+                    branch: 'master'
+                }
             }
-          }
         },
-        
+
         gitpush: {
-          stage: {
-            options: {
-              cwd: './dist',
-              remote: 'origin',
-              branch: 'master'
+            stage: {
+                options: {
+                    cwd: './dist',
+                    remote: 'origin',
+                    branch: 'master'
+                }
             }
-          }
         },
-      
+
         gitadd: {
-          stage: {
-            options: {
-              cwd: './dist',
-              all: true,
-              force: true
-            },
-            files: {
-              src: ['.']
+            stage: {
+                options: {
+                    cwd: './dist',
+                    all: true,
+                    force: true
+                },
+                files: {
+                    src: ['.']
+                }
             }
-          }
         },
-        
+
         gitcommit: {
-          stage: {
+            stage: {
+                options: {
+                    message: 'Build',
+                    cwd: './dist',
+                    allowEmpty: true
+                },
+                files: {
+                    src: ['.']
+                }
+            }
+        },
+
+        pot: {
             options: {
-              message: 'Build',
-              cwd: './dist',
-              allowEmpty: true
+                text_domain: 'tablesurfer', //Your text domain. Produces my-text-domain.pot 
+                dest: 'server/i18n/', //directory to place the pot file 
+                keywords: ['gettext', '__'], //functions to look for
+                encoding: 'UTF-8'
             },
             files: {
-              src: ['.']
-            }
-          }
+                src: ['server/webhook/*.js'],
+                expand: true,
+            },
         },
-      
+
         responsive_images: {
             dev: {
                 files: [{
@@ -282,7 +300,7 @@ module.exports = function(grunt) {
             },
             // delete everything except client and university-domains-list
             stage: {
-              files: [{
+                files: [{
                     dot: true,
                     src: [
                         '.tmp',
@@ -533,7 +551,7 @@ module.exports = function(grunt) {
                     ]
                 }]
             },
-          
+
             dist: {
                 files: [{
                     expand: true,
@@ -973,11 +991,11 @@ module.exports = function(grunt) {
         'nggettext_extract',
         'nggettext_compile'
     ]);
-    
+
     grunt.registerTask('lint', [
         'jslint:server'
     ]);
-    
+
     grunt.registerTask('stage', [
         // pull all changes
         'gitpull:stage',
@@ -988,7 +1006,8 @@ module.exports = function(grunt) {
         // upload
         'gitadd:stage',
         'gitcommit:stage',
-        'gitpush:stage'
+        'gitpush:stage',
+        'pot'
     ]);
 
     grunt.registerTask('default', [

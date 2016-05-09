@@ -4,6 +4,8 @@ import express from 'express';
 import config from '../config/environment';
 import User from '../api/user/user.model';
 import request from 'request';
+import gettext from '../components/gettext';
+
 var _ = require('lodash');
 
 var Knwl = require("knwl.js");
@@ -25,14 +27,17 @@ bot.on('message', (payload, reply) => {
         payload.user.remove((err) => {
             if (err) {
                 console.log(err);
-                reply({ 'text': 'Wir konnten dich nicht vergessen.' });
+                reply({ 'text': gettext('Wir konnten dich nicht vergessen.') });
                 return;
             }
-            reply({ 'text': 'Bis zum nächsten mal.' });
+            reply({ 'text': gettext('Bis zum nächsten mal.') });
             return;
         });
     }
 
+    /**
+     * REGISTRATION 
+     */
     if (payload.state === 'newUser') {
         bot.saveUser(payload.sender.id, (err, profile) => {
             if (err) {
@@ -79,6 +84,9 @@ bot.on('message', (payload, reply) => {
             }
         });
     } else {
+        /** 
+         * WIT.AI FORWARDING
+         */
         bot.askWit(payload.message.text, function(response) {
             reply({ 'text': response });
         });
@@ -89,6 +97,9 @@ bot.on('message', (payload, reply) => {
  * INCOMING ACTIONS FROM FB MESSENGER
  */
 bot.on('postback', (payload, reply) => {
+
+    var language = postback.user.language;
+
     switch (payload.postback.payload) {
         case 'change_language':
             if (payload.state === 'newUser') {
